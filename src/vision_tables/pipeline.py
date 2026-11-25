@@ -4,6 +4,7 @@ from __future__ import annotations
 import time
 import uuid
 from pathlib import Path
+from jsonschema import Draft202012Validator
 
 from . import models
 from .artifacts import write_json
@@ -86,7 +87,7 @@ def extract(path: Path, output: Path, settings: Settings, *, job_id: str | None 
             scoped = Ingested(source=ingestion.source, pages=[pages[n] for n in scope if n in pages],
                               regions=[r for r in ingestion.regions if r.page in scope],
                               issues=[i for i in ingestion.issues if i.page is None or i.page in scope],
-                              skipped_pages=sorted(skipped.intersection(scope)))
+                              skipped_pages=sorted(skipped.intersection(scope)), source_skipped_pages=sorted(skipped))
             collected = [readings[n] for n in scope if n in readings]
             if not collected:
                 continue
@@ -99,6 +100,7 @@ def extract(path: Path, output: Path, settings: Settings, *, job_id: str | None 
                       calls=[call for reading in collected for call in reading.calls])
             candidate = domain.assemble(scoped, collected, scope, run, doc_id)
             validated = Document.model_validate(candidate.model_dump(mode="json"))
+            Draft202012Validator(Document.model_json_schema()).validate(validated.model_dump(mode="json"))
             documents.append(validated)
         if not documents:
             raise ProcessingError("no_documents", "No document could be assembled.")

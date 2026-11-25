@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import subprocess
 from pathlib import Path
 from typing import Literal
 
@@ -54,7 +55,13 @@ class Settings(BaseModel):
         override = os.getenv("VT_INFERENCE_LOCK")
         if self.lock_file or override:
             return Path(self.lock_file or override).resolve()
-        return (self.state_dir / "inference.lock").resolve()
+        checkout = Path(__file__).resolve().parents[2]
+        if (checkout / "docs/development/REQUEST.md").is_file():
+            result = subprocess.run(["git", "-C", str(checkout), "rev-parse", "--path-format=absolute",
+                                     "--git-common-dir"], capture_output=True, text=True)
+            if result.returncode == 0:
+                return Path(result.stdout.strip()).parent / ".vt-state" / "inference.lock"
+        return Path.home() / ".local/state/vision-to-tables/inference.lock"
 
     def content_settings(self) -> dict:
         return self.model_dump(mode="json", exclude={"state_dir", "lock_file"})

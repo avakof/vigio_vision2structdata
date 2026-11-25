@@ -1,0 +1,181 @@
+{
+  "$defs": {
+    "FieldRead": {
+      "additionalProperties": false,
+      "properties": {
+        "alternatives": {
+          "items": {
+            "maxLength": 16384,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "evidence": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Evidence",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        },
+        "state": {
+          "default": "readable",
+          "enum": [
+            "readable",
+            "ambiguous",
+            "unreadable",
+            "not_present"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "raw"
+      ],
+      "title": "FieldRead",
+      "type": "object"
+    },
+    "RecordRead": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "maxProperties": 100,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FieldRead"
+            }
+          },
+          "propertyNames": {
+            "maxLength": 180,
+            "minLength": 1
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "kind": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "local_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Local Id",
+          "type": "string"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        }
+      },
+      "required": [
+        "kind",
+        "local_id",
+        "fields"
+      ],
+      "title": "RecordRead",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Untrusted proposal. Page identity, geometry and call telemetry belong to the adapter.",
+  "properties": {
+    "doc_type": {
+      "enum": [
+        "invoice",
+        "menu",
+        "recipe",
+        "unknown"
+      ],
+      "title": "Doc Type",
+      "type": "string"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/RecordRead"
+      },
+      "maxItems": 1024,
+      "title": "Records",
+      "type": "array"
+    },
+    "suspected_cutoff": {
+      "default": false,
+      "title": "Suspected Cutoff",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "doc_type",
+    "records"
+  ],
+  "title": "ModelPayload",
+  "type": "object"
+}

@@ -4,21 +4,27 @@ from __future__ import annotations
 import math
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, model_validator
 
 from .config import DocType, PIPELINE_VERSION, SCHEMA_VERSION
+from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
+from .wire_json import parse_object
 
 Number = Annotated[int, Field(ge=1)]
 Identifier = Annotated[str, Field(min_length=1, max_length=180, pattern=r"^[A-Za-z0-9_.:-]+$")]
 Sha = Annotated[str, Field(pattern="^[0-9a-f]{64}$")]
 Text = Annotated[str, Field(max_length=16384)]
-Scalar = str | bool | None
+Scalar = StrictStr | StrictBool | None
 State = Literal["readable", "ambiguous", "unreadable", "not_present"]
 Origin = Literal["observed", "calculated", "human_supplied"]
 
 
 class Wire(BaseModel):
     model_config = ConfigDict(extra="forbid", allow_inf_nan=False)
+
+    @classmethod
+    def model_validate_json(cls, json_data, **kwargs):
+        return cls.model_validate(parse_object(json_data, limit=32 << 20), **kwargs)
 
 
 class Source(Wire):
@@ -71,6 +77,9 @@ class Region(Wire):
     language: str | None = None
     writing: Literal["print", "handwriting", "mixed", "unknown"] = "unknown"
     box: Box | None = None
+    artifact_path: str | None = None
+    artifact_sha256: Sha | None = None
+    crop_to_original: tuple[float, float, float, float, float, float] | None = None
 
 
 class Issue(Wire):
@@ -86,10 +95,11 @@ class Ingested(Wire):
     regions: list[Region] = Field(default_factory=list)
     issues: list[Issue] = Field(default_factory=list)
     skipped_pages: list[Number] = Field(default_factory=list)
+    source_skipped_pages: list[Number] = Field(default_factory=list)
 
 
 class FieldRead(Wire):
-    raw: Text | None = None
+    raw: Text | None
     evidence: Text = ""
     region_id: Identifier | None = None
     state: State = "readable"
@@ -97,12 +107,42 @@ class FieldRead(Wire):
     reason: Text | None = None
     language: str | None = None
 
+    @model_validator(mode="after")
+    def raw_and_state(self):
+        if self.state == "readable" and not (self.raw and self.raw.strip()):
+            raise ValueError("readable field requires source text")
+        if self.state in ("ambiguous", "unreadable") and not (self.reason or self.alternatives):
+            raise ValueError("uncertain field requires a reason or alternatives")
+        return self
+
 
 class RecordRead(Wire):
     kind: Identifier
     local_id: Identifier
     parent_id: Identifier | None = None
     fields: dict[Identifier, FieldRead] = Field(max_length=100)
+
+    @model_validator(mode="after")
+    def vocabulary(self):
+        if self.kind not in FIELDS or self.fields.keys() - set(FIELDS[self.kind]) or self.fields.keys() & CALCULATED_ONLY:
+            raise ValueError("unsupported observed entity or field")
+        return self
+
+
+class ModelPayload(Wire):
+    """Untrusted proposal. Page identity, geometry and call telemetry belong to the adapter."""
+    doc_type: DocType
+    records: list[RecordRead] = Field(max_length=1024)
+    suspected_cutoff: StrictBool = False
+
+    @model_validator(mode="after")
+    def record_graph(self):
+        ids = {r.local_id for r in self.records}
+        if len(ids) != len(self.records) or any(r.kind not in FAMILIES[self.doc_type] for r in self.records):
+            raise ValueError("invalid reading kind or duplicate local record")
+        if any(r.parent_id is not None and r.parent_id not in ids for r in self.records):
+            raise ValueError("missing page-local parent")
+        return self
 
 
 class PageReading(Wire):
@@ -115,11 +155,19 @@ class PageReading(Wire):
     suspected_cutoff: bool = False
     calls: list[dict] = Field(default_factory=list)
 
+    @model_validator(mode="after")
+    def empty_status(self):
+        if not self.records and not (self.incomplete and self.issues):
+            raise ValueError("empty reading requires a visible incomplete issue")
+        return self
+
 
 class Evidence(Wire):
     page: Number
     region_id: Identifier | None = None
     quote: Text = ""
+    channel: Literal["direct", "native_text", "parser", "human"] | None = None
+    attempt_id: Identifier | None = None
 
 
 class Derivation(Wire):
@@ -147,6 +195,10 @@ class Observation(Wire):
             raise ValueError("unresolved observation must have null value")
         if self.origin == "observed" and not self.evidence:
             raise ValueError("observed fields require page evidence")
+        if self.origin == "observed" and self.state == "readable" and not (self.raw and self.raw.strip()):
+            raise ValueError("readable observations require a raw source reading")
+        if self.state in ("ambiguous", "unreadable") and not (self.reason or self.alternatives):
+            raise ValueError("uncertain observation requires a reason or alternatives")
         if (self.origin == "calculated") != bool(self.derivation):
             raise ValueError("calculated observations require a derivation")
         return self
@@ -176,6 +228,7 @@ class Run(Wire):
 class Coverage(Wire):
     processed_pages: list[Number]
     skipped_pages: list[Number] = Field(default_factory=list)
+    source_skipped_pages: list[Number] = Field(default_factory=list)
     incomplete_pages: list[Number] = Field(default_factory=list)
     suspected_capture: bool = False
     original_capture: Literal["not_established", "suspected_incomplete"] = "not_established"
@@ -188,13 +241,27 @@ class Correction(Wire):
     state: State = "readable"
     reason: str = Field(min_length=1, max_length=4096)
 
+    @model_validator(mode="after")
+    def resolved_value(self):
+        if (self.state == "readable") != (self.value is not None):
+            raise ValueError("correction value must agree with reading state")
+        return self
+
 
 class CorrectionSet(Wire):
     document_id: Identifier
     base_version: Number
     reviewer: str = Field(min_length=1, max_length=256)
-    changes: list[Correction] = Field(min_length=1, max_length=1000)
-    approve: bool = False
+    changes: list[Correction] = Field(default_factory=list, max_length=1000)
+    approve: StrictBool = False
+
+    @model_validator(mode="after")
+    def actionable(self):
+        if not self.changes and not self.approve:
+            raise ValueError("provide changes or explicit approval")
+        if len({c.observation_id for c in self.changes}) != len(self.changes):
+            raise ValueError("duplicate correction target")
+        return self
 
 
 class Document(Wire):
@@ -232,14 +299,26 @@ class Document(Wire):
         processed = set(self.coverage.processed_pages)
         skipped = set(self.coverage.skipped_pages)
         incomplete = set(self.coverage.incomplete_pages)
-        if processed & skipped or not processed <= page_map.keys() or not incomplete <= page_map.keys():
+        if skipped & (processed | incomplete) or not processed <= page_map.keys() or not incomplete <= page_map.keys():
             raise ValueError("inconsistent page coverage")
         if processed | skipped | incomplete != scope:
             raise ValueError("scope contains unaccounted pages")
-        if (skipped or incomplete) and self.validation != "incomplete":
+        if (skipped or incomplete or self.coverage.source_skipped_pages) and self.validation != "incomplete":
             raise ValueError("incomplete coverage must be visible")
         if self.approval == "human_approved" and (self.validation != "valid" or self.issues):
             raise ValueError("unresolved document cannot be approved")
+        if self.approval == "human_approved" and not (self.observations and self.doc_type != "unknown" and
+                self.corrections and self.corrections[-1].approve and self.corrections[-1].base_version == self.parent_version):
+            raise ValueError("approval requires an attributable human decision on this version")
+        if (self.version == 1 and self.parent_version is not None or
+                self.version > 1 and not (self.parent_version and self.parent_version < self.version)):
+            raise ValueError("invalid version lineage")
+        if self.coverage.suspected_capture != (self.coverage.original_capture == "suspected_incomplete"):
+            raise ValueError("capture assessment mismatch")
+        if self.coverage.suspected_capture and not self.issues:
+            raise ValueError("suspected incomplete capture requires a review issue")
+        if len({(o.entity_id, o.field) for o in self.observations}) != len(self.observations):
+            raise ValueError("duplicate effective entity field")
         for region in self.regions:
             page = page_map.get(region.page)
             if page is None:
@@ -247,11 +326,15 @@ class Document(Wire):
             if region.box and (region.box.xyxy[2] > page.width + 0.001 or region.box.xyxy[3] > page.height + 0.001):
                 raise ValueError("region outside original page")
         for entity in self.entities:
+            if entity.kind not in FIELDS:
+                raise ValueError("unknown entity kind")
             if entity.page not in page_map or entity.parent_id is not None and entity.parent_id not in entities:
                 raise ValueError("unknown entity page or parent")
         for obs in self.observations:
             if obs.entity_id not in entities:
                 raise ValueError("orphan observation")
+            if obs.field not in FIELDS[entities[obs.entity_id].kind]:
+                raise ValueError("unsupported field for entity kind")
             for ref in obs.evidence:
                 if ref.page not in page_map or ref.region_id and (
                     ref.region_id not in regions or regions[ref.region_id].page != ref.page

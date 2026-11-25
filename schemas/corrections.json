@@ -82,7 +82,6 @@
         "$ref": "#/$defs/Correction"
       },
       "maxItems": 1000,
-      "minItems": 1,
       "title": "Changes",
       "type": "array"
     },
@@ -103,8 +102,7 @@
   "required": [
     "document_id",
     "base_version",
-    "reviewer",
-    "changes"
+    "reviewer"
   ],
   "title": "CorrectionSet",
   "type": "object"
