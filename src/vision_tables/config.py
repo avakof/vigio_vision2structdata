@@ -23,7 +23,13 @@ def digest(data: object) -> str:
 
 
 def default_state() -> Path:
-    return Path(os.getenv("VT_STATE_DIR", ".vt-state")).resolve()
+    override = os.getenv("VT_STATE_DIR")
+    if override:
+        return Path(override).expanduser().resolve()
+    checkout = Path(__file__).resolve().parents[2]
+    if (checkout / "docs/development/REQUEST.md").is_file():
+        return checkout / ".vt-state"
+    return Path.home() / ".local/share/vision-to-tables"
 
 
 class Settings(BaseModel):
