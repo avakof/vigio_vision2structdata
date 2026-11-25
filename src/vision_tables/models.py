@@ -133,6 +133,19 @@ def prepare(settings: Settings) -> dict:
                 for component, manifest in PADDLE_MANIFEST.items():
                     download(paddle_dir / "models" / component, manifest)
                 write_json(paddle_dir / "manifest.json", PADDLE_MANIFEST)
+                smoke = ASSETS / "paddle-gate1.py"
+                if not smoke.is_file():  # editable source checkout
+                    smoke = ASSETS.parents[2] / "scripts/paddle-gate1.py"
+                if not runtime_info(settings)["components"]["parser"]["ready"]:
+                    with (paddle_dir / "smoke.log").open("w") as log:
+                        result = subprocess.run(["/usr/bin/sandbox-exec", "-p",
+                                                 "(version 1) (allow default) (deny network*)",
+                                                 str(paddle_dir / "env/bin/python"), str(smoke)],
+                                                env=env | {"VT_STATE_DIR": str(state),
+                                                           "VT_INFERENCE_LOCK": str(settings.inference_lock)},
+                                                stdout=log, stderr=subprocess.STDOUT)
+                    if result.returncode:
+                        raise ProcessingError("parser_smoke_failed", f"Full parser smoke failed; see {paddle_dir / 'smoke.log'}.")
         except ValueError as exc:
             raise ProcessingError("integrity_error", str(exc)) from exc
         except (OSError, subprocess.CalledProcessError) as exc:
