@@ -649,10 +649,13 @@ def materialize(conn: sqlite3.Connection, doc: Document) -> None:
     conn.executemany("INSERT INTO pages VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", [
         (did, ver, p.number, p.width, p.height, p.unit, p.image_path, p.image_width, p.image_height,
          json.dumps(p.image_to_original), p.text_layer, job) for p in doc.pages])
-    conn.executemany("INSERT INTO regions VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", [
+    conn.executemany("INSERT INTO regions (document_id, version, id, page, ordinal, kind, text, language, writing,"
+                     " box_json, artifact_path, artifact_sha256, crop_to_original_json)"
+                     " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", [
         (did, ver, r.id, r.page, r.order, r.kind, r.text, r.language, r.writing,
          json.dumps(r.box.model_dump(mode="json"), sort_keys=True) if r.box else None, r.artifact_path,
-         r.artifact_sha256) for r in doc.regions])
+         r.artifact_sha256, json.dumps(list(r.crop_to_original)) if r.crop_to_original else None)
+        for r in doc.regions])
     conn.executemany("INSERT INTO entities VALUES (?,?,?,?,?,?,?)", [
         (did, ver, e.id, e.kind, e.parent_id, e.page, e.ordinal) for e in doc.entities])
     for obs in doc.observations:
@@ -668,8 +671,9 @@ def materialize(conn: sqlite3.Connection, doc: Document) -> None:
                           doc.source.sha256, job, doc.source.original_path, pages[ref.page].image_path,
                           json.dumps(region.box.model_dump(mode="json"), sort_keys=True)
                           if region and region.box else None))
-    conn.executemany("INSERT INTO issues VALUES (?,?,?,?,?,?,?)", [
-        (did, ver, i, issue.code, issue.message, issue.page, json.dumps(issue.observation_ids))
+    conn.executemany("INSERT INTO issues (document_id, version, seq, code, message, page, observation_ids_json,"
+                     " severity) VALUES (?,?,?,?,?,?,?,?)", [
+        (did, ver, i, issue.code, issue.message, issue.page, json.dumps(issue.observation_ids), issue.severity)
         for i, issue in enumerate(doc.issues)])
 
 

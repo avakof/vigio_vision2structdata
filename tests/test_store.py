@@ -44,11 +44,12 @@ def test_migration_001_is_idempotent_and_checksummed(tmp_path):
     Store(tmp_path / "s")  # reopen: nothing re-applied
     with first.read() as conn:
         rows = conn.execute("SELECT version, name, checksum FROM schema_migrations").fetchall()
-    assert [(r[0], r[1]) for r in rows] == [(1, "initial"), (2, "export_published_formats")]
+    assert [(r[0], r[1]) for r in rows] == [(1, "initial"), (2, "export_published_formats"),
+                                               (3, "review_severity_and_crop_transforms")]
     assert [r[2] for r in rows] == [m.checksum for m in MIGRATIONS]
     conn = sqlite3.connect(first.path, isolation_level=None)
     assert apply_migrations(conn, "now") == []
-    tampered = (Migration(1, "initial", MIGRATIONS[0].statements[:-1]), MIGRATIONS[1])
+    tampered = (Migration(1, "initial", MIGRATIONS[0].statements[:-1]), *MIGRATIONS[1:])
     with raises("migration_mismatch"):
         apply_migrations(conn, "now", tampered)
     conn.execute("INSERT INTO schema_migrations VALUES (99,'future','x','now')")

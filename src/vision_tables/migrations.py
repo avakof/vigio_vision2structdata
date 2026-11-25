@@ -151,7 +151,29 @@ _V2 = [
     "UPDATE exports SET published_formats = formats WHERE state = 'published'",
 ]
 
-MIGRATIONS = (Migration(1, "initial", tuple(_V1)), Migration(2, "export_published_formats", tuple(_V2)))
+# Reconstruct the two materialized columns from their original snapshots while
+# the immediate migration transaction exclusively owns the database.
+_V3 = [
+    "ALTER TABLE issues ADD COLUMN severity TEXT NOT NULL DEFAULT 'review' CHECK (severity IN ('review','info'))",
+    "ALTER TABLE regions ADD COLUMN crop_to_original_json TEXT",
+    "DROP TRIGGER issues_no_update",
+    "DROP TRIGGER regions_no_update",
+    """UPDATE issues SET severity=COALESCE(json_extract(item.value,'$.severity'), 'review')
+       FROM document_versions AS v, json_each(CAST(v.snapshot_json AS TEXT), '$.issues') AS item
+       WHERE issues.document_id=v.document_id AND issues.version=v.version AND issues.seq=item.key""",
+    """UPDATE regions SET crop_to_original_json=json_extract(item.value, '$.crop_to_original')
+       FROM document_versions AS v, json_each(CAST(v.snapshot_json AS TEXT), '$.regions') AS item
+       WHERE regions.document_id=v.document_id AND regions.version=v.version
+         AND regions.id=json_extract(item.value, '$.id')""",
+    "CREATE TRIGGER issues_no_update BEFORE UPDATE ON issues "
+    "BEGIN SELECT RAISE(ABORT, 'issues rows are immutable'); END",
+    "CREATE TRIGGER regions_no_update BEFORE UPDATE ON regions "
+    "BEGIN SELECT RAISE(ABORT, 'regions rows are immutable'); END",
+]
+
+MIGRATIONS = (Migration(1, "initial", tuple(_V1)),
+              Migration(2, "export_published_formats", tuple(_V2)),
+              Migration(3, "review_severity_and_crop_transforms", tuple(_V3)))
 LATEST = MIGRATIONS[-1].version
 
 

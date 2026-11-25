@@ -110,6 +110,7 @@ class Evidence(Wire):
 class FieldRead(Wire):
     # Assigned only by the adapter, then serialized in PageReading.field_evidence.
     _trace: list[Evidence] = PrivateAttr(default_factory=list)
+    _writing: Literal["print", "handwriting", "mixed"] | None = PrivateAttr(default=None)
     raw: Text | None
     evidence: Text = ""
     region_id: Identifier | None = None

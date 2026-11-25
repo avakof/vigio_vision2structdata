@@ -194,7 +194,7 @@ def recompute(doc_type: str, entities: list[Entity], observations: list[Observat
     if doc_type == "invoice":
         _invoice(v, ents, add, note, calc, unrounded, currency_of, view)
     elif doc_type == "menu":
-        _menu(v, ents, note)
+        _menu(v, ents, note, {region.id for region in regions if region.box})
     elif doc_type == "recipe":
         _recipe(v, ents, note, roots)
     _common_rows(v, ents, note)
@@ -365,7 +365,7 @@ def _invoice(v: View, ents, add, note, calc, unrounded, currency_of, view):
                  [total_id, f"{root.id}.calculated_total"])
 
 
-def _menu(v: View, ents, note):
+def _menu(v: View, ents, note, spatial_regions):
     for eid in v.order:
         entity = ents[eid]
         if entity.kind in ("menu_item", "variant", "supplement", "bundle"):
@@ -392,7 +392,7 @@ def _menu(v: View, ents, note):
                 note("identical_translation", f"{translated} equals {plain}", entity, [b.id])
             elif a.language and b.language and a.language == b.language:
                 note("translation_same_language", f"{plain} and {translated} are both {a.language}", entity, [a.id, b.id])
-            elif not any(ev.region_id for ev in a.evidence + b.evidence):
+            elif not any(ev.region_id in spatial_regions for ev in a.evidence + b.evidence):
                 note("translation_without_layout_evidence", f"{translated} paired without region evidence", entity, [b.id])
 
 

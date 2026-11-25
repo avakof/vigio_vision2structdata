@@ -122,3 +122,5 @@ issues and approval are recomputed; a later edit resets approval.
 * Decimal-versus-grouping for `1,234` and two-digit years are never guessed; they cost a review.
 * The units table covers common FR/EN kitchen and trade units, not every regional spelling; unknown units
   are ambiguous, never guessed.
+
+Optional bounded adapter hints retain the source language and visible writing style of a quoted reading. Direct image readings can carry a boxless page-style summary linked to the source image. When a parser region or a reread crop grounds the reading, its style can be attached there. Locale and ambiguous dates keep their independent normalization rules. A page summary cannot justify pairing translations by layout.

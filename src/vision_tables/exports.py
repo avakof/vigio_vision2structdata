@@ -79,13 +79,15 @@ def render_tables(doc: Document) -> dict[str, bytes]:
              "source_sha256", "media_type", "size_bytes", "page_count", "processed_pages", "skipped_pages",
              "source_skipped_pages", "incomplete_pages", "suspected_capture", "original_capture", "pipeline",
              "model", "revision", "schema_version", "pipeline_version", "config_hash", "job_id", "issue_count",
-             "unresolved_observation_count"],
+             "review_issue_count", "info_issue_count", "unresolved_observation_count"],
             [[did, doc.version, doc.parent_version, doc.doc_type, doc.validation, doc.approval, _j(doc.scope),
               doc.source.sha256, doc.source.media_type, doc.source.size_bytes, doc.source.page_count,
               _j(cov.processed_pages), _j(cov.skipped_pages), _j(cov.source_skipped_pages),
               _j(cov.incomplete_pages), cov.suspected_capture, cov.original_capture, doc.run.pipeline,
               doc.run.model, doc.run.revision, doc.run.schema_version, doc.run.pipeline_version,
-              doc.run.config_hash, doc.run.job_id, len(doc.issues), unresolved]]),
+              doc.run.config_hash, doc.run.job_id, len(doc.issues),
+              sum(i.severity == "review" for i in doc.issues), sum(i.severity == "info" for i in doc.issues),
+              unresolved]]),
         "pages.csv": _csv(
             ["document_id", "page", "width", "height", "unit", "image_path", "image_width", "image_height",
              "image_to_original", "text_layer"],
@@ -93,10 +95,10 @@ def render_tables(doc: Document) -> dict[str, bytes]:
               _j(p.image_to_original), p.text_layer] for p in sorted(doc.pages, key=lambda p: p.number)]),
         "regions.csv": _csv(
             ["document_id", "region_id", "page", "order", "kind", "text", "language", "writing", "box_xyxy",
-             "box_precision", "artifact_path", "artifact_sha256"],
+             "box_precision", "artifact_path", "artifact_sha256", "crop_to_original"],
             [[did, r.id, r.page, r.order, r.kind, r.text, r.language, r.writing,
               _j(r.box.xyxy) if r.box else None, r.box.precision if r.box else None, r.artifact_path,
-              r.artifact_sha256] for r in sorted(doc.regions, key=lambda r: (r.page, r.order, r.id))]),
+              r.artifact_sha256, _j(r.crop_to_original) if r.crop_to_original else None] for r in sorted(doc.regions, key=lambda r: (r.page, r.order, r.id))]),
         "entities.csv": _csv(
             ["document_id", "entity_id", "kind", "parent_id", "page", "ordinal"],
             [[did, e.id, e.kind, e.parent_id, e.page, e.ordinal] for e in entities]),
@@ -114,8 +116,9 @@ def render_tables(doc: Document) -> dict[str, bytes]:
               next(p.image_path for p in doc.pages if p.number == ref.page)]
              for o in observations for i, ref in enumerate(o.evidence)]),
         "issues.csv": _csv(
-            ["document_id", "issue_seq", "code", "message", "page", "observation_ids"],
-            [[did, i, x.code, x.message, x.page, _j(x.observation_ids)] for i, x in enumerate(doc.issues)]),
+            ["document_id", "issue_seq", "code", "severity", "message", "page", "observation_ids"],
+            [[did, i, x.code, x.severity, x.message, x.page, _j(x.observation_ids)]
+             for i, x in enumerate(doc.issues)]),
         "corrections.csv": _csv(
             ["document_id", "seq", "base_version", "reviewer", "approve", "observation_id", "value", "raw",
              "state", "reason"],
@@ -188,29 +191,33 @@ def review_files(store: Store, doc: Document, snapshot_sha: str) -> dict[str, by
         if region is None:
             return None
         return {"region_id": region.id, "kind": region.kind, "writing": region.writing,
+                "language": region.language,
                 "box": region.box.model_dump(mode="json") if region.box else None,
                 "crop": _file_info(store, job, region.artifact_path) | {"sha256": region.artifact_sha256}
                 if region.artifact_path else None,
                 "crop_to_original": list(region.crop_to_original) if region.crop_to_original else None}
 
-    issue_codes: dict[str, list[str]] = {}
+    issue_marks: dict[str, list[dict]] = {}
     for issue in doc.issues:
         for obs_id in issue.observation_ids:
-            issue_codes.setdefault(obs_id, []).append(issue.code)
+            issue_marks.setdefault(obs_id, []).append({"code": issue.code, "severity": issue.severity})
 
     def item(obs) -> dict:
         entity = kinds[obs.entity_id]
         return {"observation_id": obs.id, "entity_id": obs.entity_id, "entity_kind": entity.kind,
                 "parent_id": entity.parent_id, "field": obs.field, "raw": obs.raw, "value": obs.value,
                 "state": obs.state, "origin": obs.origin, "alternatives": obs.alternatives, "reason": obs.reason,
-                "issue_codes": sorted(issue_codes.get(obs.id, [])),
+                "language": obs.language, "issue_codes": sorted(mark["code"] for mark in issue_marks.get(obs.id, [])),
+                "issues": sorted(issue_marks.get(obs.id, []), key=lambda m: (m["severity"], m["code"])),
                 "derivation": obs.derivation.model_dump(mode="json") if obs.derivation else None,
                 "evidence": [{"page": ref.page, "quote": ref.quote, "channel": ref.channel,
                               "attempt_id": ref.attempt_id, "page_reference": page_ref(ref.page),
                               "region": region_ref(ref.region_id)} for ref in obs.evidence]}
 
-    flagged = sorted({o.id for o in doc.observations if o.state != "readable"} | issue_codes.keys())
-    first = next((observations[i] for i in flagged if observations[i].origin != "calculated"), None)
+    flagged = sorted({o.id for o in doc.observations if o.state != "readable"} | issue_marks.keys())
+    needs_review = {o for i in doc.issues if i.severity == "review" for o in i.observation_ids}
+    first = next((observations[i] for i in flagged if observations[i].origin != "calculated"
+                  and (observations[i].state != "readable" or i in needs_review)), None)
     reviewer_note = "REPLACE_WITH_REVIEWER_NAME"
     example = {"document_id": doc.document_id, "base_version": doc.version, "reviewer": reviewer_note,
                "changes": ([{"observation_id": first.id, "value": None, "raw": first.raw, "state": "unreadable",
@@ -224,7 +231,9 @@ def review_files(store: Store, doc: Document, snapshot_sha: str) -> dict[str, by
         "artifact_root": str(store.artifact_root(job)),
         "source": source,
         "coverage": doc.coverage.model_dump(mode="json"),
-        "issues": [{"seq": i, "code": x.code, "message": x.message, "page": x.page,
+        "issue_counts": {"review": sum(i.severity == "review" for i in doc.issues),
+                         "info": sum(i.severity == "info" for i in doc.issues)},
+        "issues": [{"seq": i, "code": x.code, "severity": x.severity, "message": x.message, "page": x.page,
                     "page_reference": page_ref(x.page) if x.page else None,
                     "observation_ids": x.observation_ids,
                     "observations": [item(observations[o]) for o in x.observation_ids]}

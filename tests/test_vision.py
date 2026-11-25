@@ -458,3 +458,19 @@ def test_direct_tile_can_reread_immutable_heic(tmp_path, monkeypatch):
     assert tile.kind == "reread_tile" and tile.box.xyxy == pytest.approx((140, 0, 660, 420))
     assert (tmp_path / "original").read_bytes() == source.read_bytes()
     assert result.records[0].fields["total"].region_id == tile.id
+
+
+def test_visual_writing_hints_do_not_create_spatial_evidence(tmp_path, monkeypatch):
+    settings = Settings(doc_type="invoice", retries=0)
+    page, = vision.inspect_source(INVOICE, tmp_path, settings).pages
+    details = reply(detail=dict(n="supplier_name", v="Atelier de la Rive", q="Atelier de la Rive",
+                                g=None, l="fr", w="handwriting"))
+    monkeypatch.setattr(runtime_local, "call", lambda *unused: details)
+    reading = vision.read_page(page, [], tmp_path, settings)
+    supplier = reading.records[0].fields["supplier_name"]
+    assert supplier.language == "fr" and supplier.raw == "Atelier de la Rive"
+    assert supplier.region_id is None and reading.field_evidence["a"]["supplier_name"][0].region_id is None
+    summary, = reading.regions
+    assert (summary.kind, summary.writing, summary.language, summary.box) == ("page_style", "handwriting", "fr", None)
+    assert summary.artifact_sha256 == hashlib.sha256((tmp_path / page.image_path).read_bytes()).hexdigest()
+    assert reading.calls[0]["fields"][-1]["writing"] == "handwriting"

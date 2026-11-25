@@ -17,9 +17,10 @@ from . import runtime_local
 from .artifacts import write_json
 from .config import QWEN_MODEL, QWEN_REVISION, ProcessingError, Settings
 from .contracts import Box, Evidence, FieldRead, Issue, ModelPayload, Page, PageReading, Region
+from .domain.schema import model_vocabulary
 from .vision_geometry import box, invert, localize
 from .vision_ingest import PDF_UNREPRESENTED, inspect_source, read_oriented_raster
-from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
+from .vocabulary import FAMILIES
 from .wire_json import parse_object
 
 hybrid_info = runtime_local.hybrid_info
@@ -28,24 +29,43 @@ _PROMPT_TEXT_LIMIT = 9000
 _PARSER_REGIONS = 32
 _MAX_MODEL_RECORDS = 128
 _ANCHOR_FIELDS = ("description", "sku", "name", "title", "instruction")
+_LANGUAGES = ("fr", "en", "mixed", "unknown")
+_WRITINGS = ("print", "handwriting", "mixed", "unknown")
 
 
-def _object(properties):
-    return {"type": "object", "properties": properties, "required": list(properties), "additionalProperties": False}
+def _families(doc_type):
+    return list(FAMILIES) if doc_type == "auto" else [doc_type]
+
+
+def _vocabulary(doc_type):
+    """Kind -> (allowed parent kinds, observable field names), from the domain's single vocabulary."""
+    records = {}
+    for family in _families(doc_type):
+        for kind, spec in model_vocabulary(family)["records"].items():
+            records.setdefault(kind, (spec["parent"], tuple(spec["fields"])))
+    return records
+
+
+def _object(properties, required=None):
+    return {"type": "object", "properties": properties, "required": list(required or properties),
+            "additionalProperties": False}
 
 
 def _schema(doc_type, regions):
-    families = list(FAMILIES) if doc_type == "auto" else [doc_type]
-    kinds = [kind for family in families for kind in FAMILIES[family]]
+    families = _families(doc_type)
+    vocabulary = _vocabulary(doc_type)
     label = {"type": "string", "pattern": "^[A-Za-z0-9_.:-]+$", "maxLength": 48}
     text = {"type": "string", "maxLength": 1000}
     nullable = {"type": "null"}
-    field = _object({
-        "n": {"enum": sorted({f for k in kinds for f in FIELDS[k]} - CALCULATED_ONLY)},
+    properties = {
+        "n": {"enum": sorted({f for _, fields in vocabulary.values() for f in fields})},
         "v": {"anyOf": [text, nullable]}, "q": text,
         "g": {"enum": [None, *regions]},
-    })
-    record = _object({"k": {"enum": kinds}, "i": label, "p": {"anyOf": [label, nullable]},
+    }
+    required = list(properties)
+    properties.update({"l": {"enum": list(_LANGUAGES)}, "w": {"enum": list(_WRITINGS)}})
+    field = _object(properties, required)
+    record = _object({"k": {"enum": list(vocabulary)}, "i": label, "p": {"anyOf": [label, nullable]},
                       "f": {"type": "array", "maxItems": 40, "items": field}})
     return _object({"d": {"enum": families}, "cut": {"type": "boolean"},
                     "r": {"type": "array", "maxItems": _MAX_MODEL_RECORDS, "items": record}})
@@ -71,8 +91,8 @@ def _region_prompt(regions, page):
 
 
 def _prompt(doc_type, excerpts, retry, native_only, crop):
-    kinds = tuple(FIELDS) if doc_type == "auto" else FAMILIES[doc_type]
-    dictionary = "\n".join(f"{kind}: {','.join(f for f in FIELDS[kind] if f not in CALCULATED_ONLY)}" for kind in kinds)
+    dictionary = "\n".join(f"{kind}{' in ' + '|'.join(parents) if parents else ''}: {','.join(fields)}"
+                           for kind, (parents, fields) in _vocabulary(doc_type).items())
     context = "Read this page image and use any provided local region excerpts."
     if excerpts:
         context += " The image and excerpts describe the same page. Read each physical occurrence once, preserving identical rows at distinct locations."
@@ -86,7 +106,9 @@ def _prompt(doc_type, excerpts, retry, native_only, crop):
         "JSON format: d=document type, cut=true only if content visibly extends past page edges, "
         "r=ordered records; k=kind, i=short unique local ID, p=containing record ID or null, f=fields; "
         "n=field name, v=exact source reading or null if uncertain, q=short exact quote, "
-        "g=supplied region ID for that quote or null. Copy amounts, signs, dates and symbols as printed. "
+        "g=supplied region ID for that quote or null. Optional l=language of that text (fr/en/mixed), "
+        "w=visible writing style (print/handwriting/mixed). Omit these when unclear. "
+        "Copy amounts, signs, dates and symbols as printed. "
         "Never calculate totals, translate, merge distinct rows, or invent evidence. Omit absent fields. "
         "Preserve source row order, including repeated identical rows. Keep line-item, section, option, ingredient "
         "and step records separate. On a continuation page do not invent a header."
@@ -111,6 +133,29 @@ def _contains(value, text):
     return re.search(left + re.escape(value) + right, _normalize(text)) is not None
 
 
+def _style(observation, region):
+    """Validated (language, writing) hints for a grounded, readable field; unknown stays None.
+
+    A native PDF text region is print by construction and already says so: a model writing hint on text it
+    read from there is dropped. Hints are the model's claim about the visible text, not verified facts, and
+    never carry a locale.
+    """
+    language, writing = observation.get("l"), observation.get("w")
+    language = language if language in ("fr", "en", "mixed") else None
+    writing = writing if writing in ("print", "handwriting", "mixed") else None
+    if region is not None and region.kind == "native_text":
+        writing = None
+    return language, writing
+
+
+def _combine(values):
+    """One label for several: the shared known value, 'mixed' if they differ, None if none is known."""
+    known = {v for v in values if v}
+    if not known:
+        return None
+    return known.pop() if len(known) == 1 else "mixed"
+
+
 def _read_field(observation, regions, native_only, crop, item_name=None):
     raw, quote, region_id = (observation[key] for key in ("v", "q", "g"))
     region = regions.get(region_id)
@@ -129,7 +174,10 @@ def _read_field(observation, regions, native_only, crop, item_name=None):
             region = matches[0]
     if valid_quote and ((region and _contains(quote, region.text)) or (region is None and (native_match or not native_only))):
         grounding = region or crop
-        return FieldRead(raw=raw, evidence=quote, region_id=grounding.id if grounding else None), False
+        language, writing = _style(observation, region)
+        read = FieldRead(raw=raw, evidence=quote, region_id=grounding.id if grounding else None, language=language)
+        read._writing = writing
+        return read, False
     # Preserve the unsupported proposal in the attempt artifact and leave the effective field unresolved.
     return FieldRead(raw=None, state="unreadable", reason="The field was not supported by its source quote.",
                      alternatives=[raw]), True
@@ -299,7 +347,9 @@ def _call_attempt(page, root, settings, image, offered, text, native_only, crop,
         call["status"] = "incomplete" if exhausted else "parsed"
         call["fields"] = [
             {"local_id": record.local_id, "kind": record.kind, "field": name, "region_id": read.region_id,
-             "raw": read.raw, "quote": read.evidence, "state": read.state}
+             "raw": read.raw, "quote": read.evidence, "state": read.state,
+             **({"language": read.language} if read.language else {}),
+             **({"writing": read._writing} if read._writing else {})}
             for record in proposal.records for name, read in record.fields.items()
         ]
         return proposal, unsupported
@@ -351,6 +401,9 @@ def _merge(base, reread, crop):
                                               region_id=citation.region_id, alternatives=[old.raw, reading.raw],
                                               reason="Independent local readings disagree.")
                 peer.fields[name]._trace = old._trace + reading._trace
+                peer.fields[name].language = old.language if old.language == reading.language else None
+                if old._writing == reading._writing:
+                    peer.fields[name]._writing = old._writing
                 conflict = True
             elif old and old.state == "ambiguous" and reading.raw and reading.raw not in old.alternatives:
                 old.alternatives.append(reading.raw)
@@ -370,6 +423,46 @@ def _targets(payload, available):
                     selected[read.region_id] = by_id[read.region_id]
                     break
     return list(selected.values())
+
+
+def _style_regions(page, base, available, root):
+    """Fold field style hints into Region.writing/language; return the coarse page region, if any.
+
+    Parser and crop regions that actually ground a hinted field take its style (never overriding a known
+    value, so native print stays print). A page-level region with no box and no text carries the page's
+    combined style for fields without a spatial region; it is metadata only and is never cited as evidence.
+    """
+    regions = {region.id: region for region in available}
+    by_region, writings, languages, hinted = {}, [], [], False
+    for record in base.records:
+        for read in record.fields.values():
+            writing, language = read._writing, read.language
+            hinted |= bool(writing or language)
+            region = regions.get(read.region_id)
+            if region is not None and region.kind == "native_text":
+                writing = "print"  # counted for the page summary only once some model hint exists
+            writings.append(writing)
+            languages.append(language)
+            if region is not None and (writing or language):
+                by_region.setdefault(region.id, ([], []))
+                by_region[region.id][0].append(writing)
+                by_region[region.id][1].append(language)
+    for region_id, (ws, ls) in by_region.items():
+        region = regions[region_id]
+        if region.kind == "native_text":
+            continue
+        if region.writing == "unknown" and (value := _combine(ws)):
+            region.writing = value
+        if region.language is None and (value := _combine(ls)):
+            region.language = value
+    writing, language = _combine(writings), _combine(languages)
+    if not hinted or not (writing or language):
+        return []
+    image = _artifact(root, page.image_path)
+    order = max([region.order for region in available], default=-1) + 1
+    return [Region(id=f"p{page.number}-style", page=page.number, order=order, kind="page_style", writing=writing or "unknown",
+                   language=language, artifact_path=page.image_path,
+                   artifact_sha256=hashlib.sha256(image.read_bytes()).hexdigest())]
 
 
 def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: Settings) -> PageReading:
@@ -485,5 +578,6 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
         return PageReading(page=page.number, doc_type="unknown", incomplete=True, issues=issues,
                            regions=added, suspected_cutoff=cutoff, calls=calls)
     traces = {row.local_id: {name: read._trace for name, read in row.fields.items()} for row in base.records}
+    added = [*added, *_style_regions(page, base, [*native, *added], artifact_root)]
     return PageReading(page=page.number, doc_type=base.doc_type, records=base.records, regions=added, field_evidence=traces,
                        issues=issues, incomplete=partial, suspected_cutoff=cutoff, calls=calls)
