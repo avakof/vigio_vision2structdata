@@ -1,0 +1,30 @@
+{
+  "page_source": "seed-cake-page.jpg",
+  "page_sha256": "ca2d7b64218adf99d1aa37601d630f752f1b34ca53d08b66e42c4aee14fde854",
+  "source_url": "https://iiif.wellcomecollection.org/image/b18419665_MS_1810_0103.JP2/full/1600,/0/default.jpg",
+  "page_size": [
+    1601,
+    1935
+  ],
+  "crop_input": "seed-cake.png",
+  "crop_sha256": "d481aabefe5c789c24d64eeb6bb4f92f9ac70253ad4397c321fd5a88ff538e5f",
+  "unit": "px",
+  "axes": "top-left origin, x right, y down",
+  "rect_xyxy_half_open": [
+    64,
+    1104,
+    1510,
+    1854
+  ],
+  "crop_to_page_affine": [
+    1,
+    0,
+    0,
+    1,
+    64,
+    1104
+  ],
+  "transcript": "https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1810.xml",
+  "transcript_sha256": "5c4c7e84172738dc3652941b452070a172278d9b9fe49deefb50736df8e85f33",
+  "tei_pb_n": 103
+}

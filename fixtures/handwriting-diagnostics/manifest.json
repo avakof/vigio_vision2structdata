@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "description": "Prospective purposive handwriting diagnostics. Separate from the original development and held-out comparisons. Two manuscripts, three recipe crops. See SOURCES.md.",
+  "cases": [
+    {
+      "id": "seed-cake",
+      "source": "seed-cake.png",
+      "labels": "labels/seed-cake.json",
+      "split": "held_out",
+      "family": "b18419665",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "crossed-out",
+        "duplicate-ingredient"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "Wellcome Collection MS.1810, folio image 103, A Seed Cake. Image and metadata: https://iiif.wellcomecollection.org/presentation/b18419665",
+        "license": "Public Domain Mark 1.0, as marked in the Wellcome IIIF manifest.",
+        "labeler": "Wellcome Collection published scholarly TEI transcription, independently cross-checked against the facsimile before either diagnostic route ran. A deleted second instruction for three pounds of butter follows the egg yolks. The earlier three-pound butter instruction remains active. There is no replacement butter quantity. https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1810.xml"
+      },
+      "sha256": "d481aabefe5c789c24d64eeb6bb4f92f9ac70253ad4397c321fd5a88ff538e5f",
+      "labels_sha256": "a75a00dce03951defd64dc523dda89efa4c8b6c6557cabf1a8a8472c55fcf605"
+    },
+    {
+      "id": "potted-tongues",
+      "source": "potted-tongues.png",
+      "labels": "labels/potted-tongues.json",
+      "split": "held_out",
+      "family": "b1915723x",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "quantity-range",
+        "crossed-out-word"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "Wellcome Collection MS.1711, folio image 24, To Pot Tongues. Image and metadata: https://iiif.wellcomecollection.org/presentation/b1915723x",
+        "license": "Public Domain Mark 1.0, as marked in the Wellcome IIIF manifest.",
+        "labeler": "Wellcome Collection published scholarly TEI transcription, independently cross-checked against the facsimile before either diagnostic route ran. Butter is explicitly given as two or three historical pounds. The tongue count is worded as two alternative counts and is outside the scored interval. A crossed-out spelling of the verb boil is visible. https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1711_Recipe_Books_Transcript_Trial.xml"
+      },
+      "sha256": "756b658bd7ae19350846312f8dfe0c483cfaf7c08852fde7e267a6a668e24f1b",
+      "labels_sha256": "b3f38f1eeefb0874ddd683f40fde53ccd166f2db3ff247345e7e58f0e3f62700"
+    },
+    {
+      "id": "plumb-cake",
+      "source": "plumb-cake.png",
+      "labels": "labels/plumb-cake.json",
+      "split": "held_out",
+      "family": "b1915723x",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "uncertain-digit",
+        "fraction"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "Wellcome Collection MS.1711, folio image 47, A Rich Plumb Cake. Image and metadata: https://iiif.wellcomecollection.org/presentation/b1915723x",
+        "license": "Public Domain Mark 1.0, as marked in the Wellcome IIIF manifest.",
+        "labeler": "Wellcome Collection published scholarly TEI transcription, independently cross-checked against the facsimile before either diagnostic route ran. The editor marks the fractional part of the sugar amount with an unclear tag. The reference withholds a normalized sugar quantity. The clearly written sixteen eggs are a separate control. https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1711_Recipe_Books_Transcript_Trial.xml"
+      },
+      "sha256": "5f5de0e5b775097389272e70ddf136abfdc8e9bfca3d0469bb77fd7f2a43cabb",
+      "labels_sha256": "d3704cad6b8ab65f246a05405429016cc80bb6605a5498c12087dff8cd7c8a36"
+    }
+  ]
+}

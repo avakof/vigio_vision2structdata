@@ -1,0 +1,30 @@
+{
+  "page_source": "potted-tongues-page.jpg",
+  "page_sha256": "5dce229b2194a385fa51190345a587e8c464e4d2860fd151b669ef69dca8ccc7",
+  "source_url": "https://iiif.wellcomecollection.org/image/b1915723x_MS_1711_0024.JP2/full/1800,/0/default.jpg",
+  "page_size": [
+    1800,
+    2669
+  ],
+  "crop_input": "potted-tongues.png",
+  "crop_sha256": "756b658bd7ae19350846312f8dfe0c483cfaf7c08852fde7e267a6a668e24f1b",
+  "unit": "px",
+  "axes": "top-left origin, x right, y down",
+  "rect_xyxy_half_open": [
+    158,
+    1044,
+    1678,
+    2152
+  ],
+  "crop_to_page_affine": [
+    1,
+    0,
+    0,
+    1,
+    158,
+    1044
+  ],
+  "transcript": "https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1711_Recipe_Books_Transcript_Trial.xml",
+  "transcript_sha256": "6a6f83c3c23249b69bac9d274f4045f0f4d59669dd69f89b384980d3602c7bb0",
+  "tei_pb_n": 24
+}

@@ -1,0 +1,63 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "recipe",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "recipe",
+          "fields": {
+            "title": "A Seed Cake",
+            "yield_quantity": {
+              "value": null,
+              "state": "not_present",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "active-butter",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Butter",
+            "quantity": {
+              "value": "3",
+              "metric": "recipe_quantity_unit_yield",
+              "page": 1,
+              "decimal": true
+            }
+          }
+        },
+        {
+          "id": "deleted-butter",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "butter",
+            "quantity": {
+              "value": "3",
+              "metric": "recipe_quantity_unit_yield",
+              "page": 1,
+              "decimal": true
+            },
+            "crossed_out": true
+          }
+        }
+      ]
+    }
+  ]
+}

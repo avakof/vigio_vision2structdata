@@ -1,0 +1,62 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "recipe",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "recipe",
+          "fields": {
+            "title": "A Rich Plumb Cake",
+            "yield_quantity": {
+              "value": null,
+              "state": "not_present",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "sugar",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Sugar",
+            "quantity": {
+              "value": null,
+              "state": "ambiguous",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "eggs",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Eggs",
+            "quantity": {
+              "value": "16",
+              "metric": "recipe_quantity_unit_yield",
+              "page": 1,
+              "decimal": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

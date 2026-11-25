@@ -1,0 +1,30 @@
+{
+  "page_source": "plumb-cake-page.jpg",
+  "page_sha256": "e3c2d285f453ad2913152bcb156f9449854990e22c4510fb0faea2e62558df03",
+  "source_url": "https://iiif.wellcomecollection.org/image/b1915723x_MS_1711_0047.JP2/full/1800,/0/default.jpg",
+  "page_size": [
+    1800,
+    2563
+  ],
+  "crop_input": "plumb-cake.png",
+  "crop_sha256": "5f5de0e5b775097389272e70ddf136abfdc8e9bfca3d0469bb77fd7f2a43cabb",
+  "unit": "px",
+  "axes": "top-left origin, x right, y down",
+  "rect_xyxy_half_open": [
+    121,
+    281,
+    1620,
+    816
+  ],
+  "crop_to_page_affine": [
+    1,
+    0,
+    0,
+    1,
+    121,
+    281
+  ],
+  "transcript": "https://github.com/wellcomecollection/wellcome-collection-tei/blob/749ad7ee853ec82917e28349b440215d3175092e/transcribed-manuscripts/MS_1711_Recipe_Books_Transcript_Trial.xml",
+  "transcript_sha256": "6a6f83c3c23249b69bac9d274f4045f0f4d59669dd69f89b384980d3602c7bb0",
+  "tei_pb_n": 47
+}
