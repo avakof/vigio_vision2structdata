@@ -68,6 +68,29 @@
       },
       "sha256": "788063a3101f9317525de1e2baf27229bcf67338a1b1d84d00062bfbf3429761",
       "labels_sha256": "4f25e22eec89272b119006f30674f2151d3f6566c94f267cb98d974c21d57946"
+    },
+    {
+      "id": "lutz-messmer",
+      "source": "lutz-messmer-recipe.png",
+      "labels": "labels/lutz-messmer.json",
+      "split": "held_out",
+      "family": "lutz-messmer",
+      "strata": [
+        "fr",
+        "recipe",
+        "handwriting",
+        "imprecise",
+        "known-crop"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "Marianne Lutz-Messmer, Koch Buch und sonst allerhand Recept (1750), p. 153, Zentralbibliothek Zürich, Ms Z VIII 35. https://doi.org/10.7891/e-manuscripta-13157",
+        "license": "Public Domain Mark 1.0 on the holding institution’s catalogue: https://www.e-manuscripta.ch/zuz/content/titleinfo/644710",
+        "labeler": "Yvonne Hausheer, human transcript in the ZB Zürich citizen-science edition, https://www.e-manuscripta.ch/zuz/content/pagetext/644870. Sparse labels cross-checked against the manuscript. The full recipe text is French and its heading is German. The edition and page image predate inference."
+      },
+      "sha256": "619fba4324fe8c31ccf23bd2fc3eb61bce34ef044fe844609b4f297e92a8c4ef",
+      "labels_sha256": "f12c824efc2ad1f1318fa96618e79fd54ef63a87c480e45fc1eda03d95f14acd"
     }
   ]
 }

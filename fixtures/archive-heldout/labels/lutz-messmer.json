@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "recipe",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "recipe",
+          "fields": {
+            "yield_quantity": {
+              "value": null,
+              "state": "not_present",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "flour",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "farine",
+            "quantity_text": {
+              "value": "un peu",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "almonds",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "amandes",
+            "quantity_text": {
+              "value": "une petite poignée",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            },
+            "optional": true
+          }
+        }
+      ]
+    }
+  ]
+}

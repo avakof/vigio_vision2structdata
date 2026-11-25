@@ -1,0 +1,27 @@
+{
+  "page_source": "lutz-messmer-p153.jpg",
+  "page_sha256": "ab9fef547b252d596f4d9bb8128cdc548dc47a468a0f5a6ec20cbbb5a09ea0d3",
+  "page_size": [
+    1800,
+    2629
+  ],
+  "unit": "px",
+  "axes": "top-left origin, x right, y down",
+  "rect_xyxy_half_open": [
+    64,
+    22,
+    1760,
+    642
+  ],
+  "crop_to_page_affine": [
+    1,
+    0,
+    0,
+    1,
+    64,
+    22
+  ],
+  "acquisition": "IIIF derivative, 1800 px wide; the crop selects the complete first recipe including its heading and original folio number.",
+  "page_url": "https://www.e-manuscripta.ch/i3f/v20/644870/full/1800,/0/default.jpg",
+  "canvas": "https://www.e-manuscripta.ch/i3f/v20/644710/canvas/644870"
+}
