@@ -1,0 +1,38 @@
+# Independent audit of model reply recovery
+
+**Five reproduced defects remain at `cbc9c057d100e5fb9251296716608d9da5d96538`.** Prefix recovery returned only complete records at all 526 cut positions tested. The release blocker is a whole-page retry that changes which menu items are present and still yields a valid document eligible for approval. Four other cases affect relationships, contested amounts, source citations and the ability to reload a page reading.
+
+The reviewed commit contains parser change `c2ba1a811ca69ee70d226e9b2227772228734554`. Merging main into the audit worktree produced commit `1300b44024b4718bbfc6da6fc84bbf44c5c793ab` with the identical tree `2c02d5dac4cad667848f3810be756580b134b675`. The reproducer uses temporary generated rasters, scripted replies and production page reading, assembly and review eligibility checks. It runs with the core environment alone. [Executable probes](../../evidence/development/reasoner_recovery_probes.py)
+
+## Defects and retest criteria
+
+| Case | Observed result | Required behavior on retest |
+| --- | --- | --- |
+| 1. A skipped occurrence can leave the page complete | Both menu attempts contain two items. The first reads Soup and Salad. The retry resolves an unreadable currency and reads Soup twice, at prices 4 and 7. The output retains Soup and Salad, has no page issues, reports `incomplete_pages=[]` and `validation=valid`, and gives `approvable=True`. Approval itself was never submitted. | Compare occurrences in each direction within compatible parent and anchor groups. The two menus disagree about the count of Soup and Salad, so mark page 1 incomplete and emit `reread_structure_disagreement`. Keep the original attempt data and avoid guessing which Soup matches. Two attempts with the same duplicate counts should preserve both occurrences. |
+| 2. A retry can silently assign an explicitly unresolved parent | The first invoice links the Paper line to missing ID `missing` and records `unresolved_parent_ids=['r1']`. The larger retry adds Ink and leaves Paper's parent null. The document attaches Paper to `p1.root` and reports both `model_parent_unresolved` and `parent_joined`. The page is incomplete, but its effective grouping is wrong. | Carry explicit uncertainty to the effective occurrence when selecting a larger base. Paper must retain a null parent when the retry supplies no evidence for a link. Distinguish a child whose parent was absent in every attempt and test differing local IDs for the same identifiable occurrence. |
+| 3. A retry can promote a contested price to a readable fact | Soup has conflicting prices 4 and 7 in the first attempt. The retry adds Bread and gives Soup a price of 9. The larger retry becomes the base. The effective price is `9`, state `readable`, alternatives empty, with only `p1-qwen-1` cited. The recovery issue on the page does not identify the effective price as uncertain. | Merge readable and ambiguous candidates symmetrically on a uniquely identified occurrence. Require a null price, `ambiguous`, candidates 4, 7 and 9, and evidence from both attempts. Repeat with the order reversed and with the unrelated row removed. |
+| 4. Conflicting fields lose their offered native citations | An invoice's two total readings quote `Total 4.00` in native span A and `Total 7.00` in span B. The effective total correctly stays null with alternatives 4.00 and 7.00. Its only citation has no region, an empty quote and channel `direct`. A reviewer loses both source locations. | Capture the validated evidence for each candidate before combining the fields. The effective observation must cite both offered region IDs, their original quotes, the native channel and the originating attempt. Preserve the existing null value and alternatives. |
+| 5. A retry can produce a page reading that fails its own schema | Sixteen distinct candidate prices in the first attempt fit the field contract. One additional price on retry grows the list to 17. Serializing the resulting page and immediately validating that JSON as `PageReading` fails with `too_long`. The pipeline writes exactly this model representation as its per-page reading artifact. | Apply the 16-candidate cap during merge, retain the raw attempt and explicitly report how many distinct candidates were omitted. Keep the value ambiguous and the page incomplete. Require the stored page JSON to pass schema validation. Repeating an already retained candidate at the limit must consume no extra slot. |
+
+Cases 1–3 share the retry path in `src/vision_tables/vision.py`. At lines 665–674 an ambiguous match can skip a candidate without recording a mismatch. Line 694 checks total row count. Lines 869–875 can swap the base when a retry has more rows with fields. Lines 919–921 copy only that base's unresolved IDs into the effective reading. Case 4 follows from collecting candidate strings at lines 407–416 and creating the final trace from the combined field at lines 600–609. Case 5 occurs at the in-place append on line 692. The bound is declared in `contracts.py` on line 118 and the page artifact is written in `pipeline.py` on line 94.
+
+## Passing controls
+
+- **Partial tokens.** Cut a three-record reply at every character boundary, including through quoted amounts, Unicode escapes, escaped quotes, backslashes and delimiter characters inside strings. Each recovered value and record ID exactly matched a fully closed input row. Through page assembly, an exact 32-token cap retained two closed rows and flagged the page incomplete. The same fragment at a 10-token ordinary stop yielded zero rows and an incomplete page.
+- **Strict input and bounds.** Both cap settings rejected a second trailing object, a duplicate envelope key, NaN, numeric overflow, excessive nesting and an input larger than 512 KiB. An unknown region ID and a model-supplied box were omitted with an incomplete page. Directive-like text remained a literal description and the printed total remained 8.50. A 129-record reply retained 128 records and counted the omission. A 41-field row flagged the omitted field and page.
+- **References and duplicates within one reply.** Two same-description invoice lines remained distinct when a line shared its ID with the header. A uniquely compatible parent resolved. A charge with two eligible parents retained a null link and page 1 stayed incomplete. A bundle choice referencing a missing ID, an otherwise valid item with a different name in the quote, or an entity of the wrong kind retained no effective item reference. Each page was incomplete. An existing test also confirmed abstention for an amount absent from its cited native span.
+
+## Reproduction and scope
+
+Run these checks from the repository root with the core Python environment active.
+
+```sh
+PYTHONPATH=src python -B -m pytest -q -p no:cacheprovider \
+  tests/test_vision_development_recovery.py \
+  tests/test_audit_regressions.py::test_strict_json_and_semantic_boundaries \
+  tests/test_vision.py::test_valid_json_overflow_and_reread_disagreement \
+  tests/test_vision.py::test_native_invented_amount_abstains
+PYTHONPATH=src python -B evidence/development/reasoner_recovery_probes.py
+```
+
+The selected existing tests reported **15 passed**. The independent script reported **three passing control groups and five failing assertions**, exit status 1. The findings establish specific counterexamples under controlled replies. Document extraction accuracy and model performance were outside this audit. No inference or held-out data was used. The local harness recorded turn `01a213d6-78f3-7963-b080-ad92c85f5e1f`, model `gpt-6.2-astra`, effort `xhigh`.
