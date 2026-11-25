@@ -1,0 +1,4120 @@
+[
+  {
+    "document_id": "doc-c474ac98a2ae88387fccd6cc318c2bd6",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "recipe",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "e27512b8d23ebd238178acb2a789344527235caf0cecb91ce5fe7c7d24011d08",
+      "media_type": "image/jpeg",
+      "size_bytes": 220310,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1240.0,
+        "height": 1050.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1240,
+        "image_height": 1050,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_paragraph_title",
+        "text": "Scones au citron",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            77.0,
+            361.0,
+            147.0,
+            970.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-1",
+        "page": 1,
+        "order": 1,
+        "kind": "parser_text",
+        "text": "1/2 cup de lait",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            197.0,
+            642.0,
+            251.0,
+            973.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-2",
+        "page": 1,
+        "order": 2,
+        "kind": "parser_text",
+        "text": "2-3 c. à soupe de sucre",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            269.0,
+            476.0,
+            320.0,
+            973.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-3",
+        "page": 1,
+        "order": 3,
+        "kind": "parser_text",
+        "text": "1 tsp levure 2 tsp",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            339.0,
+            567.0,
+            391.0,
+            976.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-4",
+        "page": 1,
+        "order": 4,
+        "kind": "parser_text",
+        "text": "4y de beurre",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            404.0,
+            684.0,
+            457.0,
+            976.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-5",
+        "page": 1,
+        "order": 5,
+        "kind": "parser_text",
+        "text": "sel, au goût",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            472.0,
+            701.0,
+            524.0,
+            973.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-6",
+        "page": 1,
+        "order": 6,
+        "kind": "parser_text",
+        "text": "zeste de citron (facultatif)",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            537.0,
+            378.0,
+            593.0,
+            970.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-7",
+        "page": 1,
+        "order": 7,
+        "kind": "parser_text",
+        "text": "ou zeste d'orange à la place",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            609.0,
+            371.0,
+            664.0,
+            973.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            65.0,
+            349.0,
+            159.0,
+            982.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "bfa10cfd2a0a42e9a9a18138b2d3205e5b4e30a3bc7207019439e224c28a8b65",
+        "crop_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          65.0,
+          349.0
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "e5cb0cdce9f8410faab07943b39a32a7",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 8,
+            "returned_crops": 8,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 7,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 2,
+                "generated_tokens": 8,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 3,
+                "generated_tokens": 12,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 4,
+                "generated_tokens": 10,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 5,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 6,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 7,
+                "generated_tokens": 11,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 8,
+                "generated_tokens": 10,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 49.099254791013664,
+          "peak_rss_bytes": 10190585856,
+          "seconds_including_lock_wait": 49.66059729200788,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 2389,
+          "prompt_tokens": 2143,
+          "load_seconds": 2.7283367079799064,
+          "generation_seconds": 44.75418304200866,
+          "runtime_seconds": 49.86745654200786,
+          "peak_rss_bytes": 7337721856,
+          "mlx_peak_bytes": 7670197324,
+          "seconds_including_lock_wait": 50.52189570799237,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-1",
+              "raw": "lait",
+              "quote": "lait",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-1",
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-1",
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-1",
+              "raw": "cup",
+              "quote": "cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-2",
+              "raw": "sucre",
+              "quote": "sucre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-2",
+              "raw": "2-3 c. à soupe",
+              "quote": "2-3 c. à soupe",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-2",
+              "raw": "2-3 c. à soupe",
+              "quote": "2-3 c. à soupe",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-2",
+              "raw": "c. à soupe",
+              "quote": "c. à soupe",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "levure",
+              "quote": "levure",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1 tsp",
+              "quote": "1 tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-3",
+              "raw": "1 tsp",
+              "quote": "1 tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-3",
+              "raw": "tsp",
+              "quote": "tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "beurre",
+              "quote": "beurre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-4",
+              "raw": "4y",
+              "quote": "4y",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-4",
+              "raw": "4y",
+              "quote": "4y",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "sel",
+              "quote": "sel",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-5",
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-5",
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-5",
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-6",
+              "raw": "zeste de citron",
+              "quote": "zeste de citron",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-6",
+              "raw": "facultatif",
+              "quote": "facultatif",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-6",
+              "raw": "facultatif",
+              "quote": "facultatif",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-6",
+              "raw": "facultatif",
+              "quote": "facultatif",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "zeste d'orange",
+              "quote": "zeste d'orange",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-7",
+              "raw": "à la place",
+              "quote": "à la place",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-7",
+              "raw": "à la place",
+              "quote": "à la place",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-7",
+              "raw": "à la place",
+              "quote": "à la place",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 2597,
+          "prompt_tokens": 2154,
+          "load_seconds": 2.673510749998968,
+          "generation_seconds": 51.4663187499973,
+          "runtime_seconds": 56.62605312501546,
+          "peak_rss_bytes": 7320190976,
+          "mlx_peak_bytes": 7670279244,
+          "seconds_including_lock_wait": 57.22956416598754,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-1",
+              "raw": "lait",
+              "quote": "lait",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-1",
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-1",
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-1",
+              "raw": "cup",
+              "quote": "cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-2",
+              "raw": "sucre",
+              "quote": "sucre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-2",
+              "raw": "2-3 c.",
+              "quote": "2-3 c.",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-2",
+              "raw": "2-3 c.",
+              "quote": "2-3 c.",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-2",
+              "raw": "c.",
+              "quote": "c.",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "levure",
+              "quote": "levure",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1 tsp",
+              "quote": "1 tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-3",
+              "raw": "1 tsp",
+              "quote": "1 tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": "p1-parser-3",
+              "raw": "tsp",
+              "quote": "tsp",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "beurre",
+              "quote": "beurre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-4",
+              "raw": "4y",
+              "quote": "4y",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-4",
+              "raw": "4y",
+              "quote": "4y",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "sel",
+              "quote": "sel",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-5",
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-5",
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-6",
+              "raw": "zeste de citron",
+              "quote": "zeste de citron",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-6",
+              "raw": "facultatif",
+              "quote": "facultatif",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-6",
+              "raw": "facultatif",
+              "quote": "facultatif",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "zeste d'orange",
+              "quote": "zeste d'orange",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-7",
+              "raw": "à la place",
+              "quote": "à la place",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_text",
+              "region_id": "p1-parser-7",
+              "raw": "à la place",
+              "quote": "à la place",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 159,
+          "prompt_tokens": 784,
+          "load_seconds": 3.5713927920151036,
+          "generation_seconds": 4.55498312501004,
+          "runtime_seconds": 11.732565333979437,
+          "peak_rss_bytes": 7163887616,
+          "mlx_peak_bytes": 7083221886,
+          "seconds_including_lock_wait": 12.594854166993173,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-0",
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "recipe",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.r8",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.r9",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.r10",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 10
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.title",
+        "entity_id": "p1.root",
+        "field": "title",
+        "raw": "Scones au citron",
+        "value": "Scones au citron",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "Scones au citron",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.description",
+        "entity_id": "p1.root",
+        "field": "description",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "1/2 cup de lait\n2-3 c. à soupe de sucre\n1 tsp levure 2 tsp\n4y de beurre\nsel, au goût\nzeste de citron (facultatif)\nou zeste d'orange à la place\n1. Mélanger les ingrédients secs.\n2. Ajouter le lait et le beurre.\n3. Cuire 14 min à 190 °C."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": "lait",
+        "value": "lait",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-1",
+            "quote": "lait",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity",
+        "entity_id": "p1.r1",
+        "field": "quantity",
+        "raw": "1/2 cup",
+        "value": "0.5",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-1",
+            "quote": "1/2 cup",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity_text",
+        "entity_id": "p1.r1",
+        "field": "quantity_text",
+        "raw": "1/2 cup",
+        "value": "1/2 cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-1",
+            "quote": "1/2 cup",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.unit",
+        "entity_id": "p1.r1",
+        "field": "unit",
+        "raw": "cup",
+        "value": "cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-1",
+            "quote": "cup",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unit has no fixed definition; never converted",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.preparation",
+        "entity_id": "p1.r1",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.optional",
+        "entity_id": "p1.r1",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.crossed_out",
+        "entity_id": "p1.r1",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": "sucre",
+        "value": "sucre",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "sucre",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "2-3 c. à soupe",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "2-3 c.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "2-3 c. à soupe",
+          "2-3 c."
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity_text",
+        "entity_id": "p1.r2",
+        "field": "quantity_text",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "2-3 c. à soupe",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "2-3 c.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "2-3 c. à soupe",
+          "2-3 c."
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.unit",
+        "entity_id": "p1.r2",
+        "field": "unit",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "c. à soupe",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "c.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "c. à soupe",
+          "c."
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.preparation",
+        "entity_id": "p1.r2",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.optional",
+        "entity_id": "p1.r2",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.crossed_out",
+        "entity_id": "p1.r2",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "levure",
+        "value": "levure",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "levure",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity",
+        "entity_id": "p1.r3",
+        "field": "quantity",
+        "raw": "1 tsp",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1 tsp",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity_text",
+        "entity_id": "p1.r3",
+        "field": "quantity_text",
+        "raw": "1 tsp",
+        "value": "1 tsp",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1 tsp",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.unit",
+        "entity_id": "p1.r3",
+        "field": "unit",
+        "raw": "tsp",
+        "value": "tsp",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "tsp",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unit has no fixed definition; never converted",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.preparation",
+        "entity_id": "p1.r3",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.optional",
+        "entity_id": "p1.r3",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.crossed_out",
+        "entity_id": "p1.r3",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "true"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "beurre",
+        "value": "beurre",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "beurre",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity",
+        "entity_id": "p1.r4",
+        "field": "quantity",
+        "raw": "4y",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "4y",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "quantity carries unrecognized trailing text",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity_text",
+        "entity_id": "p1.r4",
+        "field": "quantity_text",
+        "raw": "4y",
+        "value": "4y",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "4y",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.unit",
+        "entity_id": "p1.r4",
+        "field": "unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "y"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.preparation",
+        "entity_id": "p1.r4",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.optional",
+        "entity_id": "p1.r4",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.crossed_out",
+        "entity_id": "p1.r4",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": "sel",
+        "value": "sel",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "sel",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity",
+        "entity_id": "p1.r5",
+        "field": "quantity",
+        "raw": "au goût",
+        "value": null,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "au goût",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "imprecise quantity kept as written; no numeric value",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity_text",
+        "entity_id": "p1.r5",
+        "field": "quantity_text",
+        "raw": "au goût",
+        "value": "au goût",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "au goût",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.unit",
+        "entity_id": "p1.r5",
+        "field": "unit",
+        "raw": "au goût",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "au goût",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized unit; no conversion applied",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.preparation",
+        "entity_id": "p1.r5",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.optional",
+        "entity_id": "p1.r5",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.crossed_out",
+        "entity_id": "p1.r5",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": "zeste de citron",
+        "value": "zeste de citron",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "zeste de citron",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.quantity",
+        "entity_id": "p1.r6",
+        "field": "quantity",
+        "raw": "facultatif",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "facultatif",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "not a number",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.quantity_text",
+        "entity_id": "p1.r6",
+        "field": "quantity_text",
+        "raw": "facultatif",
+        "value": "facultatif",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "facultatif",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.unit",
+        "entity_id": "p1.r6",
+        "field": "unit",
+        "raw": "facultatif",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "facultatif",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized unit; no conversion applied",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.preparation",
+        "entity_id": "p1.r6",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.optional",
+        "entity_id": "p1.r6",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "true"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.crossed_out",
+        "entity_id": "p1.r6",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": "zeste d'orange",
+        "value": "zeste d'orange",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "zeste d'orange",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.quantity",
+        "entity_id": "p1.r7",
+        "field": "quantity",
+        "raw": "à la place",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "à la place",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "not a number",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.quantity_text",
+        "entity_id": "p1.r7",
+        "field": "quantity_text",
+        "raw": "à la place",
+        "value": "à la place",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "à la place",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.unit",
+        "entity_id": "p1.r7",
+        "field": "unit",
+        "raw": "à la place",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "à la place",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized unit; no conversion applied",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.preparation",
+        "entity_id": "p1.r7",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "raw"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.optional",
+        "entity_id": "p1.r7",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "true"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.crossed_out",
+        "entity_id": "p1.r7",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "false"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.instruction",
+        "entity_id": "p1.r8",
+        "field": "instruction",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Mélanger les ingrédients secs."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.duration_minutes",
+        "entity_id": "p1.r8",
+        "field": "duration_minutes",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.time_text",
+        "entity_id": "p1.r8",
+        "field": "time_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_c",
+        "entity_id": "p1.r8",
+        "field": "temperature_c",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_f",
+        "entity_id": "p1.r8",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_text",
+        "entity_id": "p1.r8",
+        "field": "temperature_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.instruction",
+        "entity_id": "p1.r9",
+        "field": "instruction",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Ajouter le lait et le beurre."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.duration_minutes",
+        "entity_id": "p1.r9",
+        "field": "duration_minutes",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.time_text",
+        "entity_id": "p1.r9",
+        "field": "time_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_c",
+        "entity_id": "p1.r9",
+        "field": "temperature_c",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_f",
+        "entity_id": "p1.r9",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_text",
+        "entity_id": "p1.r9",
+        "field": "temperature_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.instruction",
+        "entity_id": "p1.r10",
+        "field": "instruction",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Cuire 14 min à 190 °C."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.duration_minutes",
+        "entity_id": "p1.r10",
+        "field": "duration_minutes",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "14"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.time_text",
+        "entity_id": "p1.r10",
+        "field": "time_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "14 min"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_c",
+        "entity_id": "p1.r10",
+        "field": "temperature_c",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "190"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_f",
+        "entity_id": "p1.r10",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_text",
+        "entity_id": "p1.r10",
+        "field": "temperature_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "190 °C"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description",
+          "p1.r1.preparation",
+          "p1.r1.optional",
+          "p1.r1.crossed_out",
+          "p1.r2.preparation",
+          "p1.r2.optional",
+          "p1.r2.crossed_out",
+          "p1.r3.preparation",
+          "p1.r3.optional",
+          "p1.r3.crossed_out",
+          "p1.r4.unit",
+          "p1.r4.preparation",
+          "p1.r4.optional",
+          "p1.r4.crossed_out",
+          "p1.r5.preparation",
+          "p1.r5.optional",
+          "p1.r5.crossed_out",
+          "p1.r6.preparation",
+          "p1.r6.optional",
+          "p1.r6.crossed_out",
+          "p1.r7.preparation",
+          "p1.r7.optional",
+          "p1.r7.crossed_out",
+          "p1.r8.instruction",
+          "p1.r8.duration_minutes",
+          "p1.r8.time_text",
+          "p1.r8.temperature_c",
+          "p1.r8.temperature_f",
+          "p1.r8.temperature_text",
+          "p1.r9.instruction",
+          "p1.r9.duration_minutes",
+          "p1.r9.time_text",
+          "p1.r9.temperature_c",
+          "p1.r9.temperature_f",
+          "p1.r9.temperature_text",
+          "p1.r10.instruction",
+          "p1.r10.duration_minutes",
+          "p1.r10.time_text",
+          "p1.r10.temperature_c",
+          "p1.r10.temperature_f",
+          "p1.r10.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_disagreement",
+        "message": "Conflicting readings were retained as unresolved alternatives.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity",
+          "p1.r2.quantity_text",
+          "p1.r2.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.description: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity_text: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.unit: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity: quantity carries unrecognized trailing text",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.unit: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.unit: unrecognized unit; no conversion applied",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity: not a number",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.unit: unrecognized unit; no conversion applied",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity: not a number",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.unit: unrecognized unit; no conversion applied",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.instruction: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.instruction"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.duration_minutes: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.duration_minutes"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.time_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.time_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_c: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.instruction: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.instruction"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.duration_minutes: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.duration_minutes"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.time_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.time_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_c: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.instruction: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.instruction"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.duration_minutes: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.duration_minutes"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.time_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.time_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_c: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_text: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "recipe_yield_missing",
+        "message": "no yield was read",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

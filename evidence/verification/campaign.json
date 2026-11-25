@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "checks": "Matched every reported source, label and settings override to its manifest; verified invocation code equality, operating-system network denial, route defaults, case-count reconciliation, canonical JSON Schema and snapshot approval state for each emitted document. Comparison rows matched paired source and label hashes.",
+  "cohorts": {
+    "development": {
+      "direct": {
+        "invocation_commit": "d984ee050913776512b50e24da6d9948bca1592b",
+        "core_identical_to_release": true,
+        "case_count": 3,
+        "validated_documents": 3,
+        "report_sha256": "d5a3bf268b16b9a537d4f92b54c0458e125fad9d69076fb570602b4d474acce4",
+        "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+        "wall_seconds": 494.8787537080061,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      },
+      "hybrid": {
+        "invocation_commit": "c67125485957050f3032d80aaa4f06600023b9ef",
+        "core_identical_to_release": true,
+        "case_count": 3,
+        "validated_documents": 3,
+        "report_sha256": "f3bb5fd60c9be7aa357cd32255fefe4578f0e6fe06cf9090a6ff49a425c3b20f",
+        "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+        "wall_seconds": 555.8120169999893,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      }
+    },
+    "heldout": {
+      "direct": {
+        "invocation_commit": "043c6727c994376713ea5ef5b9df5e7a4937101e",
+        "core_identical_to_release": true,
+        "case_count": 4,
+        "validated_documents": 4,
+        "report_sha256": "fef938d321a1193e60bdba2f5d7ac9e6f0b0760250249ff2fdc4ea3e5996f474",
+        "manifest_sha256": "e259c0680137a689640073368d9abcd29f5bad727610ee12e667a96e9dffb021",
+        "wall_seconds": 193.7829423340154,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      },
+      "hybrid": {
+        "invocation_commit": "38c303cd355db58c3f0430e5a6af107493cfd36c",
+        "core_identical_to_release": true,
+        "case_count": 4,
+        "validated_documents": 4,
+        "report_sha256": "11662738d9f8501b795ce68f59da6006b5e4154ea7d84789782538f59906e4c7",
+        "manifest_sha256": "e259c0680137a689640073368d9abcd29f5bad727610ee12e667a96e9dffb021",
+        "wall_seconds": 471.3369348330016,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      }
+    },
+    "synthetic": {
+      "direct": {
+        "invocation_commit": "f161fbaa19f187aa651244aa5e82d1c2369707c2",
+        "core_identical_to_release": true,
+        "case_count": 15,
+        "validated_documents": 10,
+        "report_sha256": "24909960465ced01cb385a75a158c7b6e2f7614ab42d30aa4343b3f27739a4bd",
+        "manifest_sha256": "69d6ae5cfb2ddc7cc4fef730cf7571f74e3c0a42d49ad7691743229b42fd96f4",
+        "wall_seconds": 1210.9876650829974,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      },
+      "hybrid": {
+        "invocation_commit": "6f88f0c89dce4d3358028708d8b2be13678e93e7",
+        "core_identical_to_release": true,
+        "case_count": 15,
+        "validated_documents": 10,
+        "report_sha256": "76613d46a23a2be6fb471ed358d29430049619a6bd86364437bba71df3e069b2",
+        "manifest_sha256": "69d6ae5cfb2ddc7cc4fef730cf7571f74e3c0a42d49ad7691743229b42fd96f4",
+        "wall_seconds": 1724.3858037919854,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      }
+    },
+    "diagnostic": {
+      "direct": {
+        "invocation_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+        "core_identical_to_release": true,
+        "case_count": 3,
+        "validated_documents": 3,
+        "report_sha256": "4483dd7e7ebf7b7b0c4f921464339cfb95fa7fc2601a48a06a3ceb7d36a20f57",
+        "manifest_sha256": "28bc671002b55afc9e103b7abd0a42e1fbb6683c1187b054c45a011bb78a130e",
+        "wall_seconds": 82.67165437500807,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      },
+      "hybrid": {
+        "invocation_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+        "core_identical_to_release": true,
+        "case_count": 3,
+        "validated_documents": 3,
+        "report_sha256": "b21ddf82208f0f6bf5a887d01df058f2e1ff53e49352810e307e3196eadb97a6",
+        "manifest_sha256": "28bc671002b55afc9e103b7abd0a42e1fbb6683c1187b054c45a011bb78a130e",
+        "wall_seconds": 346.78374520898797,
+        "guard": {
+          "loopback": true,
+          "public_connect_errno": 1
+        }
+      }
+    }
+  }
+}

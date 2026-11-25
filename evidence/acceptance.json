@@ -1,7 +1,7 @@
 {
-  "as_of": "2026-11-25T21:27:35+01:00",
-  "record": "integrated production checkpoint; final comparative evaluation in progress",
-  "all_requested_routes_complete": false,
+  "as_of": "2026-11-25T22:36:38+01:00",
+  "record": "verified release handoff",
+  "all_requested_routes_complete": true,
   "default_route": "direct",
   "selection_basis": "Frozen on the three development pages. Direct covered 1/7 answerable fields and hybrid 2/7; both missed the labeled row prices and matched the invoice total. Direct used less peak process memory and wall time. Both require review. See docs/development/evaluation-settings.md.",
   "gates": {
@@ -10,7 +10,8 @@
       "evidence": [
         "evidence/development/preflight.json",
         "evidence/development/roster.json"
-      ]
+      ],
+      "detail": "Independent repository, seven effective Orca roles, local M3 Max with 48 GiB, and separate locked runtime environments verified."
     },
     "1_feasibility": {
       "status": "passed",
@@ -44,25 +45,27 @@
     },
     "4_evaluation": {
       "status": "passed",
-      "scope": "Both real routes on identical pinned inputs, including separate development, primary held-out and handwriting diagnostic cohorts. Additional synthetic runs pending at this checkpoint.",
+      "detail": "Independent labels and identical frozen source, model settings and review policy across both routes. Seven primary archive documents, three separately sealed real handwriting diagnostics, fifteen synthetic scenarios per route. Scores and coverage remain limited.",
       "evidence": [
+        "docs/EVALUATION.md",
+        "evidence/verification/campaign.json",
         "docs/development/evaluation-settings.md",
-        "evidence/evaluation/release/development-comparison.json",
-        "evidence/evaluation/release/heldout-comparison.json",
-        "evidence/evaluation/handwriting-diagnostics/summary.json",
         "evidence/development/qa-release.md"
       ]
     },
     "5_review_handoff": {
-      "status": "blocked",
-      "reviewed_commit": "dfa12df8304ab4753369a2ef4aa03ac90386db1f",
+      "status": "passed",
+      "reviewed_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+      "detail": "Opus reviewed the original integrated implementation and its fixes, then checked the release evidence. Astra independently verified the recovery changes on the frozen production commit. QA independently reconciled primary held-out and handwriting results. The frozen offline normal CLI receipts, corrections and replay close E1.",
       "evidence": [
         "docs/development/review.md",
-        "evidence/development/qa-integrated.md",
-        "docs/development/review-recheck.md"
-      ],
-      "detail": "Material code findings fixed and independently rechecked. Final model measurements and handoff pending.",
-      "fixes_rechecked_commit": "36b3200aa93d8faa3d4e6eeda3b9edb66ec6d141"
+        "docs/development/review-recheck.md",
+        "docs/development/recovery-parser-closure.md",
+        "docs/development/reviewer-release.md",
+        "evidence/development/qa-release.md",
+        "evidence/examples/release-invoice/verification.json",
+        "docs/HANDOFF.md"
+      ]
     }
   },
   "offline_failure_paths": {
@@ -138,5 +141,509 @@
       "evidence/verification/offline-hybrid.json",
       "evidence/examples/invoice/verification.json"
     ]
-  }
+  },
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "evaluation": {
+    "development": {
+      "direct": {
+        "report": "evidence/evaluation/release/direct-development/evaluation.json",
+        "wall_seconds": 494.8787537080061,
+        "groups": {
+          "development": {
+            "cases": 3,
+            "documents": 3,
+            "field_exact": [
+              1,
+              8
+            ],
+            "answerable_field_coverage": [
+              1,
+              7
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "hybrid": {
+        "report": "evidence/evaluation/release/hybrid-development/evaluation.json",
+        "wall_seconds": 555.8120169999893,
+        "groups": {
+          "development": {
+            "cases": 3,
+            "documents": 3,
+            "field_exact": [
+              3,
+              8
+            ],
+            "answerable_field_coverage": [
+              2,
+              7
+            ],
+            "accuracy_when_answered": [
+              2,
+              2
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "heldout": {
+      "direct": {
+        "report": "evidence/evaluation/release/direct-heldout/evaluation.json",
+        "wall_seconds": 193.7829423340154,
+        "groups": {
+          "held_out": {
+            "cases": 4,
+            "documents": 4,
+            "field_exact": [
+              12,
+              22
+            ],
+            "answerable_field_coverage": [
+              12,
+              20
+            ],
+            "accuracy_when_answered": [
+              11,
+              12
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              4,
+              8
+            ],
+            "menu_price": [
+              4,
+              4
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              6
+            ],
+            "review_rate": [
+              4,
+              4
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              4
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "hybrid": {
+        "report": "evidence/evaluation/release/hybrid-heldout/evaluation.json",
+        "wall_seconds": 471.3369348330016,
+        "groups": {
+          "held_out": {
+            "cases": 4,
+            "documents": 4,
+            "field_exact": [
+              11,
+              22
+            ],
+            "answerable_field_coverage": [
+              12,
+              20
+            ],
+            "accuracy_when_answered": [
+              11,
+              12
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              4,
+              8
+            ],
+            "menu_price": [
+              4,
+              4
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              6
+            ],
+            "review_rate": [
+              4,
+              4
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              4
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "diagnostic": {
+      "direct": {
+        "report": "evidence/evaluation/handwriting-diagnostics/direct/evaluation.json",
+        "wall_seconds": 82.67165437500807,
+        "groups": {
+          "held_out": {
+            "cases": 3,
+            "documents": 3,
+            "field_exact": [
+              4,
+              18
+            ],
+            "answerable_field_coverage": [
+              3,
+              14
+            ],
+            "accuracy_when_answered": [
+              3,
+              3
+            ],
+            "row_alignment": [
+              0,
+              5
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              9
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "hybrid": {
+        "report": "evidence/evaluation/handwriting-diagnostics/hybrid/evaluation.json",
+        "wall_seconds": 346.78374520898797,
+        "groups": {
+          "held_out": {
+            "cases": 3,
+            "documents": 3,
+            "field_exact": [
+              6,
+              18
+            ],
+            "answerable_field_coverage": [
+              5,
+              14
+            ],
+            "accuracy_when_answered": [
+              4,
+              5
+            ],
+            "row_alignment": [
+              1,
+              5
+            ],
+            "recipe_quantity_unit_yield": [
+              3,
+              9
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      }
+    },
+    "synthetic": {
+      "direct": {
+        "report": "evidence/evaluation/release/direct-synthetic/evaluation.json",
+        "wall_seconds": 1210.9876650829974,
+        "groups": {
+          "development": {
+            "cases": 9,
+            "documents": 5,
+            "field_exact": [
+              174,
+              227
+            ],
+            "answerable_field_coverage": [
+              185,
+              223
+            ],
+            "accuracy_when_answered": [
+              170,
+              185
+            ],
+            "critical_numeric": [
+              115,
+              158
+            ],
+            "row_alignment": [
+              36,
+              50
+            ],
+            "review_rate": [
+              5,
+              5
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              5
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          },
+          "held_out": {
+            "cases": 6,
+            "documents": 5,
+            "field_exact": [
+              68,
+              119
+            ],
+            "answerable_field_coverage": [
+              81,
+              114
+            ],
+            "accuracy_when_answered": [
+              67,
+              81
+            ],
+            "critical_numeric": [
+              7,
+              8
+            ],
+            "row_alignment": [
+              10,
+              32
+            ],
+            "relationship": [
+              15,
+              17
+            ],
+            "menu_price": [
+              11,
+              11
+            ],
+            "recipe_quantity_unit_yield": [
+              4,
+              24
+            ],
+            "review_rate": [
+              5,
+              5
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              5
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      },
+      "hybrid": {
+        "report": "evidence/evaluation/release/hybrid-synthetic/evaluation.json",
+        "wall_seconds": 1724.3858037919854,
+        "groups": {
+          "development": {
+            "cases": 9,
+            "documents": 5,
+            "field_exact": [
+              217,
+              227
+            ],
+            "answerable_field_coverage": [
+              214,
+              223
+            ],
+            "accuracy_when_answered": [
+              213,
+              214
+            ],
+            "critical_numeric": [
+              150,
+              158
+            ],
+            "row_alignment": [
+              49,
+              50
+            ],
+            "review_rate": [
+              5,
+              5
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              5
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          },
+          "held_out": {
+            "cases": 6,
+            "documents": 5,
+            "field_exact": [
+              68,
+              119
+            ],
+            "answerable_field_coverage": [
+              76,
+              114
+            ],
+            "accuracy_when_answered": [
+              65,
+              76
+            ],
+            "critical_numeric": [
+              8,
+              8
+            ],
+            "row_alignment": [
+              9,
+              32
+            ],
+            "relationship": [
+              9,
+              17
+            ],
+            "menu_price": [
+              6,
+              11
+            ],
+            "recipe_quantity_unit_yield": [
+              11,
+              24
+            ],
+            "review_rate": [
+              5,
+              5
+            ],
+            "automatic_acceptance_rate": [
+              0,
+              5
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ]
+          }
+        }
+      }
+    }
+  },
+  "business_field_performance": {
+    "assessment": "Measured on sparse reference fields; no deployment accuracy threshold was specified or calibrated.",
+    "detail": "Both routes missed fields and relationships. Every emitted document required review."
+  },
+  "automatic_acceptance_calibration": {
+    "status": "not_run",
+    "detail": "Automatic acceptance disabled. The rate of erroneous acceptance among automatically accepted cases has denominator zero."
+  },
+  "optional_challenger": {
+    "status": "not_run",
+    "detail": "The measured application ships with Qwen3.5-9B and the optional native Paddle parser route. The optional Qwen3-VL-8B challenger was not provisioned."
+  },
+  "grouped_pdf_cli": {
+    "status": "passed",
+    "document_status": "completed",
+    "scope": [
+      1,
+      2
+    ],
+    "evidence": "evidence/verification/offline-grouped-pdf.json"
+  },
+  "release_artifacts": {
+    "handoff": "docs/HANDOFF.md",
+    "evaluation": "docs/EVALUATION.md",
+    "roster": "evidence/development/roster.json",
+    "software": "evidence/verification/software.json",
+    "cli_examples": "evidence/examples/release-invoice/verification.json"
+  },
+  "timing_note": "Contracts and implementation overlapped outstanding Gate 1 downloads. The direct synthetic trial spanned a clamshell sleep from 20:00:11 to 21:20:05 CET and a switch from AC to battery. UTC and monotonic durations differ. All primary and separate handwriting measurements were complete before suspension."
 }

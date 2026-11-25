@@ -44,5 +44,10 @@
       "loopback": true,
       "public_connect_errno": 1
     }
+  },
+  "final_handoff_recheck": {
+    "command": ".venv/bin/python -m pytest -q tests evidence/development/reviewer",
+    "result": "371 passed in 14.94s",
+    "production_source_unchanged": true
   }
 }

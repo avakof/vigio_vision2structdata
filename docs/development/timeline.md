@@ -27,5 +27,7 @@ Times are local to the target Mac on 2026-11-25 (Europe/Paris). Launch receipts 
 | 19:29–19:47 | The final frozen development reruns reproduced the earlier trial scores. The direct synthetic cohort followed. |
 | 20:00–21:20 | macOS recorded clamshell sleep at 20:00:11, dark wakes and a full lid wake at 21:20:05. The machine changed from AC to battery. This interrupted the direct synthetic cohort after all primary and handwriting comparisons. |
 | 21:23 | Opus independently verified the final archive metrics and identified that the earlier normal CLI receipts came from a previous pipeline. The lead scheduled both frozen CLI routes, a fresh correction, replay, reimport and relational export checks. |
+| 21:25–21:29 | Direct synthetic evaluation finished. The exact frozen normal CLI committed new direct and hybrid invoice versions 4 and 5. The controlled currency confirmation created version 6, and both replay and reimport reused it. Opus independently closed E1. |
+| 21:55–21:57 | Hybrid synthetic evaluation finished. A fresh normal CLI import of a two-page PDF published one version with 143 observations. The completed campaign covered 50 case runs across both routes. |
 
 The contracts, evaluation harness and implementation progressed while the initial multi-gigabyte downloads were pending. Gate 1 inference had not passed when the implementation sessions started. Neither the worker receipts nor their tests establish route readiness; the final gate report records later production runs separately.

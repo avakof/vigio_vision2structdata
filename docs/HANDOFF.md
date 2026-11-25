@@ -1,6 +1,6 @@
 # Local release handoff
 
-The headless CLI, Python package, SQLite store and two offline inference routes ran on this Apple M3 Max with 48 GiB unified memory and macOS 27.2.1. Processing and review use local files. Every new extraction requires review. The [acceptance report](../evidence/acceptance.json) gives a status and evidence for each release gate.
+The headless CLI, Python package, SQLite store and two offline inference routes ran on this Apple M3 Max with 48 GiB unified memory and macOS 27.2.1. Processing and review use local files. Every new extraction requires review. The frozen production commit is `bcffc67782a0b786531e6c09d4b5e7583ed63cc8`, pipeline 0.1.3. All six delivery gates passed. The integrated suite passed 371 checks, and the evaluation covered 25 cases on each route, for 50 case runs. [Acceptance and gate evidence](../evidence/acceptance.json) · [Detailed performance](EVALUATION.md) · [Build and tests](../evidence/verification/software.json)
 
 ## Results on real documents
 
@@ -39,6 +39,8 @@ The process-scoped verifier checks that a loopback exchange succeeds and an exte
 .venv/bin/vision-tables batch inbox --output output/batch
 ```
 
+The grouped PDF command returned one reviewable invoice covering both pages, with 27 entities and 143 observations in 107.83 s. Its issues included a subtotal mismatch and an unsupported source quote. The exported SQLite database passed integrity and foreign-key checks. [Grouped PDF receipt](../evidence/verification/offline-grouped-pdf.json)
+
 ## Review, corrections and export
 
 Use the document ID and version from the extraction response. Open the source and page or crop references in the review bundle. Set the reviewer, base version, edit targets and reasons in a separate corrections file. The example below uses the checked-in synthetic invoice's original hybrid extraction at version 2. For a fresh database, use the ID and base version actually printed by the CLI and adapt the example's targets to that snapshot.
@@ -73,6 +75,8 @@ The six specialists used separate Orca sessions, with a maximum of three active 
 
 The application supports JPEG, PNG, verified static HEIC and multipage PDF. Geometry is in original image pixels or PDF page points. Ungrounded fields retain a page reference. The domain layer uses Decimal or exact fractions where applicable and keeps raw text, alternatives and evidence. Correcting a fact recalculates its dependents. A clipped image can still omit facts beyond the frame; complete processing does not establish the original capture extent. [Architecture](ARCHITECTURE.md) · [Domain normalization and review rules](development/domain.md) · [Checked-in schemas](../schemas)
 
+The final Opus review checked the frozen invoice attempts against actual Qwen replies, refetched the stored version lineage and independently confirmed the JSON, CSV and SQLite evidence. Astra checked 526 possible response cuts and preserved disputed prices, occurrence counts and native citations through SQLite. [Final Opus review and E1 closure](development/reviewer-release.md) · [Architect closure](development/recovery-parser-closure.md)
+
 ## Reproduce the comparison
 
 Each command below runs fresh inference for every case. Use distinct output directories when retaining earlier reports. The strict scorer separates development, held-out, diagnostic and synthetic results. It records absent denominators explicitly. Matching source hashes, labels, per-case overrides and shared model settings are checked before creating a paired summary.
@@ -90,4 +94,4 @@ done
 PYTHONPATH=src .venv/bin/python evidence/development/reasoner_recovery_probes.py
 ```
 
-The JSON reports include per-fixture scores, source and label digests, processed and skipped pages, extra calls, token counts and RSS. The evaluation command's exit status describes whether it produced the report. Per-case status and business-field scores describe what the application actually extracted. The paired reports in the [release evaluation directory](../evidence/evaluation/release) give the denominators by document family, language and writing style. The synthetic campaign is in progress at this checkpoint.
+The JSON reports include per-fixture scores, source and label digests, processed and skipped pages, extra calls, token counts and RSS. The evaluation command's exit status describes whether it produced the report. Per-case status and business-field scores describe what the application actually extracted. The final evaluation gives the denominators by document family, language and writing style. [Evaluation and timings](EVALUATION.md) · [Checks on all 50 case runs](../evidence/verification/campaign.json)

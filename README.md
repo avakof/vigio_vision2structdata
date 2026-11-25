@@ -29,4 +29,4 @@ Model preparation needs network access and several gigabytes of disk. It verifie
 
 Pages are separate by default. Use explicit page grouping for a multi-page document. Inspect review issues and evidence before approving a version. The release handoff includes grouped PDF, correction, replay and export commands, plus the verification status of each local model route. [Release handoff](docs/HANDOFF.md)
 
-See the [CLI reference](docs/CLI.md), [architecture](docs/ARCHITECTURE.md), [JSON Schemas](schemas), [synthetic fixtures](fixtures/README.md) and [real-document sources and labeling limits](fixtures/public/SOURCES.md).
+See the [CLI reference](docs/CLI.md), [architecture](docs/ARCHITECTURE.md), [JSON Schemas](schemas), [synthetic fixtures](fixtures/README.md) and [real-document sources and labeling limits](fixtures/public/SOURCES.md). [Measured accuracy and timings](docs/EVALUATION.md) · [Machine-readable acceptance](evidence/acceptance.json)

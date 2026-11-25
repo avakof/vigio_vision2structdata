@@ -1,0 +1,2030 @@
+[
+  {
+    "document_id": "doc-8b1ab69b3a7452a959e6b597af291943",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "menu",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "694b716ff93c3c2a7377f0d326fd0ead0138161199c197530c1797b07d7b2184",
+      "media_type": "image/jpeg",
+      "size_bytes": 56704,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 813.0,
+        "height": 669.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 813,
+        "image_height": 669,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_paragraph_title",
+        "text": "Café des Érables",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            55.0,
+            36.0,
+            541.0,
+            118.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-1",
+        "page": 1,
+        "order": 1,
+        "kind": "parser_text",
+        "text": "Velouté de céleri",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            53.0,
+            266.0,
+            325.0,
+            313.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-2",
+        "page": 1,
+        "order": 2,
+        "kind": "parser_text",
+        "text": "Celery soup",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            54.0,
+            318.0,
+            224.0,
+            360.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-3",
+        "page": 1,
+        "order": 3,
+        "kind": "parser_text",
+        "text": "Tasse / Cup..... 4,50 €",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            66.0,
+            374.0,
+            443.0,
+            421.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-4",
+        "page": 1,
+        "order": 4,
+        "kind": "parser_text",
+        "text": "Bol / Bowl..... 6,80 €",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            69.0,
+            429.0,
+            447.0,
+            475.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-5",
+        "page": 1,
+        "order": 5,
+        "kind": "parser_text",
+        "text": "+ Croûtons.....0,70€",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            71.0,
+            484.0,
+            444.0,
+            529.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-6",
+        "page": 1,
+        "order": 6,
+        "kind": "parser_paragraph_title",
+        "text": "Tarte aux poireaux",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            52.0,
+            609.0,
+            362.0,
+            656.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-7",
+        "page": 1,
+        "order": 7,
+        "kind": "parser_paragraph_title",
+        "text": "BOISSONS",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            633.0,
+            188.0,
+            813.0,
+            234.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-8",
+        "page": 1,
+        "order": 8,
+        "kind": "parser_text",
+        "text": "Café filtre / Fil",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            631.0,
+            265.0,
+            813.0,
+            308.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-9",
+        "page": 1,
+        "order": 9,
+        "kind": "parser_text",
+        "text": "Thé noir / Bla",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            631.0,
+            322.0,
+            813.0,
+            363.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-10",
+        "page": 1,
+        "order": 10,
+        "kind": "parser_text",
+        "text": "Ancien prix",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            655.0,
+            371.0,
+            813.0,
+            412.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-11",
+        "page": 1,
+        "order": 11,
+        "kind": "parser_paragraph_title",
+        "text": "FORMULE",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            632.0,
+            461.0,
+            813.0,
+            509.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-12",
+        "page": 1,
+        "order": 12,
+        "kind": "parser_text",
+        "text": "Déjeuner / Lu",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            632.0,
+            541.0,
+            813.0,
+            585.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-13",
+        "page": 1,
+        "order": 13,
+        "kind": "parser_text",
+        "text": "Bol de velouté",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            633.0,
+            605.0,
+            813.0,
+            645.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 2,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            42.0,
+            306.0,
+            236.0,
+            372.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "26d0318911fa330de0a6d39a77cbbc2f27714e144e349570dc0802ad435e560e",
+        "crop_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          42.0,
+          306.0
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "702096c3877a452ba5b6a2321232a8b7",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 14,
+            "returned_crops": 14,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 8,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 2,
+                "generated_tokens": 7,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 3,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 4,
+                "generated_tokens": 13,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 5,
+                "generated_tokens": 12,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 6,
+                "generated_tokens": 12,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 7,
+                "generated_tokens": 7,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 8,
+                "generated_tokens": 5,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 9,
+                "generated_tokens": 8,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 10,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 11,
+                "generated_tokens": 5,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 12,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 13,
+                "generated_tokens": 7,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 14,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 53.890295041986974,
+          "peak_rss_bytes": 10189291520,
+          "seconds_including_lock_wait": 54.60629433300346,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8",
+            "p1-parser-9",
+            "p1-parser-10",
+            "p1-parser-11",
+            "p1-parser-12",
+            "p1-parser-13"
+          ],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 1121,
+          "prompt_tokens": 1495,
+          "load_seconds": 2.946230250003282,
+          "generation_seconds": 21.00473166597658,
+          "runtime_seconds": 26.909131166001316,
+          "peak_rss_bytes": 7187038208,
+          "mlx_peak_bytes": 7442827720,
+          "seconds_including_lock_wait": 27.438573791994713,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 3
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-0",
+              "raw": "Café des Érables",
+              "quote": "Café des Érables",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": "p1-parser-2",
+              "raw": "Celery soup",
+              "quote": "Celery soup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-6",
+              "raw": "Tarte aux poireaux",
+              "quote": "Tarte aux poireaux",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "BOISSONS",
+              "quote": "BOISSONS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-7",
+              "raw": "BOISSONS",
+              "quote": "BOISSONS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-8",
+              "raw": "Café filtre / Fil",
+              "quote": "Café filtre / Fil",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Thé noir / Bla",
+              "quote": "Thé noir / Bla",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-10",
+              "raw": "Ancien prix",
+              "quote": "Ancien prix",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-11",
+              "raw": "FORMULE",
+              "quote": "FORMULE",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-11",
+              "raw": "FORMULE",
+              "quote": "FORMULE",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-12",
+              "raw": "Déjeuner / Lu",
+              "quote": "Déjeuner / Lu",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-13",
+              "raw": "Bol de velouté",
+              "quote": "Bol de velouté",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8",
+            "p1-parser-9",
+            "p1-parser-10",
+            "p1-parser-11",
+            "p1-parser-12",
+            "p1-parser-13"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 1175,
+          "prompt_tokens": 1506,
+          "load_seconds": 2.0658819589880295,
+          "generation_seconds": 20.174678041017614,
+          "runtime_seconds": 24.17742079202435,
+          "peak_rss_bytes": 7164821504,
+          "mlx_peak_bytes": 7453805176,
+          "seconds_including_lock_wait": 24.81446879199939,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-0",
+              "raw": "Café des Érables",
+              "quote": "Café des Érables",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": "p1-parser-2",
+              "raw": "Celery soup",
+              "quote": "Celery soup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Tasse / Cup",
+              "quote": "Tasse / Cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "price",
+              "region_id": "p1-parser-3",
+              "raw": "4,50 €",
+              "quote": "4,50 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": "p1-parser-3",
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Bol / Bowl",
+              "quote": "Bol / Bowl",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "6,80 €",
+              "quote": "6,80 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": "p1-parser-4",
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "+ Croûtons",
+              "quote": "+ Croûtons",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "currency",
+              "region_id": "p1-parser-5",
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-6",
+              "raw": "Tarte aux poireaux",
+              "quote": "Tarte aux poireaux",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "BOISSONS",
+              "quote": "BOISSONS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-7",
+              "raw": "BOISSONS",
+              "quote": "BOISSONS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-8",
+              "raw": "Café filtre / Fil",
+              "quote": "Café filtre / Fil",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Thé noir / Bla",
+              "quote": "Thé noir / Bla",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-10",
+              "raw": "Ancien prix",
+              "quote": "Ancien prix",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-11",
+              "raw": "FORMULE",
+              "quote": "FORMULE",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-12",
+              "raw": "Déjeuner / Lu",
+              "quote": "Déjeuner / Lu",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-13",
+              "raw": "Bol de velouté",
+              "quote": "Bol de velouté",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-parser-2"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 83,
+          "prompt_tokens": 768,
+          "load_seconds": 2.032967999984976,
+          "generation_seconds": 4.14738412501174,
+          "runtime_seconds": 8.267847417009762,
+          "peak_rss_bytes": 7140605952,
+          "mlx_peak_bytes": 7053696510,
+          "seconds_including_lock_wait": 9.015184457995929,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "r1",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-2",
+              "raw": "Celery soup",
+              "quote": "Celery soup",
+              "state": "readable",
+              "language": "en",
+              "writing": "print"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "menu",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "variant",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "variant",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "supplement",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.r8",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.r9",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.r10",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 10
+      },
+      {
+        "id": "p1.r11",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 11
+      },
+      {
+        "id": "p1.r12",
+        "kind": "menu_item",
+        "parent_id": "p1.r11",
+        "page": 1,
+        "ordinal": 12
+      },
+      {
+        "id": "p1.r13",
+        "kind": "menu_item",
+        "parent_id": "p1.r11",
+        "page": 1,
+        "ordinal": 13
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.venue_name",
+        "entity_id": "p1.root",
+        "field": "venue_name",
+        "raw": "Café des Érables",
+        "value": "Café des Érables",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "Café des Érables",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "SOUPE / SOUP"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.translated_name",
+        "entity_id": "p1.r1",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "SOUP"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "Velouté de céleri"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.translated_name",
+        "entity_id": "p1.r2",
+        "field": "translated_name",
+        "raw": "Celery soup",
+        "value": "Celery soup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "Celery soup",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "Tasse / Cup",
+        "value": "Tasse / Cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "Tasse / Cup",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.price",
+        "entity_id": "p1.r3",
+        "field": "price",
+        "raw": "4,50 €",
+        "value": "4.50",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "4,50 €",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.currency",
+        "entity_id": "p1.r3",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "€",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "Bol / Bowl",
+        "value": "Bol / Bowl",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "Bol / Bowl",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.price",
+        "entity_id": "p1.r4",
+        "field": "price",
+        "raw": "6,80 €",
+        "value": "6.80",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "6,80 €",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.currency",
+        "entity_id": "p1.r4",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "€",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": "+ Croûtons",
+        "value": "+ Croûtons",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "+ Croûtons",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.price",
+        "entity_id": "p1.r5",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "0,70 €"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.currency",
+        "entity_id": "p1.r5",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "€",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": "Tarte aux poireaux",
+        "value": "Tarte aux poireaux",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "Tarte aux poireaux",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": "BOISSONS",
+        "value": "BOISSONS",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "BOISSONS",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.translated_name",
+        "entity_id": "p1.r7",
+        "field": "translated_name",
+        "raw": "BOISSONS",
+        "value": "BOISSONS",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "BOISSONS",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.name",
+        "entity_id": "p1.r8",
+        "field": "name",
+        "raw": "Café filtre / Fil",
+        "value": "Café filtre / Fil",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-8",
+            "quote": "Café filtre / Fil",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.name",
+        "entity_id": "p1.r9",
+        "field": "name",
+        "raw": "Thé noir / Bla",
+        "value": "Thé noir / Bla",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "Thé noir / Bla",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.name",
+        "entity_id": "p1.r10",
+        "field": "name",
+        "raw": "Ancien prix",
+        "value": "Ancien prix",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-10",
+            "quote": "Ancien prix",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.crossed_out",
+        "entity_id": "p1.r10",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "true"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.name",
+        "entity_id": "p1.r11",
+        "field": "name",
+        "raw": "FORMULE",
+        "value": "FORMULE",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-11",
+            "quote": "FORMULE",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.translated_name",
+        "entity_id": "p1.r11",
+        "field": "translated_name",
+        "raw": "FORMULE",
+        "value": "FORMULE",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-11",
+            "quote": "FORMULE",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.name",
+        "entity_id": "p1.r12",
+        "field": "name",
+        "raw": "Déjeuner / Lu",
+        "value": "Déjeuner / Lu",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-12",
+            "quote": "Déjeuner / Lu",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.name",
+        "entity_id": "p1.r13",
+        "field": "name",
+        "raw": "Bol de velouté",
+        "value": "Bol de velouté",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-13",
+            "quote": "Bol de velouté",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "model_field_duplicate",
+        "message": "Repeated fields were consolidated or left unresolved when they disagreed.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.name",
+          "p1.r1.translated_name",
+          "p1.r2.name",
+          "p1.r5.price",
+          "p1.r10.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "supplement.price: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.crossed_out: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "item_without_price",
+        "message": "no price was read for this item",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      },
+      {
+        "code": "identical_translation",
+        "message": "translated_name equals name",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.translated_name"
+        ],
+        "severity": "info"
+      },
+      {
+        "code": "identical_translation",
+        "message": "translated_name equals name",
+        "page": 1,
+        "observation_ids": [
+          "p1.r11.translated_name"
+        ],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
