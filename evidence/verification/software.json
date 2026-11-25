@@ -1,11 +1,11 @@
 {
   "status": "passed",
-  "source_commit": "52324e9e02ac3d60b4cc555bab60ecfe5ae51b20",
+  "source_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
   "test_command": ".venv/bin/python -m pytest -q tests evidence/development/reviewer",
-  "result": "344 passed in 14.68s",
+  "result": "371 passed in 19.65s",
   "wheel": {
     "path": ".vt-state/dist/vision_to_tables-0.1.0-py3-none-any.whl",
-    "sha256": "82632876f82c3c1fba23079a9b8ad90298a32de301f780e1f27566382a8af775",
+    "sha256": "de5b02e564494ddd0e7e163e68bf97086d0a3884dafd5db71cdcf13bd98e1344",
     "verified_members": 42,
     "package_check": "13 compatible distributions in the clean wheel-check environment; wheel ZIP integrity passed."
   },
@@ -17,6 +17,32 @@
       "recipe",
       "auto"
     ],
-    "test": "A valid, source-accented JSON token sequence (75\u201376 tokens) plus EOS passed the actual token mask in every mode."
+    "test": "Four valid examples including EOS, six rejected malformed or mismatched examples on the recovery grammar. See evidence/development/vision-development-recovery.md."
+  },
+  "test_revision": "9895363",
+  "independent_recovery_probes": [
+    "526 prefix boundaries, exact-cap and short-stop page controls",
+    "PASS closed_prefixes",
+    "PASS bounded_inputs",
+    "PASS parent_and_refs",
+    "PASS unresolved_parent_on_retry",
+    "PASS occurrence_disagreement",
+    "PASS contested_price_on_retry",
+    "PASS candidate_evidence",
+    "PASS alternative_bound"
+  ],
+  "reprovision_existing_install": {
+    "command": "UV_OFFLINE=1 .vt-state/wheel-check/bin/python tools/verify_offline.py models prepare --pipeline hybrid",
+    "comment": "Pinned installed assets already present. Earlier 0.1.2 wheel, same provisioning and runtime component code as the release source.",
+    "verified_package_counts": [
+      78,
+      100
+    ],
+    "status": "ready",
+    "exit_code": 0,
+    "network": {
+      "loopback": true,
+      "public_connect_errno": 1
+    }
   }
 }

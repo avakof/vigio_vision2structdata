@@ -1,0 +1,6 @@
+{
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "started_utc": "2026-11-25T18:10:49.450563+00:00",
+  "ordering": "Both handwriting diagnostic invocations finish first. Primary held-out, primary development, synthetic and CLI examples follow sequentially.",
+  "settings": "Release defaults except predeclared synthetic case overrides."
+}

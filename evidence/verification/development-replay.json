@@ -1,0 +1,124 @@
+{
+  "source_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "scope": "Adapter integration replay of genuine 4096-token development replies. Model inference was intercepted. Byte-identical image views and equal call token budgets checked; field, page and document contracts revalidated. Release measurements run independently through the live CLI.",
+  "cases": [
+    {
+      "case": "babani-1921",
+      "route": "direct",
+      "recorded_job_id": "4cf237250c23414facf9fd6e11aa12d9",
+      "recorded_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1"
+      ],
+      "replayed_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1"
+      ],
+      "validation": "incomplete",
+      "approval": "needs_review",
+      "records": 1,
+      "observations": 12
+    },
+    {
+      "case": "le-versailles-1920-p1",
+      "route": "direct",
+      "recorded_job_id": "73ba2b4ee90844dfbc381cc77c822914",
+      "recorded_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "replayed_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "validation": "incomplete",
+      "approval": "needs_review",
+      "records": 33,
+      "observations": 96
+    },
+    {
+      "case": "jefferson-ice-cream",
+      "route": "direct",
+      "recorded_job_id": "4dd9e03ad07d495592315f39819c1e45",
+      "recorded_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "replayed_attempts": [
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "validation": "incomplete",
+      "approval": "needs_review",
+      "records": 5,
+      "observations": 7
+    },
+    {
+      "case": "babani-1921",
+      "route": "hybrid",
+      "recorded_job_id": "4354d0eccf8242ddb92be471708fbf6d",
+      "recorded_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "replayed_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "validation": "issues",
+      "approval": "needs_review",
+      "records": 6,
+      "observations": 39
+    },
+    {
+      "case": "le-versailles-1920-p1",
+      "route": "hybrid",
+      "recorded_job_id": "373ab2c025c0470db7d706872a62610f",
+      "recorded_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "replayed_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "validation": "incomplete",
+      "approval": "needs_review",
+      "records": 8,
+      "observations": 21
+    },
+    {
+      "case": "jefferson-ice-cream",
+      "route": "hybrid",
+      "recorded_job_id": "982add6573704aa58adb5b969f1fc1ef",
+      "recorded_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "replayed_attempts": [
+        "p1-paddle",
+        "p1-qwen-0",
+        "p1-qwen-1",
+        "p1-qwen-2"
+      ],
+      "validation": "issues",
+      "approval": "needs_review",
+      "records": 1,
+      "observations": 2
+    }
+  ]
+}
