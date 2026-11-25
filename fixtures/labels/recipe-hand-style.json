@@ -52,9 +52,10 @@
           "kind": "ingredient",
           "fields": {
             "name": "levure",
-            "quantity": {"value": "2", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
+            "quantity": {"value": "1", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
             "unit": {"value": "tsp", "metric": "recipe_quantity_unit_yield", "page": 1},
-            "crossed_out": "1 tsp"
+            "crossed_out": true,
+            "replacement_quantity": {"value": "2", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true}
           },
           "row": true
         },
@@ -115,8 +116,8 @@
           "kind": "step",
           "fields": {
             "instruction": "Cuire 14 min à 190 °C.",
-            "duration_minutes": {"value": "14", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
-            "temperature_c": {"value": "190", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true}
+            "duration_minutes": {"value": "14", "metric": "recipe_time_temperature", "page": 1, "decimal": true},
+            "temperature_c": {"value": "190", "metric": "recipe_time_temperature", "page": 1, "decimal": true}
           },
           "row": true
         }

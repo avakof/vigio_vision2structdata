@@ -297,7 +297,7 @@
             "purchase_unit": "carton",
             "pack_count": {"value": "6", "decimal": true, "metric": "critical_numeric", "page": 2},
             "pack_unit_quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 2},
-            "pack_unit": "L",
+            "pack_unit": "l",
             "pack_total_quantity": {"value": "12", "decimal": true, "metric": "critical_numeric", "origin": "calculated", "inputs": ["quantity", "pack_count", "pack_unit_quantity", "pack_unit"]}
           },
           "row": true

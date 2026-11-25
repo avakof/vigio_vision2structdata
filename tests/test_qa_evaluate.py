@@ -1,6 +1,7 @@
 import hashlib
 import json
 from contextlib import closing
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -106,6 +107,84 @@ def test_sparse_rows_use_unique_labeled_text_anchor():
     duplicate = EntityResult("another-tea", "item", {"name": Reading("Tea")})
     counts, failures = score_case(expected, result([*rows(), duplicate]))
     assert counts["field_exact_ok"] == 0 and failures
+
+
+def recipe_labels():
+    return {
+        "status": "completed", "eligible": False, "documents": [{
+            "type": "recipe", "scope": [1, 2], "entities": [{
+                "id": "recipe", "kind": "recipe", "fields": {
+                    "yield_quantity": {"value": None, "state": "not_present", "page": 1,
+                                       "metric": "recipe_quantity_unit_yield"},
+                },
+            }],
+        }],
+    }
+
+
+def recipe_result(root_fields=None):
+    root = EntityResult("root", "recipe", {"title": Reading("Tea cake", pages=(1,)),
+                                          **(root_fields or {})})
+    doc = DocumentResult("recipe", (1, 2), (root,), issues=("recipe_yield_missing",))
+    return SourceResult("completed", (doc,), page_count=2, processed_pages=(1, 2))
+
+
+@pytest.mark.parametrize("absence", [{}, {"yield_quantity": Reading(None, "not_present", pages=(1,))}])
+def test_corroborated_missing_yield_is_correct_without_coverage(absence):
+    counts, failures = score_case(recipe_labels(), recipe_result(absence))
+    assert not failures
+    assert counts["field_exact_ok"] == counts["recipe_quantity_unit_yield_ok"] == 1
+    assert counts["unresolved_fields"] == 1 and counts["guessed_unresolved_fields"] == 0
+    assert counts["answerable_fields"] == counts["covered_answerable_fields"] == 0
+    assert counts["correct_answered_fields"] == 0
+
+
+@pytest.mark.parametrize("source_change", [
+    {"status": "missing_model"}, {"status": "incomplete"}, {"processed_pages": (1,)},
+    {"incomplete_pages": (2,)}, {"skipped_pages": (2,)}, {"suspected_capture": True},
+    {"documents": ()},
+])
+def test_missing_yield_denies_unavailable_or_insufficiently_processed_sources(source_change):
+    actual = replace(recipe_result(), **source_change)
+    counts, _ = score_case(recipe_labels(), actual)
+    assert counts["recipe_quantity_unit_yield_n"] == 1
+    assert counts["recipe_quantity_unit_yield_ok"] == counts["covered_answerable_fields"] == 0
+
+
+@pytest.mark.parametrize("document_change", [
+    {"document_type": "unknown"}, {"issues": ()}, {"entities": ()},
+    {"entities": (EntityResult("root", "recipe", {}),)},
+    {"entities": (EntityResult("root", "recipe", {"title": Reading("No page evidence")}),)},
+])
+def test_missing_yield_requires_identified_nonempty_recipe_and_document_issue(document_change):
+    source = recipe_result()
+    doc = replace(source.documents[0], **document_change)
+    # A source-level issue cannot corroborate an otherwise empty or unmarked document.
+    counts, _ = score_case(
+        recipe_labels(), replace(source, documents=(doc,), issues=("recipe_yield_missing",)),
+    )
+    assert counts["recipe_quantity_unit_yield_ok"] == 0
+
+
+@pytest.mark.parametrize(("field", "reading", "guess"), [
+    ("yield_quantity", Reading("12", pages=(1,)), 1),
+    ("yield_quantity", Reading(None, "ambiguous", ("4", "8"), (1,)), 0),
+    ("yield_quantity", Reading(None, "not_present", pages=(1,), raw="possibly 8"), 0),
+    ("yield_unit", Reading("servings", pages=(1,)), 0),
+    ("yield_type", Reading("portions", pages=(1,)), 0),
+])
+def test_missing_yield_rejects_contradictory_readings_even_with_an_issue(field, reading, guess):
+    counts, failures = score_case(recipe_labels(), recipe_result({field: reading}))
+    assert failures and counts["recipe_quantity_unit_yield_ok"] == 0
+    assert counts["guessed_unresolved_fields"] == guess
+
+
+def test_recipe_quantity_and_time_temperature_use_separate_denominators():
+    _, _, labels = next(row for row in load_manifest(MANIFEST)
+                        if row[0]["id"] == "recipe-hand-style")
+    counts, _ = score_case(labels, SourceResult("missing_model"))
+    assert counts["recipe_quantity_unit_yield_n"] == 12
+    assert counts["recipe_time_temperature_n"] == 2
 
 
 def _write_manifest(directory):
@@ -243,12 +322,12 @@ def test_incomplete_runtime_with_no_documents_preserves_evidence(tmp_path):
     readings.mkdir()
     (readings / "0001.json").write_text(json.dumps({
         "page": 1, "incomplete": True, "suspected_cutoff": False,
-        "issues": [{"code": "output_truncated"}], "calls": [{"seconds": 0.25}],
+        "issues": [{"code": "model_token_limit"}], "calls": [{"seconds": 0.25}],
     }))
     actual = _with_job_artifacts(SourceResult("no_extraction"), tmp_path, "no_extraction")
     assert actual.status == "incomplete"
     assert actual.page_count == 2 and actual.skipped_pages == (2,)
     assert actual.incomplete_pages == (1,) and actual.processed_pages == ()
-    assert actual.issues == ("output_truncated",)
+    assert actual.issues == ("model_token_limit",)
     assert actual.runtime["error_code"] == "no_extraction"
     assert actual.runtime["calls_by_page"] == {"1": [{"seconds": 0.25}]}

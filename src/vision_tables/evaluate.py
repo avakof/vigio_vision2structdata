@@ -72,7 +72,14 @@ _FIXTURE_ID = re.compile(r"[a-z0-9][a-z0-9_-]*")
 _ORIGINS = {"synthetic", "real"}
 _SPLITS = {"development", "held_out"}
 _STATES = {"readable", "ambiguous", "unreadable", "not_present"}
-_FIELD_METRICS = {"critical_numeric", "menu_price", "recipe_quantity_unit_yield"}
+_FIELD_METRICS = {
+    "critical_numeric", "menu_price", "recipe_quantity_unit_yield", "recipe_time_temperature",
+}
+_RECIPE_IDENTITY_FIELDS = {
+    "recipe": ("title",), "ingredient": ("name",), "step": ("instruction",),
+    "subrecipe": ("name", "title"),
+}
+_YIELD_FIELDS = ("yield_quantity", "yield_unit", "yield_type")
 _CASE_SETTINGS = {
     "doc_type", "page_groups", "max_bytes", "max_pages", "max_pixels", "render_pixels",
     "max_crops", "max_tokens", "retries",
@@ -223,7 +230,36 @@ def _check(counts: Counter, failures: list, metric: str, ok: bool, location: str
         failures.append({"metric": metric, "location": location})
 
 
-def _score_document(expected, actual, counts, failures):
+def _verified_missing_recipe_yield(source: SourceResult, document: DocumentResult | None) -> bool:
+    if (document is None or document.document_type != "recipe" or source.status != "completed"
+            or source.suspected_capture or "recipe_yield_missing" not in document.issues):
+        return False
+    pages = set(document.scope)
+    if not pages <= set(source.processed_pages) or pages.intersection(
+        source.skipped_pages + source.incomplete_pages
+    ):
+        return False
+    roots = [row for row in document.entities if row.kind == "recipe"]
+    # The issue is document-level here. With multiple roots it cannot attest to a particular root.
+    if len(roots) != 1:
+        return False
+    for name in _YIELD_FIELDS:
+        reading = roots[0].fields.get(name)
+        if reading is not None and (
+            reading.state != "not_present" or reading.value is not None
+            or reading.raw or reading.alternatives
+        ):
+            return False
+    return any(
+        reading.state == "readable" and isinstance(reading.value, str) and reading.value.strip()
+        and pages.intersection(reading.pages)
+        for row in document.entities
+        for name in _RECIPE_IDENTITY_FIELDS.get(row.kind, ())
+        if (reading := row.fields.get(name)) is not None
+    )
+
+
+def _score_document(expected, actual, source, counts, failures):
     location = f"pages {expected['scope']}"
     _check(counts, failures, "document_type", actual is not None and
            actual.document_type == expected["type"], location)
@@ -238,6 +274,7 @@ def _score_document(expected, actual, counts, failures):
     next_index = Counter()
     matches = {}
     matched_ids = set()
+    verified_missing_yield = _verified_missing_recipe_yield(source, actual)
     for entity in expected["entities"]:
         kind = entity["kind"]
         index = next_index[kind]
@@ -274,9 +311,17 @@ def _score_document(expected, actual, counts, failures):
             if not isinstance(label, dict):
                 label = {"value": label}
             reading = actual_entity.fields.get(name) if actual_entity else None
-            positive, covered, correct = _field_result(label, reading)
+            missing_yield_label = (
+                expected["type"] == entity["kind"] == "recipe" and name == "yield_quantity"
+                and label.get("state") == "not_present"
+            )
+            scoring_reading = reading
+            if missing_yield_label and verified_missing_yield and reading is None:
+                # The corroboration establishes absence for the fully processed scope.
+                scoring_reading = Reading(None, "not_present", pages=actual.scope)
+            positive, covered, correct = _field_result(label, scoring_reading)
             location_field = f"{row_location}/{name}"
-            correct &= actual_entity is not None
+            correct &= actual_entity is not None and (not missing_yield_label or verified_missing_yield)
             _check(counts, failures, "field_exact", correct, location_field)
             if positive:
                 counts["answerable_fields"] += 1
@@ -321,7 +366,7 @@ def score_case(labels: dict, actual: SourceResult) -> tuple[Counter, list]:
                set(document_map) == expected_scopes and len(document_map) == len(actual.documents),
                "source")
         for document in labels["documents"]:
-            _score_document(document, document_map.get(tuple(document["scope"])), counts, failures)
+            _score_document(document, document_map.get(tuple(document["scope"])), actual, counts, failures)
 
     review_count = sum(doc.approval == "review" for doc in actual.documents)
     auto_count = sum(doc.approval == "auto_accepted" for doc in actual.documents)

@@ -218,8 +218,6 @@ def test_credit_note_negative_prefixed_currency_survives_cli(tmp_path, capsys, m
     total = next(row for row in read_json(directory / "document.json")["observations"]
                  if row["field"] == "total")
     assert total["raw"] == "-$11.95"
-    if total["value"] is None and total["state"] == "ambiguous" and total["reason"] == "not a number":
-        pytest.xfail("dfa12df cannot normalize a sign before a currency prefix")
     assert total["value"] == "-11.95", total
 
 
@@ -273,8 +271,6 @@ def test_cli_flags_unassembled_page_in_a_mixed_type_group(tmp_path, capsys, monk
     payload = json.loads(capsys.readouterr().out)
     item = payload["documents"][0]
     assert "page_doc_type_mismatch" in item["issue_codes"]
-    if code == 0 and item["coverage"]["processed_pages"] == [1, 2] and not item["coverage"]["incomplete_pages"]:
-        pytest.xfail("dfa12df can complete a group after dropping a differently classified page")
     assert code == 3 and 2 in item["coverage"]["incomplete_pages"], item
 
 
@@ -318,14 +314,10 @@ def test_manifests_match_kind_field_vocabulary_and_separate_real_splits():
                     assert set(row["fields"]) <= set(FIELDS[row["kind"]]), (case["id"], row)
 
 
-def test_cli_evaluation_scores_production_token_limit(tmp_path, capsys, monkeypatch):
-    monkeypatch.setattr(models, "runtime_info", readiness)
-    monkeypatch.setattr(runtime_local, "call", lambda *args: {
-        "raw": "{", "generated_tokens": 32, "finish_reason": "length",
-    })
+def evaluate_fixture_case(tmp_path, capsys, fixture_id):
     source_root = FIXTURES / "manifest.json"
     manifest = read_json(source_root)
-    case = next(case for case in manifest["cases"] if case["id"] == "recipe-token-limit")
+    case = next(case for case in manifest["cases"] if case["id"] == fixture_id)
     manifest["cases"] = [case]
     for key in ("source", "labels"):
         target = tmp_path / case[key]
@@ -335,11 +327,36 @@ def test_cli_evaluation_scores_production_token_limit(tmp_path, capsys, monkeypa
     path.write_text(json.dumps(manifest), encoding="utf-8")
     result = invoke(tmp_path, capsys, "evaluate", path, "--output", tmp_path / "eval")
     (scored,) = read_json(Path(result["report"]))["case_results"]
+    return scored
+
+
+def test_cli_evaluation_scores_production_token_limit(tmp_path, capsys, monkeypatch):
+    monkeypatch.setattr(models, "runtime_info", readiness)
+    monkeypatch.setattr(runtime_local, "call", lambda *args: {
+        "raw": "{", "generated_tokens": 32, "finish_reason": "length",
+    })
+    scored = evaluate_fixture_case(tmp_path, capsys, "recipe-token-limit")
     assert scored["status"] == "incomplete" and scored["incomplete_pages"] == [1]
     assert "model_token_limit" in scored["issues"]
-    if scored["failures"] == [{"metric": "required_issue", "location": "source/output_truncated"}]:
-        pytest.xfail("initial fixture expects an obsolete truncation issue code")
     assert scored["failures"] == []
+
+
+def test_cli_evaluation_credits_recipe_yield_issue_and_separates_step_metrics(tmp_path, capsys, monkeypatch):
+    monkeypatch.setattr(models, "runtime_info", readiness)
+    monkeypatch.setattr(runtime_local, "call", lambda *args: reply(
+        "recipe", record("recipe", "head", title="Scones au citron"),
+        record("step", "mix", "head", instruction="Mélanger les ingrédients secs."),
+        record("step", "add", "head", instruction="Ajouter le lait et le beurre."),
+        record("step", "bake", "head", instruction="Cuire 14 min à 190 °C.",
+               duration_minutes="14 min", temperature_c="190 °C"),
+    ))
+    scored = evaluate_fixture_case(tmp_path, capsys, "recipe-hand-style")
+    assert scored["status"] == "completed" and "recipe_yield_missing" in scored["issues"]
+    counts = scored["counts"]
+    assert counts["recipe_quantity_unit_yield_ok"] == 1  # only the missing yield
+    assert counts["recipe_time_temperature_n"] == counts["recipe_time_temperature_ok"] == 2
+    assert counts["covered_answerable_fields"] == 6  # title, three instructions, time, temperature
+    assert not any(item["location"].endswith("/yield_quantity") for item in scored["failures"])
 
 
 def test_synthetic_labels_use_canonical_unit_and_crossout_flag():
@@ -352,9 +369,8 @@ def test_synthetic_labels_use_canonical_unit_and_crossout_flag():
 
     actual = (normalize("unit", "L").value, normalize("flag", "yes").value)
     expected = (value(pack["pack_unit"]), value(ingredient["crossed_out"]))
-    if any(old == label for old, label in zip(("L", "1 tsp"), expected, strict=True)):
-        pytest.xfail("pack-unit or crossed-out label uses raw text in a normalized slot")
     assert expected == actual
+    assert (value(ingredient["quantity"]), value(ingredient["replacement_quantity"])) == ("1", "2")
 
 
 def test_archived_recipe_crop_matches_recorded_facsimile_pixels():

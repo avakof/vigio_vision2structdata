@@ -31,7 +31,7 @@
         ]
       },
       "sha256": "c4afc1b0e5145d7a949ca827a97d79fb0a9edce58796cbe65e992faaf908d4b2",
-      "labels_sha256": "31b54c923189c2f34817d7dedbe49eb8ca7ab275fbe33726f5923dbf7fca903e"
+      "labels_sha256": "d6923c32304446e9a50e9a4bdef960ecf3bbf8737772af7c94b9cdbd8712beed"
     },
     {
       "id": "invoice-page-limit",
@@ -292,7 +292,7 @@
         "labeler": "Independent QA session; manual transcription of synthetic source"
       },
       "sha256": "b843924aca77fd1dd8746e3e67ca701e111fcbf4ae3bc78fec05dcaf0df16e0f",
-      "labels_sha256": "1ef4754980b9dbfbe4b4311e1f0c0598f3037d14b1bb1f3d93fca0521806a9d0"
+      "labels_sha256": "711f4252b2b5d0dff5311129a1872d0c648fbc0a428ed5c73a12bcf6bfa9824f"
     },
     {
       "id": "recipe-rotated",
@@ -316,7 +316,7 @@
         "labeler": "Independent QA session; manual transcription of synthetic source"
       },
       "sha256": "e27512b8d23ebd238178acb2a789344527235caf0cecb91ce5fe7c7d24011d08",
-      "labels_sha256": "1ef4754980b9dbfbe4b4311e1f0c0598f3037d14b1bb1f3d93fca0521806a9d0"
+      "labels_sha256": "711f4252b2b5d0dff5311129a1872d0c648fbc0a428ed5c73a12bcf6bfa9824f"
     },
     {
       "id": "recipe-token-limit",
@@ -343,7 +343,7 @@
         "retries": 0
       },
       "sha256": "b843924aca77fd1dd8746e3e67ca701e111fcbf4ae3bc78fec05dcaf0df16e0f",
-      "labels_sha256": "0dde21ce683e42a33257f4a74b239881c3b72816c044d8285aacab1c17aef0f5"
+      "labels_sha256": "54dfe3729b3728e0543d35627f1d75004c53a389ba062c192c978413ad606fe5"
     }
   ]
 }

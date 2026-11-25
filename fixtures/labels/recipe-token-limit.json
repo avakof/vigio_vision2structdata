@@ -6,5 +6,5 @@
     1
   ],
   "skipped_pages": [],
-  "issues": ["output_truncated"]
+  "issues": ["model_token_limit"]
 }
