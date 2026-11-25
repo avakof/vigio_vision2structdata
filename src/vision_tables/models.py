@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 
 from .artifacts import write_json
-from .config import ProcessingError, QWEN_MODEL, QWEN_REVISION, Settings
+from .config import ProcessingError, QWEN_MODEL, QWEN_REVISION, Settings, digest
 from .provision import download, matches
 
 ASSETS = Path(__file__).with_name("assets")
@@ -50,27 +50,57 @@ def _weights(state: Path, *, verify: bool = False):
     return missing
 
 
+def _processor_check(state, python, versions):
+    stamp_path = state / "models/qwen-processor-check.json"
+    key = digest([QWEN_REVISION, versions, platform.platform(), (ASSETS / "check_processor.py").stat().st_mtime_ns])
+    try:
+        cached = json.loads(stamp_path.read_text())
+        if cached.get("key") == key and cached.get("passed"):
+            return cached
+    except (OSError, ValueError):
+        pass
+    env = os.environ | {"HF_HOME": str(state / "runtime-offline/hf"), "HF_HUB_OFFLINE": "1",
+                        "TRANSFORMERS_OFFLINE": "1", "HF_HUB_DISABLE_TELEMETRY": "1",
+                        "DO_NOT_TRACK": "1", "TOKENIZERS_PARALLELISM": "false"}
+    try:
+        result = subprocess.run([str(python), "-I", str(ASSETS / "check_processor.py"), str(state / "models/qwen")],
+                                env=env, capture_output=True, text=True, timeout=60)
+        if result.returncode:
+            return {"passed": False, "reason": result.stderr.strip()[-1000:]}
+        check = {"key": key, "passed": True, **json.loads(result.stdout)}
+        write_json(stamp_path, check)
+        return check
+    except (OSError, ValueError, subprocess.TimeoutExpired) as exc:
+        return {"passed": False, "reason": str(exc)}
+
+
 def runtime_info(settings: Settings) -> dict:
     state = settings.state_dir.resolve()
     python = state / "direct-env" / "bin" / "python"
+    pins = dict(line.strip().split("==") for line in (ASSETS / "direct-requirements.txt").read_text().splitlines()
+                if line and line[0].isalnum() and "==" in line)
     versions = {}
     if python.is_file():
         code = (
-            "import json, importlib.metadata as m; "
-            "print(json.dumps({p:m.version(p) for p in "
-            "('mlx-vlm','mlx','mlx-metal','transformers','llguidance','pillow','jsonschema')}))"
+            "import json, sys, importlib.metadata as m; "
+            "all_versions = {p.metadata['Name'].lower().replace('_', '-'):p.version for p in m.distributions()}; "
+            "print(json.dumps({n:all_versions[n] for n in sys.argv[1:] if n in all_versions}))"
         )
-        result = subprocess.run([str(python), "-I", "-c", code], capture_output=True, text=True, timeout=30)
+        result = subprocess.run([str(python), "-I", "-c", code, *pins], capture_output=True, text=True, timeout=30)
         if result.returncode == 0:
             versions = json.loads(result.stdout)
     missing = _weights(state)
-    pins = dict(line.strip().split("==") for line in (ASSETS / "direct-requirements.txt").read_text().splitlines()
-                if line and line[0].isalnum() and "==" in line)
     conflicts = {p: {"installed": v, "required": pins[p]} for p, v in versions.items() if v != pins[p]}
+    missing_packages = sorted(pins.keys() - versions.keys())
     host_ok = platform.system() == "Darwin" and platform.machine() == "arm64"
+    processor = {"passed": False, "reason": "Required runtime or processor files missing."}
+    if host_ok and not missing_packages and not conflicts and all(n.endswith(".safetensors") for n in missing):
+        processor = _processor_check(state, python, versions)
     info = {"model": QWEN_MODEL, "revision": QWEN_REVISION, "versions": versions,
-            "components": {"invalid_or_missing": missing, "mlx_runtime_found": bool(versions), "version_conflicts": conflicts},
-            "ready": host_ok and bool(versions) and not missing and not conflicts, "host_supported": host_ok}
+            "components": {"invalid_or_missing": missing, "mlx_runtime_found": bool(versions),
+                           "version_conflicts": conflicts, "missing_runtime_packages": missing_packages,
+                           "processor": processor},
+            "ready": host_ok and processor["passed"] and not missing, "host_supported": host_ok}
     if settings.pipeline == "hybrid":
         try:
             from .vision import hybrid_info
@@ -98,6 +128,7 @@ def doctor(settings: Settings) -> dict:
             "python": sys.version.split()[0], "core_versions": {
                 p: importlib.metadata.version(p) for p in ("pydantic", "pypdfium2", "Pillow", "jsonschema")},
             "runtime": runtime, "ready": runtime["ready"],
+            "readiness_basis": "Local component inventory and installed runtime versions. Real inference gates are recorded in evidence/acceptance.json.",
             "next": [] if runtime["ready"] else ["Run vision-tables models prepare and inspect component results."]}
 
 
@@ -132,6 +163,19 @@ def prepare(settings: Settings) -> dict:
                 for component, manifest in PADDLE_MANIFEST.items():
                     download(paddle_dir / "models" / component, manifest)
                 write_json(paddle_dir / "manifest.json", PADDLE_MANIFEST)
+                smoke = ASSETS / "paddle-gate1.py"
+                if not smoke.is_file():  # editable source checkout
+                    smoke = ASSETS.parents[2] / "scripts/paddle-gate1.py"
+                if not runtime_info(settings)["components"]["parser"]["ready"]:
+                    with (paddle_dir / "smoke.log").open("w") as log:
+                        result = subprocess.run(["/usr/bin/sandbox-exec", "-p",
+                                                 "(version 1) (allow default) (deny network*)",
+                                                 str(paddle_dir / "env/bin/python"), str(smoke)],
+                                                env=env | {"VT_STATE_DIR": str(state),
+                                                           "VT_INFERENCE_LOCK": str(settings.inference_lock)},
+                                                stdout=log, stderr=subprocess.STDOUT)
+                    if result.returncode:
+                        raise ProcessingError("parser_smoke_failed", f"Full parser smoke failed; see {paddle_dir / 'smoke.log'}.")
         except ValueError as exc:
             raise ProcessingError("integrity_error", str(exc)) from exc
         except (OSError, subprocess.CalledProcessError) as exc:

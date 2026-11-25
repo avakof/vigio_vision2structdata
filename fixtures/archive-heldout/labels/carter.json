@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "invoice",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "invoice",
+          "fields": {
+            "document_kind": "receipt",
+            "total": {
+              "value": "10",
+              "metric": "critical_numeric",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

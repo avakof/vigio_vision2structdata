@@ -14,8 +14,15 @@ import time
 
 
 WORKTREE = Path(__file__).resolve().parents[1]
-STATE = WORKTREE / ".vt-state" / "paddle"
-LOCK = Path("/Users/vakof/orca/vision-to-tables/.vt-state/inference.lock")
+STATE = Path(os.environ.get("VT_STATE_DIR", WORKTREE / ".vt-state")).resolve() / "paddle"
+def inference_lock():
+    if os.environ.get("VT_INFERENCE_LOCK"):
+        return Path(os.environ["VT_INFERENCE_LOCK"])
+    if (WORKTREE / ".git").exists():
+        common = subprocess.check_output(["git", "-C", str(WORKTREE), "rev-parse",
+                                          "--path-format=absolute", "--git-common-dir"], text=True)
+        return Path(common.strip()).parent / ".vt-state/inference.lock"
+    return Path.home() / ".local/state/vision-to-tables/inference.lock"
 LAYOUT_REVISION = "241f8bdfc77a7c7bee915a5057aaee58c235a8d3"
 VLM_REVISION = "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd"
 WEIGHTS = {
@@ -34,7 +41,7 @@ def create_invoice(path):
     subprocess.run(
         [
             "/usr/bin/sips", "-s", "format", "png",
-            str(WORKTREE / "scripts" / "paddle-gate1-invoice.svg"),
+            str(Path(__file__).with_name("paddle-gate1-invoice.svg")),
             "--out", str(path),
         ],
         check=True,
@@ -89,7 +96,8 @@ def run():
         use_queues=False,
         enable_mkldnn=False,
     )
-    inner = pipeline.paddlex_pipeline
+    outer = pipeline.paddlex_pipeline
+    inner = getattr(outer, "_pipeline", outer)
     report = {
         "platform": platform.platform(),
         "python": platform.python_version(),
@@ -112,7 +120,7 @@ def run():
         pass_dir = output / label
         pass_dir.mkdir(exist_ok=True)
         started = time.perf_counter()
-        results = pipeline.predict(str(image_path), max_new_tokens=768)
+        results = list(pipeline.predict(str(image_path), max_new_tokens=768))
         elapsed = time.perf_counter() - started
         if len(results) != 1:
             raise RuntimeError(f"Expected one page, got {len(results)}")
@@ -149,6 +157,8 @@ if __name__ == "__main__":
         "PADDLE_PDX_CACHE_HOME": str(STATE / "paddlex"),
         "PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK": "True",
     })
-    with LOCK.open("a") as lock:
+    lock_path = inference_lock()
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with lock_path.open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         run()

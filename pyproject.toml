@@ -23,5 +23,9 @@ vision-tables = "vision_tables.cli:main"
 [tool.hatch.build.targets.wheel]
 packages = ["src/vision_tables"]
 
+[tool.hatch.build.targets.wheel.force-include]
+"scripts/paddle-gate1.py" = "vision_tables/assets/paddle-gate1.py"
+"scripts/paddle-gate1-invoice.svg" = "vision_tables/assets/paddle-gate1-invoice.svg"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

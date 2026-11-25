@@ -1,0 +1,62 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "recipe",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "recipe",
+          "fields": {
+            "title": "To Make a Potatoe Pudding",
+            "yield_quantity": {
+              "value": null,
+              "state": "not_present",
+              "page": 1,
+              "metric": "recipe_quantity_unit_yield"
+            }
+          }
+        },
+        {
+          "id": "butter",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "butter",
+            "quantity": {
+              "value": "0.5",
+              "metric": "recipe_quantity_unit_yield",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        },
+        {
+          "id": "eggs",
+          "kind": "ingredient",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "eggs",
+            "quantity": {
+              "value": "6",
+              "metric": "recipe_quantity_unit_yield",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
