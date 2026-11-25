@@ -1,0 +1,156 @@
+[
+  {
+    "case": "missing_direct",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/feasibility/invoice.png",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress"
+    ],
+    "exit": 5,
+    "code": "missing_model",
+    "expected_code": "missing_model",
+    "stage": "read",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  },
+  {
+    "case": "missing_hybrid",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/feasibility/invoice.png",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress",
+      "--pipeline",
+      "hybrid"
+    ],
+    "exit": 5,
+    "code": "hybrid_unavailable",
+    "expected_code": "hybrid_unavailable",
+    "stage": "read",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  },
+  {
+    "case": "corrupt_pdf",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/synthetic/broken.pdf",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress"
+    ],
+    "exit": 4,
+    "code": "corrupt_pdf",
+    "expected_code": "corrupt_pdf",
+    "stage": "inspect",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  },
+  {
+    "case": "encrypted_pdf",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/synthetic/encrypted.pdf",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress"
+    ],
+    "exit": 4,
+    "code": "encrypted_pdf",
+    "expected_code": "encrypted_pdf",
+    "stage": "inspect",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  },
+  {
+    "case": "unsupported",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/synthetic/unsupported.txt",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress"
+    ],
+    "exit": 4,
+    "code": "unsupported_format",
+    "expected_code": "unsupported_format",
+    "stage": "inspect",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  },
+  {
+    "case": "byte_limit",
+    "command": [
+      ".venv/bin/python",
+      "tools/verify_offline.py",
+      "extract",
+      "fixtures/feasibility/invoice.png",
+      "--output",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative/out",
+      "--state-dir",
+      "/Users/vakof/orca/vision-to-tables/.vt-state/acceptance-negative",
+      "--no-progress",
+      "--max-bytes",
+      "64"
+    ],
+    "exit": 4,
+    "code": "oversized_input",
+    "expected_code": "oversized_input",
+    "stage": "inspect",
+    "network": {
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    "status": "passed"
+  }
+]
