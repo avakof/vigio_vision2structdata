@@ -2,7 +2,6 @@
 from __future__ import annotations
 
 import fcntl
-import hashlib
 import importlib.metadata
 import json
 import os
@@ -14,22 +13,11 @@ from pathlib import Path
 
 from .artifacts import write_json
 from .config import ProcessingError, QWEN_MODEL, QWEN_REVISION, Settings
+from .provision import download, matches
 
 ASSETS = Path(__file__).with_name("assets")
 DIRECT_MANIFEST = json.loads((ASSETS / "qwen.json").read_text())
-
-
-def _matches(path: Path, entry: dict) -> bool:
-    if path.is_symlink() or not path.is_file() or path.stat().st_size != entry["size"]:
-        return False
-    if entry["algorithm"] == "sha256":
-        hashed = hashlib.sha256()
-    else:
-        hashed = hashlib.sha1(f"blob {entry['size']}\0".encode())
-    with path.open("rb") as fp:
-        while block := fp.read(8 << 20):
-            hashed.update(block)
-    return hashed.hexdigest() == entry["digest"]
+PADDLE_MANIFEST = json.loads((ASSETS / "paddle.json").read_text())
 
 
 def _weights(state: Path, *, verify: bool = False):
@@ -51,7 +39,7 @@ def _weights(state: Path, *, verify: bool = False):
         if path.is_symlink() or st.st_size != entry["size"]:
             missing.append(entry["name"])
         elif verify or cached.get(entry["name"]) != stamp:
-            if _matches(path, entry):
+            if matches(path, entry):
                 stamps[entry["name"]] = stamp
             else:
                 missing.append(entry["name"])
@@ -70,16 +58,19 @@ def runtime_info(settings: Settings) -> dict:
         code = (
             "import json, importlib.metadata as m; "
             "print(json.dumps({p:m.version(p) for p in "
-            "('mlx-vlm','mlx','mlx-metal','transformers','pillow')}))"
+            "('mlx-vlm','mlx','mlx-metal','transformers','llguidance','pillow','jsonschema')}))"
         )
         result = subprocess.run([str(python), "-I", "-c", code], capture_output=True, text=True, timeout=30)
         if result.returncode == 0:
             versions = json.loads(result.stdout)
     missing = _weights(state)
+    pins = dict(line.strip().split("==") for line in (ASSETS / "direct-requirements.txt").read_text().splitlines()
+                if line and line[0].isalnum() and "==" in line)
+    conflicts = {p: {"installed": v, "required": pins[p]} for p, v in versions.items() if v != pins[p]}
     host_ok = platform.system() == "Darwin" and platform.machine() == "arm64"
     info = {"model": QWEN_MODEL, "revision": QWEN_REVISION, "versions": versions,
-            "components": {"invalid_or_missing": missing, "mlx_runtime_found": bool(versions)},
-            "ready": host_ok and bool(versions) and not missing, "host_supported": host_ok}
+            "components": {"invalid_or_missing": missing, "mlx_runtime_found": bool(versions), "version_conflicts": conflicts},
+            "ready": host_ok and bool(versions) and not missing and not conflicts, "host_supported": host_ok}
     if settings.pipeline == "hybrid":
         try:
             from .vision import hybrid_info
@@ -115,37 +106,34 @@ def prepare(settings: Settings) -> dict:
     state.mkdir(mode=0o700, parents=True, exist_ok=True)
     if platform.system() != "Darwin" or platform.machine() != "arm64":
         raise ProcessingError("unsupported_runtime", "The pinned MLX runtime requires an Apple Silicon Mac.")
-    if settings.pipeline == "hybrid":
-        raise ProcessingError("parser_setup_required", "See docs/HANDOFF.md for full parser provisioning and gate status.")
     uv = shutil.which("uv")
     if not uv:
         raise ProcessingError("missing_tool", "Install uv to provision the isolated MLX environment.")
     env = {**os.environ, "UV_CACHE_DIR": str(state / "uv-cache"), "HF_HOME": str(state / "hf-cache"),
            "HF_HUB_DISABLE_TELEMETRY": "1"}
-    proc_env = state / "direct-env"
     model_dir = state / "models" / "qwen"
     model_dir.mkdir(parents=True, exist_ok=True)
-    requirements = ASSETS / "direct-requirements.txt"
+
+    def install(proc_env, requirements):
+        if not (proc_env / "bin/python").exists():
+            subprocess.run([uv, "venv", "--python", sys.executable, str(proc_env)], check=True, env=env)
+        subprocess.run([uv, "pip", "install", "--python", str(proc_env / "bin/python"),
+                        "-r", str(ASSETS / requirements)], check=True, env=env)
+
     with (state / "provision.lock").open("a+b") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         try:
-            if not (proc_env / "bin/python").exists():
-                subprocess.run([uv, "venv", "--python", sys.executable, str(proc_env)], check=True, env=env)
-            subprocess.run([uv, "pip", "install", "--python", str(proc_env / "bin/python"),
-                            "-r", str(requirements)], check=True, env=env)
-            for entry in DIRECT_MANIFEST["files"]:
-                path = model_dir / entry["name"]
-                if _matches(path, entry):
-                    continue
-                temp = model_dir / (path.name + ".download")
-                url = f"https://huggingface.co/{QWEN_MODEL}/resolve/{QWEN_REVISION}/{path.name}"
-                subprocess.run(["curl", "--proto", "=https", "--proto-redir", "=https", "-fLsS",
-                                "--retry", "3", "--connect-timeout", "30", "--max-time", "7200",
-                                "-C", "-", "-o", str(temp), url], check=True)
-                if not _matches(temp, entry):
-                    temp.unlink(missing_ok=True)
-                    raise ProcessingError("integrity_error", f"Digest or size mismatch for {path.name}")
-                os.replace(temp, path)
+            install(state / "direct-env", "direct-requirements.txt")
+            download(model_dir, DIRECT_MANIFEST)
+            if settings.pipeline == "hybrid":
+                paddle_dir = state / "paddle"
+                paddle_dir.mkdir(exist_ok=True)
+                install(paddle_dir / "env", "paddle-requirements.txt")
+                for component, manifest in PADDLE_MANIFEST.items():
+                    download(paddle_dir / "models" / component, manifest)
+                write_json(paddle_dir / "manifest.json", PADDLE_MANIFEST)
+        except ValueError as exc:
+            raise ProcessingError("integrity_error", str(exc)) from exc
         except (OSError, subprocess.CalledProcessError) as exc:
             raise ProcessingError("provision_failed", f"Provisioning interrupted: {exc}") from exc
         missing = _weights(state, verify=True)
