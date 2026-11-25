@@ -463,7 +463,7 @@ def test_tie_and_unknown_classification_paths_are_incomplete_too():
 
 @pytest.mark.parametrize("placement,paired", [
     ("page-only", False), ("one-side", False), ("separate_columns", False), ("coarse_crop", False),
-    ("shared_line", True), ("adjacent_spans", True),
+    ("shared_line", True), ("adjacent_spans", True), ("distant_cells", False), ("paired_cell", True),
 ])
 def test_menu_translation_requires_evidence_for_the_pair(placement, paired):
     from vision_tables.contracts import Box, CorrectionSet
@@ -484,6 +484,13 @@ def test_menu_translation_requires_evidence_for_the_pair(placement, paired):
     elif placement in ("coarse_crop", "shared_line"):
         original = translated = "pair"
         locations.append(region("pair", "Soup / Soupe", 3, 100, "crop" if placement == "coarse_crop" else "native_text"))
+    elif placement in ("distant_cells", "paired_cell"):
+        from vision_tables.vision import _table_excerpt
+        cells = "<td>Soup</td><td></td><td></td><td>Soupe</td>" if placement == "distant_cells" else "<td>Soup / Soupe</td>"
+        text = _table_excerpt(f"<table><tr>{cells}</tr></table>")
+        original = translated = "pair"
+        table = region("pair", text, 3, 790, "parser_region")
+        locations.append(table.model_copy(update={"kind": "parser_table"}))
     reading = PageReading(page=1, doc_type="menu", regions=locations, records=[
         rec("menu", "m", currency=f("EUR"), venue_name=f("Bistro")),
         rec("menu_item", "i", "m", name=f("Soup", language="en", region_id=original),

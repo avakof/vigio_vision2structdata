@@ -383,8 +383,12 @@ def _paired_translation(original, translated, spatial_regions):
             if left.page != right.page:
                 continue
             if left.id == right.id:
-                if any(paired.search(fold(line)) for line in left.text.splitlines()):
+                # Parser tables use tabs between cells. Keep cell boundaries
+                # before normalization folds whitespace in the two spellings.
+                if any(paired.search(fold(cell)) for line in left.text.splitlines() for cell in line.split("\t")):
                     return True
+                continue
+            if left.kind == "parser_table" or right.kind == "parser_table":
                 continue
             if len(left.text.splitlines()) != 1 or len(right.text.splitlines()) != 1:
                 continue
