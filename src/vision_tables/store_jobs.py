@@ -8,6 +8,8 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import stat
 import threading
 import time
 from pathlib import Path
@@ -24,7 +26,7 @@ EXIT_MISSING_RUNTIME, EXIT_CONFLICT, EXIT_INVALID, EXIT_EXPORT_PENDING, EXIT_CAN
 MISSING_RUNTIME = {"missing_model", "hybrid_unavailable", "unsupported_runtime", "missing_tool", "provision_failed",
                    "parser_setup_required", "integrity_error", "domain_unavailable"}
 CONFLICT = {"stale_base", "lease_lost"}
-INVALID = {"unknown_document", "unknown_version", "invalid_correction", "document_mismatch", "invalid_format",
+INVALID = {"no_supported_files", "unknown_document", "unknown_version", "invalid_correction", "document_mismatch", "invalid_format",
            "invalid_input"}
 SUPPORTED_SUFFIXES = {".jpg", ".jpeg", ".png", ".pdf", ".heic", ".heif"}
 HEARTBEAT_SECONDS = 15.0
@@ -35,6 +37,7 @@ _HINTS = {
     "hybrid_unavailable": "The hybrid route needs the full local parser; use --pipeline direct or see 'doctor'.",
     "unsupported_runtime": "The pinned local runtime needs an Apple Silicon Mac.",
     "no_extraction": "No page yielded fields. Inspect readings/*.json and job.json under the artifact root.",
+    "source_too_large": "Reduce the file or raise --max-bytes (bounded at 512 MiB); the file was not read.",
     "invalid_input": "Check the path or file named in the message and rerun; nothing was stored.",
     "stale_base": "Run 'vision-tables documents show DOCUMENT_ID', export the latest version, review it and "
                   "set base_version to it.",
@@ -66,10 +69,24 @@ def error_payload(code: str, message: str, job: Job | dict | None = None) -> dic
                                      "input or settings and rerun; the original job is kept for evidence.")}
 
 
-def file_sha256(path: Path) -> str:
-    digest_ = hashlib.sha256()
-    with Path(path).open("rb") as fp:
+def file_sha256(path: Path, max_bytes: int | None = None) -> str:
+    """Hash a regular file, refusing links, devices and anything over ``max_bytes`` before/while reading."""
+    try:
+        fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK)
+    except OSError as exc:
+        raise ProcessingError("invalid_input", f"Cannot read {Path(path).name}: {exc.strerror or exc}") from exc
+    with os.fdopen(fd, "rb") as fp:
+        info = os.fstat(fp.fileno())
+        if not stat.S_ISREG(info.st_mode):
+            raise ProcessingError("invalid_input", f"{Path(path).name} is not a regular file.")
+        if max_bytes is not None and info.st_size > max_bytes:
+            raise ProcessingError("source_too_large", f"{Path(path).name} is {info.st_size} bytes; the limit is "
+                                  f"{max_bytes} (--max-bytes). The file was not read.")
+        digest_, total = hashlib.sha256(), 0
         while block := fp.read(1 << 20):
+            total += len(block)
+            if max_bytes is not None and total > max_bytes:  # grew while reading
+                raise ProcessingError("source_too_large", f"{Path(path).name} exceeds --max-bytes {max_bytes}.")
             digest_.update(block)
     return digest_.hexdigest()
 
@@ -270,9 +287,15 @@ def discover(input_dir: Path) -> tuple[list[str], list[str]]:
     return supported, other
 
 
-def batch_id_for(input_dir: Path, output: Path, settings: Settings) -> str:
-    return "batch-" + digest({"input": str(input_dir), "output": str(output),
-                              "settings": settings.content_settings()})[:24]
+def effective_fingerprint(settings: Settings) -> str:
+    """The same fingerprint extraction records as run.config_hash (schema, pipeline, model, runtime, settings)."""
+    from . import models, pipeline
+    return pipeline.extraction_fingerprint(settings, models.runtime_info(settings))
+
+
+def batch_id_for(input_dir: Path, output: Path, fingerprint: str) -> str:
+    """A batch resumes only under the same effective version: an upgrade starts a new batch."""
+    return "batch-" + digest({"input": str(input_dir), "output": str(output), "fingerprint": fingerprint})[:24]
 
 
 def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *, progress: Progress | None = None,
@@ -282,9 +305,11 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
         raise ProcessingError("invalid_input", f"{input_dir} is not a directory.")
     output.mkdir(parents=True, exist_ok=True)
     supported, unsupported = discover(input_dir)
-    batch_id = batch_id_for(input_dir, output, settings)
-    store.ensure_batch(batch_id, str(input_dir), str(output), json.dumps(settings.model_dump(mode="json"),
-                                                                         sort_keys=True), supported + unsupported)
+    fingerprint = effective_fingerprint(settings)  # once per batch; models.runtime_info may spawn a subprocess
+    batch_id = batch_id_for(input_dir, output, fingerprint)
+    store.ensure_batch(batch_id, str(input_dir), str(output),
+                       json.dumps({"fingerprint": fingerprint, "settings": settings.model_dump(mode="json")},
+                                  sort_keys=True), supported + unsupported)
     store.reap_dead_owners()
     rows = {r["name"]: r for r in store.batch_items(batch_id)}
     cancelled = False
@@ -298,15 +323,18 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
             continue
         source = input_dir / name
         try:
-            sha = file_sha256(source)
-        except OSError as exc:
+            sha = file_sha256(source, settings.max_bytes)
+        except ProcessingError as exc:  # unread: a later run retries once the file is acceptable
             token = store.claim_item(batch_id, name, ("failed",))
             if token:
                 store.finish_item(batch_id, name, token, "failed", job_id=None, source_sha256=None,
-                                  detail={"error": error_payload("invalid_input", f"Cannot read {name}: {exc}")})
+                                  detail={"status": "failed", "exit_code": exit_code(exc.code),
+                                          "error": error_payload(exc.code, str(exc))})
             continue
         changed = row["source_sha256"] not in (None, sha)
         retry = ("cancelled",) + (("failed",) if retry_failed else ()) + (("incomplete",) if retry_incomplete else ())
+        if row["state"] == "failed" and row["job_id"] is None:  # rejected before any read; now acceptable
+            retry += ("failed",)
         if changed:
             retry = ("completed", "incomplete", "failed", "skipped", "cancelled")
         token = store.claim_item(batch_id, name, retry)
@@ -340,6 +368,8 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
         counts[i["state"]] = counts.get(i["state"], 0) + 1
     if cancelled:
         status, code = "cancelled", EXIT_CANCELLED
+    elif not supported:
+        status, code = "failed", EXIT_INVALID  # nothing was extractable; never a silent success
     elif counts.get("failed") or counts.get("pending") or counts.get("running"):
         status, code = "failed" if counts.get("failed") else "running", EXIT_FAILED
     elif counts.get("incomplete"):
@@ -348,10 +378,14 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
         status, code = "completed", EXIT_OK
     store.set_batch(batch_id, "running" if status == "running" else status)
     report = {"status": status, "exit_code": code, "batch_id": batch_id, "input_dir": str(input_dir),
-              "output_dir": str(output), "counts": dict(sorted(counts.items())),
+              "output_dir": str(output), "counts": dict(sorted(counts.items())), "fingerprint": fingerprint,
               "items": [{"name": i["name"], "state": i["state"], "job_id": i["job_id"],
                          "source_sha256": i["source_sha256"], **(json.loads(i["detail_json"]) if i["detail_json"]
                                                                   else {})} for i in items]}
+    if not supported:
+        report["error"] = error_payload("no_supported_files", f"{input_dir} has no supported files "
+                                        f"({', '.join(sorted(SUPPORTED_SUFFIXES))}); {len(unsupported)} skipped.")
+        report["error"]["next"] = "Point batch at a directory of JPEG, PNG, PDF or HEIC files."
     status_file = output / f"{batch_id}.status.json"
     write_json(status_file, report)
     report["status_file"] = str(status_file)

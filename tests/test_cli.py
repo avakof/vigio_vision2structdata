@@ -338,3 +338,84 @@ def test_evaluate_runs_the_manifest_with_declared_configuration(run, monkeypatch
     assert code == 0 and out["cases"] == len(report["case_results"]) == len(seen) > 0
     assert report["configuration"]["max_tokens"] == 256 and out["manifest_sha256"] == report["manifest_sha256"]
     assert all(c["status"] == "missing_model" for c in report["case_results"])  # abstention is not credited
+
+
+def _inbox(tmp, **files):
+    inbox = tmp / "inbox"
+    inbox.mkdir(exist_ok=True)
+    for name, data in files.items():
+        (inbox / name.replace("_", ".")).write_bytes(data)
+    return inbox
+
+
+def test_batch_resumes_only_under_the_same_effective_version(run, monkeypatch):
+    from vision_tables import models
+    inbox = _inbox(run.tmp, a_png=PNG + b"a", b_png=PNG + b"b")
+    extract = use(monkeypatch, fake_extract())
+    out = str(run.tmp / "out")
+    code, first = run("batch", str(inbox), "--output", out)
+    assert code == 0 and first["counts"] == {"completed": 2} and len(extract.calls) == 2
+    code, same = run("batch", str(inbox), "--output", out)  # identical arguments and version: nothing repeated
+    assert same["batch_id"] == first["batch_id"] and len(extract.calls) == 2
+    real = models.runtime_info
+
+    def upgraded(settings):  # same command line, newer model revision / component
+        return {**real(settings), "revision": "upgraded-revision"}
+    monkeypatch.setattr(models, "runtime_info", upgraded)
+    code, new = run("batch", str(inbox), "--output", out)
+    assert code == 0 and new["batch_id"] != first["batch_id"] and new["fingerprint"] != first["fingerprint"]
+    assert len(extract.calls) == 4 and new["counts"] == {"completed": 2}
+    monkeypatch.setattr(models, "runtime_info", real)
+    code, back = run("batch", str(inbox), "--output", out)  # the old version's batch is still resumable
+    assert back["batch_id"] == first["batch_id"] and len(extract.calls) == 4
+
+
+def test_batch_fingerprint_is_the_extraction_fingerprint_and_computed_once(run, monkeypatch):
+    from vision_tables import pipeline
+    inbox = _inbox(run.tmp, a_png=PNG + b"a", b_png=PNG + b"b", c_png=PNG + b"c")
+    use(monkeypatch, fake_extract())
+    seen = []
+    real = pipeline.extraction_fingerprint
+    monkeypatch.setattr(pipeline, "extraction_fingerprint", lambda s, i: seen.append(1) or real(s, i))
+    code, out = run("batch", str(inbox), "--output", str(run.tmp / "out"))
+    assert code == 0 and len(seen) == 1 and len(out["fingerprint"]) == 64
+
+
+def test_oversized_and_unreadable_files_are_not_read_and_fail_visibly(run, monkeypatch):
+    import vision_tables.store_jobs as jobs
+    inbox = _inbox(run.tmp, ok_png=PNG + b"ok", big_png=b"x" * 5000)
+    (inbox / "link.png").symlink_to(inbox / "ok.png")
+    (inbox / "folder.png").mkdir()
+    extract = use(monkeypatch, fake_extract())
+    code, out = run("batch", str(inbox), "--output", str(run.tmp / "out"), "--max-bytes", "1000")
+    states = {i["name"]: i["state"] for i in out["items"]}
+    assert code == 4 and states == {"big.png": "failed", "ok.png": "completed"}
+    big = next(i for i in out["items"] if i["name"] == "big.png")
+    assert big["error"]["code"] == "source_too_large" and "--max-bytes" in big["error"]["message"]
+    assert [p.name for p in extract.calls] == ["ok.png"] and "was not read" in big["error"]["message"]
+    with pytest.raises(ProcessingError) as exc:  # growth after the size check is also bounded
+        jobs.file_sha256(inbox / "big.png", 1000)
+    assert exc.value.code == "source_too_large"
+    with pytest.raises(ProcessingError) as exc:
+        jobs.file_sha256(inbox / "link.png", 1000)
+    assert exc.value.code == "invalid_input"
+    monkeypatch.undo()
+    # a smaller replacement is accepted on the next run without --retry-failed
+    (inbox / "big.png").write_bytes(PNG + b"small")
+    use(monkeypatch, fake_extract())
+    monkeypatch.setattr("vision_tables.store.default_apply", lambda: fake_apply)
+    code, again = run("batch", str(inbox), "--output", str(run.tmp / "out"), "--max-bytes", "1000")
+    assert code == 0 and {i["name"]: i["state"] for i in again["items"]} == {"big.png": "completed",
+                                                                            "ok.png": "completed"}
+
+
+def test_batch_with_only_unsupported_files_is_a_visible_failure(run, monkeypatch):
+    inbox = _inbox(run.tmp, notes_txt=b"hi", data_csv=b"a,b")
+    extract = use(monkeypatch, fake_extract())
+    code, out = run("batch", str(inbox), "--output", str(run.tmp / "out"))
+    assert (code, out["status"], out["error"]["code"]) == (7, "failed", "no_supported_files")
+    assert out["counts"] == {"skipped": 2} and not extract.calls and "JPEG" in out["error"]["next"]
+    empty = run.tmp / "empty"
+    empty.mkdir()
+    code, out = run("batch", str(empty), "--output", str(run.tmp / "out2"))
+    assert (code, out["error"]["code"]) == (7, "no_supported_files")

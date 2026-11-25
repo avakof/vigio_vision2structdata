@@ -69,7 +69,10 @@ document; skipped members of a group stay in its identity and are reported in `c
 | 130 | `cancelled` | SIGINT/SIGTERM. No partial version; see `error.next`. |
 
 `batch` returns the worst item: any failure 4, else incomplete 3, cancelled 130. `skipped` (unsupported
-extension) is explicit per item and does not fail the batch. Every error has `code`, `message`, `next` and,
+extension) is explicit per item and does not fail a batch that also has supported files, but a directory with
+**no** supported file returns `failed`, exit 7, `error.code: no_supported_files`. A file that is not a regular
+file, is a symlink, or exceeds `--max-bytes` is rejected before it is read (`source_too_large` / `invalid_input`,
+item `failed`, exit 4) and is retried automatically on the next run once it is acceptable. Every error has `code`, `message`, `next` and,
 for jobs, `artifact_root`.
 
 Example `extract` result (abridged):
@@ -143,7 +146,12 @@ leading apostrophe unless they are plain signed numbers such as `-12.50`. Only t
 staged result (`jobs/<id>/documents.json`) **without new inference**, and republishes every pending export.
 A job interrupted during inference has no staged result: it is reported (`needs_rerun`) and `extract` is rerun.
 `batch` resumes by rerunning the same command; completed and unchanged items are skipped, expired item leases
-are reclaimed, and a live worker's item is never taken.
+are reclaimed, and a live worker's item is never taken. The batch id hashes the input and output paths and the
+effective extraction fingerprint (`pipeline.extraction_fingerprint(settings, models.runtime_info(settings))`,
+computed once per batch, the same value extraction records as `run.config_hash`). Upgrading the model, runtime,
+component, schema or pipeline version, or changing a content setting, therefore starts a new batch that
+re-extracts every file as a new extraction version; returning to the old version resumes the old batch. The
+`batch` result reports `fingerprint`.
 
 ## Known limits
 
