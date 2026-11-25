@@ -4,11 +4,13 @@ from types import SimpleNamespace
 
 import pytest
 
-from vision_tables import runtime_local, vision
-from vision_tables.config import Settings
+from vision_tables import models, pipeline, runtime_local, vision
+from vision_tables.config import ProcessingError, Settings
 from vision_tables.contracts import Run
 from vision_tables.domain import assemble
 from vision_tables.runtime_worker import MeasuredRecognition
+
+INVOICE = Path(__file__).resolve().parents[1] / "fixtures/feasibility/invoice.png"
 
 
 class NativeRecognizer:
@@ -87,10 +89,70 @@ def test_parser_geometry_and_context_omissions_preserve_available_text(tmp_path,
     assert reading.calls[0]["context_omitted_regions"] == 1
 
 
+@pytest.mark.parametrize("label,content", [
+    ("text", ""), ("text", " \n\t"), ("table", "<table><tr><td> </td></tr></table>"),
+    ("chart", ""), ("seal", ""),
+])
+def test_blank_text_bearing_block_preserves_box_and_marks_coverage_incomplete(tmp_path, monkeypatch, label, content):
+    extra = {"block_bbox": [20, 100, 180, 140], "block_label": label, "block_content": content}
+    telemetry = token_report(9, False, True, requested=2)
+    telemetry["returned_crops"] = 2
+    telemetry["crops"].append(dict(token_report(1, False, True)["crops"][0], crop_index=2))
+    ingestion, reading = _read(tmp_path, monkeypatch, telemetry, extra=extra)
+
+    good, unread = reading.regions
+    assert (unread.id, unread.kind, unread.text) == ("p1-parser-1", f"parser_{label}", "")
+    assert unread.box.xyxy == tuple(extra["block_bbox"])
+    assert unread.box.precision == "parser_region"
+    assert reading.incomplete and {i.code for i in reading.issues} == {"parser_content_incomplete"}
+    parser_call, qwen_call = reading.calls
+    assert parser_call["status"] == "incomplete" and parser_call["degraded_blocks"] == 1
+    assert parser_call["token_telemetry_complete"] and parser_call["token_limit_hits"] == 0
+    assert qwen_call["region_ids"] == [good.id]
+    run = Run(job_id="test", pipeline="hybrid", model="test", revision="test", runtime={}, settings={},
+              config_hash="0" * 64, calls=reading.calls)
+    document = assemble(ingestion, [reading], [1], run, "doc-test")
+    assert document.coverage.incomplete_pages == [1] and unread in document.regions
+    assert any(obs.field == "total" and obs.value == "37.25" for obs in document.observations)
+
+
+@pytest.mark.parametrize("label", ["image", "header_image", "footer_image"])
+def test_blank_non_text_image_block_does_not_degrade_coverage(tmp_path, monkeypatch, label):
+    extra = {"block_bbox": [20, 100, 180, 140], "block_label": label, "block_content": ""}
+    _, reading = _read(tmp_path, monkeypatch, token_report(9, False, True), extra=extra)
+    assert not reading.incomplete and not reading.issues
+    assert reading.calls[0]["status"] == "parsed" and reading.calls[0]["degraded_blocks"] == 0
+
+
+def test_blank_only_parser_output_cannot_succeed_extraction(tmp_path, monkeypatch):
+    settings = Settings(state_dir=tmp_path, doc_type="invoice", pipeline="hybrid", max_tokens=32, retries=0, max_crops=0)
+    monkeypatch.setattr(models, "runtime_info", lambda _: {
+        "ready": True, "model": "fixture", "revision": "fixture", "versions": {}, "components": {},
+    })
+    monkeypatch.setattr(vision, "hybrid_info", lambda _: {"ready": True, "model": "fixture"})
+
+    def call(kind, request, *unused):
+        assert kind == "paddle"
+        bounds = [20, 100, 180, 140]
+        return {"width": 800, "height": 420, "omitted_regions": 0, "layout": {"boxes": [{"coordinate": bounds}]},
+                "blocks": [{"block_bbox": bounds, "block_label": "text", "block_content": "   "}],
+                "recognition_tokens": token_report(1, False, True)}
+
+    monkeypatch.setattr(runtime_local, "call", call)
+    with pytest.raises(ProcessingError) as failure:
+        pipeline.extract(INVOICE, tmp_path / "output", settings, job_id="blank-parser")
+    assert failure.value.code == "no_extraction"
+    job = tmp_path / "jobs" / "blank-parser"
+    reading = json.loads((job / "readings" / "0001.json").read_text())
+    assert reading["incomplete"] and not reading["records"]
+    assert reading["regions"][0]["box"]["xyxy"] == [20, 100, 180, 140]
+    assert {issue["code"] for issue in reading["issues"]} >= {"parser_content_incomplete", "no_parser_regions"}
+    assert json.loads((job / "job.json").read_text())["status"] == "failed"
+
+
 def _read(tmp_path, monkeypatch, telemetry, *, omitted=0, extra=None):
-    invoice = Path(__file__).resolve().parents[1] / "fixtures/feasibility/invoice.png"
     settings = Settings(doc_type="invoice", pipeline="hybrid", max_tokens=32, retries=0, max_crops=0)
-    ingestion = vision.inspect_source(invoice, tmp_path, settings)
+    ingestion = vision.inspect_source(INVOICE, tmp_path, settings)
     page, = ingestion.pages
     monkeypatch.setattr(vision, "hybrid_info", lambda _: {"ready": True, "model": "PaddleOCR-VL-1.6"})
 

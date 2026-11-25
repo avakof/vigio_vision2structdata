@@ -27,6 +27,9 @@ hybrid_info = runtime_local.hybrid_info
 __all__ = ["inspect_source", "read_page", "hybrid_info"]
 _PROMPT_TEXT_LIMIT = 9000
 _PARSER_REGIONS = 32
+# Native PaddleOCR-VL deliberately skips OCR for these image-only classes.
+# Charts and seals can carry meaningful text, so blank decoding still affects coverage.
+_PARSER_NON_TEXT_LABELS = {"image", "header_image", "footer_image"}
 _MAX_MODEL_RECORDS = 128
 _ANCHOR_FIELDS = ("description", "sku", "name", "title", "instruction")
 _LANGUAGES = ("fr", "en", "mixed", "unknown")
@@ -279,22 +282,24 @@ def _parser_regions(page, reply, first_order):
     regions = []
     degraded = 0
     for index, block in enumerate(reply["blocks"][:_PARSER_REGIONS]):
+        label = block["block_label"]
         text = block["block_content"]
         if not isinstance(text, str):
             degraded += 1
             continue
-        if not text.strip():
+        if label == "table" and "<" in text:
+            text = _table_excerpt(text)
+        unread = not text.strip()
+        if unread and label in _PARSER_NON_TEXT_LABELS:
             continue
         try:
             bounds = box(page.image_to_original, block["block_bbox"], page.width, page.height)
         except (KeyError, TypeError, ValueError):
             bounds = None
-        if block["block_label"] == "table" and "<" in text:
-            text = _table_excerpt(text)
-        if not bounds or len(text) > 16384 or not text.strip():
+        if not bounds or len(text) > 16384 or unread:
             degraded += 1
         regions.append(Region(id=f"p{page.number}-parser-{index}", page=page.number, order=first_order + index,
-                              kind=f"parser_{block['block_label']}", text=text[:16384],
+                              kind=f"parser_{label}", text="" if unread else text[:16384],
                               box=Box(xyxy=bounds, precision="parser_region") if bounds else None))
     return regions, degraded
 
@@ -537,7 +542,8 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             added, degraded = _parser_regions(page, reply, max((r.order for r in native), default=-1) + 1)
             if degraded:
                 partial = True
-                issue("parser_content_incomplete", f"The parser returned missing geometry or unrepresentable content in {degraded} block(s).")
+                issue("parser_content_incomplete",
+                      f"The parser returned unread text, missing geometry, or unrepresentable content in {degraded} block(s).")
             omitted = reply["omitted_regions"] + max(0, len(reply["blocks"]) - _PARSER_REGIONS)
             if omitted:
                 partial = True
@@ -545,7 +551,7 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             call.update({key: reply[key] for key in ("device", "components", "runtime_seconds", "peak_rss_bytes",
                                                    "seconds_including_lock_wait") if key in reply})
             call.update(omitted_regions=omitted, degraded_blocks=degraded)
-            if not added or not reply.get("layout", {}).get("boxes"):
+            if not any(region.text for region in added) or not reply.get("layout", {}).get("boxes"):
                 raise ProcessingError("no_parser_regions", "The full parser returned no usable layout and recognition result.")
             call["status"] = "incomplete" if hits or not telemetry_complete or omitted or degraded else "parsed"
         except ProcessingError as exc:
@@ -560,9 +566,10 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
         finally:
             write_json(directory / "attempt.json", call)
 
-    offered, text = _region_prompt([*native, *added], page)
+    parser_excerpts = [region for region in added if region.text]
+    offered, text = _region_prompt([*native, *parser_excerpts], page)
     if settings.pipeline == "hybrid":
-        context_omissions = sum(region.id not in offered for region in added)
+        context_omissions = sum(region.id not in offered for region in parser_excerpts)
         if context_omissions:
             partial = True
             issue("parser_context_limit", "The page prompt budget excluded some native parser regions.")
