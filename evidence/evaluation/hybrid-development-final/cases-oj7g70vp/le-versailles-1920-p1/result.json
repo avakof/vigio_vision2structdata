@@ -1,0 +1,2459 @@
+[
+  {
+    "document_id": "doc-20966aea6542e570e176b77d6ba54535",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "menu",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "ec26aa74a2c03e49f21b8b185eea3e194c61121c3232df8bb624d978caff977a",
+      "media_type": "image/jpeg",
+      "size_bytes": 607118,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1957.0,
+        "height": 2343.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1292,
+        "image_height": 1547,
+        "image_to_original": [
+          1.5147058823529411,
+          0.0,
+          0.0,
+          1.5145442792501616,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_doc_title",
+        "text": "Le Versailles",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            639.2058823529411,
+            31.80542986425339,
+            1811.5882352941176,
+            224.1525533290239
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-1",
+        "page": 1,
+        "order": 1,
+        "kind": "parser_text",
+        "text": "Téléphones",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            574.0735294117646,
+            286.24886877828055,
+            684.6470588235294,
+            342.28700711053654
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-2",
+        "page": 1,
+        "order": 2,
+        "kind": "parser_text",
+        "text": "Cavian frais 16\nLe Saucisson aband comme à éton 87\nLes Hors-5 Oeuvres Vianés 97mm",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            895.1911764705882,
+            365.0051712992889,
+            1914.5882352941176,
+            593.7013574660633
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-3",
+        "page": 1,
+        "order": 3,
+        "kind": "parser_text",
+        "text": "les Notages Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            561.9558823529411,
+            602.7886231415642,
+            1931.25,
+            861.7756948933419
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-4",
+        "page": 1,
+        "order": 4,
+        "kind": "parser_text",
+        "text": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            808.8529411764706,
+            857.2320620555914,
+            1922.1617647058822,
+            1081.3846153846152
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-5",
+        "page": 1,
+        "order": 5,
+        "kind": "parser_text",
+        "text": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            955.7794117647059,
+            1098.044602456367,
+            1940.3382352941176,
+            1369.1480284421461
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-6",
+        "page": 1,
+        "order": 6,
+        "kind": "parser_text",
+        "text": "Abeyman de Vean futuris prois 18: Mulloy Chotun, to Verbon, Grillante de pore, aux éfinards 10: Cervelle fromotterin 1: Cote Vean was the 10: Chauvronne garnig: Tete de Vean Vinaigre 10: Cote Ve manchon 9: Permestrian 13: CBateubrian 1:",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            802.7941176470588,
+            1363.0898513251454,
+            1928.2205882352941,
+            1641.7659987071752
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-7",
+        "page": 1,
+        "order": 7,
+        "kind": "parser_text",
+        "text": "deônffet froid { January 9. Kean 8. Probesy 8. anglaise 10: 44 Poulet 11. Foie gros 4:\nLes légumes { Asperges 9: 9. Pois merry 8: H. Verbrahn 8. Th�niards 5\nChum. Fleurs - Antidhaur 6. Carottes 6. Laitius 6. Salade 4",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            477.13235294117646,
+            1646.3096315449257,
+            1934.2794117647059,
+            1959.820297349709
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-8",
+        "page": 1,
+        "order": 8,
+        "kind": "parser_text",
+        "text": "Fante maison : Fante aux hares 6. Traises crênes 10: Mella 10: Place H. Fromme Antienne 5: Ferche Mella 9: Creme de marons 6: Bonhe jout 6. Coupe de hares 5. Ananas au Poids 6. Mornigne glacier Chantilly 5. Fromages 2. Huile 2. Caused by Brist. losses 4. Cerises 6. Amandes 6. Orange 4. Bananas 6",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            811.8823529411765,
+            1967.3930187459598,
+            1925.191176470588,
+            2318.767291531997
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            621.0,
+            12.0,
+            1830.0,
+            243.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "8e07d18f99e81c1fdf4b9589810c151f34b0bc6bb866b9d41caac7c079004ba7",
+        "crop_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          621.0,
+          12.0
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "373ab2c025c0470db7d706872a62610f",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.2",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc22a9f48a54aeb4794c6b2856ddbd3ffd846e5141f7dc5b92fef0d3d0e2ace8",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 9,
+            "returned_crops": 9,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 2,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 3,
+                "generated_tokens": 40,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 4,
+                "generated_tokens": 64,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 5,
+                "generated_tokens": 70,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 6,
+                "generated_tokens": 54,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 7,
+                "generated_tokens": 106,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 8,
+                "generated_tokens": 111,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 9,
+                "generated_tokens": 128,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 67.4091339999868,
+          "peak_rss_bytes": 10206806016,
+          "seconds_including_lock_wait": 67.91237841700786,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 1693,
+          "prompt_tokens": 3266,
+          "load_seconds": 2.924712833017111,
+          "generation_seconds": 33.19268520898186,
+          "runtime_seconds": 39.33852391701657,
+          "peak_rss_bytes": 7459422208,
+          "mlx_peak_bytes": 7694953548,
+          "seconds_including_lock_wait": 40.0688964590081,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-0",
+              "raw": "Le Versailles",
+              "quote": "Le Versailles",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+              "quote": "les Notages Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "description",
+              "region_id": "p1-parser-4",
+              "raw": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+              "quote": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "description",
+              "region_id": "p1-parser-5",
+              "raw": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+              "quote": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8"
+          ],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "length",
+          "generated_tokens": 4096,
+          "prompt_tokens": 3277,
+          "load_seconds": 3.9848813329881523,
+          "generation_seconds": 75.99984241698985,
+          "runtime_seconds": 83.79284008298418,
+          "peak_rss_bytes": 7466041344,
+          "mlx_peak_bytes": 7695051852,
+          "seconds_including_lock_wait": 84.47064704200602,
+          "overflow": true,
+          "recovery_issues": {
+            "model_prefix_recovered": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-0",
+              "raw": "Le Versailles",
+              "quote": "Le Versailles",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+              "quote": "les Notages Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Crème Augente",
+              "quote": "Crème Augente",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Octie Mannite",
+              "quote": "Octie Mannite",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Causemune Certine",
+              "quote": "Causemune Certine",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Les Deutf-Oenfala gelée",
+              "quote": "Les Deutf-Oenfala gelée",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Osmelke Luvorgarite",
+              "quote": "Osmelke Luvorgarite",
+              "state": "readable"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Oeuf brillés brume",
+              "quote": "Oeuf brillés brume",
+              "state": "readable"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "section",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Osmelke Luvorgarite",
+              "quote": "Osmelke Luvorgarite",
+              "state": "readable"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-3",
+              "raw": "Oeuf brillés brume",
+              "quote": "Oeuf brillés brume",
+              "state": "readable"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-4",
+              "raw": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+              "quote": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Barone Versailles",
+              "quote": "Barone Versailles",
+              "state": "readable"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "10°",
+              "quote": "10°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "fuite Maconnaise",
+              "quote": "fuite Maconnaise",
+              "state": "readable"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "10°",
+              "quote": "10°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r33",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Melane fut",
+              "quote": "Melane fut",
+              "state": "readable"
+            },
+            {
+              "local_id": "r33",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "8°",
+              "quote": "8°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r33",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r34",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Saumnon",
+              "quote": "Saumnon",
+              "state": "readable"
+            },
+            {
+              "local_id": "r34",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "10°",
+              "quote": "10°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r34",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r35",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Verte",
+              "quote": "Verte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r35",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "10°",
+              "quote": "10°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r35",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r36",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Rai bonne non",
+              "quote": "Rai bonne non",
+              "state": "readable"
+            },
+            {
+              "local_id": "r36",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "8°",
+              "quote": "8°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r36",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r37",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Epeellem, fish",
+              "quote": "Epeellem, fish",
+              "state": "readable"
+            },
+            {
+              "local_id": "r37",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "8°",
+              "quote": "8°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r37",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r38",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Sole Pretanne",
+              "quote": "Sole Pretanne",
+              "state": "readable"
+            },
+            {
+              "local_id": "r38",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "13°",
+              "quote": "13°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r38",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r39",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-4",
+              "raw": "Sole frite",
+              "quote": "Sole frite",
+              "state": "readable"
+            },
+            {
+              "local_id": "r39",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-4",
+              "raw": "12°",
+              "quote": "12°",
+              "state": "readable"
+            },
+            {
+              "local_id": "r39",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-5",
+              "raw": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+              "quote": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+              "state": "readable"
+            },
+            {
+              "local_id": "r41",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "Les Filets de Proche-la-la",
+              "quote": "Les Filets de Proche-la-la",
+              "state": "readable"
+            },
+            {
+              "local_id": "r41",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r41",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r42",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "Le Soulet",
+              "quote": "Le Soulet",
+              "state": "readable"
+            },
+            {
+              "local_id": "r42",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-5",
+              "raw": "8%",
+              "quote": "8%",
+              "state": "readable"
+            },
+            {
+              "local_id": "r42",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r43",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "Curnonery",
+              "quote": "Curnonery",
+              "state": "readable"
+            },
+            {
+              "local_id": "r43",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-5",
+              "raw": "14.16%",
+              "quote": "14.16%",
+              "state": "readable"
+            },
+            {
+              "local_id": "r43",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r44",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "La Vieux de Tour Blancasse",
+              "quote": "La Vieux de Tour Blancasse",
+              "state": "readable"
+            },
+            {
+              "local_id": "r44",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-5",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable"
+            },
+            {
+              "local_id": "r44",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r45",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "Le Setit-Sale aux Chaux",
+              "quote": "Le Setit-Sale aux Chaux",
+              "state": "readable"
+            },
+            {
+              "local_id": "r45",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-5",
+              "raw": "10m",
+              "quote": "10m",
+              "state": "readable"
+            },
+            {
+              "local_id": "r45",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 80,
+          "prompt_tokens": 963,
+          "load_seconds": 3.373272958007874,
+          "generation_seconds": 3.0303388339816593,
+          "runtime_seconds": 9.784532374993432,
+          "peak_rss_bytes": 7156613120,
+          "mlx_peak_bytes": 7221409540,
+          "seconds_including_lock_wait": 10.600657959003001,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-0",
+              "raw": "Le Versailles",
+              "quote": "Le Versailles",
+              "state": "readable",
+              "language": "fr",
+              "writing": "print"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": true,
+      "original_capture": "suspected_incomplete"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "menu",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.venue_name",
+        "entity_id": "p1.root",
+        "field": "venue_name",
+        "raw": "Le Versailles",
+        "value": "Le Versailles",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "Le Versailles",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Menu"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.date",
+        "entity_id": "p1.root",
+        "field": "date",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "du 14 Juin 1930"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "fr"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Les Potages"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.translated_name",
+        "entity_id": "p1.r1",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Soups"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.description",
+        "entity_id": "p1.r1",
+        "field": "description",
+        "raw": "Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+        "value": "Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "les Notages Crème Augente 3. Octie Mannite 4. Causemune Certine 5. Les Deutf-Oenfala gelée 5. Osmelke Luvorgarite 5. Oeuf brillés brume 5.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Les Poissons"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.translated_name",
+        "entity_id": "p1.r2",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Fish"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.description",
+        "entity_id": "p1.r2",
+        "field": "description",
+        "raw": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+        "value": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "Barone Versailles n°: fuite Maconnaise 10°: Melane fut 8°: Saumnon 10°: Verte 10°: Rai bonne non 8°: Epeellem, fish: Sole Pretanne 13°: Sole frite 12°",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Nos Spécialités"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.translated_name",
+        "entity_id": "p1.r3",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Specialties"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.description",
+        "entity_id": "p1.r3",
+        "field": "description",
+        "raw": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+        "value": "Les Filets de Proche-la-la Le Soulet 8% Curnonery 14.16% La Vieux de Tour Blancasse 10 Le Setit-Sale aux Chaux 10m",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "Les Filets de Proche-la-la\nLe Soulet 8% Curnonery 14.16%\nLa Vieux de Tour Blancasse 10\nLe Setit-Sale aux Chaux 10m",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Les Viandes"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.translated_name",
+        "entity_id": "p1.r4",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Meats"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Le Buffet froid"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.translated_name",
+        "entity_id": "p1.r5",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Cold Buffet"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Les Légumes"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.translated_name",
+        "entity_id": "p1.r6",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Vegetables"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Les Desserts"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.translated_name",
+        "entity_id": "p1.r7",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Desserts"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "suspected_cutoff",
+        "message": "page 1 may be cut off at the edge of the capture",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.version",
+          "p1.root.date",
+          "p1.root.currency",
+          "p1.r1.name",
+          "p1.r1.translated_name",
+          "p1.r2.name",
+          "p1.r2.translated_name",
+          "p1.r3.name",
+          "p1.r3.translated_name",
+          "p1.r4.name",
+          "p1.r4.translated_name",
+          "p1.r5.name",
+          "p1.r5.translated_name",
+          "p1.r6.name",
+          "p1.r6.translated_name",
+          "p1.r7.name",
+          "p1.r7.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "model_prefix_recovered",
+        "message": "Kept closed records from a reply truncated at the verified token limit.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "model_token_limit",
+        "message": "The local model reached its token budget and may have omitted page content.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts returned different document or row structures.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "suspected_capture",
+        "message": "The model flagged content near a potentially cut-off page edge.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu.version: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.version"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu.date: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.date"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu.currency: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "menu_item.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "item_without_price",
+        "message": "no price was read for this item",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
