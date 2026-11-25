@@ -125,7 +125,10 @@ def _canonical_error(lexical: str, value, entities: dict) -> str | None:
 
 
 def _human(old: Observation, entity, change: Correction, reviewer: str) -> Observation:
-    was = f"model read {old.raw[:400]!r} as {old.value!r} ({old.state})" if old.origin == "observed" else f"previous value {old.value!r} ({old.state})"
+    shown = "no text" if old.raw is None else repr(old.raw[:400])      # unreadable, absent and disputed fields have no raw
+    candidates = f", candidates {[a[:200] for a in old.alternatives[:6]]!r}" if old.alternatives else ""
+    was = (f"model read {shown} as {old.value!r} ({old.state}{candidates})" if old.origin == "observed"
+           else f"previous value {old.value!r} ({old.state}{candidates})")
     reason = f"{reviewer}: {change.reason} [{was}]"[:4000]
     return Observation(id=old.id, entity_id=old.entity_id, field=old.field, raw=change.raw, value=change.value,
                        state=change.state, origin="human_supplied", language=old.language,

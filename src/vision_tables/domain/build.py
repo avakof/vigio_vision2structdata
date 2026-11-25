@@ -189,6 +189,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
                 "value": None, "state": "ambiguous", "reason": "item_ref does not name a menu item on this page"})
 
     # ---- derive, check, finalize --------------------------------------------------------------------------
+    issues = catalog.bind_field_issues(issues, observations, entities)
     return finalize(doc_type, document_id, scope, ingested.source, ingested.source_skipped_pages, pages, list(regions.values()), run, entities, observations,
                     issues, skipped, sorted(incomplete), sorted(read), capture)
 
@@ -199,8 +200,9 @@ def finalize(doc_type, document_id, scope, source, source_skipped, pages, region
     if not entities:
         carried = [*carried, catalog.make("empty_document", "no record was assembled from the processed pages")]
     valid_obs = {o.id for o in final}
+    human = {o.id for o in final if o.origin == "human_supplied"}
     all_issues, seen = [], set()
-    for issue in [*carried, *derived]:
+    for issue in [*(catalog.classify_carried(i, human) for i in carried), *derived]:
         issue = issue.model_copy(update={"observation_ids": [i for i in issue.observation_ids if i in valid_obs]})
         key = (issue.code, issue.message, issue.page, issue.severity, tuple(issue.observation_ids))
         if key not in seen:

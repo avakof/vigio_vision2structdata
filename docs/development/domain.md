@@ -86,13 +86,27 @@ Approval (`CorrectionSet.approve`) is accepted only for the exact resulting vers
 `review` issue, coverage is complete, no cutoff is suspected, the type is known and observations exist.
 Information notes are retained. An unresolved non-critical reading stated by a human is `info`.
 
+## Carried adapter and ingestion issues
+
+Issues the domain does not derive are carried into every version and classified on each rebuild
+(`catalog.classify_carried`), never deleted:
+
+* `low_contrast`, `low_resolution`, `pdf_text_partial`, `pdf_text_unreliable` describe the source and are
+  `info` from assembly on; approval preserves them. Any field they cause to read badly raises its own issue.
+* `unsupported_quote` and `reread_disagreement` are bound at assembly to the observations they left unresolved
+  (matched on the adapter's reason text) and stay `review` until every one of those observations is a
+  human-supplied value, then become `info` with the original message and ids. With no affected observation they
+  are `info` from the start.
+* Everything else (token or record limits, parser limits, `reread_structure_disagreement`, `no_fields`,
+  `suspected_capture`, page skips) stays `review`; incomplete coverage and suspected cutoff remain unapprovable.
+
 ## Corrections
 
 A change targets an existing, non-calculated observation and must carry a canonical typed value (decimal
 string, ISO date, ISO currency, canonical unit code, closed enum, boolean, `n/d` fraction, id of a
 `menu_item`) or a non-readable state with a reason. The replacement keeps the observation id, becomes
 `human_supplied`, keeps the model's evidence, appends a `human` evidence entry and records the model's
-original reading in `reason`. The previous version retains the untouched original. Dependent calculations,
+original reading in `reason` (including candidates and 'no text' for unreadable, absent or disputed fields). The previous version retains the untouched original. Dependent calculations,
 issues and approval are recomputed; a later edit resets approval.
 
 ## Limitations (known, intended)

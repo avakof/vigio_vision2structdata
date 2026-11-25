@@ -75,6 +75,13 @@ CATALOG = {
     "suspected_cutoff": ("review", "*", "reprocess from a complete capture; a suspected cutoff cannot be approved."),
     "empty_document": ("review", "*", "reprocess: nothing was read from the processed pages."),
     "region_conflict": ("info", "*", "Two regions shared an id; the ingested region was kept."),
+    # adapter/ingestion issues the domain classifies (see classify_carried)
+    "low_contrast": ("info", "*", "Capture-quality notice: check the page; approval keeps the note."),
+    "low_resolution": ("info", "*", "Capture-quality notice: check the page; approval keeps the note."),
+    "pdf_text_partial": ("info", "*", "The PDF text layer is partial and the page image supplements it; approval keeps the note."),
+    "pdf_text_unreliable": ("info", "*", "The PDF text layer is unreliable and the page image supplements it; approval keeps the note."),
+    "unsupported_quote": ("review", "*", "Correct each affected observation; the model's quote did not support its reading."),
+    "reread_disagreement": ("review", "*", "Correct each affected observation; independent model readings disagreed."),
     "invalid_region": ("review", "*", "A region was outside its page or on an unknown page and was dropped."),
 }
 DERIVED = frozenset(code for code in CATALOG if code in {
@@ -89,6 +96,41 @@ DERIVED = frozenset(code for code in CATALOG if code in {
     "absence_unverified", "missing_root", "multiple_roots"})
 # Carried issues about one observation retire when a human supplies that observation.
 OBSERVATION_BOUND = frozenset({"invalid_evidence"})
+
+
+# Capture-quality notices from ingestion. They describe the source, not an unresolved reading, so they
+# are always retained as information; field-level problems they cause raise their own issues.
+ADVISORY = frozenset({"low_contrast", "low_resolution", "pdf_text_partial", "pdf_text_unreliable"})
+# Page-level adapter warnings about individual fields. Each is bound at assembly to the observations it
+# affected (matched by the adapter's reason text) and stays `review` until every one of them is corrected
+# by a human. An issue that affects no remaining observation is information.
+FIELD_LEVEL = {"unsupported_quote": ("unreadable", "not supported by its source quote"),
+               "reread_disagreement": ("ambiguous", "readings disagree")}
+
+
+def bind_field_issues(issues, observations, entities):
+    """Attach affected observation ids to FIELD_LEVEL issues that have none yet (assembly only)."""
+    page_of = {e.id: e.page for e in entities}
+    bound = []
+    for issue in issues:
+        if issue.code in FIELD_LEVEL and not issue.observation_ids and issue.page is not None:
+            state, needle = FIELD_LEVEL[issue.code]
+            ids = [o.id for o in observations if o.origin == "observed" and o.state == state and page_of.get(o.entity_id) == issue.page
+                   and needle in (o.reason or "")]
+            issue = issue.model_copy(update={"observation_ids": ids})
+        bound.append(issue)
+    return bound
+
+
+def classify_carried(issue, human: set[str]):
+    """Severity of a carried adapter/ingestion issue given which observations a human has supplied."""
+    if issue.code in ADVISORY:
+        severity = "info"
+    elif issue.code in FIELD_LEVEL:
+        severity = "info" if set(issue.observation_ids) <= human else "review"
+    else:
+        return issue
+    return issue if issue.severity == severity else issue.model_copy(update={"severity": severity})
 
 
 def make(code: str, message: str, *, page: int | None = None, observations=(), severity: str | None = None) -> Issue:

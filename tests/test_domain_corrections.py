@@ -170,3 +170,90 @@ def test_correcting_an_observation_retires_its_evidence_issue_only():
     assert "invalid_evidence" in issue_codes(v1, "review")
     v2 = apply_corrections(v1, edit(v1, fix("p1.i.total", "5.00", raw="5,00")))
     assert "invalid_evidence" not in issue_codes(v2)
+
+
+def invoice_with(issues=(), **replace):
+    reading = EXAMPLES["invoice"]()
+    root = reading.records[0]
+    root.fields.update(replace)
+    return reading.model_copy(update={"issues": list(issues)})
+
+
+UNSUPPORTED = FieldRead(raw=None, state="unreadable", reason="The field was not supported by its source quote.", alternatives=["27,11 €"])
+DISPUTED = FieldRead(raw=None, state="ambiguous", alternatives=["Maison Dupont", "Maison Dupond"],
+                     reason="Independent local readings disagree.", evidence="Maison Dupont SARL")
+NOTHING = FieldRead(raw=None, state="not_present", reason="no customer printed")
+
+
+def test_fields_without_raw_text_can_be_corrected_and_keep_the_model_history():
+    v1 = make(invoice_with(total=UNSUPPORTED, supplier_name=DISPUTED, customer_name=NOTHING))
+    assert all(obs(v1, f"p1.inv.{n}").raw is None for n in ("total", "supplier_name", "customer_name"))
+    v2 = apply_corrections(v1, edit(v1, fix("p1.inv.total", "27.11", raw="27,11 €"),
+                                    fix("p1.inv.supplier_name", "Maison Dupont SARL", raw="Maison Dupont SARL"),
+                                    fix("p1.inv.customer_name", "Client SA", raw="Client SA")))
+    total, supplier = obs(v2, "p1.inv.total"), obs(v2, "p1.inv.supplier_name")
+    assert total.origin == supplier.origin == "human_supplied" and total.value == "27.11"
+    assert "model read no text" in total.reason and "unreadable" in total.reason and "27,11 €" in total.reason
+    assert "Maison Dupond" in supplier.reason and "ambiguous" in supplier.reason
+    assert supplier.evidence[0].quote == "Maison Dupont SARL" and supplier.evidence[-1].channel == "human"
+    assert obs(v1, "p1.inv.supplier_name").alternatives == ["Maison Dupont", "Maison Dupond"]   # parent untouched
+    still = apply_corrections(v1, edit(v1, fix("p1.inv.customer_name", None, state="not_present", reason="confirmed blank")))
+    assert obs(still, "p1.inv.customer_name").raw is None and obs(still, "p1.inv.customer_name").state == "not_present"
+
+
+def test_capture_quality_notices_are_kept_as_information_and_do_not_block_a_human_approval():
+    notices = [Issue(code=c, message=f"{c} notice", page=1) for c in ("low_contrast", "low_resolution", "pdf_text_partial", "pdf_text_unreliable")]
+    v1 = make(invoice_with(notices))
+    assert [(i.code, i.severity, i.message) for i in v1.issues if i.code in {n.code for n in notices}] == [
+        (n.code, "info", n.message) for n in notices]
+    assert review_gate(v1)["approvable"] and v1.validation == "valid"
+    v2 = apply_corrections(v1, edit(v1, approve=True))
+    assert v2.approval == "human_approved"
+    assert [i for i in v2.issues if i.code in {n.code for n in notices}] == [i for i in v1.issues if i.code in {n.code for n in notices}]
+    assert revalidate(v2) == v2
+
+
+def test_field_level_adapter_warnings_retire_only_when_their_observations_are_corrected():
+    warnings = [Issue(code="unsupported_quote", message="quote not supported", page=1),
+                Issue(code="reread_disagreement", message="rereads disagreed", page=1)]
+    v1 = make(invoice_with(warnings, total=UNSUPPORTED, supplier_name=DISPUTED))
+    bound = {i.code: i for i in v1.issues if i.code in ("unsupported_quote", "reread_disagreement")}
+    assert bound["unsupported_quote"].observation_ids == ["p1.inv.total"] and bound["reread_disagreement"].observation_ids == ["p1.inv.supplier_name"]
+    assert {"unsupported_quote", "reread_disagreement"} <= set(issue_codes(v1, "review"))
+    half = apply_corrections(v1, edit(v1, fix("p1.inv.supplier_name", "Maison Dupont SARL")))
+    assert "reread_disagreement" in issue_codes(half, "info") and "unsupported_quote" in issue_codes(half, "review")
+    with pytest.raises(ProcessingError) as error:
+        apply_corrections(half, edit(half, approve=True))
+    assert "unsupported_quote" in str(error.value) and "unreadable_field" in str(error.value)
+    done = apply_corrections(half, edit(half, fix("p1.inv.total", "27.11", raw="27,11 €"), approve=True))
+    assert done.approval == "human_approved"
+    kept = {i.code: i for i in done.issues}
+    assert kept["unsupported_quote"].severity == kept["reread_disagreement"].severity == "info"
+    assert kept["unsupported_quote"].message == "quote not supported" and kept["unsupported_quote"].observation_ids == ["p1.inv.total"]
+    assert revalidate(done) == done
+
+
+def test_a_field_warning_that_affects_no_remaining_observation_is_only_information():
+    v1 = make(invoice_with([Issue(code="unsupported_quote", message="an earlier attempt", page=1)]))
+    assert [i.severity for i in v1.issues if i.code == "unsupported_quote"] == ["info"]
+    assert review_gate(v1)["approvable"]
+
+
+def test_incomplete_capture_and_structure_protections_still_block_approval():
+    for code in ("model_token_limit", "reread_structure_disagreement", "parser_region_limit", "no_fields", "page_limit"):
+        v1 = make(invoice_with([Issue(code=code, message=code, page=1)]))
+        assert code in issue_codes(v1, "review"), code
+        with pytest.raises(ProcessingError) as error:
+            apply_corrections(v1, edit(v1, approve=True))
+        assert error.value.code == "approval_blocked" and code in str(error.value)
+    cut = make(invoice_with([Issue(code="low_contrast", message="faint", page=1)]).model_copy(update={"suspected_cutoff": True}))
+    with pytest.raises(ProcessingError):
+        apply_corrections(cut, edit(cut, approve=True))
+    assert "low_contrast" in issue_codes(cut, "info")
+
+
+def test_unresolved_domain_validations_survive_the_advisory_downgrade():
+    v1 = make(invoice_with([Issue(code="low_contrast", message="faint", page=1)], total=f("99,00")))
+    assert "total_mismatch" in issue_codes(v1, "review")
+    with pytest.raises(ProcessingError):
+        apply_corrections(v1, edit(v1, approve=True))
