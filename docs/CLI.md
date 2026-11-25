@@ -20,7 +20,7 @@ Published layout, atomic per format, `manifest.json` last (its absence means an 
   tables/documents.csv pages.csv regions.csv entities.csv observations.csv evidence.csv issues.csv corrections.csv
   tables/table_<kind>.csv    one wide table per entity kind present (line_item, menu_item, ingredient, ...)
   review/review.json corrections.schema.json corrections.example.json
-  document.sqlite3           only with --format sqlite|all
+  document.sqlite3           selected snapshot, relational rows and ancestor hashes (--format sqlite|all)
   manifest.json              snapshot sha256 and sha256 of every published file
 ```
 

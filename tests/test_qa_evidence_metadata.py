@@ -235,6 +235,11 @@ def test_fresh_store_exports_evidence_metadata_for_extracted_and_corrected_versi
         values = {row["observation_id"]: row for row in csv_rows(result / "tables/observations.csv")}
         assert languages == {key: row["language"] or None for key, row in values.items()}
         assert values["p1.line.description"]["value"] == "'=2+2"
+        with sqlite3.connect(result / "document.sqlite3") as exported:
+            assert exported.execute("PRAGMA foreign_key_check").fetchall() == []
+            assert exported.execute("SELECT version FROM document_versions").fetchall() == [(doc.version,)]
+            assert exported.execute("SELECT version FROM export_lineage ORDER BY version").fetchall() == [
+                (n,) for n in range(1, doc.version + 1)]
         for database in (store.path, result / "document.sqlite3"):
             with closing(sqlite3.connect(database)) as conn:
                 assert materialized(conn, doc.version) == (issues, regions, languages)
@@ -306,6 +311,7 @@ def test_visual_style_is_page_metadata_and_leaves_locale_unresolved(tmp_path, mo
     assert csv_rows(published / "tables/regions.csv")[0]["writing"] == "mixed"
     review = json.loads((published / "review/review.json").read_bytes())
     date = next(item for item in review["review_items"] if item["observation_id"] == OBS_DATE)
+    assert [(s["page"], s["language"], s["writing"]) for s in review["page_styles"]] == [(1, "mixed", "mixed")]
     assert date["language"] == "fr" and all(ref["region"] is None for ref in date["evidence"])
 
 

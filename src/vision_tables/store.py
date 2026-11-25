@@ -684,12 +684,29 @@ def copy_version(store: Store, destination: sqlite3.Connection, document_id: str
                            (document_id, version)).fetchone()
         doc_row = conn.execute("SELECT * FROM documents WHERE document_id=?", (document_id,)).fetchone()
         src_row = conn.execute("SELECT * FROM sources WHERE sha256=?", (doc_row["source_sha256"],)).fetchone()
+        lineage = conn.execute("""
+            WITH RECURSIVE ancestors(version) AS (
+                SELECT ?
+                UNION
+                SELECT v.parent_version FROM ancestors a JOIN document_versions v
+                  ON v.document_id=? AND v.version=a.version WHERE v.parent_version IS NOT NULL
+            )
+            SELECT v.document_id, v.version, v.parent_version, v.kind, v.snapshot_sha256
+            FROM ancestors a JOIN document_versions v ON v.document_id=? AND v.version=a.version
+            ORDER BY v.version
+        """, (version, document_id, document_id)).fetchall()
+        correction = conn.execute("SELECT * FROM corrections WHERE document_id=? AND result_version=?",
+                                  (document_id, version)).fetchone()
     document = Document.model_validate_json(row["snapshot_json"])
     destination.execute("BEGIN IMMEDIATE")
     try:
-        for table, data in (("sources", src_row), ("documents", doc_row), ("document_versions", row)):
+        for table, data in (("sources", src_row), ("documents", doc_row)):
             destination.execute(f"INSERT INTO {table} VALUES ({','.join('?' * len(data.keys()))})", tuple(data))
+        destination.executemany("INSERT INTO export_lineage VALUES (?,?,?,?,?)", lineage)
+        destination.execute(f"INSERT INTO document_versions VALUES ({','.join('?' * len(row))})", tuple(row))
         materialize(destination, document)
+        if correction:
+            destination.execute("INSERT INTO corrections VALUES (?,?,?,?,?,?,?)", tuple(correction))
         destination.execute("COMMIT")
     except BaseException:
         if destination.in_transaction:

@@ -16,6 +16,21 @@ from .config import ProcessingError
 IMMUTABLE = ("document_versions", "pages", "regions", "entities", "observations",
              "evidence_links", "issues", "corrections")
 
+def _version_table(lineage_table: str) -> str:
+    return f"""CREATE TABLE document_versions (
+        document_id TEXT NOT NULL REFERENCES documents(document_id), version INTEGER NOT NULL,
+        parent_version INTEGER, kind TEXT NOT NULL CHECK (kind IN ('extraction','correction')),
+        base_version INTEGER NOT NULL, config_hash TEXT NOT NULL, job_id TEXT NOT NULL,
+        validation TEXT NOT NULL, approval TEXT NOT NULL, reviewer TEXT,
+        snapshot_json TEXT NOT NULL, snapshot_sha256 TEXT NOT NULL, signature_json TEXT NOT NULL,
+        created_at TEXT NOT NULL,
+        PRIMARY KEY (document_id, version),
+        FOREIGN KEY (document_id, parent_version) REFERENCES {lineage_table}(document_id, version),
+        CHECK (version >= 1), CHECK (parent_version IS NULL OR parent_version < version),
+        CHECK (kind = 'extraction' OR parent_version IS NOT NULL),
+        CHECK (base_version >= 1 AND base_version <= version))"""
+
+
 _V1 = [
     """CREATE TABLE sources (
         sha256 TEXT PRIMARY KEY CHECK (length(sha256) = 64),
@@ -45,18 +60,7 @@ _V1 = [
     """CREATE TABLE documents (
         document_id TEXT PRIMARY KEY, source_sha256 TEXT NOT NULL REFERENCES sources(sha256),
         scope_json TEXT NOT NULL, doc_type TEXT NOT NULL, created_at TEXT NOT NULL)""",
-    """CREATE TABLE document_versions (
-        document_id TEXT NOT NULL REFERENCES documents(document_id), version INTEGER NOT NULL,
-        parent_version INTEGER, kind TEXT NOT NULL CHECK (kind IN ('extraction','correction')),
-        base_version INTEGER NOT NULL, config_hash TEXT NOT NULL, job_id TEXT NOT NULL,
-        validation TEXT NOT NULL, approval TEXT NOT NULL, reviewer TEXT,
-        snapshot_json TEXT NOT NULL, snapshot_sha256 TEXT NOT NULL, signature_json TEXT NOT NULL,
-        created_at TEXT NOT NULL,
-        PRIMARY KEY (document_id, version),
-        FOREIGN KEY (document_id, parent_version) REFERENCES document_versions(document_id, version),
-        CHECK (version >= 1), CHECK (parent_version IS NULL OR parent_version < version),
-        CHECK (kind = 'extraction' OR parent_version IS NOT NULL),
-        CHECK (base_version >= 1 AND base_version <= version))""",
+    _version_table("document_versions"),
     # One base extraction per logical document and effective configuration. 'provisional' marks an
     # incomplete base that a later complete retry under the same key may replace while unedited.
     """CREATE TABLE extractions (
@@ -174,6 +178,16 @@ _V3 = [
 MIGRATIONS = (Migration(1, "initial", tuple(_V1)),
               Migration(2, "export_published_formats", tuple(_V2)),
               Migration(3, "review_severity_and_crop_transforms", tuple(_V3)))
+# A standalone export carries one complete snapshot. Its parent is identified
+# by number and hash in export_lineage; ancestor document data stays in the store.
+_EXPORT_LINEAGE = """CREATE TABLE export_lineage (
+    document_id TEXT NOT NULL REFERENCES documents(document_id), version INTEGER NOT NULL,
+    parent_version INTEGER, kind TEXT NOT NULL, snapshot_sha256 TEXT NOT NULL,
+    PRIMARY KEY (document_id, version),
+    FOREIGN KEY (document_id, parent_version) REFERENCES export_lineage(document_id, version))"""
+_export_v1 = tuple(_version_table("export_lineage") if stmt == _version_table("document_versions") else stmt
+                   for stmt in _V1)
+EXPORT_MIGRATIONS = (Migration(1, "standalone_snapshot", (_EXPORT_LINEAGE, *_export_v1)), *MIGRATIONS[1:])
 LATEST = MIGRATIONS[-1].version
 
 

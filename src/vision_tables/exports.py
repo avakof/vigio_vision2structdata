@@ -21,7 +21,7 @@ from pathlib import Path
 
 from .config import ProcessingError
 from .contracts import CorrectionSet, Document
-from .migrations import apply_migrations
+from .migrations import EXPORT_MIGRATIONS, apply_migrations
 from .store import DEFAULT_FORMATS, Store, copy_version, digest_bytes
 from .vocabulary import FIELDS
 
@@ -231,6 +231,9 @@ def review_files(store: Store, doc: Document, snapshot_sha: str) -> dict[str, by
         "artifact_root": str(store.artifact_root(job)),
         "source": source,
         "coverage": doc.coverage.model_dump(mode="json"),
+        "page_styles": [{"page": region.page, "writing": region.writing, "language": region.language,
+                         "page_reference": page_ref(region.page), "region_id": region.id}
+                        for region in doc.regions if region.kind == "page_style"],
         "issue_counts": {"review": sum(i.severity == "review" for i in doc.issues),
                          "info": sum(i.severity == "info" for i in doc.issues)},
         "issues": [{"seq": i, "code": x.code, "severity": x.severity, "message": x.message, "page": x.page,
@@ -307,7 +310,8 @@ def _sqlite_bytes(store: Store, document_id: str, version: int, scratch: Path) -
     path = scratch / "document.sqlite3"
     conn = sqlite3.connect(path, isolation_level=None)
     try:
-        apply_migrations(conn, store.created_at(document_id, version))
+        conn.execute("PRAGMA foreign_keys=ON")
+        apply_migrations(conn, store.created_at(document_id, version), EXPORT_MIGRATIONS)
         copy_version(store, conn, document_id, version)
         conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
     finally:
