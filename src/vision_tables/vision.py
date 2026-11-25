@@ -8,6 +8,7 @@ import math
 import re
 import unicodedata
 from collections import Counter, defaultdict
+from functools import lru_cache
 from html.parser import HTMLParser
 from pathlib import Path
 
@@ -33,6 +34,9 @@ _PARSER_REGIONS = 32
 _PARSER_NON_TEXT_LABELS = {"image", "header_image", "footer_image"}
 _MAX_MODEL_RECORDS = 128
 _MAX_REPLY_BYTES = 512 << 10
+_MAX_ALTERNATIVES = 16
+# Keep a source citation for each retained candidate before retaining additional citations.
+_MAX_FIELD_CITATIONS = 2 * _MAX_ALTERNATIVES
 _ROW_ID = {"type": "string", "pattern": "^r[1-9][0-9]{0,2}$"}
 _LEGACY_ID = {"type": "string", "pattern": "^[A-Za-z0-9_.:-]+$", "maxLength": 48}
 _ROOT_ID = {"enum": ["root"]}
@@ -332,7 +336,17 @@ def _model_proposal(raw, doc_type, verified_cap):
     return proposal, truncated
 
 
-def _payload(raw, doc_type, offered, native_only, crop, *, verified_cap=False):
+def _citation(read, offered, page, attempt_id):
+    region = offered.get(read.region_id)
+    channel = "direct"
+    if region and region.kind == "native_text":
+        channel = "native_text"
+    elif region and region.kind.startswith("parser_"):
+        channel = "parser"
+    return Evidence(page=page, region_id=read.region_id, quote=read.evidence, channel=channel, attempt_id=attempt_id)
+
+
+def _payload(raw, doc_type, offered, native_only, crop, *, verified_cap=False, page=None, attempt_id=None):
     proposal, truncated = _model_proposal(raw, doc_type, verified_cap)
     family = proposal["d"]
     vocabulary = _vocabulary(family)
@@ -405,15 +419,25 @@ def _payload(raw, doc_type, offered, native_only, crop, *, verified_cap=False):
                 if name == "item_ref":
                     findings["model_item_ref_unresolved"] += 1
                     continue
-                alternatives = []
+                candidates_by_value = defaultdict(list)
                 for candidate in candidates:
                     read, bad = _read_field(candidate, offered, native_only, crop)
                     unsupported |= bad
-                    if read.state == "readable" and read.raw and read.raw not in alternatives:
-                        alternatives.append(read.raw)
-                record["fields"][name] = FieldRead(raw=None, state="ambiguous" if alternatives else "unreadable",
-                                                   alternatives=alternatives[:16],
-                                                   reason="Conflicting or invalid repeated field readings in one reply.")
+                    if read.state == "readable":
+                        citations = candidates_by_value[read.raw]
+                        if page is not None:
+                            citation = _citation(read, offered, page, attempt_id)
+                            if citation not in citations:
+                                citations.append(citation)
+                alternatives = list(candidates_by_value)[:_MAX_ALTERNATIVES]
+                findings["model_alternative_limit"] += len(candidates_by_value) - len(alternatives)
+                contested = FieldRead(raw=None, state="ambiguous" if alternatives else "unreadable",
+                                      alternatives=alternatives, reason="Conflicting or invalid repeated field readings in one reply.")
+                evidence_groups = [candidates_by_value[value] for value in alternatives if candidates_by_value[value]]
+                citations = [citations[0] for citations in evidence_groups]
+                citations.extend(citation for group in evidence_groups for citation in group[1:])
+                contested._trace = citations[:_MAX_FIELD_CITATIONS]
+                record["fields"][name] = contested
                 continue
             if name == "item_ref" and field["v"] is not None:
                 pending_refs.append((record, field))
@@ -590,7 +614,8 @@ def _call_attempt(page, root, settings, image, offered, text, native_only, crop,
                      or generated >= settings.max_tokens)
         call["overflow"] = exhausted
         proposal, unsupported, findings, unresolved = _payload(reply["raw"], settings.doc_type, offered, native_only, crop,
-                                                               verified_cap=generated == settings.max_tokens)
+                                                               verified_cap=generated == settings.max_tokens,
+                                                               page=page.number, attempt_id=attempt_id)
         if findings:
             call["recovery_issues"] = dict(findings)
         if unresolved:
@@ -599,14 +624,8 @@ def _call_attempt(page, root, settings, image, offered, text, native_only, crop,
             raise ValueError("No valid fields survived model reply recovery.")
         for record in proposal.records:
             for reading in record.fields.values():
-                region = offered.get(reading.region_id)
-                channel = "direct"
-                if region and region.kind == "native_text":
-                    channel = "native_text"
-                elif region and region.kind.startswith("parser_"):
-                    channel = "parser"
-                reading._trace = [Evidence(page=page.number, region_id=reading.region_id,
-                                           quote=reading.evidence, channel=channel, attempt_id=attempt_id)]
+                if not reading._trace:
+                    reading._trace = [_citation(reading, offered, page.number, attempt_id)]
         call["status"] = "incomplete" if exhausted or findings else "parsed"
         call["fields"] = [
             {"local_id": record.local_id, "kind": record.kind, "field": name, "region_id": read.region_id,
@@ -630,68 +649,175 @@ def _anchors_match(left, right):
         return False
     if left.kind in FAMILIES:
         return True
-    return any(left.fields.get(key) and right.fields.get(key) and left.fields[key].raw
-               and left.fields[key].raw == right.fields[key].raw for key in _ANCHOR_FIELDS)
+    shared = [key for key in _ANCHOR_FIELDS if key in left.fields and key in right.fields
+              and left.fields[key].raw and right.fields[key].raw]
+    return bool(shared) and all(_normalize(left.fields[key].raw) == _normalize(right.fields[key].raw) for key in shared)
 
 
-def _parent_context(record, records, unresolved):
-    context = []
-    if record.local_id in unresolved:
-        return None
-    while record.parent_id is not None:
-        record = records[record.parent_id]
-        if record.local_id in unresolved:
-            return None
-        anchors = tuple((key, _normalize(record.fields[key].raw)) for key in _ANCHOR_FIELDS
-                        if key in record.fields and record.fields[key].raw)
-        if record.kind not in FAMILIES and not anchors:
-            return None
-        context.append((record.kind, anchors))
-    return tuple(context)
+def _unique_matches(left_ids, right_ids, compatible):
+    left_matches, right_matches = defaultdict(list), defaultdict(list)
+    for left in left_ids:
+        for right in right_ids:
+            if compatible(left, right):
+                left_matches[left].append(right)
+                right_matches[right].append(left)
+    return [(left, matches[0]) for left, matches in left_matches.items()
+            if len(matches) == 1 and len(right_matches[matches[0]]) == 1]
 
 
-def _merge(base, reread, crop, base_unresolved=(), reread_unresolved=()):
-    """Merge only independently identifiable occurrences in the same parent context."""
-    mismatch = base.doc_type != reread.doc_type
-    conflict = False
-    if mismatch:
-        return mismatch, conflict
+def _transfer_unresolved(base, reread, base_unresolved, reread_unresolved):
+    if not (base_unresolved or reread_unresolved) or base.doc_type != reread.doc_type:
+        return base_unresolved, reread_unresolved, not base_unresolved
+    old_rows = {row.local_id: row for row in base.records}
+    new_rows = {row.local_id: row for row in reread.records}
+    pairs = _unique_matches(old_rows, new_rows, lambda left, right: _anchors_match(old_rows[left], new_rows[right]))
+    old_unresolved = base_unresolved | {left for left, right in pairs
+                                       if right in reread_unresolved and old_rows[left].parent_id is None}
+    new_unresolved = reread_unresolved | {right for left, right in pairs
+                                        if left in base_unresolved and new_rows[right].parent_id is None}
+    # A richer retry may supersede the base only if it can account for its explicitly unresolved rows.
+    can_replace = base_unresolved <= {left for left, _ in pairs}
+    return old_unresolved, new_unresolved, can_replace
+
+
+def _occurrences_agree(left_ids, right_ids, compatible):
+    """Check for a bijection of occurrences, including siblings with identical anchors."""
+    if len(left_ids) != len(right_ids):
+        return False
+    edges = {left: [right for right in right_ids if compatible(left, right)] for left in left_ids}
+    assigned = {}
+
+    def augment(left, seen):
+        for right in edges[left]:
+            if right in seen:
+                continue
+            seen.add(right)
+            if right not in assigned or augment(assigned[right], seen):
+                assigned[right] = left
+                return True
+        return False
+
+    return all(augment(left, set()) for left in left_ids)
+
+
+def _field_candidates(read):
+    if read.state == "readable":
+        return [read.raw]
+    return read.alternatives if read.state == "ambiguous" else []
+
+
+def _merge_field(old, reading, reread_is_earlier):
+    candidates = [_field_candidates(read) for read in (old, reading)]
+    old_values, new_values = candidates
+    if not old_values or not new_values:
+        return old, False, 0
+    if old.state == reading.state == "readable" and _normalize(old.raw) == _normalize(reading.raw):
+        return old, False, 0
+    ordered_reads = (reading, old) if reread_is_earlier else (old, reading)
+    if reread_is_earlier:
+        candidates.reverse()
+    distinct = list(dict.fromkeys(value for values in candidates for value in values))
+    alternatives = distinct[:_MAX_ALTERNATIVES]
+    trace = []
+    for read in ordered_reads:
+        for evidence in read._trace:
+            if evidence not in trace and any(_contains(value, evidence.quote) for value in alternatives):
+                trace.append(evidence)
+    if len(trace) > _MAX_FIELD_CITATIONS:
+        primary = {next((index for index, evidence in enumerate(trace) if _contains(value, evidence.quote)), None)
+                   for value in alternatives} - {None}
+        extra = [index for index in range(len(trace)) if index not in primary]
+        selected = sorted(primary | set(extra[:_MAX_FIELD_CITATIONS - len(primary)]))
+        trace = [trace[index] for index in selected]
+    citation = next((evidence for evidence in trace if evidence.region_id), trace[0] if trace else None)
+    if old.state == reading.state:
+        different = set(old_values) != set(new_values)
+    else:
+        single, ambiguous = (old_values, new_values) if old.state == "readable" else (new_values, old_values)
+        different = single[0] not in ambiguous
+    agreed_reason = next((read.reason for read in ordered_reads if read.state == "ambiguous"), None)
+    merged = FieldRead(raw=None, state="ambiguous", evidence=citation.quote if citation else "",
+                       region_id=citation.region_id if citation else None,
+                       alternatives=alternatives, reason="Independent local readings disagree." if different else agreed_reason,
+                       language=old.language if old.language == reading.language else None)
+    if old._writing == reading._writing:
+        merged._writing = old._writing
+    merged._trace = trace
+    return merged, different, len(distinct) - len(alternatives)
+
+
+def _merge(base, reread, crop, base_unresolved=(), reread_unresolved=(), *, reread_is_earlier=False):
+    """Compare whole-page occurrence trees and merge only mutually identifiable siblings."""
+    if base.doc_type != reread.doc_type:
+        return True, False, 0
     previous = {row.local_id: row for row in base.records}
     followup = {row.local_id: row for row in reread.records}
-    old_context = {key: _parent_context(row, previous, base_unresolved) for key, row in previous.items()}
-    new_context = {key: _parent_context(row, followup, reread_unresolved) for key, row in followup.items()}
-    for candidate in followup.values():
-        context = new_context[candidate.local_id]
-        if context is None:
-            continue
-        matches = [row for key, row in previous.items() if old_context[key] == context and _anchors_match(row, candidate)]
-        if len(matches) != 1:
-            mismatch |= not crop and not matches
-            continue
-        peer = matches[0]
-        if sum(_anchors_match(peer, row) for key, row in followup.items() if new_context[key] == context) != 1:
-            continue
-        for name, reading in candidate.fields.items():
-            old = peer.fields.get(name)
-            # Relationship IDs are local to the response that produced them.
-            if name == "item_ref":
+    old_children, new_children = defaultdict(list), defaultdict(list)
+    for rows, children in ((previous, old_children), (followup, new_children)):
+        for row in rows.values():
+            children[row.parent_id].append(row.local_id)
+
+    @lru_cache(maxsize=None)
+    def anchored(left, right):
+        return _anchors_match(previous[left], followup[right])
+
+    @lru_cache(maxsize=None)
+    def identifiable(old_parent, new_parent):
+        return dict(_unique_matches(old_children[old_parent], new_children[new_parent], anchored))
+
+    @lru_cache(maxsize=None)
+    def observations(side, identifier):
+        row = (previous if side == "old" else followup)[identifier]
+        return {name: {_normalize(value) for value in _field_candidates(read)}
+                for name, read in row.fields.items() if name != "item_ref"}
+
+    @lru_cache(maxsize=None)
+    def same_subtree(left, right, ambiguous_group=False):
+        if (left in base_unresolved) != (right in reread_unresolved):
+            return False
+        old, new = previous[left], followup[right]
+        if not anchored(left, right):
+            def signature(row):
+                return {name: (read.state, read.raw, tuple(read.alternatives)) for name, read in row.fields.items()
+                        if name != "item_ref"}
+            if old.kind != new.kind or signature(old) != signature(new):
+                return False
+        elif ambiguous_group or identifiable(old.parent_id, new.parent_id).get(left) != right:
+            ambiguous_group = True
+            # Compare the repeated observations as a multiset without assigning values across sibling rows.
+            old_fields, new_fields = observations("old", left), observations("new", right)
+            if any(old_fields[name] and new_fields[name] and old_fields[name].isdisjoint(new_fields[name])
+                   for name in old_fields.keys() & new_fields.keys()):
+                return False
+        return _occurrences_agree(old_children[left], new_children[right],
+                                  lambda child, peer: same_subtree(child, peer, ambiguous_group))
+
+    mismatch = not crop and not _occurrences_agree(old_children[None], new_children[None], same_subtree)
+    conflict, omitted = False, 0
+    parents = [(None, None)]
+    while parents:
+        old_parent, new_parent = parents.pop()
+        for left, right in identifiable(old_parent, new_parent).items():
+            if left in base_unresolved or right in reread_unresolved:
                 continue
-            if (old is None and not crop) or (old is not None and old.state == "unreadable" and reading.state == "readable"):
-                peer.fields[name] = reading
-            elif old is not None and old.raw and reading.raw and _normalize(old.raw) != _normalize(reading.raw):
-                citation = reading if reading.region_id and not old.region_id else old
-                peer.fields[name] = FieldRead(raw=None, state="ambiguous", evidence=citation.evidence,
-                                              region_id=citation.region_id, alternatives=[old.raw, reading.raw],
-                                              reason="Independent local readings disagree.")
-                peer.fields[name]._trace = old._trace + reading._trace
-                peer.fields[name].language = old.language if old.language == reading.language else None
-                if old._writing == reading._writing:
-                    peer.fields[name]._writing = old._writing
-                conflict = True
-            elif old and old.state == "ambiguous" and reading.raw and reading.raw not in old.alternatives:
-                old.alternatives.append(reading.raw)
-                old._trace.extend(reading._trace)
-    return mismatch or (not crop and len(previous) != len(followup)), conflict
+            parents.append((left, right))
+            peer = previous[left]
+            for name, reading in followup[right].fields.items():
+                # Relationship IDs are local to the response that produced them.
+                if name == "item_ref":
+                    continue
+                old = peer.fields.get(name)
+                if old is None:
+                    if not crop:
+                        peer.fields[name] = reading
+                elif old.state == "unreadable":
+                    if reading.state != "unreadable":
+                        peer.fields[name] = reading
+                elif reading.state != "unreadable":
+                    peer.fields[name], different, dropped = _merge_field(old, reading, reread_is_earlier)
+                    conflict |= different
+                    omitted += dropped
+    return mismatch, conflict, omitted
 
 
 def _targets(payload, available):
@@ -755,12 +881,14 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
     added = []
     partial = any(region.page == page.number and region.kind == PDF_UNREPRESENTED for region in regions)
     cutoff = False
+    omitted_alternatives = 0
 
     def issue(code, message):
         if not any(existing.code == code for existing in issues):
             issues.append(Issue(code=code, message=message, page=page.number))
 
     def note_recovery(call):
+        nonlocal omitted_alternatives
         findings = call.get("recovery_issues", {})
         messages = {
             "model_prefix_recovered": "Kept closed records from a reply truncated at the verified token limit.",
@@ -773,9 +901,24 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             "model_parent_unresolved": "Explicit model parent links lacked a unique compatible target.",
             "model_item_ref_unresolved": "Model item references lacked a unique grounded target.",
         }
+        omitted_alternatives += findings.get("model_alternative_limit", 0)
         for code in findings:
-            issue(code, messages[code])
+            if code != "model_alternative_limit":
+                issue(code, messages[code])
         return bool(findings)
+
+    def note_reread(call, mismatch, conflict, omitted):
+        nonlocal omitted_alternatives
+        if mismatch:
+            issue("reread_structure_disagreement",
+                  "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.")
+        if conflict:
+            issue("reread_disagreement", "Conflicting readings were retained as unresolved alternatives.")
+        if omitted:
+            omitted_alternatives += omitted
+            call["reread_alternatives_omitted"] = omitted
+            write_json(artifact_root / call["artifact_dir"] / "attempt.json", call)
+        return mismatch or bool(omitted)
 
     native = [region for region in regions if region.page == page.number and region.kind == "native_text"]
     if settings.pipeline == "hybrid":
@@ -842,6 +985,7 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
     native_only = page.text_layer == "usable" and bool(native) and len(offered) == len(native) and not added
     base = None
     base_call = None
+    base_unresolved = set()
     for index in range(1 + settings.retries):
         result, unsupported = _call_attempt(page, artifact_root, settings, None if native_only else image,
                                             offered, text, native_only, None, index, calls)
@@ -863,21 +1007,22 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             issue("unsupported_quote", "A proposed field could not be grounded in its quoted source text.")
         if not result.records:
             continue
+        unresolved = set(call.get("unresolved_parent_ids", ()))
         if base is None:
             base, base_call = result, call
+            base_unresolved = unresolved
         else:
-            if ((base_call.get("recovery_issues") or base_call.get("overflow"))
-                    and base.doc_type == result.doc_type
-                    and sum(bool(row.fields) for row in result.records) > sum(bool(row.fields) for row in base.records)):
-                base, result = result, base
-                base_call, call = call, base_call
-            mismatch, conflict = _merge(base, result, crop=False, base_unresolved=base_call.get("unresolved_parent_ids", ()),
-                                        reread_unresolved=call.get("unresolved_parent_ids", ()))
-            if mismatch:
-                partial = True
-                issue("reread_structure_disagreement", "Whole-page attempts returned different document or row structures.")
-            if conflict:
-                issue("reread_disagreement", "Conflicting readings were retained as unresolved alternatives.")
+            base_unresolved, new_unresolved, can_replace = _transfer_unresolved(base, result, base_unresolved, unresolved)
+            richer = (can_replace and (base_call.get("recovery_issues") or base_call.get("overflow"))
+                      and base.doc_type == result.doc_type
+                      and sum(bool(row.fields) for row in result.records) > sum(bool(row.fields) for row in base.records))
+            if richer:
+                old_base, old_unresolved = base, base_unresolved
+                base, base_call, base_unresolved = result, call, new_unresolved
+                compared = _merge(base, old_base, False, base_unresolved, old_unresolved, reread_is_earlier=True)
+            else:
+                compared = _merge(base, result, False, base_unresolved, new_unresolved)
+            partial |= note_reread(call, *compared)
         if not (overflow or recovered or unsupported or any(read.state == "unreadable"
                                                   for record in result.records for read in record.fields.values())):
             break
@@ -907,17 +1052,23 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             if call.get("overflow"):
                 partial = True
                 issue("model_token_limit", "A local reread reached its token budget.")
-            if result is not None and _merge(base, result, crop=True, base_unresolved=base_call.get("unresolved_parent_ids", ()),
-                                             reread_unresolved=call.get("unresolved_parent_ids", ()))[1]:
-                issue("reread_disagreement", "Conflicting readings were retained as unresolved alternatives.")
+            if result is not None and base.doc_type == result.doc_type:
+                unresolved = set(call.get("unresolved_parent_ids", ()))
+                compared = _merge(base, result, True, base_unresolved, unresolved)
+                partial |= note_reread(call, *compared)
+    if omitted_alternatives:
+        partial = True
+        issue("model_alternative_limit",
+              f"Omitted {omitted_alternatives} distinct field candidate(s) while processing attempts and rereads at the "
+              f"{_MAX_ALTERNATIVES}-alternative field limit. Original replies retain these proposals.")
     if cutoff:
         issue("suspected_capture", "The model flagged content near a potentially cut-off page edge.")
     if base is None or not any(row.fields for row in base.records):
         issue("no_fields", "No local model attempt recovered supported page fields.")
         return PageReading(page=page.number, doc_type="unknown", incomplete=True, issues=issues,
                            regions=added, suspected_cutoff=cutoff, calls=calls)
-    if base_call.get("unresolved_parent_ids"):
-        base_call["effective_unresolved_parent_ids"] = list(base_call["unresolved_parent_ids"])
+    if base_unresolved:
+        base_call["effective_unresolved_parent_ids"] = sorted(base_unresolved)
         write_json(artifact_root / base_call["artifact_dir"] / "attempt.json", base_call)
     traces = {row.local_id: {name: read._trace for name, read in row.fields.items()} for row in base.records}
     added = [*added, *_style_regions(page, base, [*native, *added], artifact_root)]
