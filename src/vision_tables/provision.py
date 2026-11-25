@@ -27,7 +27,7 @@ def download(directory: Path, manifest: dict, workers: int = 8):
     directory.mkdir(mode=0o700, parents=True, exist_ok=True)
     base = "https://huggingface.co/{artifact}/resolve/{revision}/".format(**manifest)
     curl = ["curl", "--proto", "=https", "--proto-redir", "=https", "-fLsS",
-            "--connect-timeout", "30", "--retry", "3", "--max-time", "600"]
+            "--connect-timeout", "30", "--retry", "4", "--retry-all-errors", "--max-time", "600"]
     for entry in sorted(manifest["files"], key=lambda f: f["size"]):
         path = directory / entry["name"]
         if matches(path, entry):
