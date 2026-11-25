@@ -27,6 +27,6 @@ Model preparation needs network access and several gigabytes of disk. It verifie
 .venv/bin/vision-tables evaluate fixtures/public/manifest.json --output output/evaluation
 ```
 
-Pages are separate by default. Use explicit page grouping for a multi-page document. Inspect review issues and evidence before approving a version. The release handoff includes grouped PDF, correction, replay, export and verified offline commands, the measured route status and the exact sample sizes. [Release handoff](docs/HANDOFF.md)
+Pages are separate by default. Use explicit page grouping for a multi-page document. Inspect review issues and evidence before approving a version. The release handoff includes grouped PDF, correction, replay and export commands, plus the verification status of each local model route. [Release handoff](docs/HANDOFF.md)
 
 See the [CLI reference](docs/CLI.md), [architecture](docs/ARCHITECTURE.md), [JSON Schemas](schemas), [synthetic fixtures](fixtures/README.md) and [real-document sources and labeling limits](fixtures/public/SOURCES.md).

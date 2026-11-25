@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T17:11:00+01:00",
+  "as_of": "2026-11-25T17:24:00+01:00",
   "record": "integration checkpoint",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -29,20 +29,28 @@
       ]
     },
     "3_implementation": {
-      "status": "failed",
-      "detail": "Independent review found coverage and correction defects; remediation under verification."
+      "status": "passed",
+      "reviewed_commit": "36b3200aa93d8faa3d4e6eeda3b9edb66ec6d141",
+      "detail": "294 package tests and 16 independent integrated probes passed. Production inference is gated separately.",
+      "evidence": [
+        "docs/development/review-recheck.md",
+        "evidence/development/reviewer/recheck-results.txt"
+      ]
     },
     "4_evaluation": {
       "status": "not_run",
       "detail": "Scorer integrated. Measured route comparison pending."
     },
     "5_review_handoff": {
-      "status": "failed",
+      "status": "blocked",
       "reviewed_commit": "dfa12df8304ab4753369a2ef4aa03ac90386db1f",
       "evidence": [
         "docs/development/review.md",
-        "evidence/development/qa-integrated.md"
-      ]
+        "evidence/development/qa-integrated.md",
+        "docs/development/review-recheck.md"
+      ],
+      "detail": "Material code findings fixed and independently rechecked. Final model measurements and handoff pending.",
+      "fixes_rechecked_commit": "36b3200aa93d8faa3d4e6eeda3b9edb66ec6d141"
     }
   },
   "offline_failure_paths": {
