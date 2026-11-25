@@ -11,7 +11,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 SCHEMA_VERSION = "1.0"
-PIPELINE_VERSION = "0.1.2"
+PIPELINE_VERSION = "0.1.3"
 QWEN_MODEL = "mlx-community/Qwen3.5-9B-MLX-4bit"
 QWEN_REVISION = "938d8919941c6e7efd3c7150eff7fe9d12afa631"
 DocType = Literal["invoice", "menu", "recipe", "unknown"]
