@@ -1,57 +1,91 @@
 # Local release handoff
 
-The application is on `main` in the independent vision-to-tables repository. The machine-readable [acceptance report](../evidence/acceptance.json) records gate states, supporting evidence and limitations. The first integrated review covered `dfa12df8304ab4753369a2ef4aa03ac90386db1f`. The [review findings](development/review.md) and [independent QA report](../evidence/development/qa-integrated.md) include executable reproductions.
+The headless CLI, Python package, SQLite store and two offline inference routes ran on this Apple M3 Max with 48 GiB unified memory and macOS 27.2.1. Processing and review use local files. Every new extraction requires review. The [acceptance report](../evidence/acceptance.json) gives a status and evidence for each release gate.
 
-## Run from the checkout
+## Results on real documents
+
+| Cohort | Direct exact fields | Hybrid exact fields | Direct answerable coverage | Hybrid answerable coverage |
+|---|---:|---:|---:|---:|
+| Three archival development pages | 1/8 | 3/8 | 1/7 | 2/7 |
+| Four archival held-out pages | 12/22 | 11/22 | 12/20 | 12/20 |
+| Three additional handwritten recipe crops | 4/18 | 6/18 | 3/14 | 5/14 |
+
+Both routes correctly linked the four labeled dishes to their four prices on the held-out printed menu, even as the document remained incomplete. On the English handwriting diagnostics, hybrid retained the active butter quantity as 3 and omitted its unit. Both missed the separately crossed-out reading, the labeled butter range and the uncertain sugar row. All outputs required review. Zero automatic acceptances leave the false-acceptance rate among automatically accepted documents undefined. [Independent QA](../evidence/development/qa-release.md) · [Handwriting cases and limitations](../evidence/evaluation/handwriting-diagnostics/README.md)
+
+Direct is the default. Both routes matched the development invoice total and missed the two labeled development rows. The additional hybrid matches were the printed menu venue and corroborated absence of recipe yield. The direct development trial ran in 383.38 s versus 589.59 s hybrid and used a lower peak child RSS. Settings and route choice were fixed before held-out inference. The frozen repeat took 494.88 s direct and 555.81 s hybrid and reproduced all development case scores. [Selection record](development/evaluation-settings.md) · [Paired development results](../evidence/evaluation/release/development-comparison.json) · [Paired held-out results](../evidence/evaluation/release/heldout-comparison.json)
+
+## Installation and processing
+
+Run from the repository root. Provisioning verifies the pinned model files and installs the isolated runtimes. The core uses CPython 3.12.16. Project weights occupy about 5.6 GiB for Qwen and 1.9 GiB for the two Paddle components. The two model environments, caches, job artifacts and exports require additional disk space.
 
 ```sh
 export VT_STATE_DIR="$PWD/.vt-state"
-UV_CACHE_DIR="$VT_STATE_DIR/uv-cache" uv sync --locked --python 3.12.16
-.venv/bin/vision-tables doctor
+export VT_INFERENCE_LOCK="$VT_STATE_DIR/inference.lock"
+export UV_CACHE_DIR="$VT_STATE_DIR/uv-cache"
+uv sync --locked --python 3.12.16
 .venv/bin/vision-tables models prepare --pipeline direct
 .venv/bin/vision-tables models prepare --pipeline hybrid
+.venv/bin/vision-tables doctor --pipeline hybrid
+.venv/bin/python tools/verify_offline.py extract fixtures/feasibility/invoice.png --type invoice --pipeline direct --output output/photo
+.venv/bin/python tools/verify_offline.py extract fixtures/synthetic/invoice-fr-mixed.pdf --type invoice --page-group 1,2 --pipeline direct --output output/pdf
 ```
 
-The last two commands explicitly provision components. The application verifies pinned weights against upstream digests. The direct environment uses MLX for inference; the Qwen3VL image processor also requires torch and torchvision. The hybrid environment has its own PaddlePaddle, PaddleOCR and PaddleX versions. Its local full-parser smoke must produce genuine layout boxes and recognized blocks before the route is ready. Installed host packages and model locks are described in the [component inventory](../src/vision_tables/assets).
+The process-scoped verifier checks that a loopback exchange succeeds and an external connection receives an OS denial. The CLI also isolates model child processes during ordinary extraction. The PDF command groups pages 1 and 2 as one document. Ungrouped pages become separate documents. A nonzero extraction exit can carry a version with useful fields and incomplete coverage. Each CLI result lists the versions, job artifacts and review issues. [CLI options and exit codes](CLI.md)
 
 ```sh
-.venv/bin/vision-tables extract fixtures/feasibility/invoice.png --type invoice --pipeline direct --output output/photo
-.venv/bin/vision-tables extract fixtures/synthetic/invoice-fr-mixed.pdf --type invoice --page-group 1,2 --pipeline direct --output output/pdf
-.venv/bin/vision-tables batch fixtures/synthetic --output output/batch
 .venv/bin/vision-tables documents list
+.venv/bin/vision-tables jobs list
 .venv/bin/vision-tables jobs recover
+.venv/bin/vision-tables batch inbox --output output/batch
 ```
 
-Set `DOC` to the `documents[].document_id` printed by a successful extraction. The following commands produce a review bundle, apply a reviewer-authored corrections file and export a version. Review the original, page images, grounded crop references, raw readings, alternatives and issue codes in the bundle. Set the reviewer and base version in the corrections file. [Correction examples and active-cell escaping](CLI.md)
+## Review, corrections and export
+
+Use the document ID and version from the extraction response. Open the source and page or crop references in the review bundle. Set the reviewer, base version, edit targets and reasons in a separate corrections file. The example below uses the checked-in synthetic invoice's original hybrid extraction at version 2. For a fresh database, use the ID and base version actually printed by the CLI and adapt the example's targets to that snapshot.
 
 ```sh
-.venv/bin/vision-tables review bundle --document "$DOC" --output output/review
-.venv/bin/vision-tables review apply corrections.json --document "$DOC" --output output/review
-.venv/bin/vision-tables export --document "$DOC" --version 1 --format json --output output/original
-.venv/bin/vision-tables export --document "$DOC" --format csv --output output/tables
+DOC=doc-5f704466a44dd696b8317362adec39ec
+.venv/bin/vision-tables review bundle --document "$DOC" --version 2 --output output/review
+.venv/bin/vision-tables review apply evidence/examples/invoice/corrections.json --document "$DOC" --output output/review
+.venv/bin/vision-tables export --document "$DOC" --version 3 --format all --output output/tables
 ```
 
-The process-scoped verifier tests loopback and an external socket before entering the CLI. Run separate development and held-out reports for each available route. The synthetic regression set has its own manifest.
+The recorded direct extraction read the reference, supplier, currency and amount; hybrid retained the reference, supplier and amount but produced two header records and omitted the separate currency field. The example correction removed the duplicate root and supplied the printed currency. It left the document awaiting review. Repeating the correction returned version 3, and real same-configuration reimport using the installed wheel also selected version 3. JSON, CSV and standalone SQLite were checked against that version. The immutable original and intermediate page/attempt files resolve against the local job directory named in the review bundle. The checked-in input is available independently. [Versioned examples](../evidence/examples/invoice) · [Source photo](../fixtures/feasibility/invoice.png) · [Preservation and replay checks](../evidence/examples/invoice/verification.json)
+
+## Runtime and scope
+
+The direct runtime uses the pinned Qwen3.5-9B MLX 4-bit conversion, MLX-VLM 0.8.1, constrained decoding and independent validation. The still-image processor also needs torch and torchvision. The hybrid route runs PP-DocLayoutV3 and the full PaddleOCR-VL-1.6 recognizer on the CPU before constrained Qwen extraction. Both routes share an exclusive inference lock. Normal application calls start fresh model processes; the separate feasibility measurements include a second call with resident weights. [Component manifests and dependency locks](../src/vision_tables/assets) · [Feasibility measurements](../evidence/feasibility/README.md)
+
+| One-page feasibility measurement | Qwen direct | Native Paddle parser |
+|---|---:|---:|
+| Load or initialize | 5.01 s | 10.04 s |
+| First prediction | 4.86 s | 15.84 s |
+| Second prediction in the same process | 1.10 s | 15.71 s |
+| Output | 3/3 specified invoice fields twice | 6 layout boxes and 4 decoded blocks twice |
+
+The two feasibility fixtures have different dimensions and content. Paddle mapped the printed 10,00 € amount to original pixels [380, 358, 631, 391] on its 700 × 480 source. A separate real run at 32 tokens per recognized crop recorded two exhausted crops. On the same 800 × 420 invoice, the first end-to-end production CLI comparison took 8.92 s direct and 37.38 s hybrid including lock wait. Both retained the observed amount 37.25. [Paddle results](../evidence/feasibility/paddle) · [Direct CLI](../evidence/verification/offline-direct.json) · [Hybrid CLI](../evidence/verification/offline-hybrid.json)
+
+## Verification and ownership
+
+The six specialists used separate Orca sessions, with a maximum of three active assignments alongside the lead. The independent Astra architect audited the draft and the later integrated deltas. Opus reproduced material failures on dfa12df and rechecked their fixes on 36b3200. The corrections, superseded-lineage handling, export format tracking, mixed-PDF routing and structural edits have executable regression probes. Two supplemental Sonnet assignments hit the first-party account limit after the original implementations had finished. The lead integrated their partial changes and commissioned independent rechecks. Multi-gigabyte transfers delayed genuine Gate 1 results, so contract freeze and implementation preceded those results. [Roster and launch receipts](../evidence/development/roster.json) · [Actual timing](development/timeline.md) · [Opus recheck](development/review-recheck.md) · [Architect delta recheck](development/final-delta-recheck.md)
+
+The application supports JPEG, PNG, verified static HEIC and multipage PDF. Geometry is in original image pixels or PDF page points. Ungrounded fields retain a page reference. The domain layer uses Decimal or exact fractions where applicable and keeps raw text, alternatives and evidence. Correcting a fact recalculates its dependents. A clipped image can still omit facts beyond the frame; complete processing does not establish the original capture extent. [Architecture](ARCHITECTURE.md) · [Domain normalization and review rules](development/domain.md) · [Checked-in schemas](../schemas)
+
+## Reproduce the comparison
+
+Each command below runs fresh inference for every case. Use distinct output directories when retaining earlier reports. The strict scorer separates development, held-out, diagnostic and synthetic results. It records absent denominators explicitly. Matching source hashes, labels, per-case overrides and shared model settings are checked before creating a paired summary.
 
 ```sh
-.venv/bin/python tools/verify_offline.py extract fixtures/feasibility/invoice.png --type invoice --pipeline direct --output output/offline
-.venv/bin/python tools/verify_offline.py evaluate fixtures/public/manifest.json --pipeline direct --output output/eval/direct-development
-.venv/bin/python tools/verify_offline.py evaluate fixtures/archive-heldout/manifest.json --pipeline direct --output output/eval/direct-heldout
-.venv/bin/python tools/verify_offline.py evaluate fixtures/public/manifest.json --pipeline hybrid --output output/eval/hybrid-development
-.venv/bin/python tools/verify_offline.py evaluate fixtures/archive-heldout/manifest.json --pipeline hybrid --output output/eval/hybrid-heldout
-.venv/bin/vision-tables evaluate fixtures/manifest.json --pipeline direct --output output/eval/synthetic
-.venv/bin/python -m pytest -q
-.venv/bin/python -m pytest -q evidence/development/reviewer/test_review_probes.py
+for route in direct hybrid
+do
+  .venv/bin/python tools/verify_offline.py evaluate fixtures/public/manifest.json --pipeline "$route" --output "output/evaluation/$route-development"
+  .venv/bin/python tools/verify_offline.py evaluate fixtures/archive-heldout/manifest.json --pipeline "$route" --output "output/evaluation/$route-heldout"
+  .venv/bin/python tools/verify_offline.py evaluate fixtures/handwriting-diagnostics/manifest.json --pipeline "$route" --output "output/evaluation/$route-diagnostic"
+  .venv/bin/python tools/verify_offline.py evaluate fixtures/manifest.json --pipeline "$route" --output "output/evaluation/$route-synthetic"
+done
+.venv/bin/python tools/compare_evaluations.py output/evaluation/direct-heldout/evaluation.json output/evaluation/hybrid-heldout/evaluation.json
+.venv/bin/python -m pytest -q tests evidence/development/reviewer
+PYTHONPATH=src .venv/bin/python evidence/development/reasoner_recovery_probes.py
 ```
 
-## Coordination and verification
-
-The [roster](../evidence/development/roster.json) records requested and observed harness models and efforts, harness session IDs, worktrees, tasks and dispatches. All six specialists and the lead ran locally in Orca on the M3 Max; development harnesses used their configured providers. The production application reads documents locally. Concurrency stayed within three active specialist assignments. Heavy model calls share the common project lock. [Actual gate timing](development/timeline.md)
-
-The archived development and held-out sources have independent, sparse human reference labels. Score them separately from generated fixtures. Accuracy, coverage and review rates need their denominators. Historical material and a small English held-out cohort limit generalization. [Development sources](../fixtures/public/SOURCES.md) · [Held-out sources](../fixtures/archive-heldout/SOURCES.md)
-
-## Verification checkpoint
-
-At the first integrated checkpoint 213 package tests passed. The six real negative CLI cases passed under OS-level external denial, including encrypted PDFs, malformed files and explicit runtime errors. Independent tests reproduced correction, publication and coverage defects. Opus verified the fixes on 36b3200 with all 294 package tests and 16 reviewer probes passing. [Recheck report](development/review-recheck.md) The static HEIC decoder and offline Qwen processor were exercised on this Mac. Both pinned model routes subsequently ran offline on a synthetic invoice. Direct preserved the reference, EUR and 37.25. Hybrid preserved the reference and amount, omitted the separate currency observation and emitted two invoice roots. The published examples include both extractions and a structural correction that kept the document in review. [Versioned example](../evidence/examples/invoice/verification.json)
-
-The first archival direct run returned zero of eight labeled fields across three development documents. The direct route remains the baseline during the comparison. Automatic acceptance is disabled.
+The JSON reports include per-fixture scores, source and label digests, processed and skipped pages, extra calls, token counts and RSS. The evaluation command's exit status describes whether it produced the report. Per-case status and business-field scores describe what the application actually extracted. The paired reports in the [release evaluation directory](../evidence/evaluation/release) give the denominators by document family, language and writing style. The synthetic campaign is in progress at this checkpoint.

@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T19:12:55+01:00",
+  "as_of": "2026-11-25T19:47:58+01:00",
   "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -43,11 +43,14 @@
       ]
     },
     "4_evaluation": {
-      "status": "not_run",
-      "detail": "Release cohort comparison awaits recovery recheck. Both 2048-token development baselines emitted 0 of 3 documents. The development recovery trial with 4096 tokens emitted all 3 direct documents and scored 1/8 fields.",
+      "status": "passed",
+      "scope": "Both real routes on identical pinned inputs, including separate development, primary held-out and handwriting diagnostic cohorts. Additional synthetic runs pending at this checkpoint.",
       "evidence": [
-        "evidence/development/qa-live-development.md",
-        "evidence/evaluation/direct-development-final/evaluation.json"
+        "docs/development/evaluation-settings.md",
+        "evidence/evaluation/release/development-comparison.json",
+        "evidence/evaluation/release/heldout-comparison.json",
+        "evidence/evaluation/handwriting-diagnostics/summary.json",
+        "evidence/development/qa-release.md"
       ]
     },
     "5_review_handoff": {
