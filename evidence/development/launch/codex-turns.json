@@ -1,0 +1,34 @@
+{
+  "vision": {
+    "session_id": "01a21339-ac34-7a90-9bf5-0407cbcdb5ed",
+    "harness": "codex",
+    "model": "gpt-6.2-sol",
+    "effort": "high",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-vision",
+    "source": "Codex session_meta and turn_context"
+  },
+  "reasoner": {
+    "session_id": "01a21339-ac34-7863-8028-c56b2f332efe",
+    "harness": "codex",
+    "model": "gpt-6.2-astra",
+    "effort": "xhigh",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-reasoner",
+    "source": "Codex session_meta and turn_context"
+  },
+  "qa": {
+    "session_id": "01a21339-ac33-7203-8477-af85c30648ff",
+    "harness": "codex",
+    "model": "gpt-6.2-sol",
+    "effort": "high",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-qa",
+    "source": "Codex session_meta and turn_context"
+  },
+  "integration": {
+    "session_id": "01a21337-ea80-73c3-88c4-fe7d355e7d6f",
+    "harness": "codex",
+    "model": "gpt-6.2-astra",
+    "effort": "xhigh",
+    "cwd": "/Users/vakof/orca/vision-to-tables",
+    "source": "Codex session_meta and turn_context"
+  }
+}

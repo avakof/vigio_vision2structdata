@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "repo": "/Users/vakof/orca/vision-to-tables",
+  "initial_head": "7da4257",
+  "branch": "main",
+  "remotes": [],
+  "host": {
+    "chip": "Apple M3 Max",
+    "memory_bytes": 51539607552,
+    "os": "macOS 27.2.1 (26B131)",
+    "architecture": "arm64",
+    "available_disk_GiB_at_preflight": 746,
+    "memory_pressure_free_percent_at_preflight": 89
+  },
+  "orca": {
+    "version": "1.4.274",
+    "product": "Orca (orca.dev)",
+    "executable": "/Applications/Orca.app/Contents/Resources/bin/orca",
+    "runtime_running": true,
+    "run": "run_7901ade1ddff",
+    "project_setup": "ready",
+    "placement": "local",
+    "source": "ORCA_CLI_COMMAND, --version, status --json, project setups --environment local --json, skills get orchestration --full"
+  },
+  "harness": {
+    "codex": "0.171.0",
+    "claude_code": "2.1.329",
+    "claude_auth": {
+      "provider": "firstParty",
+      "logged_in": true,
+      "subscription": "pro"
+    }
+  },
+  "core": {
+    "python": "3.12.16",
+    "uv": "0.13.9",
+    "lock": "uv.lock",
+    "executable": ".venv/bin/python"
+  },
+  "isolation": "Independent root and child worktrees in dedicated Git repository, project-specific cache and environments. No service or speech project changes."
+}

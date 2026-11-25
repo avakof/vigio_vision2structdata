@@ -1,0 +1,907 @@
+{
+  "$defs": {
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "precision": {
+          "enum": [
+            "native_text",
+            "parser_region",
+            "crop"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "space": {
+          "const": "original_top_left",
+          "default": "original_top_left",
+          "title": "Space",
+          "type": "string"
+        },
+        "xyxy": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xyxy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "xyxy",
+        "precision"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
+    "Correction": {
+      "additionalProperties": false,
+      "properties": {
+        "observation_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Observation Id",
+          "type": "string"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "state": {
+          "default": "readable",
+          "enum": [
+            "readable",
+            "ambiguous",
+            "unreadable",
+            "not_present"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "observation_id",
+        "value",
+        "reason"
+      ],
+      "title": "Correction",
+      "type": "object"
+    },
+    "CorrectionSet": {
+      "additionalProperties": false,
+      "properties": {
+        "approve": {
+          "default": false,
+          "title": "Approve",
+          "type": "boolean"
+        },
+        "base_version": {
+          "minimum": 1,
+          "title": "Base Version",
+          "type": "integer"
+        },
+        "changes": {
+          "items": {
+            "$ref": "#/$defs/Correction"
+          },
+          "maxItems": 1000,
+          "minItems": 1,
+          "title": "Changes",
+          "type": "array"
+        },
+        "document_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Document Id",
+          "type": "string"
+        },
+        "reviewer": {
+          "maxLength": 256,
+          "minLength": 1,
+          "title": "Reviewer",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "base_version",
+        "reviewer",
+        "changes"
+      ],
+      "title": "CorrectionSet",
+      "type": "object"
+    },
+    "Coverage": {
+      "additionalProperties": false,
+      "properties": {
+        "incomplete_pages": {
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "title": "Incomplete Pages",
+          "type": "array"
+        },
+        "original_capture": {
+          "default": "not_established",
+          "enum": [
+            "not_established",
+            "suspected_incomplete"
+          ],
+          "title": "Original Capture",
+          "type": "string"
+        },
+        "processed_pages": {
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "title": "Processed Pages",
+          "type": "array"
+        },
+        "skipped_pages": {
+          "items": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "title": "Skipped Pages",
+          "type": "array"
+        },
+        "suspected_capture": {
+          "default": false,
+          "title": "Suspected Capture",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "processed_pages"
+      ],
+      "title": "Coverage",
+      "type": "object"
+    },
+    "Derivation": {
+      "additionalProperties": false,
+      "properties": {
+        "calculation": {
+          "minLength": 1,
+          "title": "Calculation",
+          "type": "string"
+        },
+        "inputs": {
+          "items": {
+            "maxLength": 180,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Inputs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "calculation",
+        "inputs"
+      ],
+      "title": "Derivation",
+      "type": "object"
+    },
+    "Entity": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "ordinal": {
+          "minimum": 0,
+          "title": "Ordinal",
+          "type": "integer"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "page",
+        "ordinal"
+      ],
+      "title": "Entity",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Quote",
+          "type": "string"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "observation_ids": {
+          "items": {
+            "maxLength": 180,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Observation Ids",
+          "type": "array"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "alternatives": {
+          "items": {
+            "maxLength": 16384,
+            "type": "string"
+          },
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "derivation": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Derivation"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "entity_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "field": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Field",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "origin": {
+          "default": "observed",
+          "enum": [
+            "observed",
+            "calculated",
+            "human_supplied"
+          ],
+          "title": "Origin",
+          "type": "string"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Raw"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "state": {
+          "enum": [
+            "readable",
+            "ambiguous",
+            "unreadable",
+            "not_present"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "id",
+        "entity_id",
+        "field",
+        "raw",
+        "value",
+        "state"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "Page": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "number"
+        },
+        "image_height": {
+          "minimum": 1,
+          "title": "Image Height",
+          "type": "integer"
+        },
+        "image_path": {
+          "title": "Image Path",
+          "type": "string"
+        },
+        "image_to_original": {
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Image To Original",
+          "type": "array"
+        },
+        "image_width": {
+          "minimum": 1,
+          "title": "Image Width",
+          "type": "integer"
+        },
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "text_layer": {
+          "default": "absent",
+          "enum": [
+            "absent",
+            "usable",
+            "partial",
+            "unreliable"
+          ],
+          "title": "Text Layer",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "px",
+            "pt"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "number"
+        }
+      },
+      "required": [
+        "number",
+        "width",
+        "height",
+        "unit",
+        "image_path",
+        "image_width",
+        "image_height",
+        "image_to_original"
+      ],
+      "title": "Page",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "box": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Box"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "order": {
+          "minimum": 0,
+          "title": "Order",
+          "type": "integer"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Text",
+          "type": "string"
+        },
+        "writing": {
+          "default": "unknown",
+          "enum": [
+            "print",
+            "handwriting",
+            "mixed",
+            "unknown"
+          ],
+          "title": "Writing",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "page",
+        "order",
+        "kind"
+      ],
+      "title": "Region",
+      "type": "object"
+    },
+    "Run": {
+      "additionalProperties": false,
+      "properties": {
+        "calls": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Calls",
+          "type": "array"
+        },
+        "config_hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Config Hash",
+          "type": "string"
+        },
+        "job_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Job Id",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "pipeline": {
+          "enum": [
+            "direct",
+            "hybrid"
+          ],
+          "title": "Pipeline",
+          "type": "string"
+        },
+        "pipeline_version": {
+          "default": "0.1.0",
+          "title": "Pipeline Version",
+          "type": "string"
+        },
+        "revision": {
+          "title": "Revision",
+          "type": "string"
+        },
+        "runtime": {
+          "additionalProperties": true,
+          "title": "Runtime",
+          "type": "object"
+        },
+        "schema_version": {
+          "default": "1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "settings": {
+          "additionalProperties": true,
+          "title": "Settings",
+          "type": "object"
+        }
+      },
+      "required": [
+        "job_id",
+        "pipeline",
+        "model",
+        "revision",
+        "runtime",
+        "settings",
+        "config_hash"
+      ],
+      "title": "Run",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "original_path": {
+          "title": "Original Path",
+          "type": "string"
+        },
+        "page_count": {
+          "minimum": 1,
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 1,
+          "title": "Size Bytes",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "media_type",
+        "size_bytes",
+        "page_count",
+        "original_path"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approval": {
+      "default": "needs_review",
+      "enum": [
+        "needs_review",
+        "human_approved"
+      ],
+      "title": "Approval",
+      "type": "string"
+    },
+    "corrections": {
+      "items": {
+        "$ref": "#/$defs/CorrectionSet"
+      },
+      "title": "Corrections",
+      "type": "array"
+    },
+    "coverage": {
+      "$ref": "#/$defs/Coverage"
+    },
+    "doc_type": {
+      "enum": [
+        "invoice",
+        "menu",
+        "recipe",
+        "unknown"
+      ],
+      "title": "Doc Type",
+      "type": "string"
+    },
+    "document_id": {
+      "maxLength": 180,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "title": "Document Id",
+      "type": "string"
+    },
+    "entities": {
+      "items": {
+        "$ref": "#/$defs/Entity"
+      },
+      "title": "Entities",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "observations": {
+      "items": {
+        "$ref": "#/$defs/Observation"
+      },
+      "title": "Observations",
+      "type": "array"
+    },
+    "pages": {
+      "items": {
+        "$ref": "#/$defs/Page"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "parent_version": {
+      "anyOf": [
+        {
+          "minimum": 1,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Version"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/Region"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "run": {
+      "$ref": "#/$defs/Run"
+    },
+    "scope": {
+      "items": {
+        "minimum": 1,
+        "type": "integer"
+      },
+      "minItems": 1,
+      "title": "Scope",
+      "type": "array"
+    },
+    "source": {
+      "$ref": "#/$defs/Source"
+    },
+    "validation": {
+      "default": "issues",
+      "enum": [
+        "valid",
+        "issues",
+        "incomplete"
+      ],
+      "title": "Validation",
+      "type": "string"
+    },
+    "version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Version",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "document_id",
+    "doc_type",
+    "scope",
+    "source",
+    "pages",
+    "regions",
+    "run",
+    "coverage",
+    "entities",
+    "observations",
+    "issues"
+  ],
+  "title": "Document",
+  "type": "object"
+}

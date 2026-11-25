@@ -1,0 +1,339 @@
+{
+  "$defs": {
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "precision": {
+          "enum": [
+            "native_text",
+            "parser_region",
+            "crop"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "space": {
+          "const": "original_top_left",
+          "default": "original_top_left",
+          "title": "Space",
+          "type": "string"
+        },
+        "xyxy": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xyxy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "xyxy",
+        "precision"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "observation_ids": {
+          "items": {
+            "maxLength": 180,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Observation Ids",
+          "type": "array"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "Page": {
+      "additionalProperties": false,
+      "properties": {
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "number"
+        },
+        "image_height": {
+          "minimum": 1,
+          "title": "Image Height",
+          "type": "integer"
+        },
+        "image_path": {
+          "title": "Image Path",
+          "type": "string"
+        },
+        "image_to_original": {
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Image To Original",
+          "type": "array"
+        },
+        "image_width": {
+          "minimum": 1,
+          "title": "Image Width",
+          "type": "integer"
+        },
+        "number": {
+          "minimum": 1,
+          "title": "Number",
+          "type": "integer"
+        },
+        "text_layer": {
+          "default": "absent",
+          "enum": [
+            "absent",
+            "usable",
+            "partial",
+            "unreliable"
+          ],
+          "title": "Text Layer",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "px",
+            "pt"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "number"
+        }
+      },
+      "required": [
+        "number",
+        "width",
+        "height",
+        "unit",
+        "image_path",
+        "image_width",
+        "image_height",
+        "image_to_original"
+      ],
+      "title": "Page",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "box": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Box"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "order": {
+          "minimum": 0,
+          "title": "Order",
+          "type": "integer"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Text",
+          "type": "string"
+        },
+        "writing": {
+          "default": "unknown",
+          "enum": [
+            "print",
+            "handwriting",
+            "mixed",
+            "unknown"
+          ],
+          "title": "Writing",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "page",
+        "order",
+        "kind"
+      ],
+      "title": "Region",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "media_type": {
+          "title": "Media Type",
+          "type": "string"
+        },
+        "original_path": {
+          "title": "Original Path",
+          "type": "string"
+        },
+        "page_count": {
+          "minimum": 1,
+          "title": "Page Count",
+          "type": "integer"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "size_bytes": {
+          "minimum": 1,
+          "title": "Size Bytes",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sha256",
+        "media_type",
+        "size_bytes",
+        "page_count",
+        "original_path"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "pages": {
+      "items": {
+        "$ref": "#/$defs/Page"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/Region"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "skipped_pages": {
+      "items": {
+        "minimum": 1,
+        "type": "integer"
+      },
+      "title": "Skipped Pages",
+      "type": "array"
+    },
+    "source": {
+      "$ref": "#/$defs/Source"
+    }
+  },
+  "required": [
+    "source",
+    "pages"
+  ],
+  "title": "Ingested",
+  "type": "object"
+}

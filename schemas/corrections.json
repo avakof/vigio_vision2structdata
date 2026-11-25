@@ -1,0 +1,111 @@
+{
+  "$defs": {
+    "Correction": {
+      "additionalProperties": false,
+      "properties": {
+        "observation_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Observation Id",
+          "type": "string"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        },
+        "state": {
+          "default": "readable",
+          "enum": [
+            "readable",
+            "ambiguous",
+            "unreadable",
+            "not_present"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "observation_id",
+        "value",
+        "reason"
+      ],
+      "title": "Correction",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "approve": {
+      "default": false,
+      "title": "Approve",
+      "type": "boolean"
+    },
+    "base_version": {
+      "minimum": 1,
+      "title": "Base Version",
+      "type": "integer"
+    },
+    "changes": {
+      "items": {
+        "$ref": "#/$defs/Correction"
+      },
+      "maxItems": 1000,
+      "minItems": 1,
+      "title": "Changes",
+      "type": "array"
+    },
+    "document_id": {
+      "maxLength": 180,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.:-]+$",
+      "title": "Document Id",
+      "type": "string"
+    },
+    "reviewer": {
+      "maxLength": 256,
+      "minLength": 1,
+      "title": "Reviewer",
+      "type": "string"
+    }
+  },
+  "required": [
+    "document_id",
+    "base_version",
+    "reviewer",
+    "changes"
+  ],
+  "title": "CorrectionSet",
+  "type": "object"
+}

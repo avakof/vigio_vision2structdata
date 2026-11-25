@@ -1,0 +1,28 @@
+{
+  "id": "4533a081-a97a-4d6f-89ae-3a6b07547962",
+  "ok": true,
+  "result": {
+    "outcome": {
+      "kind": "structured",
+      "sessionId": "86695985-f792-4d5b-9f14-8b8109e83a35",
+      "handle": "structured-agent-session-86695985-f792-4d5b-9f14-8b8109e83a35",
+      "tabId": "structured-agent-session-86695985-f792-4d5b-9f14-8b8109e83a35"
+    },
+    "worktreeId": "d0267cdd-91d5-453e-8c43-b57bb74444b7::/Users/vakof/orca/vision-to-tables",
+    "receipt": {
+      "mode": "structured",
+      "preferred": "structured",
+      "reason": "requested",
+      "detail": "Started a structured chat session, as requested."
+    },
+    "prompt": {
+      "delivery": "submit",
+      "outcome": "journaled",
+      "messageId": "1795618761213-c981e965e62344449fc9f7abc5cac38b"
+    },
+    "operationId": "1795618761204-47168d8691ab42a8aea0abf1e36b7d2f"
+  },
+  "_meta": {
+    "runtimeId": "3a8b1004-da35-4003-8216-d3a340cfb684"
+  }
+}

@@ -1,0 +1,375 @@
+{
+  "$defs": {
+    "Box": {
+      "additionalProperties": false,
+      "properties": {
+        "precision": {
+          "enum": [
+            "native_text",
+            "parser_region",
+            "crop"
+          ],
+          "title": "Precision",
+          "type": "string"
+        },
+        "space": {
+          "const": "original_top_left",
+          "default": "original_top_left",
+          "title": "Space",
+          "type": "string"
+        },
+        "xyxy": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Xyxy",
+          "type": "array"
+        }
+      },
+      "required": [
+        "xyxy",
+        "precision"
+      ],
+      "title": "Box",
+      "type": "object"
+    },
+    "FieldRead": {
+      "additionalProperties": false,
+      "properties": {
+        "alternatives": {
+          "items": {
+            "maxLength": 16384,
+            "type": "string"
+          },
+          "maxItems": 16,
+          "title": "Alternatives",
+          "type": "array"
+        },
+        "evidence": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Evidence",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "raw": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Raw"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "maxLength": 16384,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        },
+        "state": {
+          "default": "readable",
+          "enum": [
+            "readable",
+            "ambiguous",
+            "unreadable",
+            "not_present"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "title": "FieldRead",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Code",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "observation_ids": {
+          "items": {
+            "maxLength": 180,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_.:-]+$",
+            "type": "string"
+          },
+          "title": "Observation Ids",
+          "type": "array"
+        },
+        "page": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Page"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "RecordRead": {
+      "additionalProperties": false,
+      "properties": {
+        "fields": {
+          "maxProperties": 100,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/FieldRead"
+            }
+          },
+          "propertyNames": {
+            "maxLength": 180,
+            "minLength": 1
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "kind": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "local_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Local Id",
+          "type": "string"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        }
+      },
+      "required": [
+        "kind",
+        "local_id",
+        "fields"
+      ],
+      "title": "RecordRead",
+      "type": "object"
+    },
+    "Region": {
+      "additionalProperties": false,
+      "properties": {
+        "box": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Box"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "language": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Language"
+        },
+        "order": {
+          "minimum": 0,
+          "title": "Order",
+          "type": "integer"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "text": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Text",
+          "type": "string"
+        },
+        "writing": {
+          "default": "unknown",
+          "enum": [
+            "print",
+            "handwriting",
+            "mixed",
+            "unknown"
+          ],
+          "title": "Writing",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "page",
+        "order",
+        "kind"
+      ],
+      "title": "Region",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "calls": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Calls",
+      "type": "array"
+    },
+    "doc_type": {
+      "enum": [
+        "invoice",
+        "menu",
+        "recipe",
+        "unknown"
+      ],
+      "title": "Doc Type",
+      "type": "string"
+    },
+    "incomplete": {
+      "default": false,
+      "title": "Incomplete",
+      "type": "boolean"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "page": {
+      "minimum": 1,
+      "title": "Page",
+      "type": "integer"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/RecordRead"
+      },
+      "maxItems": 1024,
+      "title": "Records",
+      "type": "array"
+    },
+    "regions": {
+      "items": {
+        "$ref": "#/$defs/Region"
+      },
+      "title": "Regions",
+      "type": "array"
+    },
+    "suspected_cutoff": {
+      "default": false,
+      "title": "Suspected Cutoff",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "page",
+    "doc_type"
+  ],
+  "title": "PageReading",
+  "type": "object"
+}
