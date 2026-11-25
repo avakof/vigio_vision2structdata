@@ -155,3 +155,22 @@ def test_pathological_inputs_are_bounded():
         for kind in ("money", "number", "quantity", "date", "duration", "percent", "unit", "enum:document_kind"):
             assert normalize(kind, raw).state == "ambiguous" or kind in ("unit",)
     assert time.monotonic() - started < 2
+
+
+@pytest.mark.parametrize("raw,expected,markers", [
+    ("-$11.95", "-11.95", ("USD", "CAD", "AUD")), ("$-11.95", "-11.95", ("USD", "CAD", "AUD")),
+    ("+$5", "5", ("USD", "CAD", "AUD")), ("$11.95", "11.95", ("USD", "CAD", "AUD")),
+    ("($11.95)", "-11.95", ("USD", "CAD", "AUD")), ("- 11.95 $", "-11.95", ("USD", "CAD", "AUD")),
+    ("−€3,00", "-3.00", ("EUR",)), ("€-11,95", "-11.95", ("EUR",)), ("-11,95 €", "-11.95", ("EUR",)),
+    ("(11,95 €)", "-11.95", ("EUR",)), ("11,95 €-", "-11.95", ("EUR",)), ("11.95-$", "-11.95", ("USD", "CAD", "AUD")),
+    ("-CA$ 11.95", "-11.95", ("CAD",)), ("US$-11.95", "-11.95", ("USD",)), ("-USD 1 234,50", "-1234.50", ("USD",)),
+    ("-$1,234.50", "-1234.50", ("USD", "CAD", "AUD"))])
+def test_sign_and_currency_marker_are_independent_in_any_order(raw, expected, markers):
+    parsed = normalize("money", raw)
+    assert (parsed.value, parsed.state, parsed.currency) == (expected, "readable", markers)
+
+
+def test_currency_marker_never_resolves_the_currency_field_and_bad_signs_stay_unresolved():
+    assert normalize("currency", "$").value is None
+    for raw in ("--$1", "$", "-", "$-", "-$-"):
+        assert normalize("money", raw).value is None

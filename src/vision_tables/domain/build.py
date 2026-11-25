@@ -95,6 +95,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
     doc_type = _resolve_type(list(read.values()), issues)
 
     # ---- entities ----------------------------------------------------------------------------------------
+    degraded: set[int] = set()  # pages whose content was dropped or could not be classified: not complete
     entities: list[Entity] = []
     used_ids: set[str] = set()
     sources: list[tuple[Entity, object]] = []
@@ -102,8 +103,10 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
         if reading.page not in read:
             continue
         if reading.doc_type == "unknown" and reading.records:
+            degraded.add(reading.page)
             issues.append(catalog.make("unclassified_page", f"page {reading.page} was not classified as {doc_type}", page=reading.page))
         elif reading.doc_type != doc_type and reading.records:
+            degraded.add(reading.page)
             issues.append(catalog.make("page_doc_type_mismatch", f"page {reading.page} reads as {reading.doc_type}, not {doc_type}; "
                                        f"{len(reading.records)} records were not assembled", page=reading.page))
             continue
@@ -111,6 +114,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
         page_entities: list[tuple[Entity, object]] = []
         for rec in reading.records:
             if rec.kind not in FAMILIES[reading.doc_type] or rec.kind not in FIELDS:
+                degraded.add(reading.page)
                 issues.append(catalog.make("unsupported_kind", f"record kind {rec.kind!r} is not in the {reading.doc_type} vocabulary",
                                            page=reading.page))
                 continue
@@ -147,6 +151,8 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
                 seen.add(cursor.id)
     _join_roots(entities, doc_type, issues)
 
+    incomplete |= degraded  # read, but part of the page is missing from the document
+
     # ---- observations ------------------------------------------------------------------------------------
     channel = "direct" if run.pipeline == "direct" else "parser"
     order_hint = _document_date_order(sources)
@@ -156,6 +162,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
     for entity, rec in sources:
         for name, fr in rec.fields.items():
             if name not in FIELDS[entity.kind] or name in CALCULATED_ONLY:
+                incomplete.add(entity.page)
                 issues.append(catalog.make("unsupported_field", f"{entity.kind}.{name} is not an observable field", page=entity.page))
                 continue
             region_id = fr.region_id

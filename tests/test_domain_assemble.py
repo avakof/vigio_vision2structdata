@@ -415,3 +415,47 @@ def test_aggregates_fall_back_to_child_rows_and_total_checks_can_be_indeterminat
     partial = build(PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i", total=f("12,00")),
         rec("line_item", "a", "i", description=f("A"), quantity=f("1"), unit_price=f("10,00"))]))
     assert "total_check_indeterminate" in codes(partial, "info")
+
+
+def test_signed_prefixed_amount_keeps_raw_sign_and_leaves_currency_unresolved():
+    reading = PageReading(page=1, doc_type="invoice", records=[
+        rec("invoice", "i", document_kind=f("Avoir"), currency=f("$"), total=f("-$11.95")),
+        rec("line_item", "a", "i", description=f("Retour"), quantity=f("1"), unit_price=f("$11.95"), line_total=f("-$11.95"))])
+    document = build(reading)
+    total = obs(document, "i", "total")
+    assert (total.raw, total.value, total.state) == ("-$11.95", "-11.95", "readable")
+    assert obs(document, "a", "line_total").value == "-11.95" and obs(document, "a", "unit_price").value == "11.95"
+    currency = obs(document, "i", "currency")
+    assert currency.value is None and currency.alternatives == ["USD", "CAD", "AUD"] and currency.raw == "$"
+    assert "currency_conflict" not in codes(document)
+    euro = PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i", currency=f("EUR"), total=f("-$11.95"))])
+    assert "currency_conflict" in codes(build(euro), "review")
+
+
+def _mixed(first, second, scope_pages=2):
+    return build([first, second], pages=2, scope=[1, 2])
+
+
+def test_dropped_page_in_a_mixed_type_group_is_incomplete_not_complete():
+    document = _mixed(EXAMPLES["invoice"](1), EXAMPLES["menu"](2))
+    assert document.coverage.processed_pages == [1, 2] and document.coverage.incomplete_pages == [2]
+    assert document.coverage.skipped_pages == [] and document.validation == "incomplete"
+    assert "page_doc_type_mismatch" in codes(document, "review") and not review_gate(document)["approvable"]
+    assert not any(e.page == 2 for e in document.entities)
+    clean = _mixed(EXAMPLES["invoice"](1), EXAMPLES["invoice"](2))
+    assert clean.coverage.incomplete_pages == [] and clean.validation != "incomplete"
+
+
+def test_tie_and_unknown_classification_paths_are_incomplete_too():
+    tie = _mixed(PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i", total=f("1"))]),
+                 PageReading(page=2, doc_type="menu", records=[rec("menu", "m", venue_name=f("x"))]))
+    assert tie.doc_type == "unknown" and tie.coverage.incomplete_pages == [1, 2] and tie.validation == "incomplete"
+    unknown_page = _mixed(EXAMPLES["invoice"](1), PageReading(page=2, doc_type="unknown",
+                          records=[rec("unknown", "u", description=f("stamp"))]))
+    assert unknown_page.coverage.incomplete_pages == [2] and unknown_page.validation == "incomplete"
+    assert "unclassified_page" in codes(unknown_page, "review")
+    foreign_kind = PageReading.model_construct(page=2, doc_type="invoice", records=[rec("menu_item", "m", name=f("x"))],
+                                               regions=[], issues=[], incomplete=False, suspected_cutoff=False, calls=[])
+    assert _mixed(EXAMPLES["invoice"](1), foreign_kind).coverage.incomplete_pages == [2]
+    all_unknown = build(PageReading(page=1, doc_type="unknown", records=[rec("unknown", "u", description=f("?"))]))
+    assert all_unknown.coverage.incomplete_pages == [1]

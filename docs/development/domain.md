@@ -100,6 +100,7 @@ issues and approval are recomputed; a later edit resets approval.
 * No way to add or remove a record or re-parent one: corrections edit observations only.
 * A supplier's own arithmetic error cannot be waived: `*_mismatch` blocks approval until an input
   reading is corrected. A waiver needs a contract field.
+* A page whose records were dropped (wrong-type page, tie, unclassified, unsupported kind or field) is listed in `incomplete_pages` and the version is `incomplete`; `processed_pages` only means a reading existed.
 * `suspected_cutoff`, incomplete coverage and `source_skipped_pages` make a version unapprovable (contract
   guard); the remedy is re-capture or reprocessing.
 * A model quote is checked only against the raw reading and the cited region text; it cannot prove the

@@ -102,19 +102,34 @@ def currency_candidates(text: str) -> tuple[str, ...]:
 
 
 def split_currency(raw: str) -> tuple[tuple[str, ...], str]:
-    """Strip currency markers printed at either end of an amount; return (candidates, remainder)."""
-    rest, found = raw.strip(), ()
+    """Strip currency markers printed at either end of an amount; return (candidates, remainder).
+
+    A sign or parenthesis may sit outside the marker ('-$11.95', '$-11.95', '($11.95)', '11,95 €-'); it is
+    kept, in printed order relative to the digits, in the remainder. The marker's spelling is untouched.
+    """
+    text = raw.strip()
+    lead = re.sub(r"\s", "", re.match(r"[\s+\-\u2212\u2013(]*", text).group())
+    text = text[len(re.match(r"[\s+\-\u2212\u2013(]*", text).group()):]
+    tail_match = re.search(r"[\s+\-\u2212\u2013)]*$", text)
+    tail = re.sub(r"\s", "", tail_match.group())
+    text = text[:tail_match.start()]
+    found = ()
     for _ in range(2):
         for token in _SYMBOL_PATTERN:
             word = re.fullmatch(r"[A-Za-z]+", token) is not None
-            lead = re.match(rf"{re.escape(token)}{r'\b' if word else ''}\s*", rest, re.IGNORECASE)
-            trail = re.search(rf"\s*{r'\b' if word else ''}{re.escape(token)}$", rest, re.IGNORECASE)
-            hit = lead or trail
+            lead_hit = re.match(rf"{re.escape(token)}{r'\b' if word else ''}\s*", text, re.IGNORECASE)
+            trail_hit = re.search(rf"\s*{r'\b' if word else ''}{re.escape(token)}$", text, re.IGNORECASE)
+            hit = lead_hit or trail_hit
             if hit:
                 found = found or currency_candidates(token)
-                rest = (rest[hit.end():] if hit is lead else rest[:hit.start()]).strip()
+                text = (text[hit.end():] if hit is lead_hit else text[:hit.start()]).strip()
+                # a sign between the marker and the digits ('$-11.95') belongs to the amount
+                inner = re.match(r"[\s+\-\u2212\u2013]+", text)
+                if inner and hit is lead_hit:
+                    lead += re.sub(r"\s", "", inner.group())
+                    text = text[inner.end():]
                 break
-    return found, rest
+    return found, lead + text.strip() + tail
 
 
 def currency_in_amount(raw: str) -> tuple[str, ...]:
