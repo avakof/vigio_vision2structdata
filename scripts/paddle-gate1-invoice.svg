@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="480" viewBox="0 0 700 480">
+  <rect width="700" height="480" fill="white"/>
+  <g font-family="Arial, sans-serif" font-size="21" fill="black">
+    <text x="48" y="68" font-size="32" font-weight="bold">FACTURE / INVOICE</text>
+    <text x="48" y="112">Papeterie Nuage (fictif)</text>
+    <text x="48" y="144">Réf. SYN-016 | 25/11/2026</text>
+    <path d="M48 180 H652 V306 H48 Z M48 222 H652 M48 264 H652 M320 180 V306 M418 180 V306 M532 180 V306" fill="none" stroke="black" stroke-width="2"/>
+    <text x="59" y="208">Article / Item</text>
+    <text x="331" y="208">Qté</text>
+    <text x="429" y="208">Prix</text>
+    <text x="543" y="208">Montant</text>
+    <text x="59" y="250">Carnet</text>
+    <text x="331" y="250">2</text>
+    <text x="429" y="250">4,00 €</text>
+    <text x="543" y="250">8,00 €</text>
+    <text x="59" y="292">Stylo</text>
+    <text x="331" y="292">1</text>
+    <text x="429" y="292">2,00 €</text>
+    <text x="543" y="292">2,00 €</text>
+    <text x="385" y="384" font-size="28" font-weight="bold">Total TTC : 10,00 €</text>
+  </g>
+</svg>
