@@ -1,0 +1,316 @@
+[
+  {
+    "document_id": "doc-6893fdc370a75d944e11e8b5e0a04ac1",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "recipe",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "619fba4324fe8c31ccf23bd2fc3eb61bce34ef044fe844609b4f297e92a8c4ef",
+      "media_type": "image/png",
+      "size_bytes": 1390813,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1696.0,
+        "height": 620.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1696,
+        "image_height": 620,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [],
+    "run": {
+      "job_id": "4bebd0f4115d42d885d0950c250195a8",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 538,
+          "prompt_tokens": 1669,
+          "load_seconds": 3.6924976669833995,
+          "generation_seconds": 12.705904166010441,
+          "runtime_seconds": 20.436604999995325,
+          "peak_rss_bytes": 7281770496,
+          "mlx_peak_bytes": 7505712296,
+          "seconds_including_lock_wait": 21.234328791993903,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": null,
+              "raw": "Courgeons",
+              "quote": "Courgeons",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": "Il faut peler les Courgeons et les couper par tranches fines, on met ces tranches sur le feu dans un plat de Roche pour leur faire rendre leur Eau, il faut y mettre un peu d'eau, afin qu'elles ne s'attachent pas, et couvrir le plat; quand elles ont un peu cuit à petit feu, il faut les mettre égoutter dans la passoire ensuite on échauffe du Beurre frais, on y jasse un moment le Courgeon en le poudrant d'un peu de farine, Sel et Poivre à discretion, ensuite on y vide de la bonne Crème, on fait cuire le tout pendant un quart d'heure, ayant soin de remettre de la Crème, s'il devient trop épais, après quoi on le dresse et on y jasse un peu de muscade par dessus, ou si l'on veut y ajouter une petite poignéegnée d'amandes pelées et pilées avec un peu de Sucre, qu'on fait cuire parmi.",
+              "quote": "Il faut peler les Courgeons et les couper par tranches fines, on met ces tranches sur le feu dans un plat de Roche pour leur faire rendre leur Eau, il faut y mettre un peu d'eau, afin qu'elles ne s'attachent pas, et couvrir le plat; quand elles ont un peu cuit à petit feu, il faut les mettre égoutter dans la passoire ensuite on échauffe du Beurre frais, on y jasse un moment le Courgeon en le poudrant d'un peu de farine, Sel et Poivre à discretion, ensuite on y vide de la bonne Crème, on fait cuire le tout pendant un quart d'heure, ayant soin de remettre de la Crème, s'il devient trop épais, après quoi on le dresse et on y jasse un peu de muscade par dessus, ou si l'on veut y ajouter une petite poignéegnée d'amandes pelées et pilées avec un peu de Sucre, qu'on fait cuire parmi.",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "version",
+              "region_id": null,
+              "raw": "153",
+              "quote": "153",
+              "state": "readable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "recipe",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.title",
+        "entity_id": "p1.root",
+        "field": "title",
+        "raw": "Courgeons",
+        "value": "Courgeons",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Courgeons",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.description",
+        "entity_id": "p1.root",
+        "field": "description",
+        "raw": "Il faut peler les Courgeons et les couper par tranches fines, on met ces tranches sur le feu dans un plat de Roche pour leur faire rendre leur Eau, il faut y mettre un peu d'eau, afin qu'elles ne s'attachent pas, et couvrir le plat; quand elles ont un peu cuit à petit feu, il faut les mettre égoutter dans la passoire ensuite on échauffe du Beurre frais, on y jasse un moment le Courgeon en le poudrant d'un peu de farine, Sel et Poivre à discretion, ensuite on y vide de la bonne Crème, on fait cuire le tout pendant un quart d'heure, ayant soin de remettre de la Crème, s'il devient trop épais, après quoi on le dresse et on y jasse un peu de muscade par dessus, ou si l'on veut y ajouter une petite poignéegnée d'amandes pelées et pilées avec un peu de Sucre, qu'on fait cuire parmi.",
+        "value": "Il faut peler les Courgeons et les couper par tranches fines, on met ces tranches sur le feu dans un plat de Roche pour leur faire rendre leur Eau, il faut y mettre un peu d'eau, afin qu'elles ne s'attachent pas, et couvrir le plat; quand elles ont un peu cuit à petit feu, il faut les mettre égoutter dans la passoire ensuite on échauffe du Beurre frais, on y jasse un moment le Courgeon en le poudrant d'un peu de farine, Sel et Poivre à discretion, ensuite on y vide de la bonne Crème, on fait cuire le tout pendant un quart d'heure, ayant soin de remettre de la Crème, s'il devient trop épais, après quoi on le dresse et on y jasse un peu de muscade par dessus, ou si l'on veut y ajouter une petite poignéegnée d'amandes pelées et pilées avec un peu de Sucre, qu'on fait cuire parmi.",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Il faut peler les Courgeons et les couper par tranches fines, on met ces tranches sur le feu dans un plat de Roche pour leur faire rendre leur Eau, il faut y mettre un peu d'eau, afin qu'elles ne s'attachent pas, et couvrir le plat; quand elles ont un peu cuit à petit feu, il faut les mettre égoutter dans la passoire ensuite on échauffe du Beurre frais, on y jasse un moment le Courgeon en le poudrant d'un peu de farine, Sel et Poivre à discretion, ensuite on y vide de la bonne Crème, on fait cuire le tout pendant un quart d'heure, ayant soin de remettre de la Crème, s'il devient trop épais, après quoi on le dresse et on y jasse un peu de muscade par dessus, ou si l'on veut y ajouter une petite poignéegnée d'amandes pelées et pilées avec un peu de Sucre, qu'on fait cuire parmi.",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": "153",
+        "value": "153",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "153",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "recipe_yield_missing",
+        "message": "no yield was read",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      }
+    ],
+    "validation": "valid",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

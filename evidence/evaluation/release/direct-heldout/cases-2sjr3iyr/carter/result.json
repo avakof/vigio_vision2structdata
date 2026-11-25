@@ -1,0 +1,630 @@
+[
+  {
+    "document_id": "doc-1a8059ef391f6331f38d3958f992a105",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "invoice",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "fac2184d4bcb72ce717f538cede1993f9f2b2a637b938ac25273e284ed692acb",
+      "media_type": "image/jpeg",
+      "size_bytes": 194681,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1600.0,
+        "height": 798.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1600,
+        "image_height": 798,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-style",
+        "page": 1,
+        "order": 0,
+        "kind": "page_style",
+        "text": "",
+        "language": "en",
+        "writing": "handwriting",
+        "box": null,
+        "artifact_path": "pages/0001.png",
+        "artifact_sha256": "39e4350b1ba8db165301840595d34a82b765830b7cdf998cfe5ff5537fada964",
+        "crop_to_original": null
+      }
+    ],
+    "run": {
+      "job_id": "c705071499034d30bc26f6acf9e324a8",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 330,
+          "prompt_tokens": 1912,
+          "load_seconds": 2.512744625011692,
+          "generation_seconds": 12.47659725000267,
+          "runtime_seconds": 17.148831792001147,
+          "peak_rss_bytes": 5982961664,
+          "mlx_peak_bytes": 7613178838,
+          "seconds_including_lock_wait": 17.615548833011417,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": null,
+              "raw": "W. Robert Hord",
+              "quote": "W. Robert Hord",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": null,
+              "raw": "Mary R Carter",
+              "quote": "To Mary R Carter",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": null,
+              "raw": "$",
+              "quote": "$",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": null,
+              "raw": "10",
+              "quote": "$ 10",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_kind",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "charge_total",
+              "region_id": null,
+              "raw": "10",
+              "quote": "$ 10",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 330,
+          "prompt_tokens": 1923,
+          "load_seconds": 2.8567354590049945,
+          "generation_seconds": 8.276285707979696,
+          "runtime_seconds": 13.654300083988346,
+          "peak_rss_bytes": 7323582464,
+          "mlx_peak_bytes": 7622501510,
+          "seconds_including_lock_wait": 14.159777792025125,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": null,
+              "raw": "W. Robert Hord",
+              "quote": "W. Robert Hord",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": null,
+              "raw": "Mary R Carter",
+              "quote": "To Mary R Carter",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": null,
+              "raw": "$",
+              "quote": "$",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": null,
+              "raw": "10",
+              "quote": "$ 10",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_kind",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "charge_total",
+              "region_id": null,
+              "raw": "10",
+              "quote": "$ 10",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": true,
+      "original_capture": "suspected_incomplete"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "invoice",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.supplier_name",
+        "entity_id": "p1.root",
+        "field": "supplier_name",
+        "raw": "W. Robert Hord",
+        "value": "W. Robert Hord",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "W. Robert Hord",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.customer_name",
+        "entity_id": "p1.root",
+        "field": "customer_name",
+        "raw": "Mary R Carter",
+        "value": "Mary R Carter",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "To Mary R Carter",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.issue_date",
+        "entity_id": "p1.root",
+        "field": "issue_date",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Sept 12, 1829"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": "$",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "$",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "USD",
+          "CAD",
+          "AUD"
+        ],
+        "reason": "symbol does not identify one currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.total",
+        "entity_id": "p1.root",
+        "field": "total",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "$ 10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.document_kind",
+        "entity_id": "p1.root",
+        "field": "document_kind",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "receipt"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.charge_total",
+        "entity_id": "p1.root",
+        "field": "charge_total",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "$ 10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "suspected_cutoff",
+        "message": "page 1 may be cut off at the edge of the capture",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.issue_date",
+          "p1.root.document_kind"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "suspected_capture",
+        "message": "The model flagged content near a potentially cut-off page edge.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.issue_date: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.issue_date"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "invoice.currency: symbol does not identify one currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.document_kind: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.document_kind"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "critical_missing",
+        "message": "invoice.document_number was not read",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      },
+      {
+        "code": "total_check_indeterminate",
+        "message": "no subtotal or line items were read to compare with the total",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.total"
+        ],
+        "severity": "info"
+      }
+    ],
+    "validation": "issues",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
