@@ -1,0 +1,34 @@
+Merged: 36b3200aa93d8faa3d4e6eeda3b9edb66ec6d141 into vt-review at 9fedab503c2fb3676fed19fac75e03bb3c7ed35f
+Date: 2026-11-25T16:22:25Z
+
+$ .venv/bin/python -m pytest -q
+294 passed in 12.28s
+
+$ .venv/bin/python -m pytest -q -rA evidence/development/reviewer -s
+...NATIVE_CHANNELS 0 partial ['direct'] ['critical_missing', 'pdf_text_partial']
+......BATCH_WITH_SKIPPED_INPUT incomplete 3 {'completed': 1, 'skipped': 1}
+.NATIVE_NOTE 0 completed partial ['/private/var/folders/q8/_7ztc8bn4ybc9m23xt7dz_fc0000gn/T/pytest-of-vakof/pytest-242/test_native_pdf_with_raster_no0/state/jobs/8926091d9233425284ff13354861750a/pages/0001.png'] ['critical_missing', 'pdf_text_partial']
+.REREAD_APPROVE 0 None
+.FAINT 0 valid ['low_contrast'] FAINT_APPROVE 0 None FAINT_REPROCESS reused 2
+PASSED evidence/development/reviewer/test_recheck_probes.py::test_m4_structural_add_remove_add_field_through_cli_store_replay_and_exports
+PASSED evidence/development/reviewer/test_recheck_probes.py::test_m4_rejections_leave_no_version
+PASSED evidence/development/reviewer/test_recheck_probes.py::test_l3_field_evidence_names_attempt_and_channel
+PASSED evidence/development/reviewer/test_recheck_probes.py::test_m3_tiny_raster_mark_keeps_page_image_in_read
+PASSED evidence/development/reviewer/test_review_probes.py::test_pending_default_export_survives_a_later_single_format_export
+PASSED evidence/development/reviewer/test_review_probes.py::test_pending_correction_export_survives_a_later_single_format_export
+PASSED evidence/development/reviewer/test_review_probes.py::test_correction_on_superseded_provisional_extraction_is_rejected
+PASSED evidence/development/reviewer/test_review_probes.py::test_integrated_replay_correction_and_consistent_exports
+PASSED evidence/development/reviewer/test_review_probes.py::test_truncated_but_valid_reply_is_incomplete_not_success
+PASSED evidence/development/reviewer/test_review_probes.py::test_unsupported_files_in_batch_are_visible
+PASSED evidence/development/reviewer/test_review_probes.py::test_date_order_borrowed_from_another_field_is_disclosed
+PASSED evidence/development/reviewer/test_review_probes.py::test_native_pdf_with_raster_note_is_not_read_text_only_without_a_signal
+PASSED evidence/development/reviewer/test_review_probes.py::test_resolved_reread_disagreement_can_be_approved
+PASSED evidence/development/reviewer/test_review_probes.py::test_low_contrast_capture_can_be_approved_after_review
+PASSED evidence/development/reviewer/test_review_probes.py::test_unreadable_field_can_be_corrected
+PASSED evidence/development/reviewer/test_review_probes.py::test_reread_disagreement_blocker_retires_once_the_field_is_corrected
+16 passed in 1.18s
+
+$ vision-tables evaluate fixtures/manifest.json --output <scratch> --state-dir <empty>   (no runtime)
+exit=5
+ status blocked blocked_cases 10 {'corrupt_image': 1, 'corrupt_pdf': 1, 'encrypted_pdf': 1, 'missing_model': 10, 'oversized_input': 1, 'unsupported_format': 1}
+ configuration model mlx-community/Qwen3.5-9B-MLX-4bit revision 938d8919941c6e7efd3c7150eff7fe9d12afa631 components_ready False base_config_hash b4bae87a244e40cc
