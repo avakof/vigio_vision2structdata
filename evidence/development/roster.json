@@ -1,0 +1,185 @@
+[
+  {
+    "role": "integration",
+    "requested": {
+      "harness": "codex",
+      "model": "gpt-6.2-astra",
+      "effort": "xhigh"
+    },
+    "effective": {
+      "session_id": "01a21337-ea80-73c3-88c4-fe7d355e7d6f",
+      "harness": "codex",
+      "model": "gpt-6.2-astra",
+      "effort": "xhigh",
+      "cwd": "/Users/vakof/orca/vision-to-tables",
+      "source": "Codex session_meta and turn_context"
+    },
+    "orca_handle": "structured-agent-session-86695985-f792-4d5b-9f14-8b8109e83a35",
+    "worktree": "/Users/vakof/orca/vision-to-tables",
+    "run_id": "run_7901ade1ddff",
+    "task_id": null,
+    "dispatch_id": null,
+    "substitution": null,
+    "additional_dispatches": []
+  },
+  {
+    "role": "reasoner",
+    "requested": {
+      "harness": "codex",
+      "model": "gpt-6.2-astra",
+      "effort": "xhigh"
+    },
+    "effective": {
+      "session_id": "01a21339-ac34-7863-8028-c56b2f332efe",
+      "harness": "codex",
+      "model": "gpt-6.2-astra",
+      "effort": "xhigh",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-reasoner",
+      "source": "Codex session_meta and turn_context"
+    },
+    "orca_handle": "structworker_1b0ab809-6b0b-469a-939e-88bfa5522096",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-reasoner",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_1a04b12a5d27",
+    "dispatch_id": "ctx_f8fd0b9bbfdb",
+    "substitution": null,
+    "additional_dispatches": []
+  },
+  {
+    "role": "vision",
+    "requested": {
+      "harness": "codex",
+      "model": "gpt-6.2-sol",
+      "effort": "high"
+    },
+    "effective": {
+      "session_id": "01a21339-ac34-7a90-9bf5-0407cbcdb5ed",
+      "harness": "codex",
+      "model": "gpt-6.2-sol",
+      "effort": "high",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-vision",
+      "source": "Codex session_meta and turn_context"
+    },
+    "orca_handle": "structworker_3b81e211-e8e0-47ef-bc90-6fa370ab6a78",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-vision",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_429df61b585c",
+    "dispatch_id": "ctx_13e3479904c2",
+    "substitution": null,
+    "additional_dispatches": [
+      {
+        "dispatchId": "ctx_7d399a4913e9",
+        "taskId": "task_da1f14ea1181"
+      },
+      {
+        "dispatchId": "ctx_eff72f2f269a",
+        "taskId": "task_c04a771d48bd"
+      }
+    ]
+  },
+  {
+    "role": "extraction",
+    "requested": {
+      "harness": "claude",
+      "model": "claude-sonnet-5-5",
+      "effort": "high"
+    },
+    "effective": {
+      "session_id": "3907a0bf-a07f-45ce-b163-3a1c30136c28",
+      "model": "claude-sonnet-5-5",
+      "harness": "Claude Code",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-domain",
+      "source": "Claude Code assistant message metadata",
+      "effort": "high",
+      "effort_source": "Orca worker-start receipt"
+    },
+    "orca_handle": "structworker_2e485c0f-ec52-4ce2-bcc1-d6b0c3be21a8",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-domain",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_bbdca15ee466",
+    "dispatch_id": "ctx_d72a4936f266",
+    "substitution": null,
+    "additional_dispatches": []
+  },
+  {
+    "role": "persistence",
+    "requested": {
+      "harness": "claude",
+      "model": "claude-sonnet-5-5",
+      "effort": "high"
+    },
+    "effective": {
+      "session_id": "fd5bde56-d14a-41d0-93b6-7994ebfe884b",
+      "model": "claude-sonnet-5-5",
+      "harness": "Claude Code",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-store",
+      "source": "Claude Code assistant message metadata",
+      "effort": "high",
+      "effort_source": "Orca worker-start receipt"
+    },
+    "orca_handle": "structworker_719e30c6-1378-4ace-b5c3-5765da1501f8",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-store",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_8eebb0b6af92",
+    "dispatch_id": "ctx_e08943fdf4c2",
+    "substitution": null,
+    "additional_dispatches": [
+      {
+        "dispatchId": "ctx_df16b9e5453b",
+        "taskId": "task_ae1ba98d02f7"
+      }
+    ]
+  },
+  {
+    "role": "qa",
+    "requested": {
+      "harness": "codex",
+      "model": "gpt-6.2-sol",
+      "effort": "high"
+    },
+    "effective": {
+      "session_id": "01a21339-ac33-7203-8477-af85c30648ff",
+      "harness": "codex",
+      "model": "gpt-6.2-sol",
+      "effort": "high",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-qa",
+      "source": "Codex session_meta and turn_context"
+    },
+    "orca_handle": "structworker_f0b25c6f-1699-4d34-9038-0b002a0974ad",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-qa",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_e19bc0368b0d",
+    "dispatch_id": "ctx_2c511ca52da2",
+    "substitution": null,
+    "additional_dispatches": [
+      {
+        "dispatchId": "ctx_224ade62eafd",
+        "taskId": "task_2b9978b90a49"
+      }
+    ]
+  },
+  {
+    "role": "reviewer",
+    "requested": {
+      "harness": "claude",
+      "model": "claude-opus-5-5",
+      "effort": "high"
+    },
+    "effective": {
+      "session_id": "31dd643b-c348-4318-bd44-d8fab55ab852",
+      "model": "claude-opus-5-5",
+      "harness": "Claude Code",
+      "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-review",
+      "source": "Claude Code assistant message metadata",
+      "effort": "high",
+      "effort_source": "Orca worker-start receipt"
+    },
+    "orca_handle": "structworker_bc4a3916-0f7e-4cae-9bbd-ab579cfb12e9",
+    "worktree": "/Users/vakof/orca/workspaces/vision-to-tables/vt-review",
+    "run_id": "run_7901ade1ddff",
+    "task_id": "task_0c28b0db7e0f",
+    "dispatch_id": "ctx_dea7abd80546",
+    "substitution": null,
+    "additional_dispatches": []
+  }
+]

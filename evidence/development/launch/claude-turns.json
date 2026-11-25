@@ -16,5 +16,14 @@
     "source": "Claude Code assistant message metadata",
     "effort": "high",
     "effort_source": "Orca worker-start receipt"
+  },
+  "review": {
+    "session_id": "31dd643b-c348-4318-bd44-d8fab55ab852",
+    "model": "claude-opus-5-5",
+    "harness": "Claude Code",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-review",
+    "source": "Claude Code assistant message metadata",
+    "effort": "high",
+    "effort_source": "Orca worker-start receipt"
   }
 }
