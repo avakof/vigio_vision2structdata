@@ -1,0 +1,56 @@
+{
+  "status": "completed",
+  "eligible": true,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "invoice",
+      "scope": [
+        1
+      ],
+      "exhaustive": [
+        "line_item"
+      ],
+      "issues": [],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "invoice",
+          "fields": {
+            "document_number": "PW-318",
+            "currency": "USD",
+            "issue_date": "2026-03-21",
+            "subtotal": {"value": "23.95", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"},
+            "total": {"value": "23.95", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          }
+        },
+        {
+          "id": "boxes",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Paper cake boxes", "page": 1},
+            "quantity": {"value": "3", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "7.15", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "21.45", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "liners",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Waxed liners", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "1.25", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "2.50", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        }
+      ]
+    }
+  ]
+}
