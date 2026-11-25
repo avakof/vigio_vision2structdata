@@ -13,6 +13,7 @@ from .build import finalize
 from .normalize import clean_text
 from .schema import ENUMS, FIELD_TYPES
 from .units import DIMENSION, ISO_CODES
+from .structure import edit_structure
 
 _DECIMAL = re.compile(r"-?(?:0|[1-9]\d{0,23})(?:\.\d{1,12})?")
 _FRACTION = re.compile(r"-?\d{1,24}/\d{1,24}")
@@ -143,6 +144,7 @@ def apply_corrections(document: Document, changes: CorrectionSet) -> Document:
         raise ProcessingError("document_mismatch", "The corrections belong to another document.")
     if changes.base_version != document.version:
         raise ProcessingError("stale_base", f"Corrections target version {changes.base_version}; this is version {document.version}.")
+    document = edit_structure(document, changes, _canonical_error)
     index = {o.id: o for o in document.observations}
     entities = {e.id: e for e in document.entities}
     replacements: dict[str, Observation] = {}

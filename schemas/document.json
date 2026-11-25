@@ -1,5 +1,137 @@
 {
   "$defs": {
+    "AddField": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "field": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Field",
+          "type": "string"
+        },
+        "op": {
+          "const": "add_field",
+          "title": "Op",
+          "type": "string"
+        },
+        "reading": {
+          "$ref": "#/$defs/HumanField"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "entity_id",
+        "field",
+        "reading",
+        "reason"
+      ],
+      "title": "AddField",
+      "type": "object"
+    },
+    "AddRow": {
+      "additionalProperties": false,
+      "properties": {
+        "after_entity_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "After Entity Id"
+        },
+        "entity_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "fields": {
+          "maxProperties": 100,
+          "minProperties": 1,
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "$ref": "#/$defs/HumanField"
+            }
+          },
+          "propertyNames": {
+            "maxLength": 180,
+            "minLength": 1
+          },
+          "title": "Fields",
+          "type": "object"
+        },
+        "kind": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Kind",
+          "type": "string"
+        },
+        "op": {
+          "const": "add_row",
+          "title": "Op",
+          "type": "string"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "entity_id",
+        "kind",
+        "page",
+        "fields",
+        "reason"
+      ],
+      "title": "AddRow",
+      "type": "object"
+    },
     "Box": {
       "additionalProperties": false,
       "properties": {
@@ -142,6 +274,32 @@
           "minLength": 1,
           "title": "Reviewer",
           "type": "string"
+        },
+        "structure": {
+          "items": {
+            "discriminator": {
+              "mapping": {
+                "add_field": "#/$defs/AddField",
+                "add_row": "#/$defs/AddRow",
+                "remove_row": "#/$defs/RemoveRow"
+              },
+              "propertyName": "op"
+            },
+            "oneOf": [
+              {
+                "$ref": "#/$defs/AddField"
+              },
+              {
+                "$ref": "#/$defs/AddRow"
+              },
+              {
+                "$ref": "#/$defs/RemoveRow"
+              }
+            ]
+          },
+          "maxItems": 1000,
+          "title": "Structure",
+          "type": "array"
         }
       },
       "required": [
@@ -354,6 +512,49 @@
         "page"
       ],
       "title": "Evidence",
+      "type": "object"
+    },
+    "HumanField": {
+      "additionalProperties": false,
+      "properties": {
+        "raw": {
+          "maxLength": 16384,
+          "minLength": 1,
+          "title": "Raw",
+          "type": "string"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "title": "Value"
+        }
+      },
+      "required": [
+        "raw",
+        "value"
+      ],
+      "title": "HumanField",
       "type": "object"
     },
     "Issue": {
@@ -765,6 +966,36 @@
         "kind"
       ],
       "title": "Region",
+      "type": "object"
+    },
+    "RemoveRow": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "maxLength": 180,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9_.:-]+$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "op": {
+          "const": "remove_row",
+          "title": "Op",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 4096,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "op",
+        "entity_id",
+        "reason"
+      ],
+      "title": "RemoveRow",
       "type": "object"
     },
     "Run": {

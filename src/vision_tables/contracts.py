@@ -252,16 +252,50 @@ class Correction(Wire):
         return self
 
 
+class HumanField(Wire):
+    raw: Text = Field(min_length=1)
+    value: StrictStr | StrictBool
+    region_id: Identifier | None = None
+
+
+class AddField(Wire):
+    op: Literal["add_field"]
+    entity_id: Identifier
+    field: Identifier
+    reading: HumanField
+    reason: str = Field(min_length=1, max_length=4096)
+
+
+class AddRow(Wire):
+    op: Literal["add_row"]
+    entity_id: Identifier
+    kind: Identifier
+    parent_id: Identifier | None = None
+    page: Number
+    # Empty means append to the page; an anchor places the row after it.
+    after_entity_id: Identifier | None = None
+    fields: dict[Identifier, HumanField] = Field(min_length=1, max_length=100)
+    reason: str = Field(min_length=1, max_length=4096)
+
+
+class RemoveRow(Wire):
+    op: Literal["remove_row"]
+    entity_id: Identifier
+    reason: str = Field(min_length=1, max_length=4096)
+
+
 class CorrectionSet(Wire):
     document_id: Identifier
     base_version: Number
     reviewer: str = Field(min_length=1, max_length=256)
     changes: list[Correction] = Field(default_factory=list, max_length=1000)
+    structure: list[Annotated[AddField | AddRow | RemoveRow, Field(discriminator="op")]] = Field(
+        default_factory=list, max_length=1000, exclude_if=lambda value: not value)
     approve: StrictBool = False
 
     @model_validator(mode="after")
     def actionable(self):
-        if not self.changes and not self.approve:
+        if not self.changes and not self.structure and not self.approve:
             raise ValueError("provide changes or explicit approval")
         if len({c.observation_id for c in self.changes}) != len(self.changes):
             raise ValueError("duplicate correction target")

@@ -123,6 +123,11 @@ def render_tables(doc: Document) -> dict[str, bytes]:
                 [ch.observation_id, ch.value, ch.raw, ch.state, ch.reason] if ch else [None] * 5)]
              for i, c in enumerate(doc.corrections) for ch in (c.changes or [None])]),
     }
+    tables["structural_corrections.csv"] = _csv(
+        ["document_id", "event", "base_version", "reviewer", "operation", "entity_id", "reason", "details_json"],
+        [[did, i, correction.base_version, correction.reviewer, op.op, op.entity_id, op.reason,
+          _j(op.model_dump(mode="json"))]
+         for i, correction in enumerate(doc.corrections) for op in correction.structure])
     by_obs = {}
     for obs in observations:
         by_obs.setdefault(obs.entity_id, {})[obs.field] = obs
