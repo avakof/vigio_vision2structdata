@@ -1,0 +1,43 @@
+{
+  "args": [
+    "/Users/vakof/orca/vision-to-tables/.venv/bin/python",
+    "tools/verify_offline.py",
+    "extract",
+    "fixtures/feasibility/invoice.png",
+    "--pipeline",
+    "direct",
+    "--type",
+    "invoice",
+    "--output",
+    "/Users/vakof/orca/vision-to-tables/.vt-state/release-runs/direct/exports",
+    "--no-progress"
+  ],
+  "exit": 0,
+  "wall_seconds": 8.915041875006864,
+  "commit": "fa1aa9e9b9307fbbbc8e2f08fd3a7f962f59f9c3",
+  "status": "completed",
+  "exit_code": 0,
+  "source": "fixtures/feasibility/invoice.png",
+  "pipeline": "direct",
+  "network": {
+    "loopback": true,
+    "public_connect_errno": 1
+  },
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "version": 1,
+  "snapshot_sha256": "0beedda91a4b85d9bcd3df189e576aa8dea828ae00eba1936928f0aecb7c5ad9",
+  "validation": "valid",
+  "approval": "needs_review",
+  "calls": [
+    {
+      "id": "p1-qwen-0",
+      "status": "parsed",
+      "generated_tokens": 195,
+      "token_limit": 2048,
+      "runtime_seconds": 8.05221912500565,
+      "seconds_including_lock_wait": 8.519747832993744,
+      "peak_rss_bytes": 7134756864,
+      "mlx_peak_bytes": 6963011906
+    }
+  ]
+}

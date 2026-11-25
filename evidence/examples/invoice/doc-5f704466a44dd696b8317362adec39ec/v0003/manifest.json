@@ -1,0 +1,26 @@
+{
+  "approval": "needs_review",
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "files": {
+    "document.json": "e93e080bb4990e59af0468bae87284f8341b619c8ba2423b05bbdaa930f00094",
+    "document.sqlite3": "ea5d8a4475752b30b776b0d11d9a5acb6cec7bb7c33dc92318a173c9d866592e",
+    "review/corrections.example.json": "0a0d481a6f474e88c6d016629774d0e08f25195ef9b95c41a99440d5d875bda2",
+    "review/corrections.schema.json": "272991f750b5c3aad2044da398330b9d231c142f94aa78f0f4cd7dee850f5089",
+    "review/review.json": "f0872c94a7b7745413dabbed007e2693ebca211a6219d7a6b4a20d3557274672",
+    "tables/corrections.csv": "be0242c1d4aa1dfd6fafd8faa31607e708146264abff3f7b852eda995a78246e",
+    "tables/documents.csv": "7f3e0fdc7496c4d6d8e437ba853869f857fee013c2ed0817de9524495d9eb474",
+    "tables/entities.csv": "3e36a5828514a62a8e54c59b695f1eb39d352678a9d83b533bbcc0187f84ca99",
+    "tables/evidence.csv": "fd357ccbcf9a259b9479c97c92c82696edfe8ca31888524d4a2fcbee03d77fd0",
+    "tables/issues.csv": "c6554841434994cc8b4ebc92b852e232ec627c0e2ce98248b346cf4aa7cb869b",
+    "tables/observations.csv": "0b271d0d5ce2b08743890feffac5551828cbcc291f72863e421726ed332c6be9",
+    "tables/pages.csv": "dea8f719020d2492be567460047b5676529c17075638051af71b42a067fa1fc4",
+    "tables/regions.csv": "efdc1d1c9a565917d3957a27027c10e19e6235813afa234e2e308fa2894fbe46",
+    "tables/structural_corrections.csv": "4f6e9fdf2deffe7b3b7cc2cdc3266fca95afad036de749576c2e3a0068117a0d",
+    "tables/table_invoice.csv": "df8b87a6ea28ffd9b1bb67831db6751c17972c30c1008a2b1e83d4ae9e861d6d"
+  },
+  "format": "vision-tables-export/1",
+  "parent_version": 2,
+  "snapshot_sha256": "e93e080bb4990e59af0468bae87284f8341b619c8ba2423b05bbdaa930f00094",
+  "validation": "valid",
+  "version": 3
+}

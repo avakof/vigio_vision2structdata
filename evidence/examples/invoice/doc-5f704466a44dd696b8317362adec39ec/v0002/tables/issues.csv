@@ -1,0 +1,9 @@
+document_id,issue_seq,code,severity,message,page,observation_ids
+doc-5f704466a44dd696b8317362adec39ec,0,invalid_parent,info,invoice p1-parser-1: invoice cannot contain invoice; link ignored,1,[]
+doc-5f704466a44dd696b8317362adec39ec,1,multiple_roots,info,2 invoice records were read,,[]
+doc-5f704466a44dd696b8317362adec39ec,2,critical_missing,info,invoice.issue_date was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,3,critical_missing,info,invoice.currency was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,4,critical_missing,info,invoice.total was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,5,critical_missing,info,invoice.document_number was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,6,critical_missing,info,invoice.supplier_name was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,7,total_check_indeterminate,info,no subtotal or line items were read to compare with the total,1,"[""p1.p1-parser-1.total""]"

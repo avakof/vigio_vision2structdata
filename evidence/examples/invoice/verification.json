@@ -1,0 +1,213 @@
+{
+  "status": "passed",
+  "source": "fixtures/feasibility/invoice.png",
+  "source_sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "controlled_review": "Source-verified correction example by the integrator; no human approval requested or recorded.",
+  "snapshots": [
+    {
+      "version": 1,
+      "route": "direct",
+      "approval": "needs_review",
+      "snapshot_sha256": "0beedda91a4b85d9bcd3df189e576aa8dea828ae00eba1936928f0aecb7c5ad9",
+      "entity_count": 1,
+      "fields": [
+        "document_kind",
+        "document_number",
+        "supplier_name",
+        "currency",
+        "total"
+      ],
+      "amounts": [
+        "37.25"
+      ],
+      "issue_codes": [
+        "critical_missing",
+        "total_check_indeterminate"
+      ]
+    },
+    {
+      "version": 2,
+      "route": "hybrid",
+      "approval": "needs_review",
+      "snapshot_sha256": "b254dc1b24cc396eda8bd5921dcf121591c1531f13413d1fe1aa9ef6c69daaa8",
+      "entity_count": 2,
+      "fields": [
+        "document_kind",
+        "document_number",
+        "supplier_name",
+        "total"
+      ],
+      "amounts": [
+        "37.25"
+      ],
+      "issue_codes": [
+        "invalid_parent",
+        "multiple_roots",
+        "critical_missing",
+        "critical_missing",
+        "critical_missing",
+        "critical_missing",
+        "critical_missing",
+        "total_check_indeterminate"
+      ]
+    },
+    {
+      "version": 3,
+      "route": "hybrid",
+      "approval": "needs_review",
+      "snapshot_sha256": "e93e080bb4990e59af0468bae87284f8341b619c8ba2423b05bbdaa930f00094",
+      "entity_count": 1,
+      "fields": [
+        "document_kind",
+        "document_number",
+        "supplier_name",
+        "total",
+        "currency"
+      ],
+      "amounts": [
+        "37.25"
+      ],
+      "issue_codes": [
+        "invalid_parent",
+        "critical_missing",
+        "total_check_indeterminate"
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "tag": "bundle",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "review",
+        "bundle",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "2",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "completed",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.19436475000111386
+    },
+    {
+      "tag": "apply",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "review",
+        "apply",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice/corrections.json",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "applied",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.2218553749844432
+    },
+    {
+      "tag": "replay",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "review",
+        "apply",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice/corrections.json",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "replayed",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.215634708001744
+    },
+    {
+      "tag": "export-v1",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "1",
+        "--format",
+        "all",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "completed",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.19850962498458102
+    },
+    {
+      "tag": "export-v2",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "2",
+        "--format",
+        "all",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "completed",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.19846391602186486
+    },
+    {
+      "tag": "export-v3",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "3",
+        "--format",
+        "all",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/evidence/examples/invoice"
+      ],
+      "exit": 0,
+      "status": "completed",
+      "offline": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "seconds": 0.19448308399296366
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+document_id,observation_id,entity_id,entity_kind,field,raw,value,state,origin,language,reason,alternatives,derivation,derivation_inputs,evidence_count
+doc-5f704466a44dd696b8317362adec39ec,p1.p1-parser-0.document_kind,p1.p1-parser-0,invoice,document_kind,FACTURE / INVOICE,invoice,readable,observed,,,[],,,1
+doc-5f704466a44dd696b8317362adec39ec,p1.p1-parser-0.document_number,p1.p1-parser-0,invoice,document_number,VTX-4187,VTX-4187,readable,observed,,,[],,,1
+doc-5f704466a44dd696b8317362adec39ec,p1.p1-parser-0.supplier_name,p1.p1-parser-0,invoice,supplier_name,Atelier de la Rive,Atelier de la Rive,readable,observed,,,[],,,1
+doc-5f704466a44dd696b8317362adec39ec,p1.p1-parser-0.currency,p1.p1-parser-0,invoice,currency,EUR,EUR,readable,human_supplied,,The printed code appears to the right of the decimal-comma total.,[],,,1
+doc-5f704466a44dd696b8317362adec39ec,p1.p1-parser-0.total,p1.p1-parser-0,invoice,total,"37,25 EUR",37.25,readable,human_supplied,,The printed total belongs to the invoice identified by VTX-4187.,[],,,1

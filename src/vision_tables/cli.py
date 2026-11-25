@@ -394,6 +394,7 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:
         payload, code = {"status": "failed", "error": error_payload("internal_error",
                                                                     f"{type(exc).__name__}: {exc}")}, EXIT_INTERNAL
+    payload.setdefault("status", {EXIT_OK: "completed", EXIT_EXPORT_PENDING: "export_pending"}.get(code, "failed"))
     payload["exit_code"] = code
     print(json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True, default=str), flush=True)
     return code

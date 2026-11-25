@@ -1,0 +1,71 @@
+{
+  "args": [
+    "/Users/vakof/orca/vision-to-tables/.venv/bin/python",
+    "tools/verify_offline.py",
+    "extract",
+    "fixtures/feasibility/invoice.png",
+    "--pipeline",
+    "hybrid",
+    "--type",
+    "invoice",
+    "--output",
+    "/Users/vakof/orca/vision-to-tables/.vt-state/release-runs/hybrid/exports",
+    "--no-progress"
+  ],
+  "exit": 0,
+  "wall_seconds": 37.38163041701773,
+  "commit": "fa1aa9e9b9307fbbbc8e2f08fd3a7f962f59f9c3",
+  "status": "completed",
+  "exit_code": 0,
+  "source": "fixtures/feasibility/invoice.png",
+  "pipeline": "hybrid",
+  "network": {
+    "loopback": true,
+    "public_connect_errno": 1
+  },
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "version": 2,
+  "snapshot_sha256": "b254dc1b24cc396eda8bd5921dcf121591c1531f13413d1fe1aa9ef6c69daaa8",
+  "validation": "valid",
+  "approval": "needs_review",
+  "calls": [
+    {
+      "id": "p1-paddle",
+      "status": "parsed",
+      "token_limit": 768,
+      "runtime_seconds": 19.489683583000442,
+      "seconds_including_lock_wait": 26.36593775000074,
+      "peak_rss_bytes": 10180280320,
+      "recognition_tokens": {
+        "crops": [
+          {
+            "cap_hit": false,
+            "crop_index": 1,
+            "eos_seen": true,
+            "generated_tokens": 26,
+            "token_limit": 768
+          },
+          {
+            "cap_hit": false,
+            "crop_index": 2,
+            "eos_seen": true,
+            "generated_tokens": 9,
+            "token_limit": 768
+          }
+        ],
+        "requested_crops": 2,
+        "returned_crops": 2
+      }
+    },
+    {
+      "id": "p1-qwen-0",
+      "status": "parsed",
+      "generated_tokens": 226,
+      "token_limit": 2048,
+      "runtime_seconds": 9.102901624981314,
+      "seconds_including_lock_wait": 9.551308583992068,
+      "peak_rss_bytes": 7133511680,
+      "mlx_peak_bytes": 7078373890
+    }
+  ]
+}

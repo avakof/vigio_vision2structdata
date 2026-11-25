@@ -1,0 +1,5 @@
+document_id,region_id,page,order,kind,text,language,writing,box_xyxy,box_precision,artifact_path,artifact_sha256,crop_to_original
+doc-5f704466a44dd696b8317362adec39ec,p1-parser-0,1,0,parser_text,"FACTURE / INVOICE
+Référence : VTX-4187
+Atelier de la Rive",,unknown,"[41.0,33.0,765.0,281.0]",parser_region,,,
+doc-5f704466a44dd696b8317362adec39ec,p1-parser-1,1,1,parser_text,"TOTAL 37,25 EUR",,unknown,"[42.0,309.0,467.0,358.0]",parser_region,,,
