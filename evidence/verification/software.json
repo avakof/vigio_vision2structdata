@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "source_commit": "52324e9e02ac3d60b4cc555bab60ecfe5ae51b20",
+  "test_command": ".venv/bin/python -m pytest -q tests evidence/development/reviewer",
+  "result": "344 passed in 14.68s",
+  "wheel": {
+    "path": ".vt-state/dist/vision_to_tables-0.1.0-py3-none-any.whl",
+    "sha256": "82632876f82c3c1fba23079a9b8ad90298a32de301f780e1f27566382a8af775",
+    "verified_members": 42,
+    "package_check": "13 compatible distributions in the clean wheel-check environment; wheel ZIP integrity passed."
+  },
+  "constrained_decoding_preflight": {
+    "network": "macOS sandbox; local Qwen tokenizer and MLX bitmask processor",
+    "schema_modes": [
+      "invoice",
+      "menu",
+      "recipe",
+      "auto"
+    ],
+    "test": "A valid, source-accented JSON token sequence (75\u201376 tokens) plus EOS passed the actual token mask in every mode."
+  }
+}

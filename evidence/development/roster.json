@@ -43,7 +43,20 @@
     "task_id": "task_1a04b12a5d27",
     "dispatch_id": "ctx_f8fd0b9bbfdb",
     "substitution": null,
-    "additional_dispatches": []
+    "additional_dispatches": [
+      {
+        "dispatchId": "ctx_c0b5f3d31ce3",
+        "taskId": "task_4a14b2a33b60"
+      },
+      {
+        "dispatchId": "ctx_d6bbbb55290c",
+        "taskId": "task_18d856ef6a22"
+      },
+      {
+        "dispatchId": "ctx_4eeefcb1719e",
+        "taskId": "task_8344a9797321"
+      }
+    ]
   },
   {
     "role": "vision",
@@ -86,6 +99,10 @@
       {
         "dispatchId": "ctx_c8dece0a852e",
         "taskId": "task_df29c66423fc"
+      },
+      {
+        "dispatchId": "ctx_fc6decd1ad95",
+        "taskId": "task_a3b6612ed3b5"
       }
     ]
   },
