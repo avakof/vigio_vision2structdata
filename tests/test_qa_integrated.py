@@ -294,8 +294,9 @@ def test_manifests_match_kind_field_vocabulary_and_separate_real_splits():
     manifest_names = ("manifest.json", "public/manifest.json", "archive-heldout/manifest.json")
     groups = [load_manifest(FIXTURES / path) for path in manifest_names]
     real_dev, real_holdout = groups[1:]
+    assert {case["id"] for case, _, _ in real_dev} == {"babani-1921", "le-versailles-1920-p1", "jefferson-ice-cream"}
+    assert {case["id"] for case, _, _ in real_holdout} == {"carter", "delmonicos", "bedingfield", "lutz-messmer"}
     for group, split in ((real_dev, "development"), (real_holdout, "held_out")):
-        assert len(group) == 3
         assert all(case["split"] == split and case["provenance"]["origin"] == "real"
                    for case, _, _ in group)
         for case, _, labels in group:
