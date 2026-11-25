@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling==1.29.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "vision-to-tables"
+version = "0.1.0"
+description = "Evidence-backed local document extraction"
+requires-python = "==3.12.*"
+dependencies = [
+  "pydantic>=2.10,<3",
+  "Pillow>=11,<14",
+  "pypdfium2>=4.30,<6",
+  "jsonschema>=4.23,<5",
+]
+
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+vision-tables = "vision_tables.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vision_tables"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
