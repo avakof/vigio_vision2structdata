@@ -1,0 +1,1079 @@
+{
+  "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+  "shared": {
+    "doc_type": "auto",
+    "page_groups": [],
+    "max_bytes": 67108864,
+    "max_pages": 16,
+    "max_pixels": 40000000,
+    "render_pixels": 2000000,
+    "max_crops": 1,
+    "max_tokens": 4096,
+    "retries": 1,
+    "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+    "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631"
+  },
+  "routes": {
+    "direct": {
+      "case_order": [
+        "babani-1921",
+        "le-versailles-1920-p1",
+        "jefferson-ice-cream"
+      ],
+      "runtime": {
+        "case_seconds": [
+          53.126,
+          280.133,
+          161.238
+        ],
+        "case_status": {
+          "incomplete": 3
+        },
+        "emitted_documents": 3,
+        "attempted_pages": 3,
+        "processed_pages": 3,
+        "qwen_calls": 8,
+        "qwen_tokens": 17564,
+        "qwen_token_cap_hits": 3,
+        "qwen_crop_reads": 2,
+        "qwen_retry_and_crop_calls": 5,
+        "parser_calls": 0,
+        "parser_crops_with_token_counts": 0,
+        "parser_crops_without_token_counts": 0,
+        "parser_tokens": 0,
+        "parser_token_cap_hits": 0,
+        "max_model_process_rss_bytes": 7500054528,
+        "max_mlx_peak_bytes": 7691185228
+      },
+      "groups": [
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "all",
+          "cases": 3,
+          "measures": {
+            "field_exact": [
+              1,
+              8
+            ],
+            "answerable_field_coverage": [
+              1,
+              7
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              3
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "en",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "fr",
+          "cases": 2,
+          "measures": {
+            "field_exact": [
+              1,
+              4
+            ],
+            "answerable_field_coverage": [
+              1,
+              4
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              2,
+              2
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              2
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "fraction",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "handwriting",
+          "cases": 3,
+          "measures": {
+            "field_exact": [
+              1,
+              8
+            ],
+            "answerable_field_coverage": [
+              1,
+              7
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              3
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "historical",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              3
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "invoice",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              1
+            ],
+            "answerable_field_coverage": [
+              1,
+              1
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "menu",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              3
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "multiple-columns",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              3
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "print",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              1
+            ],
+            "answerable_field_coverage": [
+              1,
+              1
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "recipe",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              0,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              0,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    "hybrid": {
+      "case_order": [
+        "babani-1921",
+        "le-versailles-1920-p1",
+        "jefferson-ice-cream"
+      ],
+      "runtime": {
+        "case_seconds": [
+          180.342,
+          209.277,
+          164.641
+        ],
+        "case_status": {
+          "completed": 2,
+          "incomplete": 1
+        },
+        "emitted_documents": 3,
+        "attempted_pages": 3,
+        "processed_pages": 3,
+        "qwen_calls": 9,
+        "qwen_tokens": 9945,
+        "qwen_token_cap_hits": 1,
+        "qwen_crop_reads": 3,
+        "qwen_retry_and_crop_calls": 6,
+        "parser_calls": 3,
+        "parser_crops_with_token_counts": 16,
+        "parser_crops_without_token_counts": 0,
+        "parser_tokens": 1195,
+        "parser_token_cap_hits": 0,
+        "max_model_process_rss_bytes": 14023524352,
+        "max_mlx_peak_bytes": 7695051852
+      },
+      "groups": [
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "all",
+          "cases": 3,
+          "measures": {
+            "field_exact": [
+              3,
+              8
+            ],
+            "answerable_field_coverage": [
+              2,
+              7
+            ],
+            "accuracy_when_answered": [
+              2,
+              2
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "en",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "fr",
+          "cases": 2,
+          "measures": {
+            "field_exact": [
+              2,
+              4
+            ],
+            "answerable_field_coverage": [
+              2,
+              4
+            ],
+            "accuracy_when_answered": [
+              2,
+              2
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              2,
+              2
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              1,
+              2
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "fraction",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "handwriting",
+          "cases": 3,
+          "measures": {
+            "field_exact": [
+              3,
+              8
+            ],
+            "answerable_field_coverage": [
+              2,
+              7
+            ],
+            "accuracy_when_answered": [
+              2,
+              2
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              2
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              3,
+              3
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              1,
+              3
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "historical",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              3
+            ],
+            "answerable_field_coverage": [
+              1,
+              3
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "invoice",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              1
+            ],
+            "answerable_field_coverage": [
+              1,
+              1
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "menu",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              3
+            ],
+            "answerable_field_coverage": [
+              1,
+              3
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "multiple-columns",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              3
+            ],
+            "answerable_field_coverage": [
+              1,
+              3
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "menu_price": [
+              0,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "print",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              1
+            ],
+            "answerable_field_coverage": [
+              1,
+              1
+            ],
+            "accuracy_when_answered": [
+              1,
+              1
+            ],
+            "critical_numeric": [
+              1,
+              1
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              0
+            ],
+            "case_pass": [
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "origin": "real",
+          "split": "development",
+          "stratum": "recipe",
+          "cases": 1,
+          "measures": {
+            "field_exact": [
+              1,
+              4
+            ],
+            "answerable_field_coverage": [
+              0,
+              3
+            ],
+            "accuracy_when_answered": [
+              0,
+              0
+            ],
+            "row_alignment": [
+              0,
+              1
+            ],
+            "recipe_quantity_unit_yield": [
+              1,
+              3
+            ],
+            "review_rate": [
+              1,
+              1
+            ],
+            "false_acceptance_rate": [
+              0,
+              0
+            ],
+            "unresolved_guess_rate": [
+              0,
+              1
+            ],
+            "case_pass": [
+              0,
+              1
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

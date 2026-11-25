@@ -1,0 +1,20 @@
+{
+  "sha": "c67125485957050f3032d80aaa4f06600023b9ef",
+  "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    ".venv/bin/python",
+    "tools/verify_offline.py",
+    "evaluate",
+    "fixtures/public/manifest.json",
+    "--pipeline",
+    "hybrid",
+    "--output",
+    "evidence/evaluation/release/hybrid-development"
+  ],
+  "started_utc": "2026-11-25T18:37:34.382130+00:00",
+  "wall_seconds": 555.8120169999893,
+  "exit_code": 0,
+  "finished_utc": "2026-11-25T18:46:50.194614+00:00"
+}

@@ -1,0 +1,2187 @@
+[
+  {
+    "document_id": "doc-c48f4d76786f01ae1253c22c0b79894f",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "invoice",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "53de907d6754bff1fa1a0ab28d010ee539702997ac0c969cc6fb15acc9b54290",
+      "media_type": "image/jpeg",
+      "size_bytes": 379815,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1663.0,
+        "height": 2160.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1240,
+        "image_height": 1611,
+        "image_to_original": [
+          1.3411290322580645,
+          0.0,
+          0.0,
+          1.3407821229050279,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_text",
+        "text": "BABANI\n98 Boul Haussmann\nPARIS\nKIMONOS\nETOFFES\nROBES\nd ORIENT",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            120.70161290322581,
+            104.58100558659217,
+            685.3169354838709,
+            706.5921787709497
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-1",
+        "page": 1,
+        "order": 1,
+        "kind": "parser_header",
+        "text": "26 août 1921.",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            996.4588709677419,
+            115.30726256983239,
+            1418.914516129032,
+            183.6871508379888
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-2",
+        "page": 1,
+        "order": 2,
+        "kind": "parser_text",
+        "text": "M $ ^{n} $ G. H. Reynolds 128\n6 Rue Haley\nHoula Vasa\nAven. Montains Doit",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            797.9717741935483,
+            268.1564245810056,
+            1591.9201612903225,
+            675.754189944134
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-3",
+        "page": 1,
+        "order": 3,
+        "kind": "parser_table",
+        "text": "1\tRobe Crétoise velours noir\t1100\t\n1\tmaziade marine et or\t1100\t\n\ttiéline\t2200\t\n\tPauflrose\t2201\t\n\tPour acquit\t2202\t\n\tSohn Babau\tannée\t\n\tY. Burr\t1100\t\n\t\tJUSQU'A 5007\t\nPassé le délai de 24 heures, aucune marchandise ne sera ni reprise ni échangée.\tETL Reynolds.\t\t\nTél. Louvre 27-53",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            105.94919354838709,
+            744.1340782122904,
+            1625.448387096774,
+            2086.2569832402232
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            104.0,
+            88.0,
+            701.9999999999999,
+            723.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "a1a3bc71f22932a55220f50fe03580fbbd23905055c3f7d38e7a37fbac7104a6",
+        "crop_to_original": [
+          0.9999999999999999,
+          0.0,
+          0.0,
+          1.0,
+          104.0,
+          88.0
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "9ec1a8e8ac8c46d8ac6d889ac48fa07a",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 4,
+            "returned_crops": 4,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 32,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 2,
+                "generated_tokens": 11,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 3,
+                "generated_tokens": 36,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 4,
+                "generated_tokens": 153,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 104.6498858750274,
+          "peak_rss_bytes": 13463732224,
+          "seconds_including_lock_wait": 106.09891295799753,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 1284,
+          "prompt_tokens": 2901,
+          "load_seconds": 2.9252808329765685,
+          "generation_seconds": 29.626851000008173,
+          "runtime_seconds": 35.82339945799322,
+          "peak_rss_bytes": 7487012864,
+          "mlx_peak_bytes": 7692708940,
+          "seconds_including_lock_wait": 36.324506458011456,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_kind",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": "p1-parser-0",
+              "raw": "BABANI",
+              "quote": "BABANI",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_address",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_id",
+              "region_id": "p1-parser-2",
+              "raw": "128",
+              "quote": "128",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_address",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": "p1-parser-1",
+              "raw": "26 août 1921",
+              "quote": "26 août 1921",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "subtotal",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "tax_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "charge_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "discount_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Robe Crétoise velours noir",
+              "quote": "Robe Crétoise velours noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "maziade marine et or",
+              "quote": "maziade marine et or",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "tiéline",
+              "quote": "tiéline",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Pauflrose",
+              "quote": "Pauflrose",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2201",
+              "quote": "2201",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2201",
+              "quote": "2201",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Pour acquit",
+              "quote": "Pour acquit",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-2",
+            "p1-parser-3"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 1284,
+          "prompt_tokens": 2912,
+          "load_seconds": 1.9738740410248283,
+          "generation_seconds": 25.150233291991754,
+          "runtime_seconds": 28.989500374998897,
+          "peak_rss_bytes": 7465910272,
+          "mlx_peak_bytes": 7692790860,
+          "seconds_including_lock_wait": 29.418141874979483,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_kind",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": "p1-parser-0",
+              "raw": "BABANI",
+              "quote": "BABANI",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_address",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_id",
+              "region_id": "p1-parser-2",
+              "raw": "128",
+              "quote": "128",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_address",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": "p1-parser-1",
+              "raw": "26 août 1921",
+              "quote": "26 août 1921",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "subtotal",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "tax_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "charge_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "discount_total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Robe Crétoise velours noir",
+              "quote": "Robe Crétoise velours noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "maziade marine et or",
+              "quote": "maziade marine et or",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "1100",
+              "quote": "1100",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "tiéline",
+              "quote": "tiéline",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2200",
+              "quote": "2200",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Pauflrose",
+              "quote": "Pauflrose",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2201",
+              "quote": "2201",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2201",
+              "quote": "2201",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-parser-3",
+              "raw": "Pour acquit",
+              "quote": "Pour acquit",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-parser-3",
+              "raw": "1",
+              "quote": "1",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-parser-3",
+              "raw": "2202",
+              "quote": "2202",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 122,
+          "prompt_tokens": 1103,
+          "load_seconds": 1.9814274579985067,
+          "generation_seconds": 3.5112434169859625,
+          "runtime_seconds": 7.3442848330014385,
+          "peak_rss_bytes": 7145340928,
+          "mlx_peak_bytes": 7256134804,
+          "seconds_including_lock_wait": 7.8245576249901205,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "unknown",
+              "field": "description",
+              "region_id": "p1-parser-0",
+              "raw": "BABANI\n98 Boul Haussmann\nPARIS\nKIMONOS\nETOFFES\nROBES\nd ORIENT",
+              "quote": "BABANI\n98 Boul Haussmann\nPARIS\nKIMONOS\nETOFFES\nROBES\nd ORIENT",
+              "state": "readable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "invoice",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.document_kind",
+        "entity_id": "p1.root",
+        "field": "document_kind",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "invoice"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.supplier_name",
+        "entity_id": "p1.root",
+        "field": "supplier_name",
+        "raw": "BABANI",
+        "value": "BABANI",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "BABANI",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.supplier_address",
+        "entity_id": "p1.root",
+        "field": "supplier_address",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "98 Boul. Haussmann, PARIS"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.customer_name",
+        "entity_id": "p1.root",
+        "field": "customer_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "E. H. Reynolds"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.customer_id",
+        "entity_id": "p1.root",
+        "field": "customer_id",
+        "raw": "128",
+        "value": "128",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-2",
+            "quote": "128",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.customer_address",
+        "entity_id": "p1.root",
+        "field": "customer_address",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "6 Rue Haley, Hotel Plaza, Aven. Montaigne"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.issue_date",
+        "entity_id": "p1.root",
+        "field": "issue_date",
+        "raw": "26 août 1921",
+        "value": "1921-08-26",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-1",
+            "quote": "26 août 1921",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "fr"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.subtotal",
+        "entity_id": "p1.root",
+        "field": "subtotal",
+        "raw": "2200",
+        "value": "2200",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2200",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.total",
+        "entity_id": "p1.root",
+        "field": "total",
+        "raw": "2202",
+        "value": "2202",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2202",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.tax_total",
+        "entity_id": "p1.root",
+        "field": "tax_total",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "2"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.charge_total",
+        "entity_id": "p1.root",
+        "field": "charge_total",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "2"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.discount_total",
+        "entity_id": "p1.root",
+        "field": "discount_total",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "0"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.calculated_total",
+        "entity_id": "p1.root",
+        "field": "calculated_total",
+        "raw": null,
+        "value": "2200.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(subtotal, minor unit); absent components omitted",
+          "inputs": [
+            "p1.root.subtotal"
+          ]
+        }
+      },
+      {
+        "id": "p1.r1.description",
+        "entity_id": "p1.r1",
+        "field": "description",
+        "raw": "Robe Crétoise velours noir",
+        "value": "Robe Crétoise velours noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "Robe Crétoise velours noir",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity",
+        "entity_id": "p1.r1",
+        "field": "quantity",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.unit_price",
+        "entity_id": "p1.r1",
+        "field": "unit_price",
+        "raw": "1100",
+        "value": "1100",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1100",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.line_total",
+        "entity_id": "p1.r1",
+        "field": "line_total",
+        "raw": "1100",
+        "value": "1100",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1100",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.calculated_line_total",
+        "entity_id": "p1.r1",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "1100.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r1.quantity",
+            "p1.r1.unit_price"
+          ]
+        }
+      },
+      {
+        "id": "p1.r2.description",
+        "entity_id": "p1.r2",
+        "field": "description",
+        "raw": "maziade marine et or",
+        "value": "maziade marine et or",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "maziade marine et or",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.unit_price",
+        "entity_id": "p1.r2",
+        "field": "unit_price",
+        "raw": "1100",
+        "value": "1100",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1100",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.line_total",
+        "entity_id": "p1.r2",
+        "field": "line_total",
+        "raw": "1100",
+        "value": "1100",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1100",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.calculated_line_total",
+        "entity_id": "p1.r2",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "1100.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r2.quantity",
+            "p1.r2.unit_price"
+          ]
+        }
+      },
+      {
+        "id": "p1.r3.description",
+        "entity_id": "p1.r3",
+        "field": "description",
+        "raw": "tiéline",
+        "value": "tiéline",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "tiéline",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity",
+        "entity_id": "p1.r3",
+        "field": "quantity",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.unit_price",
+        "entity_id": "p1.r3",
+        "field": "unit_price",
+        "raw": "2200",
+        "value": "2200",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2200",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.line_total",
+        "entity_id": "p1.r3",
+        "field": "line_total",
+        "raw": "2200",
+        "value": "2200",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2200",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.calculated_line_total",
+        "entity_id": "p1.r3",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "2200.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r3.quantity",
+            "p1.r3.unit_price"
+          ]
+        }
+      },
+      {
+        "id": "p1.r4.description",
+        "entity_id": "p1.r4",
+        "field": "description",
+        "raw": "Pauflrose",
+        "value": "Pauflrose",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "Pauflrose",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity",
+        "entity_id": "p1.r4",
+        "field": "quantity",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.unit_price",
+        "entity_id": "p1.r4",
+        "field": "unit_price",
+        "raw": "2201",
+        "value": "2201",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2201",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.line_total",
+        "entity_id": "p1.r4",
+        "field": "line_total",
+        "raw": "2201",
+        "value": "2201",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2201",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.calculated_line_total",
+        "entity_id": "p1.r4",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "2201.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r4.quantity",
+            "p1.r4.unit_price"
+          ]
+        }
+      },
+      {
+        "id": "p1.r5.description",
+        "entity_id": "p1.r5",
+        "field": "description",
+        "raw": "Pour acquit",
+        "value": "Pour acquit",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "Pour acquit",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity",
+        "entity_id": "p1.r5",
+        "field": "quantity",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "1",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.unit_price",
+        "entity_id": "p1.r5",
+        "field": "unit_price",
+        "raw": "2202",
+        "value": "2202",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2202",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.line_total",
+        "entity_id": "p1.r5",
+        "field": "line_total",
+        "raw": "2202",
+        "value": "2202",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "2202",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.calculated_line_total",
+        "entity_id": "p1.r5",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "2202.00",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r5.quantity",
+            "p1.r5.unit_price"
+          ]
+        }
+      }
+    ],
+    "issues": [
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.document_kind",
+          "p1.root.supplier_address",
+          "p1.root.customer_name",
+          "p1.root.customer_address",
+          "p1.root.currency",
+          "p1.root.tax_total",
+          "p1.root.charge_total",
+          "p1.root.discount_total"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.document_kind: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.document_kind"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.supplier_address: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.supplier_address"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.customer_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.customer_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.customer_address: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.customer_address"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.currency: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.tax_total: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.tax_total"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.charge_total: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.charge_total"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.discount_total: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.discount_total"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "critical_missing",
+        "message": "invoice.document_number was not read",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      },
+      {
+        "code": "subtotal_mismatch",
+        "message": "printed subtotal 2200.00 but line totals sum to 8803.00",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.subtotal",
+          "p1.r1.line_total",
+          "p1.r2.line_total",
+          "p1.r3.line_total",
+          "p1.r4.line_total",
+          "p1.r5.line_total"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "total_mismatch",
+        "message": "printed total 2202.00 but calculated 2200.00",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.total",
+          "p1.root.calculated_total"
+        ],
+        "severity": "review"
+      }
+    ],
+    "validation": "issues",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
