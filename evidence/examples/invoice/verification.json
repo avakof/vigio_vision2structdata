@@ -209,5 +209,19 @@
       },
       "seconds": 0.19448308399296366
     }
-  ]
+  ],
+  "actual_same_configuration_reimport": {
+    "command": ".vt-state/wheel-check/bin/python tools/verify_offline.py extract fixtures/feasibility/invoice.png --type invoice --pipeline hybrid --output .vt-state/release-runs/reimport --no-progress",
+    "installed_wheel_sha256": "82632876f82c3c1fba23079a9b8ad90298a32de301f780e1f27566382a8af775",
+    "network": {
+      "loopback": true,
+      "public_connect_errno": 1
+    },
+    "job_id": "e81a3fed4fc5447fa27ea63dce9e2733",
+    "exit_code": 0,
+    "action": "reused",
+    "selected_version": 3,
+    "base_version": 2,
+    "approval": "needs_review"
+  }
 }
