@@ -22,6 +22,7 @@ def main():
         os.execv(sandbox, [sandbox, "-f", str(PROFILE), sys.executable, __file__,
                            "--restricted", *sys.argv[1:]])
     probe = network_probe()
+    os.environ["VT_VERIFY_OUTER_SANDBOX"] = "1"
     print(json.dumps({"offline_probe": probe}), file=sys.stderr, flush=True)
     # Both the import and child model processes execute under the tested profile.
     sys.argv = ["vision-tables", *sys.argv[2:]]
