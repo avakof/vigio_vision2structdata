@@ -1,0 +1,50 @@
+SHA: dfa12df8304ab4753369a2ef4aa03ac90386db1f
+Date: 2026-11-25T15:42:22Z
+Python: Python 3.12.16
+
+$ .venv/bin/python -m pytest -q
+.....................................................................    [100%]
+213 passed in 8.73s
+
+$ .venv/bin/python -m pytest -q -rA evidence/development/reviewer/test_review_probes.py -s
+.FF..BATCH_WITH_SKIPPED_INPUT completed 0 {'completed': 1, 'skipped': 1}
+.ISSUE_DATE readable 2026-04-03 [] day/month order taken from a same-document date (dmy)
+.NATIVE_NOTE 0 completed usable [None] ['critical_missing']
+FREREAD_APPROVE 1 TypeError: 'NoneType' object is not subscriptable
+FFAINT 0 issues ['low_contrast'] FAINT_APPROVE 4 This version cannot be approved: low_contrast (The rendered page has very low luminance contrast.) FAINT_REPROCESS reused 1
+E       AssertionError: corrected version's json/csv/review export lost: exports row marked published after a sqlite-only export; recover reports ok; files=['.publish.lock', 'document.sqlite3', 'manifest.json']
+E       AssertionError: correction accepted on superseded v1 -> v3; reimport serves v2
+        print("NATIVE_NOTE", code, out["status"], document.pages[0].text_layer, seen, sorted({i.code for i in document.issues}))
+E       AssertionError: assert (False or 'usable' != 'usable' or 'valid' == 'incomplete'
+        print("REREAD_APPROVE", code, approved.get("error", {}).get("message"))
+E       AssertionError: {'artifact_root': None, 'code': 'internal_error', 'message': "TypeError: 'NoneType' object is not subscriptable", 'nex... stage artifacts under the artifact root; fix the input or settings and rerun; the original job is kept for evidence.'}
+        notes = ["FAINT", code, doc["validation"], doc["issue_codes"]]
+        notes += ["FAINT_APPROVE", code, approved.get("error", {}).get("message")]
+        notes += ["FAINT_REPROCESS", _doc(again)["action"], _doc(again)["version"]]
+E       AssertionError: no correction can retire the low_contrast blocker and reprocessing reuses the same version
+E       AssertionError: {'artifact_root': None, 'code': 'internal_error', 'message': "TypeError: 'NoneType' object is not subscriptable", 'nex... stage artifacts under the artifact root; fix the input or settings and rerun; the original job is kept for evidence.'}
+E           Failed: approval_blocked: This version cannot be approved: reread_disagreement (Conflicting readings were retained as unresolved alternatives.)
+PASSED evidence/development/reviewer/test_review_probes.py::test_pending_default_export_survives_a_later_single_format_export
+PASSED evidence/development/reviewer/test_review_probes.py::test_integrated_replay_correction_and_consistent_exports
+PASSED evidence/development/reviewer/test_review_probes.py::test_truncated_but_valid_reply_is_incomplete_not_success
+PASSED evidence/development/reviewer/test_review_probes.py::test_unsupported_files_in_batch_are_visible
+PASSED evidence/development/reviewer/test_review_probes.py::test_date_order_borrowed_from_another_field_is_disclosed
+FAILED evidence/development/reviewer/test_review_probes.py::test_pending_correction_export_survives_a_later_single_format_export
+FAILED evidence/development/reviewer/test_review_probes.py::test_correction_on_superseded_provisional_extraction_is_rejected
+FAILED evidence/development/reviewer/test_review_probes.py::test_native_pdf_with_raster_note_is_not_read_text_only_without_a_signal
+FAILED evidence/development/reviewer/test_review_probes.py::test_resolved_reread_disagreement_can_be_approved
+FAILED evidence/development/reviewer/test_review_probes.py::test_low_contrast_capture_can_be_approved_after_review
+FAILED evidence/development/reviewer/test_review_probes.py::test_unreadable_field_can_be_corrected
+FAILED evidence/development/reviewer/test_review_probes.py::test_reread_disagreement_blocker_retires_once_the_field_is_corrected
+7 failed, 5 passed in 0.81s
+
+$ vision-tables evaluate fixtures/manifest.json --output <scratch>/evout --state-dir <empty scratch state> --no-progress
+  (no Qwen runtime provisioned in that state dir)
+  -> exit 0, "status": "completed", cases 15, cases_with_failures 10
+  -> case statuses: 10 x missing_model, 5 bounded-failure fixtures (oversized_input, encrypted_pdf, corrupt_pdf,
+     corrupt_image, unsupported_format)
+  -> synthetic/development/all: case_pass 0.556, answerable_field_coverage 0.0; held_out case_pass 0.0
+  -> top-level "configuration" holds only budgets/route; no model id, revision, readiness or config fingerprint
+
+$ grep -n HANDOFF README.md docs/ARCHITECTURE.md ; ls docs/HANDOFF.md
+  README.md:30 and docs/ARCHITECTURE.md:23 link docs/HANDOFF.md -> "No such file or directory"
