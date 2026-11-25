@@ -1,6 +1,6 @@
 {
-  "as_of": "2026-11-25T18:04:00+01:00",
-  "record": "integration checkpoint",
+  "as_of": "2026-11-25T18:49:00+01:00",
+  "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
   "selection_basis": "Requested first baseline; real comparison pending.",
@@ -13,12 +13,14 @@
       ]
     },
     "1_feasibility": {
-      "status": "blocked",
-      "detail": "Full Paddle parser passed cold and warm. Direct Qwen image generation awaits shard 1.",
+      "status": "passed",
+      "detail": "Pinned MLX image generation and the native CPU layout plus recognition pipeline each ran cold and resident under process-level external network denial. Provisioning and implementation overlapped.",
       "evidence": [
-        "evidence/feasibility/processor.json",
-        "evidence/development/vision-paddle-gate1.md",
-        "evidence/feasibility/paddle/report.json"
+        "evidence/feasibility/direct-smoke.json",
+        "evidence/feasibility/qwen-artifact.json",
+        "evidence/feasibility/paddle/report.json",
+        "evidence/feasibility/paddle/invoice_res.json",
+        "docs/development/timeline.md"
       ]
     },
     "2_contracts": {
@@ -40,7 +42,7 @@
     },
     "4_evaluation": {
       "status": "not_run",
-      "detail": "Scorer integrated. Measured route comparison pending."
+      "detail": "Full candidate comparison outstanding. First direct development baseline emitted no documents on three archival inputs; stricter recovery is under development."
     },
     "5_review_handoff": {
       "status": "blocked",
@@ -60,14 +62,23 @@
   },
   "production_routes": {
     "direct": {
-      "status": "blocked"
+      "status": "passed",
+      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
+      "evidence": "evidence/verification/offline-direct.json"
     },
     "hybrid": {
-      "status": "blocked"
+      "status": "passed",
+      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
+      "evidence": "evidence/verification/offline-hybrid.json"
     }
   },
   "offline_production": {
-    "status": "not_run"
+    "status": "passed",
+    "evidence": [
+      "evidence/verification/offline-direct.json",
+      "evidence/verification/offline-hybrid.json",
+      "evidence/examples/invoice/verification.json"
+    ]
   },
   "components": {
     "native_full_parser": {
