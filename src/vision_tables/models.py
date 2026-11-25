@@ -98,6 +98,7 @@ def doctor(settings: Settings) -> dict:
             "python": sys.version.split()[0], "core_versions": {
                 p: importlib.metadata.version(p) for p in ("pydantic", "pypdfium2", "Pillow", "jsonschema")},
             "runtime": runtime, "ready": runtime["ready"],
+            "readiness_basis": "Local component inventory and installed runtime versions. Real inference gates are recorded in evidence/acceptance.json.",
             "next": [] if runtime["ready"] else ["Run vision-tables models prepare and inspect component results."]}
 
 

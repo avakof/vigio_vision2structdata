@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import time
 import uuid
+from importlib.metadata import version
 from pathlib import Path
 from jsonschema import Draft202012Validator
 
@@ -10,6 +11,23 @@ from . import models
 from .artifacts import write_json
 from .config import PIPELINE_VERSION, SCHEMA_VERSION, ProcessingError, Settings, digest
 from .contracts import Document, Ingested, Issue, PageReading, Run
+
+
+def extraction_fingerprint(settings: Settings, info: dict) -> str:
+    """Hash semantic inputs. Exclude host paths, timing, cache state and receipts."""
+    from .models import PADDLE_MANIFEST
+    parser = info["components"].get("parser", {})
+    return digest({
+        "schema": SCHEMA_VERSION,
+        "pipeline_version": PIPELINE_VERSION,
+        "settings": settings.content_settings(),
+        "model": info["model"], "revision": info["revision"],
+        "runtime": info["versions"],
+        "core_versions": {p: version(p) for p in ("Pillow", "pypdfium2", "pydantic", "jsonschema")},
+        "parser_versions": parser.get("versions", {}),
+        "parser_revisions": {k: v["revision"] for k, v in PADDLE_MANIFEST.items()}
+        if settings.pipeline == "hybrid" else {},
+    })
 
 
 def page_scopes(total: int, settings: Settings, processed: set[int]) -> list[list[int]]:
@@ -56,10 +74,7 @@ def extract(path: Path, output: Path, settings: Settings, *, job_id: str | None 
                 raise ProcessingError("hybrid_unavailable", str(info["components"].get("parser", {}).get("reason", message)))
             raise ProcessingError("missing_model", message)
         content = settings.content_settings()
-        identity = {"schema": SCHEMA_VERSION, "pipeline_version": PIPELINE_VERSION,
-                    "settings": content, "model": info["model"], "revision": info["revision"],
-                    "runtime": info["versions"], "components": info["components"]}
-        config_hash = digest(identity)
+        config_hash = extraction_fingerprint(settings, info)
         readings = {}
         any_records = False
         for n, page in sorted(pages.items()):
@@ -78,7 +93,9 @@ def extract(path: Path, output: Path, settings: Settings, *, job_id: str | None 
                                       issues=[Issue(code=exc.code, message=str(exc), page=n)])
             write_json(root / "readings" / f"{n:04d}.json", reading.model_dump(mode="json"))
             readings[n] = reading
-            checkpoint(processed_pages=sorted(readings))
+            checkpoint(attempted_pages=sorted(readings),
+                       processed_pages=[i for i, r in readings.items() if r.records],
+                       incomplete_pages=[i for i, r in readings.items() if r.incomplete])
         if not any_records:
             raise ProcessingError("no_extraction", "No page yielded fields. Inspect the per-page reading artifacts.")
         checkpoint(stage="assemble")
