@@ -590,7 +590,8 @@ def _with_job_artifacts(result: SourceResult, job_root: Path, error_code: str | 
 def run(manifest: Path, output: Path, settings: Settings) -> dict:
     """Evaluate the production pipeline. Inference locking belongs to the runtime."""
     from .config import ProcessingError, Settings
-    from .pipeline import extract
+    from .models import runtime_info
+    from .pipeline import extract, extraction_fingerprint
 
     def run_case(source, artifacts, overrides):
         effective = Settings.model_validate({**settings.model_dump(), **overrides})
@@ -607,4 +608,10 @@ def run(manifest: Path, output: Path, settings: Settings) -> dict:
         )
         return _with_job_artifacts(_source_result(documents), job_root, None)
 
-    return evaluate_manifest(manifest, output, run_case, configuration=settings.content_settings())
+    runtime = runtime_info(settings)
+    configuration = {
+        **settings.content_settings(), "model": runtime["model"], "revision": runtime["revision"],
+        "versions": runtime["versions"], "components_ready": runtime["ready"],
+        "base_config_hash": extraction_fingerprint(settings, runtime),
+    }
+    return evaluate_manifest(manifest, output, run_case, configuration=configuration)
