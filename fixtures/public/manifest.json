@@ -61,12 +61,12 @@
       ],
       "provenance": {
         "origin": "real",
-        "source": "Thomas Jefferson Papers, Library of Congress, https://www.loc.gov/exhibits/treasures/tr33b.html#obj36",
+        "source": "Thomas Jefferson Papers, Manuscript Division, Library of Congress; full recto facsimile (1200 × 4312) supplied with the Thomas Jefferson Foundation transcription. https://www.monticello.org/jefferson-day/dinner-is-served/ice-creams-were-produced",
         "license": "Public-domain manuscript; Library of Congress lists no known restrictions on use or reproduction.",
         "labeler": "Thomas Jefferson Foundation / Monticello historical manuscript transcription; see SOURCES.md."
       },
       "settings": {},
-      "sha256": "68bc782442ddb0ec4dbb65523bd87e412714e2599c671f379c7ddbaea7c2979e",
+      "sha256": "1f7f0bf1fb1bd384c9f4b76080d3df3342b7b243bb52b065af783e1e09bf374b",
       "labels_sha256": "6e8f014186be7c0aac3a5f73fed76c836fd72d9ec244b7248a64419185f12504"
     }
   ]
