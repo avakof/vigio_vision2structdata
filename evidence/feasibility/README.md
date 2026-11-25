@@ -17,4 +17,18 @@ python3 tools/feasibility/provision_qwen.py "$PWD/.vt-state/models/qwen" --manif
 
 The checked-in image can be regenerated with `.vt-state/direct-env/bin/python tools/feasibility/direct_smoke.py --make-fixture` using the macOS Arial font. A common POSIX lock serializes both generations with other project inference. The subprocess verifies an external TCP connection is denied by the OS and completes a loopback exchange. The first call starts in a fresh process after loading local weights. The second keeps the model resident. OS disk-cache state is uncontrolled. Output includes raw strings, input and generated token counts, enforced schema, exact matches, elapsed times, MLX peak allocation and the process RSS high-water mark.
 
-The post-run `direct-smoke.json` contains the result for each call. The application and route comparison use the separate release acceptance report.
+## Measured on the M3 Max
+
+Both generations passed on 2026-11-25. Each returned the exact printed reference `VTX-4187`, currency `EUR` and total `37,25`. Each consumed 383 prompt tokens, emitted 29 tokens and ended at a stop token. The process verified a successful loopback exchange and an OS denial on an external socket.
+
+| Measurement | Observed |
+| --- | ---: |
+| Imports and weight loading | 5.01 s |
+| First constrained generation | 4.86 s |
+| Second generation in the same process | 1.10 s |
+| End-to-end wall time, both calls | 12.55 s |
+| Highest MLX allocation | 6.46 GiB |
+| Maximum process RSS | 6.67 GiB |
+| macOS peak memory footprint | 8.29 GiB |
+
+Sample size was one synthetic printed page, read twice. The restricted file-to-tables CLI run and real-document evaluation are recorded separately in the release acceptance report. [Outputs and generation measurements](direct-smoke.json), [process measurements](direct-smoke-process.json), [verified artifact inventory](qwen-artifact.json), [release acceptance](../acceptance.json).

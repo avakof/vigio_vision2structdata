@@ -1,0 +1,13 @@
+{
+  "exit": 0,
+  "wall_seconds": 12.547809583018534,
+  "command": "/usr/bin/time -l /usr/bin/sandbox-exec -f tools/feasibility/offline.sb .vt-state/direct-env/bin/python tools/feasibility/direct_smoke.py --require-network-denial",
+  "host": "Apple M3 Max, Mac15,9, macOS 27.2.1 (26B131), arm64, 48 GiB unified memory",
+  "timing_tool": "/usr/bin/time -l (macOS)",
+  "user_cpu_seconds": 4.16,
+  "system_cpu_seconds": 2.31,
+  "maximum_resident_set_bytes": 7157874688,
+  "peak_memory_footprint_bytes": 8905792088,
+  "swaps": 0,
+  "observations": "One process loaded one image and generated two responses. System-calculated resident size, peak footprint and MLX allocation are different measurements. OS file-cache state was uncontrolled."
+}

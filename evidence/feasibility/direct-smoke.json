@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "fixture": "fixtures/feasibility/invoice.png",
+  "fixture_sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+  "reference_origin": "Deterministic synthetic print; expected values authored before inference.",
+  "input_pixels": [
+    800,
+    420
+  ],
+  "artifact": "mlx-community/Qwen3.5-9B-MLX-4bit",
+  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+  "prompt": "Read the invoice image. Return the printed invoice number as reference, the printed currency code as currency, and the printed total amount as total. Copy punctuation and decimal separators exactly. Use null if illegible. Output JSON.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "reference": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "currency": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "total": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    },
+    "required": [
+      "reference",
+      "currency",
+      "total"
+    ],
+    "additionalProperties": false
+  },
+  "expected": {
+    "reference": "VTX-4187",
+    "currency": "EUR",
+    "total": "37,25"
+  },
+  "schema_enforcement": "mlx_vlm.structured + llguidance",
+  "settings": {
+    "max_tokens": 96,
+    "temperature": 0,
+    "enable_thinking": false,
+    "retries": 0
+  },
+  "python": "3.12.16",
+  "runtime": {
+    "mlx": "0.32.4",
+    "mlx-metal": "0.32.4",
+    "mlx-vlm": "0.8.1",
+    "llguidance": "1.9.1",
+    "transformers": "5.23.0",
+    "Pillow": "13.0.0",
+    "jsonschema": "4.26.0"
+  },
+  "network_probe": {
+    "loopback": true,
+    "public_connect_errno": 1
+  },
+  "calls": [
+    {
+      "mode": "process_cold",
+      "seconds": 4.856305875000544,
+      "raw": "{\"reference\": \"VTX-4187\", \"currency\": \"EUR\", \"total\": \"37,25\"}",
+      "finish_reason": "stop",
+      "generated_tokens": 29,
+      "prompt_tokens": 383,
+      "mlx_peak_bytes": 6930743367,
+      "max_rss_bytes_macos": 7154286592,
+      "schema_valid": true,
+      "exact": true
+    },
+    {
+      "mode": "weights_resident",
+      "seconds": 1.1004903330176603,
+      "raw": "{\"reference\": \"VTX-4187\", \"currency\": \"EUR\", \"total\": \"37,25\"}",
+      "finish_reason": "stop",
+      "generated_tokens": 29,
+      "prompt_tokens": 383,
+      "mlx_peak_bytes": 6934404223,
+      "max_rss_bytes_macos": 7157874688,
+      "schema_valid": true,
+      "exact": true
+    }
+  ],
+  "imports_and_model_load_s": 5.008433124981821,
+  "processors": {
+    "model": "Model",
+    "processor": "Qwen3VLProcessor",
+    "image_processor": "Qwen3VLImageProcessor"
+  },
+  "total_process_work_s": 10.987181584001519
+}
