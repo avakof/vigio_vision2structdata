@@ -1,9 +1,9 @@
 {
-  "as_of": "2026-11-25T19:04:41+01:00",
+  "as_of": "2026-11-25T19:12:55+01:00",
   "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
-  "selection_basis": "Requested first baseline; real comparison pending.",
+  "selection_basis": "Frozen on the three development pages. Direct covered 1/7 answerable fields and hybrid 2/7; both missed the labeled row prices and matched the invoice total. Direct used less peak process memory and wall time. Both require review. See docs/development/evaluation-settings.md.",
   "gates": {
     "0_preflight": {
       "status": "passed",
@@ -32,13 +32,14 @@
       ]
     },
     "3_implementation": {
-      "status": "failed",
-      "reviewed_commit": "cbc9c057d100e5fb9251296716608d9da5d96538",
-      "detail": "The broader software suite passed 356 checks. Independent probes subsequently reproduced five faults in bounded recovery and reread reconciliation. Repairs are under way.",
+      "status": "passed",
+      "reviewed_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+      "detail": "Frozen code passed 371 integrated checks, eight independent recovery probe groups, and seven SQLite round trips. All five new recovery findings and the duplicate-price multiset case closed.",
       "evidence": [
+        "evidence/verification/software.json",
+        "docs/development/recovery-parser-closure.md",
         "docs/development/review-recheck.md",
-        "docs/development/recovery-parser-audit.md",
-        "evidence/development/reasoner_recovery_probes.py"
+        "docs/development/final-delta-recheck.md"
       ]
     },
     "4_evaluation": {
