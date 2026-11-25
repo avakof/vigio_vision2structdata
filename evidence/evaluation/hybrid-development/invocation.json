@@ -1,0 +1,27 @@
+{
+  "sha": "e34f65cad5701c06f16858dc2ad8f9f5b9fff6a4",
+  "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    ".venv/bin/python",
+    "tools/verify_offline.py",
+    "evaluate",
+    "fixtures/public/manifest.json",
+    "--pipeline",
+    "hybrid",
+    "--output",
+    "evidence/evaluation/hybrid-development"
+  ],
+  "started_utc": "2026-11-25T17:42:09.887036+00:00",
+  "wall_seconds": 486.1142421250115,
+  "exit_code": 0,
+  "finished_utc": "2026-11-25T17:50:16.001891+00:00",
+  "state_dir": "/Users/vakof/orca/vision-to-tables/.vt-state",
+  "inference_lock": "/Users/vakof/orca/vision-to-tables/.vt-state/inference.lock",
+  "artifact_sha256": {
+    "evaluation.json": "51d8687dbc4eaa9d9c7a8434aaa1b88b51318b43a5c934e08186daebd4068162",
+    "exit.json": "600fc48458f5aec9f00213397d0bb83c330ca08d29c3c9bec3324d8becfe6d68",
+    "stderr.log": "c52e28410be82c37150b10b4c27428bd1cc6c885b174ebba79bb951be8b6207d"
+  }
+}

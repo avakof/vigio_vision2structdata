@@ -1,0 +1,2242 @@
+{
+  "version": 1,
+  "manifest_sha256": "c20d4aa88f909bf0a6b3c3aaebb1d43d789b8411501d9847c7a1b97f54c65261",
+  "configuration": {
+    "pipeline": "hybrid",
+    "doc_type": "auto",
+    "page_groups": [],
+    "max_bytes": 67108864,
+    "max_pages": 16,
+    "max_pixels": 40000000,
+    "render_pixels": 2000000,
+    "max_crops": 1,
+    "max_tokens": 2048,
+    "retries": 1,
+    "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+    "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+    "versions": {
+      "annotated-doc": "0.0.7",
+      "annotated-types": "0.8.0",
+      "anyio": "4.16.0",
+      "attrs": "26.1.0",
+      "certifi": "2026.11.20",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.3",
+      "click": "8.5.1",
+      "cryptography": "50.0.2",
+      "datasets": "5.2.0",
+      "dill": "0.4.1",
+      "fastapi": "0.165.0",
+      "filelock": "4.3.1",
+      "fsspec": "2026.9.0",
+      "h11": "0.16.0",
+      "hf-xet": "1.8.0",
+      "httpcore": "1.0.9",
+      "httpcore2": "2.16.2",
+      "httpx": "0.28.1",
+      "httpx2": "2.16.2",
+      "huggingface-hub": "2.4.0",
+      "idna": "3.20",
+      "jinja2": "3.1.6",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "llguidance": "1.9.1",
+      "markdown-it-py": "4.3.0",
+      "markupsafe": "3.0.4",
+      "mdurl": "0.1.2",
+      "miniaudio": "1.73",
+      "mlx": "0.32.4",
+      "mlx-audio": "0.6.8",
+      "mlx-metal": "0.32.4",
+      "mlx-vlm": "0.8.1",
+      "mpmath": "1.3.0",
+      "multiprocess": "0.70.19",
+      "networkx": "3.7",
+      "numpy": "2.5.5",
+      "opencv-python": "5.1.0.95",
+      "opentelemetry-api": "1.45.2",
+      "packaging": "26.4",
+      "pandas": "3.1.1",
+      "pillow": "13.0.0",
+      "pyarrow": "26.0.1",
+      "pycparser": "3.12",
+      "pydantic": "2.14.4",
+      "pydantic-core": "2.50.5",
+      "pygments": "2.21.0",
+      "python-dateutil": "4.0.0",
+      "python-multipart": "0.0.34",
+      "pyyaml": "6.0.4",
+      "referencing": "0.37.0",
+      "regex": "2026.11.24",
+      "requests": "2.34.2",
+      "rich": "15.0.0",
+      "rpds-py": "2026.9.1",
+      "safetensors": "0.8.0",
+      "scipy": "1.18.1",
+      "sentencepiece": "0.2.3",
+      "setuptools": "84.2.1",
+      "shellingham": "1.5.4",
+      "sounddevice": "0.5.6",
+      "starlette": "1.10.0",
+      "sympy": "1.14.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "tqdm": "4.70.1",
+      "transformers": "5.23.0",
+      "truststore": "0.10.5",
+      "typer": "0.29.2",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.5",
+      "tzdata": "2026.6",
+      "urllib3": "2.8.0",
+      "uvicorn": "0.54.0",
+      "websockets": "17.4",
+      "xxhash": "4.1.0"
+    },
+    "components_ready": true,
+    "base_config_hash": "1bbdc4f9de51f414d1ee28eacd5b113e7199e2b80c7b7a3fb673dcfa0e8e39a1"
+  },
+  "case_results": [
+    {
+      "fixture": "babani-1921",
+      "origin": "real",
+      "split": "development",
+      "strata": [
+        "fr",
+        "invoice",
+        "print",
+        "handwriting"
+      ],
+      "sha256": "53de907d6754bff1fa1a0ab28d010ee539702997ac0c969cc6fb15acc9b54290",
+      "labels_sha256": "662e794e428572d0153538c892456c29d88b6658b988adcaf37f6d82095a3fb2",
+      "settings": {},
+      "status": "incomplete",
+      "detail": "No page yielded fields. Inspect the per-page reading artifacts.",
+      "processed_pages": [],
+      "skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "page_count": 1,
+      "issues": [
+        "invalid_model_reply",
+        "no_fields"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 1,
+        "field_exact_ok": 0,
+        "answerable_fields": 1,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "status",
+          "location": "source"
+        },
+        {
+          "metric": "page_coverage",
+          "location": "processed_pages"
+        },
+        {
+          "metric": "document_scope",
+          "location": "source"
+        },
+        {
+          "metric": "document_type",
+          "location": "pages [1]"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/header/total"
+        },
+        {
+          "metric": "critical_numeric",
+          "location": "pages [1]/header/total"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "babani-1921",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 172.1616566250159,
+        "processed_page_count": 0,
+        "failed": true,
+        "process_high_water_rss_bytes": 123748352,
+        "backend": {
+          "job_id": "03effc9643eb462ab33499888d7ab9be",
+          "error_code": "no_extraction",
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 13470089216,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 32,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 2,
+                      "eos_seen": true,
+                      "generated_tokens": 11,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 3,
+                      "eos_seen": true,
+                      "generated_tokens": 36,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 4,
+                      "eos_seen": true,
+                      "generated_tokens": 153,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 4,
+                  "returned_crops": 4
+                },
+                "runtime_seconds": 105.74536375000025,
+                "seconds_including_lock_wait": 106.23071037500631,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "stop",
+                "generated_tokens": 1440,
+                "generation_seconds": 27.665340917010326,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.76281666700379,
+                "mlx_peak_bytes": 7692184652,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7439843328,
+                "prompt_tokens": 2838,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2",
+                  "p1-parser-3"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 33.1360590000113,
+                "seconds_including_lock_wait": 33.63640491600381,
+                "status": "failed",
+                "token_limit": 2048
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-1",
+                "attempt_id": "p1-qwen-1",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "stop",
+                "generated_tokens": 1435,
+                "generation_seconds": 27.465145750000374,
+                "id": "p1-qwen-1",
+                "image_path": "pages/0001.png",
+                "load_seconds": 1.9991568750119768,
+                "mlx_peak_bytes": 7692282956,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7459061760,
+                "prompt_tokens": 2849,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2",
+                  "p1-parser-3"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 31.337515416991664,
+                "seconds_including_lock_wait": 31.75411795900436,
+                "status": "failed",
+                "token_limit": 2048
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-qpg0f5vd/babani-1921"
+    },
+    {
+      "fixture": "le-versailles-1920-p1",
+      "origin": "real",
+      "split": "development",
+      "strata": [
+        "fr",
+        "menu",
+        "historical",
+        "multiple-columns",
+        "handwriting"
+      ],
+      "sha256": "ec26aa74a2c03e49f21b8b185eea3e194c61121c3232df8bb624d978caff977a",
+      "labels_sha256": "c8fa23ee42801ae2c98147e55065bb1f14f7ad22a0203e908ba4954420c8929c",
+      "settings": {},
+      "status": "incomplete",
+      "detail": "No page yielded fields. Inspect the per-page reading artifacts.",
+      "processed_pages": [],
+      "skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "page_count": 1,
+      "issues": [
+        "invalid_model_reply",
+        "model_token_limit",
+        "no_fields"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 3,
+        "field_exact_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "status",
+          "location": "source"
+        },
+        {
+          "metric": "page_coverage",
+          "location": "processed_pages"
+        },
+        {
+          "metric": "document_scope",
+          "location": "source"
+        },
+        {
+          "metric": "document_type",
+          "location": "pages [1]"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/header/venue_name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/water/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/water/price"
+        },
+        {
+          "metric": "menu_price",
+          "location": "pages [1]/water/price"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/water"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "le-versailles-1920-p1",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 145.87399699998787,
+        "processed_page_count": 0,
+        "failed": true,
+        "process_high_water_rss_bytes": 138674176,
+        "backend": {
+          "job_id": "7d3c679f83b04b0394e4e0dcbdedf2df",
+          "error_code": "no_extraction",
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 10206593024,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 4,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 2,
+                      "eos_seen": true,
+                      "generated_tokens": 4,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 3,
+                      "eos_seen": true,
+                      "generated_tokens": 40,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 4,
+                      "eos_seen": true,
+                      "generated_tokens": 64,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 5,
+                      "eos_seen": true,
+                      "generated_tokens": 70,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 6,
+                      "eos_seen": true,
+                      "generated_tokens": 54,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 7,
+                      "eos_seen": true,
+                      "generated_tokens": 106,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 8,
+                      "eos_seen": true,
+                      "generated_tokens": 111,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 9,
+                      "eos_seen": true,
+                      "generated_tokens": 128,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 9,
+                  "returned_crops": 9
+                },
+                "runtime_seconds": 60.2509751659818,
+                "seconds_including_lock_wait": 60.66790262502036,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "length",
+                "generated_tokens": 2048,
+                "generation_seconds": 38.27575041601085,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.007434833998559,
+                "mlx_peak_bytes": 7694445644,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": true,
+                "peak_rss_bytes": 7463911424,
+                "prompt_tokens": 3203,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2",
+                  "p1-parser-3",
+                  "p1-parser-4",
+                  "p1-parser-5",
+                  "p1-parser-6",
+                  "p1-parser-7",
+                  "p1-parser-8"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 42.13061733299401,
+                "seconds_including_lock_wait": 42.60660166601883,
+                "status": "failed",
+                "token_limit": 2048
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-1",
+                "attempt_id": "p1-qwen-1",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "length",
+                "generated_tokens": 2048,
+                "generation_seconds": 37.790102583996486,
+                "id": "p1-qwen-1",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.0079993750259746,
+                "mlx_peak_bytes": 7694527564,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": true,
+                "peak_rss_bytes": 7469072384,
+                "prompt_tokens": 3214,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2",
+                  "p1-parser-3",
+                  "p1-parser-4",
+                  "p1-parser-5",
+                  "p1-parser-6",
+                  "p1-parser-7",
+                  "p1-parser-8"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 41.64717570799985,
+                "seconds_including_lock_wait": 42.06822833302431,
+                "status": "failed",
+                "token_limit": 2048
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-qpg0f5vd/le-versailles-1920-p1"
+    },
+    {
+      "fixture": "jefferson-ice-cream",
+      "origin": "real",
+      "split": "development",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "fraction"
+      ],
+      "sha256": "1f7f0bf1fb1bd384c9f4b76080d3df3342b7b243bb52b065af783e1e09bf374b",
+      "labels_sha256": "6e8f014186be7c0aac3a5f73fed76c836fd72d9ec244b7248a64419185f12504",
+      "settings": {},
+      "status": "incomplete",
+      "detail": "No page yielded fields. Inspect the per-page reading artifacts.",
+      "processed_pages": [],
+      "skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "page_count": 1,
+      "issues": [
+        "invalid_model_reply",
+        "model_token_limit",
+        "no_fields"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 4,
+        "field_exact_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "status",
+          "location": "source"
+        },
+        {
+          "metric": "page_coverage",
+          "location": "processed_pages"
+        },
+        {
+          "metric": "document_scope",
+          "location": "source"
+        },
+        {
+          "metric": "document_type",
+          "location": "pages [1]"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/header/yield_quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/header/yield_quantity"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/sugar/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/sugar/quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/sugar/quantity"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/sugar/unit"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/sugar/unit"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/sugar"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "jefferson-ice-cream",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 166.59257466698182,
+        "processed_page_count": 0,
+        "failed": true,
+        "process_high_water_rss_bytes": 162758656,
+        "backend": {
+          "job_id": "0a572049eb0345ef9b828b76a58d21f4",
+          "error_code": "no_extraction",
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 14030585856,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 3,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 2,
+                      "eos_seen": true,
+                      "generated_tokens": 373,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 3,
+                      "eos_seen": true,
+                      "generated_tokens": 6,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 3,
+                  "returned_crops": 3
+                },
+                "runtime_seconds": 99.20144708300359,
+                "seconds_including_lock_wait": 99.67056141700596,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "length",
+                "generated_tokens": 2048,
+                "generation_seconds": 36.27408495900454,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.726381874992512,
+                "mlx_peak_bytes": 7692692556,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": true,
+                "peak_rss_bytes": 7470956544,
+                "prompt_tokens": 2954,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 41.700133917009225,
+                "seconds_including_lock_wait": 42.160344583011465,
+                "status": "failed",
+                "token_limit": 2048
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-1",
+                "attempt_id": "p1-qwen-1",
+                "channel": "direct",
+                "constrained": true,
+                "error": "invalid_model_reply",
+                "finish_reason": "stop",
+                "generated_tokens": 867,
+                "generation_seconds": 19.074500999995507,
+                "id": "p1-qwen-1",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.6705784579971805,
+                "mlx_peak_bytes": 7692790860,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7479214080,
+                "prompt_tokens": 2965,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1",
+                  "p1-parser-2"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 23.720471042004647,
+                "seconds_including_lock_wait": 24.213309374987148,
+                "status": "failed",
+                "token_limit": 2048
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-qpg0f5vd/jefferson-ice-cream"
+    }
+  ],
+  "metrics": [
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "all",
+      "counts": {
+        "attempts": 3,
+        "documents": 0,
+        "status_n": 3,
+        "status_ok": 0,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 6,
+        "document_scope_n": 3,
+        "document_scope_ok": 0,
+        "document_type_n": 3,
+        "document_type_ok": 0,
+        "field_exact_n": 8,
+        "field_exact_ok": 0,
+        "answerable_fields": 7,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 8,
+          "rate": 0.0
+        },
+        "critical_numeric": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 7,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 7,
+          "denominator": 7,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "en",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 4,
+        "field_exact_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "fr",
+      "counts": {
+        "attempts": 2,
+        "documents": 0,
+        "status_n": 2,
+        "status_ok": 0,
+        "page_coverage_n": 6,
+        "page_coverage_ok": 4,
+        "document_scope_n": 2,
+        "document_scope_ok": 0,
+        "document_type_n": 2,
+        "document_type_ok": 0,
+        "field_exact_n": 4,
+        "field_exact_ok": 0,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 2,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 2,
+        "passed_cases": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 4,
+          "denominator": 6,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "critical_numeric": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 4,
+          "denominator": 4,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "fraction",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 4,
+        "field_exact_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "handwriting",
+      "counts": {
+        "attempts": 3,
+        "documents": 0,
+        "status_n": 3,
+        "status_ok": 0,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 6,
+        "document_scope_n": 3,
+        "document_scope_ok": 0,
+        "document_type_n": 3,
+        "document_type_ok": 0,
+        "field_exact_n": 8,
+        "field_exact_ok": 0,
+        "answerable_fields": 7,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 6,
+          "denominator": 9,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 8,
+          "rate": 0.0
+        },
+        "critical_numeric": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 7,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 7,
+          "denominator": 7,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "historical",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 3,
+        "field_exact_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "invoice",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 1,
+        "field_exact_ok": 0,
+        "answerable_fields": 1,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "critical_numeric": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "menu",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 3,
+        "field_exact_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "multiple-columns",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 3,
+        "field_exact_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "menu_price_n": 1,
+        "menu_price_ok": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "menu_price": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "print",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 1,
+        "field_exact_ok": 0,
+        "answerable_fields": 1,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "critical_numeric_n": 1,
+        "critical_numeric_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "critical_numeric": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "development",
+      "stratum": "recipe",
+      "counts": {
+        "attempts": 1,
+        "documents": 0,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 2,
+        "document_scope_n": 1,
+        "document_scope_ok": 0,
+        "document_type_n": 1,
+        "document_type_ok": 0,
+        "field_exact_n": 4,
+        "field_exact_ok": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 0,
+        "answerable_fields": 3,
+        "covered_answerable_fields": 0,
+        "correct_answered_fields": 0,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 0,
+        "review_documents": 0,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "document_scope": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "document_type": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "field_exact": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "review_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        }
+      }
+    }
+  ],
+  "runtime": [
+    {
+      "origin": "real",
+      "split": "development",
+      "by_phase": {
+        "fresh_process_per_model_call": {
+          "samples": 3,
+          "noncompleted_runs": 3,
+          "seconds": {
+            "min": 145.87399699998787,
+            "mean": 161.5427427639952,
+            "max": 172.1616566250159
+          },
+          "processed_pages": 0,
+          "samples_with_processed_pages": 0,
+          "end_to_end_seconds_per_processed_page": null,
+          "process_high_water_rss_max_bytes": 162758656
+        }
+      }
+    }
+  ]
+}
