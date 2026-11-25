@@ -4,7 +4,7 @@ from __future__ import annotations
 import math
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, model_validator
+from pydantic import BaseModel, ConfigDict, Field, PrivateAttr, StrictBool, StrictStr, model_validator
 
 from .config import DocType, PIPELINE_VERSION, SCHEMA_VERSION
 from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
@@ -99,7 +99,17 @@ class Ingested(Wire):
     source_skipped_pages: list[Number] = Field(default_factory=list)
 
 
+class Evidence(Wire):
+    page: Number
+    region_id: Identifier | None = None
+    quote: Text = ""
+    channel: Literal["direct", "native_text", "parser", "human"] | None = None
+    attempt_id: Identifier | None = None
+
+
 class FieldRead(Wire):
+    # Assigned only by the adapter, then serialized in PageReading.field_evidence.
+    _trace: list[Evidence] = PrivateAttr(default_factory=list)
     raw: Text | None
     evidence: Text = ""
     region_id: Identifier | None = None
@@ -155,20 +165,13 @@ class PageReading(Wire):
     incomplete: bool = False
     suspected_cutoff: bool = False
     calls: list[dict] = Field(default_factory=list)
+    field_evidence: dict[Identifier, dict[Identifier, list[Evidence]]] = Field(default_factory=dict)
 
     @model_validator(mode="after")
     def empty_status(self):
         if not self.records and not (self.incomplete and self.issues):
             raise ValueError("empty reading requires a visible incomplete issue")
         return self
-
-
-class Evidence(Wire):
-    page: Number
-    region_id: Identifier | None = None
-    quote: Text = ""
-    channel: Literal["direct", "native_text", "parser", "human"] | None = None
-    attempt_id: Identifier | None = None
 
 
 class Derivation(Wire):

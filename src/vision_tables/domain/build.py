@@ -164,7 +164,9 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
                 issues.append(catalog.make("invalid_evidence", f"{entity.kind}.{name} cites region {region_id}, which is not a region of page {entity.page}",
                                            page=entity.page, observations=[f"{entity.id}.{name}"]))
                 region_id, region = None, None
-            evidence = [Evidence(page=entity.page, region_id=region_id, quote=fr.evidence, channel=channel)]
+            evidence = read[entity.page].field_evidence.get(rec.local_id, {}).get(name, [])
+            if not evidence:
+                evidence = [Evidence(page=entity.page, region_id=region_id, quote=fr.evidence, channel=channel)]
             observation = _observe(entity, name, fr, region, evidence, order_hint)
             observations.append(observation)
             if FIELD_TYPES[entity.kind][name] == "ref" and observation.state == "readable":

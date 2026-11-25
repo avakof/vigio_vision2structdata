@@ -46,6 +46,75 @@
       "title": "Box",
       "type": "object"
     },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "attempt_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attempt Id"
+        },
+        "channel": {
+          "anyOf": [
+            {
+              "enum": [
+                "direct",
+                "native_text",
+                "parser",
+                "human"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Channel"
+        },
+        "page": {
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "quote": {
+          "default": "",
+          "maxLength": 16384,
+          "title": "Quote",
+          "type": "string"
+        },
+        "region_id": {
+          "anyOf": [
+            {
+              "maxLength": 180,
+              "minLength": 1,
+              "pattern": "^[A-Za-z0-9_.:-]+$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Region Id"
+        }
+      },
+      "required": [
+        "page"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
     "FieldRead": {
       "additionalProperties": false,
       "properties": {
@@ -397,6 +466,31 @@
       ],
       "title": "Doc Type",
       "type": "string"
+    },
+    "field_evidence": {
+      "patternProperties": {
+        "^[A-Za-z0-9_.:-]+$": {
+          "patternProperties": {
+            "^[A-Za-z0-9_.:-]+$": {
+              "items": {
+                "$ref": "#/$defs/Evidence"
+              },
+              "type": "array"
+            }
+          },
+          "propertyNames": {
+            "maxLength": 180,
+            "minLength": 1
+          },
+          "type": "object"
+        }
+      },
+      "propertyNames": {
+        "maxLength": 180,
+        "minLength": 1
+      },
+      "title": "Field Evidence",
+      "type": "object"
     },
     "incomplete": {
       "default": false,

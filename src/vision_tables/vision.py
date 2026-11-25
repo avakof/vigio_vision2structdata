@@ -16,7 +16,7 @@ from PIL import Image, ImageOps
 from . import runtime_local
 from .artifacts import write_json
 from .config import QWEN_MODEL, QWEN_REVISION, ProcessingError, Settings
-from .contracts import Box, FieldRead, Issue, ModelPayload, Page, PageReading, Region
+from .contracts import Box, Evidence, FieldRead, Issue, ModelPayload, Page, PageReading, Region
 from .vision_geometry import box, invert, localize
 from .vision_ingest import inspect_source
 from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
@@ -266,6 +266,16 @@ def _call_attempt(page, root, settings, image, offered, text, native_only, crop,
                      or generated >= settings.max_tokens)
         call["overflow"] = exhausted
         proposal, unsupported = _payload(reply["raw"], schema, offered, native_only, crop)
+        for record in proposal.records:
+            for reading in record.fields.values():
+                region = offered.get(reading.region_id)
+                channel = "direct"
+                if region and region.kind == "native_text":
+                    channel = "native_text"
+                elif region and region.kind.startswith("parser_"):
+                    channel = "parser"
+                reading._trace = [Evidence(page=page.number, region_id=reading.region_id,
+                                           quote=reading.evidence, channel=channel, attempt_id=attempt_id)]
         call["status"] = "incomplete" if exhausted else "parsed"
         call["fields"] = [
             {"local_id": record.local_id, "kind": record.kind, "field": name, "region_id": read.region_id,
@@ -319,9 +329,11 @@ def _merge(base, reread, crop):
                 peer.fields[name] = FieldRead(raw=None, state="ambiguous", evidence=old.evidence,
                                               region_id=old.region_id, alternatives=[old.raw, reading.raw],
                                               reason="Independent local readings disagree.")
+                peer.fields[name]._trace = old._trace + reading._trace
                 conflict = True
             elif old and old.state == "ambiguous" and reading.raw and reading.raw not in old.alternatives:
                 old.alternatives.append(reading.raw)
+                old._trace.extend(reading._trace)
     return mismatch or (not crop and not same_structure), conflict
 
 
@@ -440,5 +452,6 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
         issue("no_fields", "No local model attempt recovered supported page fields.")
         return PageReading(page=page.number, doc_type="unknown", incomplete=True, issues=issues,
                            regions=added, suspected_cutoff=cutoff, calls=calls)
-    return PageReading(page=page.number, doc_type=base.doc_type, records=base.records, regions=added,
+    traces = {row.local_id: {name: read._trace for name, read in row.fields.items()} for row in base.records}
+    return PageReading(page=page.number, doc_type=base.doc_type, records=base.records, regions=added, field_evidence=traces,
                        issues=issues, incomplete=partial, suspected_cutoff=cutoff, calls=calls)
