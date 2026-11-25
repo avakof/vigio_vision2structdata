@@ -1,0 +1,107 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "menu",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "menu",
+          "fields": {
+            "venue_name": "Café des Érables"
+          }
+        },
+        {
+          "id": "soup-section",
+          "kind": "section",
+          "fields": {
+            "name": "SOUPE",
+            "translated_name": "SOUP"
+          }
+        },
+        {
+          "id": "celery",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Velouté de céleri",
+            "translated_name": "Celery soup"
+          },
+          "parent": "soup-section",
+          "row": true
+        },
+        {
+          "id": "tart",
+          "kind": "menu_item",
+          "parent": "soup-section",
+          "fields": {
+            "name": "Tarte aux poireaux",
+            "price": {
+              "value": null,
+              "state": "not_present",
+              "allow_missing": true,
+              "metric": "menu_price"
+            }
+          }
+        },
+        {
+          "id": "cup",
+          "kind": "variant",
+          "fields": {
+            "name": "Tasse",
+            "price": {
+              "value": "4.50",
+              "decimal": true,
+              "metric": "menu_price",
+              "page": 1
+            },
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        },
+        {
+          "id": "bowl",
+          "kind": "variant",
+          "fields": {
+            "name": "Bol",
+            "price": {
+              "value": "6.80",
+              "decimal": true,
+              "metric": "menu_price",
+              "page": 1
+            },
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        },
+        {
+          "id": "croutons",
+          "kind": "supplement",
+          "fields": {
+            "name": "Croûtons",
+            "price": {
+              "value": "0.70",
+              "decimal": true,
+              "metric": "menu_price",
+              "page": 1
+            },
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        }
+      ]
+    }
+  ],
+  "suspected_capture": true
+}

@@ -1,0 +1,349 @@
+{
+  "version": 1,
+  "description": "Original fictional English and French evaluation sources and bounded-failure scenarios. The split identifies fixture families reserved from tuning.",
+  "cases": [
+    {
+      "id": "invoice-fr",
+      "source": "synthetic/invoice-fr-mixed.pdf",
+      "labels": "labels/invoice-fr.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "fr",
+        "invoice",
+        "print",
+        "native-and-raster-pdf",
+        "dense-table",
+        "continuation"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (invoice-fr-mixed.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "settings": {
+        "page_groups": [
+          [
+            1,
+            2
+          ]
+        ]
+      },
+      "sha256": "c4afc1b0e5145d7a949ca827a97d79fb0a9edce58796cbe65e992faaf908d4b2",
+      "labels_sha256": "31b54c923189c2f34817d7dedbe49eb8ca7ab275fbe33726f5923dbf7fca903e"
+    },
+    {
+      "id": "invoice-page-limit",
+      "source": "synthetic/invoice-fr-mixed.pdf",
+      "labels": "labels/invoice-page-limit.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "fr",
+        "invoice",
+        "print",
+        "bounded-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (invoice-fr-mixed.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "settings": {
+        "max_pages": 1
+      },
+      "sha256": "c4afc1b0e5145d7a949ca827a97d79fb0a9edce58796cbe65e992faaf908d4b2",
+      "labels_sha256": "597ae40f289f1ca286f09708736cf29ec72c5e81bf6677999157c0137bb5b697"
+    },
+    {
+      "id": "credit-en",
+      "source": "synthetic/credit-en.pdf",
+      "labels": "labels/credit-en.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "en",
+        "credit-note",
+        "invoice",
+        "print",
+        "ambiguous",
+        "untrusted-document-data"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (credit-en.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "0f52ce495642a43e942947b985b8d41932878c2b0b1d98e513bb04d53881f5ae",
+      "labels_sha256": "f89fa8c9f96936f416942b82562d8b8a24f545d3349af5b0b5bce22c595041bf"
+    },
+    {
+      "id": "unrelated-pages",
+      "source": "synthetic/unrelated-pages.pdf",
+      "labels": "labels/unrelated-pages.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "fr",
+        "en",
+        "invoice",
+        "print",
+        "unrelated-pages"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (unrelated-pages.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "settings": {
+        "page_groups": []
+      },
+      "sha256": "56e88c7088f268c17e5619b997be04dbee56c270e3c42d4cc6e9b13601251935",
+      "labels_sha256": "10e77bc0025033943e2e41fc081cdf4712311c215dd2f5ed0f50aa2bcc4af8a9"
+    },
+    {
+      "id": "invoice-byte-limit",
+      "source": "synthetic/invoice-fr-mixed.pdf",
+      "labels": "labels/invoice-byte-limit.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "invoice",
+        "print",
+        "bounded-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (invoice-fr-mixed.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "settings": {
+        "max_bytes": 4096
+      },
+      "sha256": "c4afc1b0e5145d7a949ca827a97d79fb0a9edce58796cbe65e992faaf908d4b2",
+      "labels_sha256": "69b016b966edb7287179d689487daa4786a4d399296d2ccd4dde23a496faa3eb"
+    },
+    {
+      "id": "encrypted",
+      "source": "synthetic/encrypted.pdf",
+      "labels": "labels/encrypted.json",
+      "split": "development",
+      "family": "invoice-fr-credit-family",
+      "strata": [
+        "en",
+        "invoice",
+        "print",
+        "invalid-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (encrypted.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "1ccd3ac0939f02f0dba385c9905edd2304683e13d0132a0566e54244345e79d9",
+      "labels_sha256": "04b0d1aa618f98ecb97684d71873f2e0d05775e38bcc016709af8f7c510762e5"
+    },
+    {
+      "id": "broken-pdf",
+      "source": "synthetic/broken.pdf",
+      "labels": "labels/broken-pdf.json",
+      "split": "development",
+      "family": "corrupt",
+      "strata": [
+        "invalid-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (broken.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "9e9dc568248d06c1d320767d2e2a9f529a19c8f039e9f6a3c25247cf8d120afc",
+      "labels_sha256": "864e1516770a20f585d8350a23675a93a9bbd5d2d1dea0f5e33957533a4dd453"
+    },
+    {
+      "id": "broken-image",
+      "source": "synthetic/broken.png",
+      "labels": "labels/broken-image.json",
+      "split": "development",
+      "family": "corrupt",
+      "strata": [
+        "invalid-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (broken.png)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "4c4b6a3be1314ab86138bef4314dde022e600960d8689a2c8f8631802d20dab6",
+      "labels_sha256": "214f2296fde7d33b8a0469a4caac832968aaf57d806783c9c66abddf7f2ef073"
+    },
+    {
+      "id": "unsupported",
+      "source": "synthetic/unsupported.txt",
+      "labels": "labels/unsupported.json",
+      "split": "development",
+      "family": "unsupported",
+      "strata": [
+        "invalid-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (unsupported.txt)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "8ab8106d36e40d6cd27088476ea2ad8c08f3a5545827dacaf7d46273c8ae36e7",
+      "labels_sha256": "ef2710a4cd1add165a69ac59961b57fa1a882bb12fabb86ae4d2b91c9d329ee7"
+    },
+    {
+      "id": "invoice-en",
+      "source": "synthetic/invoice-en.pdf",
+      "labels": "labels/invoice-en.json",
+      "split": "held_out",
+      "family": "paperwing",
+      "strata": [
+        "en",
+        "invoice",
+        "print"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (invoice-en.pdf)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "751478a9e70ebc689053b49b60a1b3dda73108d1bf7cd1f7409718985fe9699b",
+      "labels_sha256": "6dae53f5851ec01b1e12067a870778cc8d8262330855ca5004c00b1ce95a15a8"
+    },
+    {
+      "id": "menu-bilingual",
+      "source": "synthetic/menu-bilingual.png",
+      "labels": "labels/menu-bilingual.json",
+      "split": "held_out",
+      "family": "erables",
+      "strata": [
+        "fr",
+        "en",
+        "mixed-language",
+        "menu",
+        "print",
+        "multiple-columns"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (menu-bilingual.png)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "a564e76081fb357733a24605201f256f583a3705cbf49b2bd6da8c13721d314a",
+      "labels_sha256": "2a57077f7dcd034ac2ffee352cfed19de19b5cef0fc649b3126bde1681dcd196"
+    },
+    {
+      "id": "menu-crop",
+      "source": "synthetic/menu-cropped-blurred.jpg",
+      "labels": "labels/menu-crop.json",
+      "split": "held_out",
+      "family": "erables",
+      "strata": [
+        "fr",
+        "en",
+        "mixed-language",
+        "menu",
+        "print",
+        "crop",
+        "blur",
+        "bounded-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (menu-cropped-blurred.jpg)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "694b716ff93c3c2a7377f0d326fd0ead0138161199c197530c1797b07d7b2184",
+      "labels_sha256": "13a6596a6b897f5de63c2c4eb7c9ae0a138e1576074deff062e19c36995c7242"
+    },
+    {
+      "id": "recipe-hand-style",
+      "source": "synthetic/recipe-hand-style.png",
+      "labels": "labels/recipe-hand-style.json",
+      "split": "held_out",
+      "family": "scones",
+      "strata": [
+        "fr",
+        "en",
+        "mixed-language",
+        "recipe",
+        "simulated-handwriting",
+        "ambiguous"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (recipe-hand-style.png)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "b843924aca77fd1dd8746e3e67ca701e111fcbf4ae3bc78fec05dcaf0df16e0f",
+      "labels_sha256": "1ef4754980b9dbfbe4b4311e1f0c0598f3037d14b1bb1f3d93fca0521806a9d0"
+    },
+    {
+      "id": "recipe-rotated",
+      "source": "synthetic/recipe-rotated.jpg",
+      "labels": "labels/recipe-hand-style.json",
+      "split": "held_out",
+      "family": "scones",
+      "strata": [
+        "fr",
+        "en",
+        "mixed-language",
+        "recipe",
+        "simulated-handwriting",
+        "ambiguous",
+        "rotation"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (recipe-rotated.jpg)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "sha256": "e27512b8d23ebd238178acb2a789344527235caf0cecb91ce5fe7c7d24011d08",
+      "labels_sha256": "1ef4754980b9dbfbe4b4311e1f0c0598f3037d14b1bb1f3d93fca0521806a9d0"
+    },
+    {
+      "id": "recipe-token-limit",
+      "source": "synthetic/recipe-hand-style.png",
+      "labels": "labels/recipe-token-limit.json",
+      "split": "held_out",
+      "family": "scones",
+      "strata": [
+        "fr",
+        "en",
+        "mixed-language",
+        "recipe",
+        "simulated-handwriting",
+        "bounded-input"
+      ],
+      "provenance": {
+        "origin": "synthetic",
+        "source": "fixtures/generate.py (recipe-hand-style.png)",
+        "license": "Original fictional QA material created for this repository",
+        "labeler": "Independent QA session; manual transcription of synthetic source"
+      },
+      "settings": {
+        "max_tokens": 32,
+        "retries": 0
+      },
+      "sha256": "b843924aca77fd1dd8746e3e67ca701e111fcbf4ae3bc78fec05dcaf0df16e0f",
+      "labels_sha256": "0dde21ce683e42a33257f4a74b239881c3b72816c044d8285aacab1c17aef0f5"
+    }
+  ]
+}

@@ -1,0 +1,323 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 2,
+  "processed_pages": [
+    1,
+    2
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "invoice",
+      "scope": [
+        1
+      ],
+      "exhaustive": [
+        "line_item"
+      ],
+      "issues": [],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "invoice",
+          "fields": {
+            "document_number": "FAC-0317",
+            "supplier_name": "Atelier des Aulnes",
+            "currency": "EUR",
+            "issue_date": "2026-03-17"
+          }
+        },
+        {
+          "id": "row-1",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Bols en grès", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "4.80", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "9.60", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-2",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Tasses crème", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "3.20", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "3.20", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-3",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Tasses crème", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "3.20", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "3.20", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-4",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Assiettes ovales", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "7.50", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "15.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-5",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Nappes lin", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "12.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "12.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-6",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Serviettes bleu nuit", "page": 1},
+            "quantity": {"value": "4", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "1.25", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "5.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-7",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Moulins poivre", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "8.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "8.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-8",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Carafes vertes", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "3.50", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "7.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-9",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Ramequins", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "2.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "2.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-10",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Cuillères inox", "page": 1},
+            "quantity": {"value": "3", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "1.30", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "3.90", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-11",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Plateaux chêne", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "14.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "14.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-12",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Torchons", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "2.60", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "5.20", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-13",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Dessous-de-plat", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "4.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "4.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-14",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Bougeoirs", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "2.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "4.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-15",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Verres côtelés", "page": 1},
+            "quantity": {"value": "3", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "2.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "6.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-16",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Pichets", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "5.00", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "5.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-17",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Fourchettes dessert", "page": 1},
+            "quantity": {"value": "6", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "1.10", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "6.60", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-18",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Mugs", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "3.50", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "7.00", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-19",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Planche hêtre", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "8.50", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "8.50", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-20",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Pinces à thé", "page": 1},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "1.40", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "2.80", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-21",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Minuteurs", "page": 1},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "6.40", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "6.40", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "row-22",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Étiquettes", "page": 1},
+            "quantity": {"value": "4", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "unit_price": {"value": "0.15", "decimal": true, "metric": "critical_numeric", "page": 1},
+            "line_total": {"value": "0.60", "decimal": true, "metric": "critical_numeric", "page": 1, "origin": "observed"}
+          },
+          "row": true
+        }
+      ]
+    },
+    {
+      "type": "invoice",
+      "scope": [
+        2
+      ],
+      "exhaustive": [
+        "line_item"
+      ],
+      "issues": [
+        "total_mismatch"
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "invoice",
+          "fields": {
+            "document_kind": "credit_note",
+            "document_number": "CN-071",
+            "issue_date": {"value": null, "state": "ambiguous", "alternatives": ["2026-03-04", "2026-04-03"], "page": 2},
+            "currency": {"value": null, "state": "ambiguous", "page": 2},
+            "total": {"value": "-11.95", "decimal": true, "metric": "critical_numeric", "page": 2, "origin": "observed"}
+          }
+        },
+        {
+          "id": "return",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "Cup returned", "page": 2},
+            "quantity": {"value": "1", "decimal": true, "metric": "critical_numeric", "page": 2},
+            "unit_price": {"value": "7.25", "decimal": true, "metric": "critical_numeric", "page": 2},
+            "line_total": {"value": "-7.25", "decimal": true, "metric": "critical_numeric", "page": 2, "origin": "observed"}
+          },
+          "row": true
+        },
+        {
+          "id": "formula",
+          "kind": "line_item",
+          "fields": {
+            "description": {"value": "=2+2", "page": 2},
+            "quantity": {"value": "2", "decimal": true, "metric": "critical_numeric", "page": 2},
+            "unit_price": {"value": "2.00", "decimal": true, "metric": "critical_numeric", "page": 2},
+            "line_total": {"value": "-4.00", "decimal": true, "metric": "critical_numeric", "page": 2, "origin": "observed"}
+          },
+          "row": true
+        }
+      ]
+    }
+  ]
+}

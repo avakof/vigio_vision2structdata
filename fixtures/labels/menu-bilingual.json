@@ -1,0 +1,164 @@
+{
+  "status": "completed",
+  "eligible": true,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "menu",
+      "scope": [
+        1
+      ],
+      "exhaustive": [
+        "menu_item",
+        "variant",
+        "supplement",
+        "bundle",
+        "bundle_choice"
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "menu",
+          "fields": {
+            "venue_name": "Café des Érables"
+          }
+        },
+        {
+          "id": "soup-section",
+          "kind": "section",
+          "fields": {
+            "name": "SOUPE",
+            "translated_name": "SOUP"
+          }
+        },
+        {
+          "id": "drinks",
+          "kind": "section",
+          "fields": {
+            "name": "BOISSONS",
+            "translated_name": "DRINKS"
+          }
+        },
+        {
+          "id": "combo-section",
+          "kind": "section",
+          "fields": {
+            "name": "FORMULE",
+            "translated_name": "COMBO"
+          }
+        },
+        {
+          "id": "celery",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Velouté de céleri",
+            "translated_name": "Celery soup"
+          },
+          "parent": "soup-section",
+          "row": true
+        },
+        {
+          "id": "tart",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Tarte aux poireaux",
+            "translated_name": "Leek tart",
+            "price": {"value": "7.20", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "soup-section",
+          "row": true
+        },
+        {
+          "id": "coffee",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Café filtre",
+            "translated_name": "Filter coffee",
+            "price": {"value": "2.60", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "drinks",
+          "row": true
+        },
+        {
+          "id": "tea",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Thé noir",
+            "translated_name": "Black tea",
+            "price": {"value": "2.80", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "drinks",
+          "row": true
+        },
+        {
+          "id": "cup",
+          "kind": "variant",
+          "fields": {
+            "name": "Tasse",
+            "price": {"value": "4.50", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        },
+        {
+          "id": "bowl",
+          "kind": "variant",
+          "fields": {
+            "name": "Bol",
+            "price": {"value": "6.80", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        },
+        {
+          "id": "croutons",
+          "kind": "supplement",
+          "fields": {
+            "name": "Croûtons",
+            "price": {"value": "0.70", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "celery",
+          "row": true
+        },
+        {
+          "id": "lunch",
+          "kind": "bundle",
+          "fields": {
+            "name": "Déjeuner",
+            "translated_name": "Lunch",
+            "price": {"value": "10.40", "decimal": true, "metric": "menu_price", "page": 1},
+            "currency": "EUR"
+          },
+          "parent": "combo-section",
+          "row": true
+        },
+        {
+          "id": "main",
+          "kind": "bundle_choice",
+          "fields": {
+            "name": "Bol de velouté OU tarte"
+          },
+          "parent": "lunch"
+        },
+        {
+          "id": "drink",
+          "kind": "bundle_choice",
+          "fields": {
+            "name": "Café filtre OU thé noir"
+          },
+          "parent": "lunch"
+        }
+      ]
+    }
+  ]
+}

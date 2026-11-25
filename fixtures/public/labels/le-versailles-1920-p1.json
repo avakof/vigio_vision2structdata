@@ -33,7 +33,8 @@
               "origin": "observed"
             }
           },
-          "row": true
+          "row": true,
+          "anchor": "name"
         }
       ]
     }

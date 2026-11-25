@@ -45,7 +45,7 @@
       },
       "settings": {},
       "sha256": "ec26aa74a2c03e49f21b8b185eea3e194c61121c3232df8bb624d978caff977a",
-      "labels_sha256": "267f53501b79ffa63ee522cb0b749e6bdc4045790e57f98f3b7d00b9478e0024"
+      "labels_sha256": "c8fa23ee42801ae2c98147e55065bb1f14f7ad22a0203e908ba4954420c8929c"
     },
     {
       "id": "jefferson-ice-cream",
@@ -67,7 +67,7 @@
       },
       "settings": {},
       "sha256": "68bc782442ddb0ec4dbb65523bd87e412714e2599c671f379c7ddbaea7c2979e",
-      "labels_sha256": "0190d6cd371ab5c5ded7d5e1712d67121f74a3998fa427a81eab97c8ac3782a7"
+      "labels_sha256": "6e8f014186be7c0aac3a5f73fed76c836fd72d9ec244b7248a64419185f12504"
     }
   ]
 }

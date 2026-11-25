@@ -1,0 +1,126 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "recipe",
+      "scope": [
+        1
+      ],
+      "exhaustive": [
+        "ingredient",
+        "substitution",
+        "step"
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "recipe",
+          "fields": {
+            "title": "Scones au citron",
+            "yield_quantity": {"value": null, "metric": "recipe_quantity_unit_yield", "page": 1, "state": "not_present"}
+          }
+        },
+        {
+          "id": "milk",
+          "kind": "ingredient",
+          "fields": {
+            "name": "lait",
+            "quantity": {"value": "0.5", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true, "raw": "1/2"},
+            "unit": {"value": "cup", "metric": "recipe_quantity_unit_yield", "page": 1}
+          },
+          "row": true
+        },
+        {
+          "id": "sugar",
+          "kind": "ingredient",
+          "fields": {
+            "name": "sucre",
+            "quantity_min": {"value": "2", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
+            "quantity_max": {"value": "3", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
+            "unit": {"value": "tbsp", "metric": "recipe_quantity_unit_yield", "page": 1}
+          },
+          "row": true
+        },
+        {
+          "id": "raising",
+          "kind": "ingredient",
+          "fields": {
+            "name": "levure",
+            "quantity": {"value": "2", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
+            "unit": {"value": "tsp", "metric": "recipe_quantity_unit_yield", "page": 1},
+            "crossed_out": "1 tsp"
+          },
+          "row": true
+        },
+        {
+          "id": "butter",
+          "kind": "ingredient",
+          "fields": {
+            "name": "beurre",
+            "quantity": {"value": null, "metric": "recipe_quantity_unit_yield", "page": 1, "state": "unreadable"},
+            "unit": {"value": "g", "metric": "recipe_quantity_unit_yield", "page": 1}
+          },
+          "row": true
+        },
+        {
+          "id": "salt",
+          "kind": "ingredient",
+          "fields": {
+            "name": "sel",
+            "quantity_text": {"value": "au goût", "metric": "recipe_quantity_unit_yield", "page": 1}
+          },
+          "row": true
+        },
+        {
+          "id": "lemon",
+          "kind": "ingredient",
+          "fields": {
+            "name": "zeste de citron",
+            "optional": true
+          },
+          "row": true
+        },
+        {
+          "id": "orange",
+          "kind": "substitution",
+          "fields": {
+            "name": "zeste d'orange"
+          },
+          "parent": "lemon"
+        },
+        {
+          "id": "mix",
+          "kind": "step",
+          "fields": {
+            "instruction": "Mélanger les ingrédients secs."
+          },
+          "row": true
+        },
+        {
+          "id": "add",
+          "kind": "step",
+          "fields": {
+            "instruction": "Ajouter le lait et le beurre."
+          },
+          "row": true
+        },
+        {
+          "id": "bake",
+          "kind": "step",
+          "fields": {
+            "instruction": "Cuire 14 min à 190 °C.",
+            "duration_minutes": {"value": "14", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true},
+            "temperature_c": {"value": "190", "metric": "recipe_quantity_unit_yield", "page": 1, "decimal": true}
+          },
+          "row": true
+        }
+      ]
+    }
+  ]
+}
