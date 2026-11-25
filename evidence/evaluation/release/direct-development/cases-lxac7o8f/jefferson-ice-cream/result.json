@@ -1,0 +1,879 @@
+[
+  {
+    "document_id": "doc-5e42cfae7d09dc8aec5572cab740a374",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "recipe",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "1f7f0bf1fb1bd384c9f4b76080d3df3342b7b243bb52b065af783e1e09bf374b",
+      "media_type": "image/jpeg",
+      "size_bytes": 965363,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1200.0,
+        "height": 4312.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 746,
+        "image_height": 2680,
+        "image_to_original": [
+          1.6085790884718498,
+          0.0,
+          0.0,
+          1.608955223880597,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_tile",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            0.0,
+            754.0,
+            1200.0,
+            3557.9999999999995
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "49f1fb95ae73051f7583dcbb70e74b337efa4d3a2e7a30050832c561988a1869",
+        "crop_to_original": [
+          1.2972972972972974,
+          0.0,
+          0.0,
+          1.2975474317445626,
+          0.0,
+          754.0
+        ]
+      },
+      {
+        "id": "p1-style",
+        "page": 1,
+        "order": 1,
+        "kind": "page_style",
+        "text": "",
+        "language": "en",
+        "writing": "handwriting",
+        "box": null,
+        "artifact_path": "pages/0001.png",
+        "artifact_sha256": "a68157863d17058eaf49a939387c9e1b6053443772a44807ee3256a7b9b34093",
+        "crop_to_original": null
+      }
+    ],
+    "run": {
+      "job_id": "0863799c146747529525e1084cf8cd19",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 2091,
+          "prompt_tokens": 2594,
+          "load_seconds": 2.1479395419883076,
+          "generation_seconds": 75.30391137499828,
+          "runtime_seconds": 81.65996229200391,
+          "peak_rss_bytes": 7435780096,
+          "mlx_peak_bytes": 7689710668,
+          "seconds_including_lock_wait": 82.37895454198588,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 3,
+            "model_alternative_limit": 2
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": null,
+              "raw": "Ice cream",
+              "quote": "Ice cream",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": "2 bottles of good cream. 6 yolks of eggs. 2 lbs sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (gr",
+              "quote": "2 bottles of good cream. 6 yolks of eggs. 2 lbs sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (gr",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "vanilla",
+              "quote": "vanilla",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "salt",
+              "quote": "salt",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 803,
+          "prompt_tokens": 2605,
+          "load_seconds": 3.177308417012682,
+          "generation_seconds": 34.03960512499907,
+          "runtime_seconds": 40.884267999994336,
+          "peak_rss_bytes": 7481278464,
+          "mlx_peak_bytes": 7689808972,
+          "seconds_including_lock_wait": 41.54023154100287,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": null,
+              "raw": "Ice cream",
+              "quote": "Ice cream",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 585,
+          "prompt_tokens": 2653,
+          "load_seconds": 4.582841166993603,
+          "generation_seconds": 28.483279750013025,
+          "runtime_seconds": 35.755533542018384,
+          "peak_rss_bytes": 7493353472,
+          "mlx_peak_bytes": 7691185228,
+          "seconds_including_lock_wait": 36.3588259590033,
+          "overflow": false,
+          "recovery_issues": {
+            "model_parent_unresolved": 1
+          },
+          "unresolved_parent_ids": [
+            "r1"
+          ],
+          "fields": [
+            {
+              "local_id": "r1",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": "p1-crop-1",
+              "raw": "of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-sole. then near boiling take it off and strain it through a towel. put it in the Salathiere. then set it on ice an hours before it is to be served. put into the ice a handful of salt, as a layer. put ice all round the Salathiere. i.e. a layer of ice a layer of salt for three layers. put salt on the cover lid of the Salathiere & cover the hole with ice. leave it still half a quarter of an hour. then turn the Salathiere in the ice 10 minutes. open it to loosen with a spatula the ice from the inner sides of the Salathiere. shut it & replace it in the ice. open it from time to time to de-tact the ice from the sides. then well taken (grate) stir it well with the Spatula. put it in moulds, justling it well down on the knee. then put the mould into the same bucket of ice, leave it there to the moment I serving it. to withdraw it, immerse the mould in warm water, t",
+              "quote": "of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-sole. then near boiling take it off and strain it through a towel. put it in the Salathiere. then set it on ice an hours before it is to be served. put into the ice a handful of salt, as a layer. put ice all round the Salathiere. i.e. a layer of ice a layer of salt for three layers. put salt on the cover lid of the Salathiere & cover the hole with ice. leave it still half a quarter of an hour. then turn the Salathiere in the ice 10 minutes. open it to loosen with a spatula the ice from the inner sides of the Salathiere. shut it & replace it in the ice. open it from time to time to de-tact the ice from the sides. then well taken (grate) stir it well with the Spatula. put it in moulds, justling it well down on the knee. then put the mould into the same bucket of ice, leave it there to the moment I serving it. to withdraw it, immerse the mould in warm water, t",
+              "state": "readable",
+              "language": "en",
+              "writing": "handwriting"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": true,
+      "original_capture": "suspected_incomplete"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "recipe",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.title",
+        "entity_id": "p1.root",
+        "field": "title",
+        "raw": "Ice cream",
+        "value": "Ice cream",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Ice cream",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.description",
+        "entity_id": "p1.root",
+        "field": "description",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2 bottles of good cream. 6 yolks of eggs. 2 lbs sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (gr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2 bottles of good cream. 6 yolks of eggs. 1 lb sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (grs",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "well with the Spatulate. put it in moulds, justling it well down on the knee. Then put the moulds into the same bucket of ice, leave it there to the moment of serving it. to withdraw it, immerse the mould in warm water, turning it well till it will come out & turn it into a plate.",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "2 bottles of good cream. 6 yolks of eggs. 2 lbs sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (gr",
+          "2 bottles of good cream. 6 yolks of eggs. 1 lb sugar. mix the yolks & sugar. put the cream on a fire in a coffee-pot, first putting in a stick of vanilla. then near boiling take it off & pour it gently into the mixture of eggs & sugar. stir it well. put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot. then near boiling take it off and strain it through a towel. put it in the Salbthiere. then set it in ice an hours before it is to be served. put into the ice a handful of salt, or a large piece of ice. put ice all round the Salbthiere. i.e. a layer of ice a layer of salt for three layers. put salt on the coverlid of the Salbthiere & cover the hole with ice. leave it still half quarter of an hour. then turn the Salbthiere in the ice 10 minutes. open it to loosen with a spatulate the ice from the inner sides of the Salbthiere. shut it & replace it in the ice. open it from time to time to detach the ice from the sides. then well taken (grs",
+          "well with the Spatulate. put it in moulds, justling it well down on the knee. Then put the moulds into the same bucket of ice, leave it there to the moment of serving it. to withdraw it, immerse the mould in warm water, turning it well till it will come out & turn it into a plate."
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.instruction",
+        "entity_id": "p1.r1",
+        "field": "instruction",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "mix the yolks & sugar",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put the cream on a fire in a coffee-pot, first putting in a stick of vanilla",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "then near boiling take it off & pour it gently into the mixture of eggs & sugar",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "stir it well",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "then near boiling take it off and strain it through a towel",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put it in the Salbthiere",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "then set it in ice an hours before it is to be served",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put into the ice a handful of salt, or a large piece of ice",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put ice all round the Salbthiere",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "i.e. a layer of ice a layer of salt for three layers",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "put salt on the coverlid of the Salbthiere & cover the hole with ice",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "leave it still half quarter of an hour",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "then turn the Salbthiere in the ice 10 minutes",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "open it to loosen with a spatulate the ice from the inner sides of the Salbthiere",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "shut it & replace it in the ice",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "mix the yolks & sugar",
+          "put the cream on a fire in a coffee-pot, first putting in a stick of vanilla",
+          "then near boiling take it off & pour it gently into the mixture of eggs & sugar",
+          "stir it well",
+          "put it on the fire again stirring it thoroughly with a spoon to prevent it's sticking to the coffee-pot",
+          "then near boiling take it off and strain it through a towel",
+          "put it in the Salbthiere",
+          "then set it in ice an hours before it is to be served",
+          "put into the ice a handful of salt, or a large piece of ice",
+          "put ice all round the Salbthiere",
+          "i.e. a layer of ice a layer of salt for three layers",
+          "put salt on the coverlid of the Salbthiere & cover the hole with ice",
+          "leave it still half quarter of an hour",
+          "then turn the Salbthiere in the ice 10 minutes",
+          "open it to loosen with a spatulate the ice from the inner sides of the Salbthiere",
+          "shut it & replace it in the ice"
+        ],
+        "reason": "Conflicting or invalid repeated field readings in one reply.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "good cream",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "eggs",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "sugar",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "good cream",
+          "eggs",
+          "sugar"
+        ],
+        "reason": "Conflicting or invalid repeated field readings in one reply.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2 bottles",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "6 yolks",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2 lbs",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "2 bottles",
+          "6 yolks",
+          "2 lbs"
+        ],
+        "reason": "Conflicting or invalid repeated field readings in one reply.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "vanilla",
+        "value": "vanilla",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "vanilla",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "salt",
+        "value": "salt",
+        "state": "readable",
+        "origin": "observed",
+        "language": "en",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "salt",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "suspected_cutoff",
+        "message": "page 1 may be cut off at the edge of the capture",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "model_field_duplicate",
+        "message": "Repeated fields were consolidated or left unresolved when they disagreed.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_disagreement",
+        "message": "Conflicting readings were retained as unresolved alternatives.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "model_parent_unresolved",
+        "message": "Explicit model parent links lacked a unique compatible target.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "model_alternative_limit",
+        "message": "Omitted 2 distinct field candidate(s) while processing attempts and rereads at the 16-alternative field limit. Original replies retain these proposals.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "suspected_capture",
+        "message": "The model flagged content near a potentially cut-off page edge.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "recipe.description: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "step.instruction: Conflicting or invalid repeated field readings in one reply.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.instruction"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.name: Conflicting or invalid repeated field readings in one reply.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "ingredient.quantity: Conflicting or invalid repeated field readings in one reply.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "recipe_yield_missing",
+        "message": "no yield was read",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
