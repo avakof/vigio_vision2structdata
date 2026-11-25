@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T19:47:58+01:00",
+  "as_of": "2026-11-25T21:23:43+01:00",
   "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -71,23 +71,20 @@
   },
   "production_routes": {
     "direct": {
-      "status": "passed",
-      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
-      "evidence": "evidence/verification/offline-direct.json"
+      "status": "not_run",
+      "detail": "Frozen evaluation executes real local inference. Normal extract-to-SQLite-and-exports receipts on the exact frozen revision are queued after the benchmark."
     },
     "hybrid": {
-      "status": "passed",
-      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
-      "evidence": "evidence/verification/offline-hybrid.json"
+      "status": "not_run",
+      "detail": "Frozen evaluation executes real local inference. Normal extract-to-SQLite-and-exports receipts on the exact frozen revision are queued after the benchmark."
     }
   },
   "offline_production": {
-    "status": "passed",
+    "status": "not_run",
     "evidence": [
-      "evidence/verification/offline-direct.json",
-      "evidence/verification/offline-hybrid.json",
-      "evidence/examples/invoice/verification.json"
-    ]
+      "docs/development/reviewer-release.md"
+    ],
+    "scope": "Frozen release normal CLI persistence, corrections and publication."
   },
   "components": {
     "native_full_parser": {
@@ -104,5 +101,25 @@
         "evidence/feasibility/processor.json"
       ]
     }
+  },
+  "production_routes_early_checkpoint": {
+    "direct": {
+      "status": "passed",
+      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
+      "evidence": "evidence/verification/offline-direct.json"
+    },
+    "hybrid": {
+      "status": "passed",
+      "scope": "Normal offline CLI on the 800 × 420 synthetic invoice. Domain accuracy is measured separately.",
+      "evidence": "evidence/verification/offline-hybrid.json"
+    }
+  },
+  "offline_production_early_checkpoint": {
+    "status": "passed",
+    "evidence": [
+      "evidence/verification/offline-direct.json",
+      "evidence/verification/offline-hybrid.json",
+      "evidence/examples/invoice/verification.json"
+    ]
   }
 }
