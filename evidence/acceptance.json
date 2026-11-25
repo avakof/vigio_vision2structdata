@@ -1,0 +1,63 @@
+{
+  "as_of": "2026-11-25T17:11:00+01:00",
+  "record": "integration checkpoint",
+  "all_requested_routes_complete": false,
+  "default_route": "direct",
+  "selection_basis": "Requested first baseline; real comparison pending.",
+  "gates": {
+    "0_preflight": {
+      "status": "passed",
+      "evidence": [
+        "evidence/development/preflight.json",
+        "evidence/development/roster.json"
+      ]
+    },
+    "1_feasibility": {
+      "status": "blocked",
+      "detail": "Provisioning native components. Actual image-generation and full parser results pending.",
+      "evidence": [
+        "evidence/feasibility/processor.json",
+        "evidence/development/vision-paddle-gate1.md"
+      ]
+    },
+    "2_contracts": {
+      "status": "passed",
+      "evidence": [
+        "docs/development/contract-audit.md",
+        "docs/development/freeze.md",
+        "tests/test_audit_regressions.py"
+      ]
+    },
+    "3_implementation": {
+      "status": "failed",
+      "detail": "Independent review found coverage and correction defects; remediation under verification."
+    },
+    "4_evaluation": {
+      "status": "not_run",
+      "detail": "Scorer integrated. Measured route comparison pending."
+    },
+    "5_review_handoff": {
+      "status": "failed",
+      "reviewed_commit": "dfa12df8304ab4753369a2ef4aa03ac90386db1f",
+      "evidence": [
+        "docs/development/review.md",
+        "evidence/development/qa-integrated.md"
+      ]
+    }
+  },
+  "offline_failure_paths": {
+    "status": "passed",
+    "evidence": "evidence/verification/offline-failure-paths.json"
+  },
+  "production_routes": {
+    "direct": {
+      "status": "blocked"
+    },
+    "hybrid": {
+      "status": "blocked"
+    }
+  },
+  "offline_production": {
+    "status": "not_run"
+  }
+}
