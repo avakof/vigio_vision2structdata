@@ -72,3 +72,23 @@ There were zero automatic acceptances, so the false-acceptance rate is undefined
 - **"valid" does not mean checked.** A document can have `validation: valid` while carrying `info`-level structure notices. The hybrid example v2 had two invoice roots and `multiple_roots`. Review is still mandatory, but readers should not treat "valid" as "checked".
 - **Earlier recheck nit resolved.** `README.md:30` no longer over-claims, and HANDOFF now reports measured results with denominators.
 - **Not re-run by me:** model inference, timing, RSS, the synthetic campaign, and the final export receipts.
+
+## E1 recheck: closed (main `67c471c`, merged into `vt-review` as `b4916d4`)
+
+I re-ran no inference and changed no code. The script [`release_e1_check.py`](../../evidence/development/reviewer/release_e1_check.py) reads the committed exports. It opens the main checkout's `.vt-state` read-only: job artifacts are only read, and the SQLite database is opened with `mode=ro`.
+
+| Check | Result |
+|---|---|
+| Production code | `git diff bcffc67 67c471c -- src schemas tests tools scripts fixtures pyproject.toml uv.lock` is empty. |
+| Source identity | The `fixtures/feasibility/invoice.png` SHA-256 `74a42e29…` matches the receipt, all three snapshots and both job `original` copies. |
+| OS-level network denial | All 8 normal-CLI calls (2 extractions, apply, replay, reimport, 3 exports) exit 0 with `{"loopback": true, "public_connect_errno": 1}`. |
+| Real extractions | v4 is direct (job `ef84663f`, 1 Qwen attempt, `stop` after 195 tokens). v5 is hybrid (job `88a65ece`, Paddle then Qwen, `stop` after 220 tokens). Both are `new_extraction`, `needs_review`, with no incomplete or skipped pages. The direct run took 12.01 s and the hybrid run 40.87 s. |
+| Runtime fingerprint | `run.config_hash` of v4 and v5 equals `extraction_fingerprint()` recomputed from the frozen code and the installed runtimes (readiness true; package version queries only). Both use Qwen `938d8919941c`, 4,096 tokens and pipeline 0.1.3, which equals `PIPELINE_VERSION` at `bcffc67`. |
+| Observations against attempts | Every observed raw value and quote in v4 and v5 (5 references each) appears in the job's `attempts/*/reply.json`. Each cited `attempt_id` exists in `run.calls` and on disk. Values: `VTX-4187`, `Atelier de la Rive`, `EUR`, and `37,25 EUR` normalized to `37.25`. |
+| JSON, CSV and SQLite | For v4–v6, the manifest digests and the snapshot SHA-256 (`4606604e…`, `28297563…`, `83d712be…`) match the receipt. Observation ids, values, states and origins agree across `document.json`, `observations.csv` and `document.sqlite3`, with `integrity_check ok` and 0 foreign-key violations. |
+| Correction | The store holds one correction row, 5→6; the earlier 2→3 row belongs to the pre-freeze example. v6 has `parent_version 5`, `currency` as `human_supplied` `EUR`, `approve: false` and `needs_review`. The replay returned `replayed` and added no version. |
+| Same-configuration hybrid reimport | Job `0839f9af` started at 20:26:31Z, after v6 was created at 20:26:30.69Z. Its staged `config_hash` equals v5's. It added 0 version rows and published v6 to its output. The extraction key points to v5 (`final`), whose lineage head is 6. |
+
+The frozen `bcffc67` code is now shown end to end through the normal CLI with real local inference: extraction, persistence, correction, replay, reimport and export. E1 is closed.
+
+One note that does not block closure: the v6 correction re-asserts a value v5 had already read (`EUR`). It therefore demonstrates provenance and versioning, not a value change. Value-changing and structural corrections are covered by the reviewer probes and `tests/test_qa_integrated.py`. The synthetic hybrid and grouped-PDF checks are out of scope here.
