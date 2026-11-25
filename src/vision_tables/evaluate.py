@@ -395,6 +395,7 @@ def evaluate_manifest(
     cases = [case for case in load_manifest(manifest) if case[0]["split"] in splits]
     if not cases:
         raise ValueError("No fixtures in requested splits")
+    output = output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     run_directory = Path(tempfile.mkdtemp(prefix="cases-", dir=output))
     results = []

@@ -332,10 +332,12 @@ def test_evaluate_runs_the_manifest_with_declared_configuration(run, monkeypatch
         seen.append(settings.pipeline)
         raise ProcessingError("missing_model", "no local model in this test")
     use(monkeypatch, unavailable)
-    code, out = run("evaluate", str(manifest), "--output", str(run.tmp / "eval"), "--pipeline", "direct",
+    monkeypatch.chdir(run.tmp)
+    code, out = run("evaluate", str(manifest), "--output", "eval", "--pipeline", "direct",
                     "--max-tokens", "256")
     report = json.loads(Path(out["report"]).read_text())
-    assert code == 0 and out["cases"] == len(report["case_results"]) == len(seen) > 0
+    assert code == 5 and out["status"] == "blocked"
+    assert out["blocked_cases"] == out["cases"] == len(report["case_results"]) == len(seen) > 0
     assert report["configuration"]["max_tokens"] == 256 and out["manifest_sha256"] == report["manifest_sha256"]
     assert all(c["status"] == "missing_model" for c in report["case_results"])  # abstention is not credited
 

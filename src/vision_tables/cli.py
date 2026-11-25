@@ -13,6 +13,7 @@ import re
 import signal
 import sys
 import threading
+from collections import Counter
 from pathlib import Path
 
 from pydantic import ValidationError
@@ -315,10 +316,18 @@ def cmd_evaluate(args):
     settings = _settings(args)
     report = evaluate.run(Path(args.manifest), Path(args.output), settings)
     cases = report.get("case_results", [])
-    return {"command": "evaluate", "status": "completed", "report": str(Path(args.output).resolve() / "evaluation.json"),
+    counts = Counter(c["status"] for c in cases if c.get("status"))
+    blocked = sum(counts[k] for k in store_jobs.MISSING_RUNTIME)
+    status, code = "completed", EXIT_OK
+    if blocked:
+        status, code = "blocked", EXIT_MISSING_RUNTIME
+    elif counts["error"]:
+        status, code = "failed", EXIT_INTERNAL
+    return {"command": "evaluate", "status": status, "report": str(Path(args.output).resolve() / "evaluation.json"),
             "manifest_sha256": report.get("manifest_sha256"), "cases": len(cases),
+            "case_status_counts": dict(counts), "blocked_cases": blocked,
             "cases_with_failures": sum(bool(c.get("failures")) for c in cases),
-            "configuration": report.get("configuration")}, EXIT_OK
+            "configuration": report.get("configuration")}, code
 
 
 def cmd_jobs_list(args):
