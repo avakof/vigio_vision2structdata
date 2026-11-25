@@ -74,21 +74,31 @@ def _processor_check(state, python, versions):
         return {"passed": False, "reason": str(exc)}
 
 
-def runtime_info(settings: Settings) -> dict:
-    state = settings.state_dir.resolve()
-    python = state / "direct-env" / "bin" / "python"
-    pins = dict(line.strip().split("==") for line in (ASSETS / "direct-requirements.txt").read_text().splitlines()
-                if line and line[0].isalnum() and "==" in line)
+def runtime_pins(filename: str) -> dict[str, str]:
+    lines = (ASSETS / filename).read_text().splitlines()
+    return dict(line.split("==") for line in lines if line and line[0].isalnum() and "==" in line)
+
+
+def installed_versions(python: Path, pins: dict[str, str]) -> dict[str, str]:
+    """Query the isolated interpreter and preserve missing packages for readiness diagnostics."""
     versions = {}
     if python.is_file():
         code = (
-            "import json, sys, importlib.metadata as m; "
-            "all_versions = {p.metadata['Name'].lower().replace('_', '-'):p.version for p in m.distributions()}; "
+            "import json, re, sys, importlib.metadata as m; "
+            "all_versions = {re.sub('[-_.]+', '-', p.metadata['Name']).lower():p.version for p in m.distributions()}; "
             "print(json.dumps({n:all_versions[n] for n in sys.argv[1:] if n in all_versions}))"
         )
         result = subprocess.run([str(python), "-I", "-c", code, *pins], capture_output=True, text=True, timeout=30)
         if result.returncode == 0:
             versions = json.loads(result.stdout)
+    return versions
+
+
+def runtime_info(settings: Settings) -> dict:
+    state = settings.state_dir.resolve()
+    python = state / "direct-env" / "bin" / "python"
+    pins = runtime_pins("direct-requirements.txt")
+    versions = installed_versions(python, pins)
     missing = _weights(state)
     conflicts = {p: {"installed": v, "required": pins[p]} for p, v in versions.items() if v != pins[p]}
     missing_packages = sorted(pins.keys() - versions.keys())

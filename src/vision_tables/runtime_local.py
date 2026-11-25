@@ -11,13 +11,13 @@ from functools import lru_cache
 from pathlib import Path
 
 from .config import ProcessingError
-from .models import PADDLE_MANIFEST, runtime_info
+from .models import PADDLE_MANIFEST, installed_versions, runtime_info, runtime_pins
 from .provision import matches
 from .wire_json import parse_object
 
 LAYOUT_REVISION = PADDLE_MANIFEST["layout"]["revision"]
 VLM_REVISION = PADDLE_MANIFEST["vlm"]["revision"]
-_PACKAGE_VERSIONS = {"paddlepaddle": "3.2.1", "paddleocr": "3.7.0", "paddlex": "3.7.0"}
+_PARSER_PINS = runtime_pins("paddle-requirements.txt")
 _PROFILE = "(version 1) (allow default) (deny network*)"
 
 
@@ -47,15 +47,13 @@ def hybrid_info(settings):
         if platform.system() != "Darwin" or platform.machine() != "arm64":
             raise ValueError("The native Paddle adapter requires Apple Silicon macOS")
         python = home / "env" / "bin" / "python"
-        version_probe = (
-            "import json, importlib.metadata as m, sys; "
-            "print(json.dumps({p: m.version(p) for p in sys.argv[1:]}))"
-        )
-        versions = json.loads(subprocess.check_output(
-            [str(python), "-I", "-c", version_probe, *_PACKAGE_VERSIONS],
-            stderr=subprocess.DEVNULL, text=True, timeout=10,
-        ))
-        if versions != _PACKAGE_VERSIONS or any(report["packages"].get(p) != v for p, v in versions.items()):
+        versions = installed_versions(python, _PARSER_PINS)
+        mismatches = {name: {"required": expected, "installed": versions.get(name)}
+                      for name, expected in _PARSER_PINS.items() if versions.get(name) != expected}
+        if mismatches:
+            return info | {"reason": "The native parser environment differs from its pinned lock.",
+                           "version_conflicts": mismatches}
+        if any(report["packages"].get(p) != versions[p] for p in ("paddlepaddle", "paddleocr", "paddlex", "safetensors")):
             raise ValueError("Paddle runtime versions do not match the verified smoke")
         for path, entry in files:
             status = path.stat()
