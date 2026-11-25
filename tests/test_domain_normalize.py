@@ -146,3 +146,12 @@ def test_arbitrary_text_never_raises_and_never_yields_non_canonical_numbers():
                 assert re.fullmatch(r"-?\d+(\.\d+)?|-?\d+/\d+", parsed.value), (raw, parsed.value)
             if kind == "date" and parsed.value:
                 assert re.fullmatch(r"\d{4}-\d{2}-\d{2}", parsed.value)
+
+
+def test_pathological_inputs_are_bounded():
+    import time
+    started = time.monotonic()
+    for raw in ("1" * 16000 + "x", "1 " * 4000 + "x", "1,1" * 5000, "(" * 16000):
+        for kind in ("money", "number", "quantity", "date", "duration", "percent", "unit", "enum:document_kind"):
+            assert normalize(kind, raw).state == "ambiguous" or kind in ("unit",)
+    assert time.monotonic() - started < 2

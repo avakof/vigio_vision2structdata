@@ -18,6 +18,7 @@ from .schema import ENUMS
 from .units import DIMENSION, FRACTION_CHARS, MINOR_UNITS, currency_candidates, currency_in_amount, fold, split_currency, unit_code
 
 MAX_DIGITS = 24
+MAX_RAW = 200  # longest raw text any non-text lexical type will parse
 _SPACES = "     "
 
 
@@ -416,6 +417,8 @@ def normalize(lexical: str, raw: str, *, order: str | None = None) -> Parsed:
     if lexical == "text":
         text = clean_text(raw)
         return Parsed(text) if text else unresolved("empty text")
+    if len(raw) > MAX_RAW:
+        return unresolved("too long to be a single value")
     if lexical == "money":
         return parse_money(raw)
     if lexical == "number":

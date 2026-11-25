@@ -378,3 +378,40 @@ def test_mixed_language_readings_keep_language_and_multilingual_alternatives_ver
     inv = build(bilingual)
     assert obs(inv, "i", "document_kind").value == "credit_note"
     assert (obs(inv, "a", "quantity").value, obs(inv, "a", "purchase_unit").value, obs(inv, "a", "purchase_unit").origin) == ("2", "carton", "calculated")
+
+
+def test_invoice_consistency_checks_each_report_their_own_code():
+    reading = PageReading(page=1, doc_type="invoice", records=[
+        rec("invoice", "i", currency=f("EUR"), issue_date=f("15/04/2026"), due_date=f("01/04/2026"), subtotal=f("20,00"),
+            tax_total=f("3,00"), charge_total=f("5,00"), discount_total=f("2,00"), total=f("26,00")),
+        rec("line_item", "a", "i", description=f("A"), quantity=f("1"), unit_price=f("10,00"), discount=f("1,00"),
+            discount_rate=f("20 %"), line_total=f("9,00")),
+        rec("line_item", "b", "i", description=f("B"), quantity=f("1"), purchase_unit=f("kg"), pack_count=f("6"),
+            unit_price=f("10,00"), line_total=f("10,00")),
+        rec("tax", "t", "i", name=f("TVA"), basis=f("10,00"), rate=f("20 %"), amount=f("2,50")),
+        rec("charge", "c", "i", name=f("Transport"), amount=f("4,00")),
+        rec("discount", "d", "i", name=f("Remise"), amount=f("-1,00"))])
+    document = build(reading)
+    review = set(codes(document, "review"))
+    assert {"due_before_issue", "subtotal_mismatch", "tax_amount_mismatch", "tax_sum_mismatch", "charge_sum_mismatch",
+            "discount_sum_mismatch", "line_discount_conflict"} <= review
+    assert "pack_definition_incomplete" in codes(document, "info")
+    assert obs(document, "i", "calculated_total").value == "26.00"   # 20 + 3 + 5 - 2, printed aggregates preferred, subtotal as printed
+    assert "total_mismatch" not in review
+    conflict = PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i"), rec("line_item", "b", "i", description=f("B"),
+        quantity=f("1"), purchase_unit=f("kg"), pack_count=f("6"), pack_unit_quantity=f("1"), pack_unit=f("l"))])
+    assert "pack_purchase_unit_conflict" in codes(build(conflict), "review")
+
+
+def test_aggregates_fall_back_to_child_rows_and_total_checks_can_be_indeterminate():
+    reading = PageReading(page=1, doc_type="invoice", records=[
+        rec("invoice", "i", currency=f("EUR"), total=f("12,00")),
+        rec("line_item", "a", "i", description=f("A"), quantity=f("1"), unit_price=f("10,00"), line_total=f("10,00")),
+        rec("tax", "t", "i", name=f("TVA"), amount=f("2,00"))])
+    document = build(reading)
+    assert obs(document, "i", "calculated_total").value == "12.00" and "total_mismatch" not in codes(document)
+    lone = build(PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i", total=f("12,00"))]))
+    assert "total_check_indeterminate" in codes(lone, "info") and not any(o.origin == "calculated" for o in lone.observations)
+    partial = build(PageReading(page=1, doc_type="invoice", records=[rec("invoice", "i", total=f("12,00")),
+        rec("line_item", "a", "i", description=f("A"), quantity=f("1"), unit_price=f("10,00"))]))
+    assert "total_check_indeterminate" in codes(partial, "info")
