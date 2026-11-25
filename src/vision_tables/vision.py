@@ -18,7 +18,7 @@ from .artifacts import write_json
 from .config import QWEN_MODEL, QWEN_REVISION, ProcessingError, Settings
 from .contracts import Box, Evidence, FieldRead, Issue, ModelPayload, Page, PageReading, Region
 from .vision_geometry import box, invert, localize
-from .vision_ingest import inspect_source, read_oriented_raster
+from .vision_ingest import PDF_UNREPRESENTED, inspect_source, read_oriented_raster
 from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
 from .wire_json import parse_object
 
@@ -74,6 +74,8 @@ def _prompt(doc_type, excerpts, retry, native_only, crop):
     kinds = tuple(FIELDS) if doc_type == "auto" else FAMILIES[doc_type]
     dictionary = "\n".join(f"{kind}: {','.join(f for f in FIELDS[kind] if f not in CALCULATED_ONLY)}" for kind in kinds)
     context = "Read this page image and use any provided local region excerpts."
+    if excerpts:
+        context += " The image and excerpts describe the same page. Read each physical occurrence once, preserving identical rows at distinct locations."
     if native_only:
         context = "Read only these native PDF text regions. Their x/y percentages indicate columns and rows."
     if crop:
@@ -119,11 +121,13 @@ def _read_field(observation, regions, native_only, crop, item_name=None):
                          evidence=quote if grounded or not native_only else "",
                          region_id=grounded.id if grounded else None), False
     valid_quote = _contains(lexical, quote)
+    native_match = False
     if region is None and native_only and valid_quote:
         matches = [candidate for candidate in regions.values() if _contains(quote, candidate.text)]
+        native_match = bool(matches)
         if len(matches) == 1:
             region = matches[0]
-    if valid_quote and ((region and _contains(quote, region.text)) or (region is None and not native_only)):
+    if valid_quote and ((region and _contains(quote, region.text)) or (region is None and (native_match or not native_only))):
         grounding = region or crop
         return FieldRead(raw=raw, evidence=quote, region_id=grounding.id if grounding else None), False
     # Preserve the unsupported proposal in the attempt artifact and leave the effective field unresolved.
@@ -373,7 +377,7 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
     issues = []
     calls = []
     added = []
-    partial = False
+    partial = any(region.page == page.number and region.kind == PDF_UNREPRESENTED for region in regions)
     cutoff = False
 
     def issue(code, message):

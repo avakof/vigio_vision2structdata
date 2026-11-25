@@ -9,7 +9,8 @@ import stat
 import tempfile
 import threading
 import unicodedata
-from contextlib import closing
+from contextlib import ExitStack, closing, contextmanager
+from ctypes import c_float, c_int, c_uint
 from pathlib import Path
 
 import pypdfium2 as pdf
@@ -24,6 +25,10 @@ from .vision_heic import decode_heic
 _MAX_NATIVE_CHARS = 20_000
 _MAX_RENDER_EDGE = 8192
 _MAX_PAGE_INVENTORY = 100_000
+_MAX_ANNOTATIONS = 2048
+_MAX_GRAPHICS_INSPECTION = 4096
+_FORM_DEPTH = 8
+PDF_UNREPRESENTED = "pdf_unrepresented"
 _PDF_LOCK = threading.Lock()
 _HEIC_STILLS = {b"heic", b"heix", b"heim", b"heis"}
 _HEIC_SEQUENCES = {b"hevc", b"hevx", b"hevm", b"hevs"}
@@ -201,16 +206,135 @@ def _pdf_lines(handle, bounds, original_to_render, render_width, render_height):
     return lines, count, hidden, invalid
 
 
+def _intersects(a, b):
+    return a[0] < b[2] and a[2] > b[0] and a[1] < b[3] and a[3] > b[1]
+
+
+def _simple_decoration(obj, bounds, native, page_width, behind_text):
+    """Recognize long rules and light, wide backgrounds only. Keep drawn marks."""
+    count = raw.FPDFPath_CountSegments(obj)
+    if count not in (2, 4, 5):
+        return False
+    points = []
+    closed = False
+    matrix = obj.get_matrix()
+    for index in range(count):
+        segment = raw.FPDFPath_GetPathSegment(obj, index)
+        expected = raw.FPDF_SEGMENT_MOVETO if index == 0 else raw.FPDF_SEGMENT_LINETO
+        x, y = c_float(), c_float()
+        if (not segment or raw.FPDFPathSegment_GetType(segment) != expected
+                or not raw.FPDFPathSegment_GetPoint(segment, x, y)):
+            return False
+        points.append(matrix.on_point(x.value, y.value))
+        closed = raw.FPDFPathSegment_GetClose(segment)
+    width, height = bounds[2] - bounds[0], bounds[3] - bounds[1]
+    axis_aligned = all(abs(x0 - x1) < 0.01 or abs(y0 - y1) < 0.01
+                       for (x0, y0), (x1, y1) in zip(points, points[1:]))
+    if not axis_aligned:
+        return False
+    if count == 2:
+        return max(width, height) >= 40 and min(width, height) <= 3 and not any(_intersects(bounds, r) for r in native)
+    if not closed or len(set(points)) != 4 or len({x for x, _ in points}) != 2 or len({y for _, y in points}) != 2:
+        return False
+    if max(width, height) >= 40 and min(width, height) <= 3:
+        return not any(_intersects(bounds, r) for r in native)
+    if not behind_text or width < page_width * 0.65:
+        return False
+    fill, stroke = c_int(), c_int()
+    rgba = [c_uint() for _ in range(4)]
+    return bool(raw.FPDFPath_GetDrawMode(obj, fill, stroke) and fill.value != raw.FPDF_FILLMODE_NONE
+                and not stroke.value and raw.FPDFPageObj_GetFillColor(obj, *rgba)
+                and all(component.value >= 220 for component in rgba[:3]) and rgba[3].value == 255)
+
+
+def _has_visual_graphics(handle, bounds, native):
+    painted_text = []
+    painted_form_text = False
+    for index, obj in enumerate(handle.get_objects(max_depth=_FORM_DEPTH)):
+        if index >= _MAX_GRAPHICS_INSPECTION:
+            return True  # Keep the already-rendered page when the inventory limit is reached.
+        kind = obj.type
+        active = c_int()
+        if raw.FPDFPageObj_GetIsActive(obj, active) and not active.value:
+            continue
+        if kind == raw.FPDF_PAGEOBJ_TEXT:
+            if obj.container is None:
+                painted_text.append(obj.get_bounds())
+            else:
+                painted_form_text = True
+            continue
+        if kind == raw.FPDF_PAGEOBJ_FORM and obj.level < _FORM_DEPTH - 1:
+            continue  # The iterator will inspect the children of this form.
+        if obj.container is not None:
+            return True  # Form-child coordinates are local to the form.
+        rect = obj.get_bounds()
+        if not _intersects(rect, bounds):
+            continue
+        if kind == raw.FPDF_PAGEOBJ_PATH and _simple_decoration(
+            obj, rect, native, bounds[2] - bounds[0],
+            not painted_form_text and not any(_intersects(rect, prior) for prior in painted_text),
+        ):
+            continue
+        return True
+    return False
+
+
+_INTERACTIVE_ANNOTATIONS = {
+    raw.FPDF_ANNOT_UNKNOWN, raw.FPDF_ANNOT_POPUP, raw.FPDF_ANNOT_WIDGET, raw.FPDF_ANNOT_XFAWIDGET,
+    raw.FPDF_ANNOT_FILEATTACHMENT, raw.FPDF_ANNOT_MOVIE, raw.FPDF_ANNOT_SCREEN, raw.FPDF_ANNOT_SOUND,
+    raw.FPDF_ANNOT_RICHMEDIA, raw.FPDF_ANNOT_THREED,
+}
+
+
+@contextmanager
+def _pdf_annotations(handle, bounds):
+    """Expose print-only static appearances without initializing interactive forms."""
+    count = raw.FPDFPage_GetAnnotCount(handle)
+    visual = False
+    unrepresented = count < 0 or count > _MAX_ANNOTATIONS
+    with ExitStack() as restore:
+        for index in range(min(count, _MAX_ANNOTATIONS)):
+            annot = raw.FPDFPage_GetAnnot(handle, index)
+            if not annot:
+                unrepresented = True
+                continue
+            restore.callback(raw.FPDFPage_CloseAnnot, annot)
+            flags = raw.FPDFAnnot_GetFlags(annot)
+            if flags < 0:
+                unrepresented = True
+                continue
+            if flags & (raw.FPDF_ANNOT_FLAG_HIDDEN | raw.FPDF_ANNOT_FLAG_INVISIBLE):
+                continue
+            print_only = bool(flags & raw.FPDF_ANNOT_FLAG_NOVIEW)
+            if print_only and not flags & raw.FPDF_ANNOT_FLAG_PRINT:
+                continue
+            rect = raw.FS_RECTF()
+            if not raw.FPDFAnnot_GetRect(annot, rect):
+                unrepresented = True
+                continue
+            if not _intersects((rect.left, rect.bottom, rect.right, rect.top), bounds):
+                continue
+            kind = raw.FPDFAnnot_GetSubtype(annot)
+            appearance = raw.FPDFAnnot_GetAP(annot, raw.FPDF_ANNOT_APPEARANCEMODE_NORMAL, None, 0) > 2
+            if kind == raw.FPDF_ANNOT_LINK and not appearance:
+                continue  # An interactive link target alone has no page content.
+            if (kind in _INTERACTIVE_ANNOTATIONS
+                    or kind == raw.FPDF_ANNOT_TEXT and raw.FPDFAnnot_GetStringValue(annot, b"Contents", None, 0) > 2
+                    or kind == raw.FPDF_ANNOT_STAMP and not appearance):
+                unrepresented = True
+                continue
+            if print_only:
+                if not raw.FPDFAnnot_SetFlags(annot, flags & ~raw.FPDF_ANNOT_FLAG_NOVIEW):
+                    unrepresented = True
+                    continue
+                restore.callback(raw.FPDFAnnot_SetFlags, annot, flags)
+            visual = True
+        yield visual, unrepresented
+
+
 def _native_regions(handle, bounds, page):
     matrix = invert(page.image_to_original)
     lines, count, hidden, invalid = _pdf_lines(handle, bounds, matrix, page.image_width, page.image_height)
-    left, _, _, top = bounds
-    pdf_to_original = (1, 0, 0, -1, -left, top)
-    mixed = any(
-        (raster := box(pdf_to_original, obj.get_bounds(), page.width, page.height)) is not None
-        and (raster[2] - raster[0]) * (raster[3] - raster[1]) >= 0.15 * page.width * page.height
-        for obj in handle.get_objects(filter=[raw.FPDF_PAGEOBJ_IMAGE], max_depth=4)
-    )
     rows = []
     for line in lines:
         rects = [rect for _, rect in line if rect is not None]
@@ -228,7 +352,7 @@ def _native_regions(handle, bounds, page):
                for index, (_, rect, content) in enumerate(rows)]
     if not regions or invalid > max(2, count * 0.08):
         return ("unreliable" if count else "absent"), []
-    if hidden or mixed or invalid or count > _MAX_NATIVE_CHARS:
+    if hidden or invalid or count > _MAX_NATIVE_CHARS:
         return "partial", regions
     return "usable", regions
 
@@ -245,7 +369,9 @@ def _pdf_page(handle, number, root, settings):
     while math.ceil(w * scale) * math.ceil(h * scale) > budget:
         scale *= 0.99
     relative = f"pages/{number:04d}.png"
-    with closing(handle.render(scale=scale, rev_byteorder=True)) as bitmap:
+    with _pdf_annotations(handle, bounds) as (annotated, unrepresented), closing(
+        handle.render(scale=scale, rev_byteorder=True, draw_annots=True, may_draw_forms=False)
+    ) as bitmap:
         image = bitmap.to_pil()
         image.save(root / relative)
         w, h = image.size
@@ -262,6 +388,20 @@ def _pdf_page(handle, number, root, settings):
         page.text_layer, regions = _native_regions(handle, bounds, page)
     except (pdf.PdfiumError, ValueError):
         page.text_layer, regions = "unreliable", []
+    if page.text_layer == "usable":
+        native_rects = [(x0 + left, top - y1, x1 + left, top - y0)
+                        for r in regions for x0, y0, x1, y1 in [r.box.xyxy]]
+        try:
+            visual = annotated or unrepresented or _has_visual_graphics(handle, bounds, native_rects)
+        except (pdf.PdfiumError, ValueError):
+            visual = True  # The static image is still available if object inspection fails.
+        if visual:
+            page.text_layer = "partial"
+    if unrepresented:
+        message = "Some PDF annotations or interactive content could not be represented in the static render. Export a flattened PDF if these marks matter."
+        regions.append(Region(id=f"p{number}-pdf-unrepresented", page=number, order=len(regions),
+                              kind=PDF_UNREPRESENTED))
+        issues.append(Issue(code=PDF_UNREPRESENTED, message=message, page=number))
     if page.text_layer in ("partial", "unreliable"):
         issues.append(Issue(code=f"pdf_text_{page.text_layer}", message="The visual page is needed to supplement the PDF text layer.", page=number))
     return page, regions, issues

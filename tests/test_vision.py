@@ -4,9 +4,11 @@ import json
 import os
 import subprocess
 import sys
+from ctypes import POINTER, cast, create_string_buffer
 from pathlib import Path
 
 import pypdfium2 as pdf
+from pypdfium2 import raw
 import pytest
 from PIL import Image, ImageDraw
 
@@ -77,6 +79,86 @@ def test_pdf_rotation_and_crop_use_original_top_left(tmp_path):
     assert page.image_width > page.image_height
     assert point(page.image_to_original, 0, 0) == pytest.approx((0, 750), abs=0.001)
     assert point(page.image_to_original, page.image_width, page.image_height) == pytest.approx((590, 0), abs=0.001)
+
+
+def _wchar(text):
+    return cast(create_string_buffer((text + "\0").encode("utf-16-le")), POINTER(raw.FPDF_WCHAR))
+
+
+def _pdf_with_rows(path, mark=None):
+    with pdf.PdfDocument.new() as document:
+        page = document.new_page(600, 800)
+        for y in (620, 580):
+            row = raw.FPDFPageObj_NewTextObj(document, b"Helvetica", 20)
+            assert raw.FPDFText_SetText(row, _wchar("Bols 4,00"))
+            raw.FPDFPageObj_Transform(row, 1, 0, 0, 1, 55, y)
+            raw.FPDFPage_InsertObject(page, row)
+        if mark in {"outline", "strike"}:
+            if mark == "outline":
+                ink = raw.FPDFPageObj_CreateNewPath(430, 610)
+                assert raw.FPDFPath_BezierTo(ink, 420, 665, 470, 665, 460, 610)
+                assert raw.FPDFPath_LineTo(ink, 477, 620)
+            else:
+                ink = raw.FPDFPageObj_CreateNewPath(52, 628)
+                assert raw.FPDFPath_LineTo(ink, 140, 628)
+            assert raw.FPDFPageObj_SetStrokeColor(ink, 225, 0, 0, 255)
+            assert raw.FPDFPageObj_SetStrokeWidth(ink, 3)
+            assert raw.FPDFPath_SetDrawMode(ink, raw.FPDF_FILLMODE_NONE, True)
+            raw.FPDFPage_InsertObject(page, ink)
+        elif mark in {"stamp", "note"}:
+            subtype = raw.FPDF_ANNOT_STAMP if mark == "stamp" else raw.FPDF_ANNOT_TEXT
+            annotation = raw.FPDFPage_CreateAnnot(page, subtype)
+            assert annotation
+            try:
+                assert raw.FPDFAnnot_SetRect(annotation, raw.FS_RECTF(410, 650, 510, 610))
+                assert raw.FPDFAnnot_SetFlags(annotation, raw.FPDF_ANNOT_FLAG_PRINT | raw.FPDF_ANNOT_FLAG_NOVIEW)
+                if mark == "stamp":
+                    assert raw.FPDFAnnot_SetAP(annotation, raw.FPDF_ANNOT_APPEARANCEMODE_NORMAL,
+                                               _wchar("q 1 0 0 rg 410 610 100 40 re f Q"))
+                else:
+                    assert raw.FPDFAnnot_SetStringValue(annotation, b"Contents", _wchar("Review the handwritten amount"))
+            finally:
+                raw.FPDFPage_CloseAnnot(annotation)
+        page.gen_content()
+        page.close()
+        document.save(path)
+
+
+@pytest.mark.parametrize("mark,visual", [(None, False), ("outline", True), ("strike", True), ("stamp", True), ("note", True)])
+def test_mixed_pdf_preserves_rows_and_routes_native_or_visual_evidence(tmp_path, monkeypatch, mark, visual):
+    source = tmp_path / "rows.pdf"
+    _pdf_with_rows(source, mark)
+    settings = Settings(doc_type="invoice", retries=0, max_crops=0)
+    ingestion = vision.inspect_source(source, tmp_path, settings)
+    page, = ingestion.pages
+    rows = [region for region in ingestion.regions if region.kind == "native_text"]
+    assert [row.text for row in rows] == ["Bols 4,00", "Bols 4,00"]
+    assert rows[0].box.xyxy != rows[1].box.xyxy
+    assert page.text_layer == ("partial" if visual else "usable")
+    model_records = [
+        {"k": "line_item", "i": f"line-{index}", "p": None,
+         "f": [{"n": "description", "v": "Bols", "q": "Bols 4,00", "g": row.id if visual else None}]}
+        for index, row in enumerate(rows)
+    ]
+
+    def inspect_request(_, request, *unused):
+        assert bool(request["image"]) is visual
+        assert all(row.id in request["prompt"] for row in rows)
+        return {"raw": json.dumps({"d": "invoice", "cut": False, "r": model_records}),
+                "generated_tokens": 50, "finish_reason": "stop"}
+
+    monkeypatch.setattr(runtime_local, "call", inspect_request)
+    result = vision.read_page(page, ingestion.regions, tmp_path, settings)
+    assert [record.fields["description"].raw for record in result.records] == ["Bols", "Bols"]
+    assert [record.fields["description"].region_id for record in result.records] == (
+        [row.id for row in rows] if visual else [None, None]
+    )
+    assert result.incomplete is (mark == "note")
+    assert any(issue.code == "pdf_unrepresented" for issue in ingestion.issues) is (mark == "note")
+    if mark != "note":
+        with Image.open(tmp_path / page.image_path) as view:
+            pixels = view.tobytes()
+            assert any(r > 180 and g < 40 and b < 40 for r, g, b in zip(pixels[::3], pixels[1::3], pixels[2::3])) is visual
 
 
 @pytest.mark.parametrize("name,code", [
