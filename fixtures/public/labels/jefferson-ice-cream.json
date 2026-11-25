@@ -42,7 +42,8 @@
               "metric": "recipe_quantity_unit_yield",
               "page": 1
             }
-          }
+          },
+          "anchor": "name"
         }
       ]
     }
