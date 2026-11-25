@@ -111,7 +111,7 @@ issues and approval are recomputed; a later edit resets approval.
 
 ## Limitations (known, intended)
 
-* No way to add or remove a record or re-parent one: corrections edit observations only.
+* Structural corrections add missed fields and rows and remove spurious rows. Changing a row's parent requires removing the old row and adding its replacement. See the structural event examples in [the CLI reference](../CLI.md).
 * A supplier's own arithmetic error cannot be waived: `*_mismatch` blocks approval until an input
   reading is corrected. A waiver needs a contract field.
 * A page whose records were dropped (wrong-type page, tie, unclassified, unsupported kind or field) is listed in `incomplete_pages` and the version is `incomplete`; `processed_pages` only means a reading existed.

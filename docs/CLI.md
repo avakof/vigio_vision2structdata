@@ -134,6 +134,26 @@ rejected before anything is applied):
 inputs and the domain module recomputes them. `"approve": true` with `"changes": []` approves an unchanged valid
 version and fails while blocking issues remain. The schema ships in every review bundle.
 
+The optional `structure` array handles omitted fields, omitted rows and spurious rows. Operations apply in order in the same transaction as field changes. Use actual entity IDs from the base snapshot. An added reading requires source spelling and a canonical value, with an optional existing region ID on that page.
+
+```json
+{
+  "document_id": "doc-EXAMPLE",
+  "base_version": 1,
+  "reviewer": "R. Chef",
+  "structure": [
+    {"op": "add_field", "entity_id": "p1.inv", "field": "customer_id",
+     "reading": {"raw": "CX-651", "value": "CX-651"}, "reason": "Visible in the heading"},
+    {"op": "add_row", "entity_id": "human-line-1", "kind": "line_item", "page": 1,
+     "parent_id": "p1.inv", "after_entity_id": "p1.l1", "reason": "Omitted printed line",
+     "fields": {"description": {"raw": "Café", "value": "Café"}, "line_total": {"raw": "7,50", "value": "7.50"}}},
+    {"op": "remove_row", "entity_id": "p1.spurious", "reason": "Repeated scan of the same physical row"}
+  ]
+}
+```
+
+The store retains each prior version and the entire event. A removal must account for child rows and any bundle choice references. Added rows have review-supplied evidence linked to the page. CSV includes a structural event table alongside the effective business rows.
+
 ## Review bundle
 
 `review/review.json` lists each issue with its observations (raw text, value, state, alternatives, reason),
