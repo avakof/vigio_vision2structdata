@@ -78,6 +78,14 @@
       {
         "dispatchId": "ctx_268a8812d681",
         "taskId": "task_4cab4634f946"
+      },
+      {
+        "dispatchId": "ctx_4f19d1e62723",
+        "taskId": "task_634b61a00158"
+      },
+      {
+        "dispatchId": "ctx_c8dece0a852e",
+        "taskId": "task_df29c66423fc"
       }
     ]
   },
@@ -111,6 +119,12 @@
       {
         "dispatchId": "ctx_1199f8a592d4",
         "taskId": "task_f6351ef77c19"
+      },
+      {
+        "dispatchId": "ctx_fd6ce372b1a1",
+        "taskId": "task_b4de91d3634e",
+        "outcome": "usage_limit",
+        "detail": "Claude Pro five-hour account limit, reset at 20:00 Europe/Paris. No alternate Claude API provider was configured. Original assignment and first review remediations completed in the requested session. Integrator recovered the local follow-up draft in 28b9cf6."
       }
     ]
   },
@@ -144,6 +158,12 @@
       {
         "dispatchId": "ctx_6c1fdedc7c84",
         "taskId": "task_2d0384ed7c16"
+      },
+      {
+        "dispatchId": "ctx_68110f6759aa",
+        "taskId": "task_a709bbe902a3",
+        "outcome": "usage_limit",
+        "detail": "Claude Pro five-hour account limit, reset at 20:00 Europe/Paris. No alternate Claude API provider was configured. Original assignment and first review remediations completed in the requested session. Integrator recovered the local follow-up draft in 28b9cf6."
       }
     ]
   },
@@ -176,6 +196,10 @@
       {
         "dispatchId": "ctx_bdb4adeb7c77",
         "taskId": "task_0b4c6d4b56b5"
+      },
+      {
+        "dispatchId": "ctx_4989ac568ba3",
+        "taskId": "task_c77d7967c829"
       }
     ]
   },

@@ -614,4 +614,5 @@ def run(manifest: Path, output: Path, settings: Settings) -> dict:
         "versions": runtime["versions"], "components_ready": runtime["ready"],
         "base_config_hash": extraction_fingerprint(settings, runtime),
     }
-    return evaluate_manifest(manifest, output, run_case, configuration=configuration)
+    return evaluate_manifest(manifest, output, run_case, configuration=configuration,
+                             runtime_phase="fresh_process_per_model_call")
