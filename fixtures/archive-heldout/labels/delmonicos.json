@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "menu",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "row-1",
+          "kind": "menu_item",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Skate black butter",
+            "price": {
+              "value": "60",
+              "metric": "menu_price",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        },
+        {
+          "id": "row-2",
+          "kind": "menu_item",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Sheep's trotters, poulette",
+            "price": {
+              "value": "60",
+              "metric": "menu_price",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        },
+        {
+          "id": "row-3",
+          "kind": "menu_item",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Braised beef with noodles",
+            "price": {
+              "value": "70",
+              "metric": "menu_price",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        },
+        {
+          "id": "row-4",
+          "kind": "menu_item",
+          "anchor": "name",
+          "row": true,
+          "fields": {
+            "name": "Veal cutlet with tarragon",
+            "price": {
+              "value": "85",
+              "metric": "menu_price",
+              "decimal": true,
+              "page": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

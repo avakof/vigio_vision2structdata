@@ -1,0 +1,26 @@
+{
+  "page_source": "bedingfield-p46.jpg",
+  "page_sha256": "2536b4de2e1640dfe190c399bcc2d74b501839df36fd12547edfb2d024acd5fe",
+  "page_size": [
+    2500,
+    2899
+  ],
+  "unit": "px",
+  "axes": "top-left origin, x right, y down",
+  "rect_xyxy_half_open": [
+    220,
+    1384,
+    2368,
+    1800
+  ],
+  "crop_to_page_affine": [
+    1,
+    0,
+    0,
+    1,
+    220,
+    1384
+  ],
+  "acquisition": "IIIF derivative at width 2500",
+  "page_url": "https://iiif-images.library.upenn.edu/iiif/3/8012d04b-339c-4e1e-8c6d-004abab86e05/full/2500,/0/default.jpg"
+}

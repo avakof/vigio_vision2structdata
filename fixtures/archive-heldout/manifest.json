@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "description": "Independent historical source families reserved before local model inference. Sparse factual labels; see SOURCES.md.",
+  "cases": [
+    {
+      "id": "carter",
+      "source": "carter-receipt.jpg",
+      "labels": "labels/carter.json",
+      "split": "held_out",
+      "family": "carter",
+      "strata": [
+        "en",
+        "invoice",
+        "receipt",
+        "handwriting"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "Mary R. Carter receipt (1829), Smithsonian National Museum of African American History and Culture, object 2011.104.78, https://nmaahc.si.edu/object/nmaahc_2011.104.78",
+        "license": "CC0 (Smithsonian Open Access media NMAAHC-2011_104_78_001). Collection of the Smithsonian National Museum of African American History and Culture, Gift of Liljenquist Family.",
+        "labeler": "Smithsonian catalogue and digital volunteers. Labels use the explicitly documented transaction type and total. No currency jurisdiction or inferred payment state is scored."
+      },
+      "sha256": "fac2184d4bcb72ce717f538cede1993f9f2b2a637b938ac25273e284ed692acb",
+      "labels_sha256": "7898ad61122bbf4169acedd3951acf73df2e2e2a236585621f6b6bf011716660"
+    },
+    {
+      "id": "delmonicos",
+      "source": "delmonicos-menu.jpg",
+      "labels": "labels/delmonicos.json",
+      "split": "held_out",
+      "family": "delmonicos",
+      "strata": [
+        "en",
+        "menu",
+        "print"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "NYPL Buttolph, 1896-10-07, menu 25680, page 41831, https://digitalcollections.nypl.org/items/510d47db-2b7d-a3d9-e040-e00a18064a99",
+        "license": "1896 publication, US public domain. From The New York Public Library.",
+        "labeler": "NYPL volunteer transcription in the 2021-08-01 data dump (menu marked complete). Four unambiguous human-transcribed dish-price pairs cross-checked on the scan. The dump expresses prices in dollars; the label uses the visible numeral on the menu (e.g. 60). No currency label is inferred."
+      },
+      "sha256": "1e3cd6293958baf91dbac9aabdf47859d36aa7cbe4b2b3a85dde530903c40f4a",
+      "labels_sha256": "0988924bee2f8f1bdfb78a9232667720a9f5c75741c4636aae68ee0f1233c81d"
+    },
+    {
+      "id": "bedingfield",
+      "source": "bedingfield-recipe.png",
+      "labels": "labels/bedingfield.json",
+      "split": "held_out",
+      "family": "bedingfield",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "imprecise",
+        "fraction",
+        "known-crop"
+      ],
+      "settings": {},
+      "provenance": {
+        "origin": "real",
+        "source": "UPenn Ms. Codex 631, vol. 1, p. 46 [=11v]; https://digitalcollections.library.upenn.edu/items/5f8e34b7-c865-4d8e-832e-92b480f3bb15",
+        "license": "No Copyright – United States, as marked on the item (NoC-US 1.0). Provided by the University of Pennsylvania Libraries.",
+        "labeler": "Alyssa Connell, published diplomatic transcription (2015), https://rarecooking.com/2015/10/26/to-make-a-potatoe-pudding/. Original manuscript facts only; excludes the modern adaptation. Recipe is an intentional region of the full folio. The instruction to sweeten to taste does not supply a measured amount of sugar."
+      },
+      "sha256": "788063a3101f9317525de1e2baf27229bcf67338a1b1d84d00062bfbf3429761",
+      "labels_sha256": "4f25e22eec89272b119006f30674f2151d3f6566c94f267cb98d974c21d57946"
+    }
+  ]
+}
