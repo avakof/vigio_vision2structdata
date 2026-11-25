@@ -1,0 +1,20 @@
+{
+  "sha": "f161fbaa19f187aa651244aa5e82d1c2369707c2",
+  "manifest_sha256": "69d6ae5cfb2ddc7cc4fef730cf7571f74e3c0a42d49ad7691743229b42fd96f4",
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    ".venv/bin/python",
+    "tools/verify_offline.py",
+    "evaluate",
+    "fixtures/manifest.json",
+    "--pipeline",
+    "direct",
+    "--output",
+    "evidence/evaluation/release/direct-synthetic"
+  ],
+  "started_utc": "2026-11-25T18:46:50.272939+00:00",
+  "wall_seconds": 1210.9876650829974,
+  "exit_code": 0,
+  "finished_utc": "2026-11-25T20:25:36.924604+00:00"
+}

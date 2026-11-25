@@ -1,0 +1,4538 @@
+[
+  {
+    "document_id": "doc-65ffd8a3fca768087de2c156fb53fa2c",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "recipe",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "b843924aca77fd1dd8746e3e67ca701e111fcbf4ae3bc78fec05dcaf0df16e0f",
+      "media_type": "image/png",
+      "size_bytes": 112266,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1050.0,
+        "height": 1240.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1050,
+        "image_height": 1240,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-style",
+        "page": 1,
+        "order": 0,
+        "kind": "page_style",
+        "text": "",
+        "language": "fr",
+        "writing": "handwriting",
+        "box": null,
+        "artifact_path": "pages/0001.png",
+        "artifact_sha256": "8acaf0a05651dc94bb3f0adf3bfc54f5278ad010f85f5099887a5c41597ff7c8",
+        "crop_to_original": null
+      }
+    ],
+    "run": {
+      "job_id": "c5a1e9fb6b684278a320dd7dbd80a311",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 3399,
+          "prompt_tokens": 1949,
+          "load_seconds": 2.1442263750068378,
+          "generation_seconds": 56.78339075000258,
+          "runtime_seconds": 61.06998116700561,
+          "peak_rss_bytes": 7331758080,
+          "mlx_peak_bytes": 7645619750,
+          "seconds_including_lock_wait": 61.5416697920009,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": null,
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "version",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_type",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "lait",
+              "quote": "lait",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "cup",
+              "quote": "cup",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "sucre",
+              "quote": "sucre",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "2-3",
+              "quote": "2-3",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "c. à soupe",
+              "quote": "c. à soupe",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "levure",
+              "quote": "levure",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "2 tsp",
+              "quote": "2 tsp",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "tsp",
+              "quote": "tsp",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "beurre",
+              "quote": "beurre",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "4",
+              "quote": "4",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "g",
+              "quote": "g",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "sel",
+              "quote": "sel",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "zeste de citron",
+              "quote": "zeste de citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": "facultatif",
+              "quote": "(facultatif)",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "zeste d'orange",
+              "quote": "zeste d'orange",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Mélanger les ingrédients secs.",
+              "quote": "1. Mélanger les ingrédients secs.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Ajouter le lait et le beurre.",
+              "quote": "2. Ajouter le lait et le beurre.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Cuire 14 min à 190 °C.",
+              "quote": "3. Cuire 14 min à 190 °C.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": "14",
+              "quote": "14 min",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": "14 min",
+              "quote": "14 min",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": "190",
+              "quote": "190 °C",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": "190 °C",
+              "quote": "190 °C",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 3399,
+          "prompt_tokens": 1960,
+          "load_seconds": 2.056583249999676,
+          "generation_seconds": 55.97633887498523,
+          "runtime_seconds": 59.89072058300371,
+          "peak_rss_bytes": 7311867904,
+          "mlx_peak_bytes": 7655270102,
+          "seconds_including_lock_wait": 60.40345220899326,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": null,
+              "raw": "Scones au citron",
+              "quote": "Scones au citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "version",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_type",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "lait",
+              "quote": "lait",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "1/2 cup",
+              "quote": "1/2 cup",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "cup",
+              "quote": "cup",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "sucre",
+              "quote": "sucre",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "2-3",
+              "quote": "2-3",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "c. à soupe",
+              "quote": "c. à soupe",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "levure",
+              "quote": "levure",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "2 tsp",
+              "quote": "2 tsp",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "tsp",
+              "quote": "tsp",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "beurre",
+              "quote": "beurre",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "4",
+              "quote": "4",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": "g",
+              "quote": "g",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "sel",
+              "quote": "sel",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": "au goût",
+              "quote": "au goût",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "zeste de citron",
+              "quote": "zeste de citron",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": "facultatif",
+              "quote": "(facultatif)",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": "zeste d'orange",
+              "quote": "zeste d'orange",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_min",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "quantity_max",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "optional",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "ingredient",
+              "field": "replacement_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Mélanger les ingrédients secs.",
+              "quote": "1. Mélanger les ingrédients secs.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Ajouter le lait et le beurre.",
+              "quote": "2. Ajouter le lait et le beurre.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": "Cuire 14 min à 190 °C.",
+              "quote": "3. Cuire 14 min à 190 °C.",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "duration_minutes",
+              "region_id": null,
+              "raw": "14",
+              "quote": "14 min",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "time_text",
+              "region_id": null,
+              "raw": "14 min",
+              "quote": "14 min",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_c",
+              "region_id": null,
+              "raw": "190",
+              "quote": "190 °C",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_f",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "step",
+              "field": "temperature_text",
+              "region_id": null,
+              "raw": "190 °C",
+              "quote": "190 °C",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "recipe",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.r8",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.r9",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.r10",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 10
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.title",
+        "entity_id": "p1.root",
+        "field": "title",
+        "raw": "Scones au citron",
+        "value": "Scones au citron",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Scones au citron",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.description",
+        "entity_id": "p1.root",
+        "field": "description",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_quantity",
+        "entity_id": "p1.root",
+        "field": "yield_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_unit",
+        "entity_id": "p1.root",
+        "field": "yield_unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_type",
+        "entity_id": "p1.root",
+        "field": "yield_type",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": "lait",
+        "value": "lait",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "lait",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity",
+        "entity_id": "p1.r1",
+        "field": "quantity",
+        "raw": "1/2 cup",
+        "value": "0.5",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1/2 cup",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity_min",
+        "entity_id": "p1.r1",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity_max",
+        "entity_id": "p1.r1",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.unit",
+        "entity_id": "p1.r1",
+        "field": "unit",
+        "raw": "cup",
+        "value": "cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "cup",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unit has no fixed definition; never converted",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.preparation",
+        "entity_id": "p1.r1",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.optional",
+        "entity_id": "p1.r1",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.crossed_out",
+        "entity_id": "p1.r1",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.replacement_quantity",
+        "entity_id": "p1.r1",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": "sucre",
+        "value": "sucre",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "sucre",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": "2-3",
+        "value": null,
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2-3",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "range: see quantity_min and quantity_max",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity_min",
+        "entity_id": "p1.r2",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity_max",
+        "entity_id": "p1.r2",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.unit",
+        "entity_id": "p1.r2",
+        "field": "unit",
+        "raw": "c. à soupe",
+        "value": "tbsp",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "c. à soupe",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unit has no fixed definition; never converted",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.preparation",
+        "entity_id": "p1.r2",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.optional",
+        "entity_id": "p1.r2",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.crossed_out",
+        "entity_id": "p1.r2",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.replacement_quantity",
+        "entity_id": "p1.r2",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "levure",
+        "value": "levure",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "levure",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity",
+        "entity_id": "p1.r3",
+        "field": "quantity",
+        "raw": "2 tsp",
+        "value": "2",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2 tsp",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity_min",
+        "entity_id": "p1.r3",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity_max",
+        "entity_id": "p1.r3",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.unit",
+        "entity_id": "p1.r3",
+        "field": "unit",
+        "raw": "tsp",
+        "value": "tsp",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "tsp",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unit has no fixed definition; never converted",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.preparation",
+        "entity_id": "p1.r3",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.optional",
+        "entity_id": "p1.r3",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.crossed_out",
+        "entity_id": "p1.r3",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.replacement_quantity",
+        "entity_id": "p1.r3",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "beurre",
+        "value": "beurre",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "beurre",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity",
+        "entity_id": "p1.r4",
+        "field": "quantity",
+        "raw": "4",
+        "value": "4",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "4",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity_min",
+        "entity_id": "p1.r4",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity_max",
+        "entity_id": "p1.r4",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.unit",
+        "entity_id": "p1.r4",
+        "field": "unit",
+        "raw": "g",
+        "value": "g",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "g",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.preparation",
+        "entity_id": "p1.r4",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.optional",
+        "entity_id": "p1.r4",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.crossed_out",
+        "entity_id": "p1.r4",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.replacement_quantity",
+        "entity_id": "p1.r4",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": "sel",
+        "value": "sel",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "sel",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity",
+        "entity_id": "p1.r5",
+        "field": "quantity",
+        "raw": "au goût",
+        "value": null,
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "au goût",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "imprecise quantity kept as written; no numeric value",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity_min",
+        "entity_id": "p1.r5",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity_max",
+        "entity_id": "p1.r5",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.unit",
+        "entity_id": "p1.r5",
+        "field": "unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.preparation",
+        "entity_id": "p1.r5",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.optional",
+        "entity_id": "p1.r5",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.crossed_out",
+        "entity_id": "p1.r5",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.replacement_quantity",
+        "entity_id": "p1.r5",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": "zeste de citron",
+        "value": "zeste de citron",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "zeste de citron",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.quantity",
+        "entity_id": "p1.r6",
+        "field": "quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.quantity_min",
+        "entity_id": "p1.r6",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.quantity_max",
+        "entity_id": "p1.r6",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.unit",
+        "entity_id": "p1.r6",
+        "field": "unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.preparation",
+        "entity_id": "p1.r6",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.optional",
+        "entity_id": "p1.r6",
+        "field": "optional",
+        "raw": "facultatif",
+        "value": true,
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "(facultatif)",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.crossed_out",
+        "entity_id": "p1.r6",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.replacement_quantity",
+        "entity_id": "p1.r6",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": "zeste d'orange",
+        "value": "zeste d'orange",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "zeste d'orange",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.quantity",
+        "entity_id": "p1.r7",
+        "field": "quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.quantity_min",
+        "entity_id": "p1.r7",
+        "field": "quantity_min",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.quantity_max",
+        "entity_id": "p1.r7",
+        "field": "quantity_max",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.unit",
+        "entity_id": "p1.r7",
+        "field": "unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.preparation",
+        "entity_id": "p1.r7",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.optional",
+        "entity_id": "p1.r7",
+        "field": "optional",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.crossed_out",
+        "entity_id": "p1.r7",
+        "field": "crossed_out",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.replacement_quantity",
+        "entity_id": "p1.r7",
+        "field": "replacement_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.instruction",
+        "entity_id": "p1.r8",
+        "field": "instruction",
+        "raw": "Mélanger les ingrédients secs.",
+        "value": "Mélanger les ingrédients secs.",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1. Mélanger les ingrédients secs.",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.duration_minutes",
+        "entity_id": "p1.r8",
+        "field": "duration_minutes",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.time_text",
+        "entity_id": "p1.r8",
+        "field": "time_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_c",
+        "entity_id": "p1.r8",
+        "field": "temperature_c",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_f",
+        "entity_id": "p1.r8",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.temperature_text",
+        "entity_id": "p1.r8",
+        "field": "temperature_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.instruction",
+        "entity_id": "p1.r9",
+        "field": "instruction",
+        "raw": "Ajouter le lait et le beurre.",
+        "value": "Ajouter le lait et le beurre.",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2. Ajouter le lait et le beurre.",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.duration_minutes",
+        "entity_id": "p1.r9",
+        "field": "duration_minutes",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.time_text",
+        "entity_id": "p1.r9",
+        "field": "time_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_c",
+        "entity_id": "p1.r9",
+        "field": "temperature_c",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_f",
+        "entity_id": "p1.r9",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.temperature_text",
+        "entity_id": "p1.r9",
+        "field": "temperature_text",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.instruction",
+        "entity_id": "p1.r10",
+        "field": "instruction",
+        "raw": "Cuire 14 min à 190 °C.",
+        "value": "Cuire 14 min à 190 °C.",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "3. Cuire 14 min à 190 °C.",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.duration_minutes",
+        "entity_id": "p1.r10",
+        "field": "duration_minutes",
+        "raw": "14",
+        "value": "14",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "14 min",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.time_text",
+        "entity_id": "p1.r10",
+        "field": "time_text",
+        "raw": "14 min",
+        "value": "14 min",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "14 min",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_c",
+        "entity_id": "p1.r10",
+        "field": "temperature_c",
+        "raw": "190",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "190 °C",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "190 C",
+          "190 F"
+        ],
+        "reason": "temperature scale not printed",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_f",
+        "entity_id": "p1.r10",
+        "field": "temperature_f",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "The local model could not read the field.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.temperature_text",
+        "entity_id": "p1.r10",
+        "field": "temperature_text",
+        "raw": "190 °C",
+        "value": "190 °C",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "190 °C",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "unreadable_field",
+        "message": "recipe.description: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.version: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.version"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_unit: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_type: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_type"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.unit: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.unit: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_min: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.quantity_min"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.quantity_max: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.quantity_max"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.unit: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.optional: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.optional"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.crossed_out: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.crossed_out"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.replacement_quantity: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.duration_minutes: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.duration_minutes"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.time_text: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.time_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_c: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_text: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.duration_minutes: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.duration_minutes"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.time_text: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.time_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_c: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_text: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.temperature_text"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "step.temperature_c: temperature scale not printed",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.temperature_c"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.temperature_f: The local model could not read the field.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.temperature_f"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.replacement_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "replacement_without_crossout",
+        "message": "ingredient.replacement_quantity without a crossed_out reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.replacement_quantity"
+        ],
+        "severity": "review"
+      }
+    ],
+    "validation": "issues",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

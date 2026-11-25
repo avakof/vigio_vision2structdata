@@ -1,0 +1,1523 @@
+[
+  {
+    "document_id": "doc-b7bb0d9984acf71b8f2f392f75aa1fc6",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "invoice",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "751478a9e70ebc689053b49b60a1b3dda73108d1bf7cd1f7409718985fe9699b",
+      "media_type": "application/pdf",
+      "size_bytes": 1941,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 612.0,
+        "height": 792.0,
+        "unit": "pt",
+        "image_path": "pages/0001.png",
+        "image_width": 1231,
+        "image_height": 1593,
+        "image_to_original": [
+          0.49715678310316813,
+          0.0,
+          0.0,
+          0.49717510292833883,
+          0.0,
+          0.0001220703125
+        ],
+        "text_layer": "usable"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-pdf-0",
+        "page": 1,
+        "order": 0,
+        "kind": "native_text",
+        "text": "Invoice PW-318",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            55.90399932861328,
+            48.86798095703125,
+            258.14801025390625,
+            69.33599853515625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-1",
+        "page": 1,
+        "order": 1,
+        "kind": "native_text",
+        "text": "Paperwing Supply | Bill to: Lightwell Kitchen",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            55.077999114990234,
+            95.8079833984375,
+            324.3399658203125,
+            108.926025390625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-2",
+        "page": 1,
+        "order": 2,
+        "kind": "native_text",
+        "text": "March 21, 2026 | Currency: USD",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            55.0359992980957,
+            122.8079833984375,
+            256.0759582519531,
+            135.926025390625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-3",
+        "page": 1,
+        "order": 3,
+        "kind": "native_text",
+        "text": "Amount",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            508.7560119628906,
+            193.97601318359375,
+            556.9020385742188,
+            204.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-4",
+        "page": 1,
+        "order": 4,
+        "kind": "native_text",
+        "text": "Description",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            55.077999114990234,
+            193.97601318359375,
+            123.04800415039062,
+            206.77197265625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-5",
+        "page": 1,
+        "order": 5,
+        "kind": "native_text",
+        "text": "Qty",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            283.8179931640625,
+            193.79400634765625,
+            304.8739929199219,
+            206.926025390625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-6",
+        "page": 1,
+        "order": 6,
+        "kind": "native_text",
+        "text": "Unit price",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            371.9839782714844,
+            193.97601318359375,
+            429.4259948730469,
+            206.77197265625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-7",
+        "page": 1,
+        "order": 7,
+        "kind": "native_text",
+        "text": "3",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            297.80401611328125,
+            233.93402099609375,
+            304.3699951171875,
+            244.16802978515625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-8",
+        "page": 1,
+        "order": 8,
+        "kind": "native_text",
+        "text": "7.15",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            403.41400146484375,
+            233.93402099609375,
+            429.44000244140625,
+            244.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-9",
+        "page": 1,
+        "order": 9,
+        "kind": "native_text",
+        "text": "21.45",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            522.3779907226562,
+            233.93402099609375,
+            556.4400024414062,
+            244.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-10",
+        "page": 1,
+        "order": 10,
+        "kind": "native_text",
+        "text": "Paper cake boxes",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            55.077999114990234,
+            233.97601318359375,
+            165.50997924804688,
+            246.77197265625
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-11",
+        "page": 1,
+        "order": 11,
+        "kind": "native_text",
+        "text": "Waxed liners",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            54.167999267578125,
+            270.97601318359375,
+            134.36001586914062,
+            281.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-12",
+        "page": 1,
+        "order": 12,
+        "kind": "native_text",
+        "text": "2",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            297.62200927734375,
+            270.93402099609375,
+            304.25799560546875,
+            281.0
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-13",
+        "page": 1,
+        "order": 13,
+        "kind": "native_text",
+        "text": "1.25",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            404.2820129394531,
+            270.93402099609375,
+            429.44000244140625,
+            281.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-14",
+        "page": 1,
+        "order": 14,
+        "kind": "native_text",
+        "text": "2.50",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            530.1619873046875,
+            270.93402099609375,
+            556.3280029296875,
+            281.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-15",
+        "page": 1,
+        "order": 15,
+        "kind": "native_text",
+        "text": "Subtotal",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            54.630001068115234,
+            357.8080139160156,
+            104.38600158691406,
+            368.15399169921875
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-16",
+        "page": 1,
+        "order": 16,
+        "kind": "native_text",
+        "text": "23.95",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            522.3779907226562,
+            357.9339904785156,
+            556.4400024414062,
+            368.1679992675781
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-17",
+        "page": 1,
+        "order": 17,
+        "kind": "native_text",
+        "text": "23.95",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            522.3779907226562,
+            392.9339904785156,
+            556.4400024414062,
+            403.1679992675781
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-pdf-18",
+        "page": 1,
+        "order": 18,
+        "kind": "native_text",
+        "text": "Total payable",
+        "language": null,
+        "writing": "print",
+        "box": {
+          "xyxy": [
+            54.321998596191406,
+            392.97601318359375,
+            137.46798706054688,
+            405.9259948730469
+          ],
+          "space": "original_top_left",
+          "precision": "native_text"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 17,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            516.0487408610885,
+            386.8023521485601,
+            562.7814784727863,
+            409.17523178033537
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "86a5dcc0636432e6fa4dcb41a398790b6a4c39a797a88f5dfd66f745afd29c93",
+        "crop_to_original": [
+          0.49715678310316813,
+          0.0,
+          0.0,
+          0.49717510292833883,
+          516.0487408610885,
+          386.8023521485601
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "b066ec8bee144e42802f084d11b52f1e",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": null,
+          "region_ids": [
+            "p1-pdf-0",
+            "p1-pdf-1",
+            "p1-pdf-2",
+            "p1-pdf-3",
+            "p1-pdf-4",
+            "p1-pdf-5",
+            "p1-pdf-6",
+            "p1-pdf-7",
+            "p1-pdf-8",
+            "p1-pdf-9",
+            "p1-pdf-10",
+            "p1-pdf-11",
+            "p1-pdf-12",
+            "p1-pdf-13",
+            "p1-pdf-14",
+            "p1-pdf-15",
+            "p1-pdf-16",
+            "p1-pdf-17",
+            "p1-pdf-18"
+          ],
+          "channel": "native_text",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 678,
+          "prompt_tokens": 1024,
+          "load_seconds": 2.8657003749976866,
+          "generation_seconds": 24.617187249998096,
+          "runtime_seconds": 36.655215749982744,
+          "peak_rss_bytes": 7129694208,
+          "mlx_peak_bytes": 7175842860,
+          "seconds_including_lock_wait": 37.15898566698888,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_kind",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_number",
+              "region_id": "p1-pdf-0",
+              "raw": "PW-318",
+              "quote": "Invoice PW-318",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": "p1-pdf-1",
+              "raw": "Paperwing Supply",
+              "quote": "Paperwing Supply",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": "p1-pdf-1",
+              "raw": "Lightwell Kitchen",
+              "quote": "Bill to: Lightwell Kitchen",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": "p1-pdf-2",
+              "raw": "March 21, 2026",
+              "quote": "March 21, 2026",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": "p1-pdf-2",
+              "raw": "USD",
+              "quote": "Currency: USD",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "subtotal",
+              "region_id": "p1-pdf-16",
+              "raw": "23.95",
+              "quote": "23.95",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-pdf-10",
+              "raw": "Paper cake boxes",
+              "quote": "Paper cake boxes",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-pdf-7",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-pdf-8",
+              "raw": "7.15",
+              "quote": "7.15",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-pdf-9",
+              "raw": "21.45",
+              "quote": "21.45",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-pdf-11",
+              "raw": "Waxed liners",
+              "quote": "Waxed liners",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-pdf-12",
+              "raw": "2",
+              "quote": "2",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-pdf-13",
+              "raw": "1.25",
+              "quote": "1.25",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-pdf-14",
+              "raw": "2.50",
+              "quote": "2.50",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": null,
+          "region_ids": [
+            "p1-pdf-0",
+            "p1-pdf-1",
+            "p1-pdf-2",
+            "p1-pdf-3",
+            "p1-pdf-4",
+            "p1-pdf-5",
+            "p1-pdf-6",
+            "p1-pdf-7",
+            "p1-pdf-8",
+            "p1-pdf-9",
+            "p1-pdf-10",
+            "p1-pdf-11",
+            "p1-pdf-12",
+            "p1-pdf-13",
+            "p1-pdf-14",
+            "p1-pdf-15",
+            "p1-pdf-16",
+            "p1-pdf-17",
+            "p1-pdf-18"
+          ],
+          "channel": "native_text",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 641,
+          "prompt_tokens": 1035,
+          "load_seconds": 2.5014773749862798,
+          "generation_seconds": 11.392453625012422,
+          "runtime_seconds": 15.985547500022221,
+          "peak_rss_bytes": 7111704576,
+          "mlx_peak_bytes": 7189327244,
+          "seconds_including_lock_wait": 16.548336375009967,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "document_number",
+              "region_id": "p1-pdf-0",
+              "raw": "PW-318",
+              "quote": "PW-318",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "supplier_name",
+              "region_id": "p1-pdf-1",
+              "raw": "Paperwing Supply",
+              "quote": "Paperwing Supply",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "customer_name",
+              "region_id": "p1-pdf-1",
+              "raw": "Lightwell Kitchen",
+              "quote": "Lightwell Kitchen",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "issue_date",
+              "region_id": "p1-pdf-2",
+              "raw": "March 21, 2026",
+              "quote": "March 21, 2026",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "currency",
+              "region_id": "p1-pdf-2",
+              "raw": "USD",
+              "quote": "USD",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "subtotal",
+              "region_id": "p1-pdf-16",
+              "raw": "23.95",
+              "quote": "23.95",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "invoice",
+              "field": "total",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "ambiguous"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-pdf-10",
+              "raw": "Paper cake boxes",
+              "quote": "Paper cake boxes",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-pdf-7",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-pdf-8",
+              "raw": "7.15",
+              "quote": "7.15",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-pdf-9",
+              "raw": "21.45",
+              "quote": "21.45",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "description",
+              "region_id": "p1-pdf-11",
+              "raw": "Waxed liners",
+              "quote": "Waxed liners",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "quantity",
+              "region_id": "p1-pdf-12",
+              "raw": "2",
+              "quote": "2",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "unit_price",
+              "region_id": "p1-pdf-13",
+              "raw": "1.25",
+              "quote": "1.25",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "line_item",
+              "field": "line_total",
+              "region_id": "p1-pdf-14",
+              "raw": "2.50",
+              "quote": "2.50",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-pdf-17"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 77,
+          "prompt_tokens": 774,
+          "load_seconds": 2.7106230829958804,
+          "generation_seconds": 2.544012250000378,
+          "runtime_seconds": 8.570952250011032,
+          "peak_rss_bytes": 7123484672,
+          "mlx_peak_bytes": 7069572926,
+          "seconds_including_lock_wait": 9.269255082996096,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "r1",
+              "kind": "line_item",
+              "field": "price_basis",
+              "region_id": "p1-pdf-17",
+              "raw": "23.95",
+              "quote": "23.95",
+              "state": "readable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "invoice",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "line_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.document_kind",
+        "entity_id": "p1.root",
+        "field": "document_kind",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "invoice"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.document_number",
+        "entity_id": "p1.root",
+        "field": "document_number",
+        "raw": "PW-318",
+        "value": "PW-318",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-0",
+            "quote": "Invoice PW-318",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.supplier_name",
+        "entity_id": "p1.root",
+        "field": "supplier_name",
+        "raw": "Paperwing Supply",
+        "value": "Paperwing Supply",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-1",
+            "quote": "Paperwing Supply",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.customer_name",
+        "entity_id": "p1.root",
+        "field": "customer_name",
+        "raw": "Lightwell Kitchen",
+        "value": "Lightwell Kitchen",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-1",
+            "quote": "Bill to: Lightwell Kitchen",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.issue_date",
+        "entity_id": "p1.root",
+        "field": "issue_date",
+        "raw": "March 21, 2026",
+        "value": "2026-03-21",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-2",
+            "quote": "March 21, 2026",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": "USD",
+        "value": "USD",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-2",
+            "quote": "Currency: USD",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.subtotal",
+        "entity_id": "p1.root",
+        "field": "subtotal",
+        "raw": "23.95",
+        "value": "23.95",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-16",
+            "quote": "23.95",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.total",
+        "entity_id": "p1.root",
+        "field": "total",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-17",
+            "quote": "23.95",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-pdf-17",
+            "quote": "23.95",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "23.95"
+        ],
+        "reason": "Conflicting or invalid repeated field readings in one reply.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.calculated_total",
+        "entity_id": "p1.root",
+        "field": "calculated_total",
+        "raw": null,
+        "value": "23.95",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(subtotal, minor unit); absent components omitted",
+          "inputs": [
+            "p1.root.subtotal"
+          ]
+        }
+      },
+      {
+        "id": "p1.r1.description",
+        "entity_id": "p1.r1",
+        "field": "description",
+        "raw": "Paper cake boxes",
+        "value": "Paper cake boxes",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-10",
+            "quote": "Paper cake boxes",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.quantity",
+        "entity_id": "p1.r1",
+        "field": "quantity",
+        "raw": "3",
+        "value": "3",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-7",
+            "quote": "3",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.unit_price",
+        "entity_id": "p1.r1",
+        "field": "unit_price",
+        "raw": "7.15",
+        "value": "7.15",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-8",
+            "quote": "7.15",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.line_total",
+        "entity_id": "p1.r1",
+        "field": "line_total",
+        "raw": "21.45",
+        "value": "21.45",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-9",
+            "quote": "21.45",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.calculated_line_total",
+        "entity_id": "p1.r1",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "21.45",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r1.quantity",
+            "p1.r1.unit_price"
+          ]
+        }
+      },
+      {
+        "id": "p1.r2.description",
+        "entity_id": "p1.r2",
+        "field": "description",
+        "raw": "Waxed liners",
+        "value": "Waxed liners",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-11",
+            "quote": "Waxed liners",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": "2",
+        "value": "2",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-12",
+            "quote": "2",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.unit_price",
+        "entity_id": "p1.r2",
+        "field": "unit_price",
+        "raw": "1.25",
+        "value": "1.25",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-13",
+            "quote": "1.25",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.line_total",
+        "entity_id": "p1.r2",
+        "field": "line_total",
+        "raw": "2.50",
+        "value": "2.50",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-pdf-14",
+            "quote": "2.50",
+            "channel": "native_text",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.calculated_line_total",
+        "entity_id": "p1.r2",
+        "field": "calculated_line_total",
+        "raw": null,
+        "value": "2.50",
+        "state": "readable",
+        "origin": "calculated",
+        "language": null,
+        "evidence": [],
+        "alternatives": [],
+        "reason": null,
+        "derivation": {
+          "calculation": "calc.v1: round_half_up(unit_price*multiplier - discount, minor unit); tax excluded",
+          "inputs": [
+            "p1.r2.quantity",
+            "p1.r2.unit_price"
+          ]
+        }
+      }
+    ],
+    "issues": [
+      {
+        "code": "model_field_duplicate",
+        "message": "Repeated fields were consolidated or left unresolved when they disagreed.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.document_kind"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "invoice.document_kind: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.document_kind"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "invoice.total: Conflicting or invalid repeated field readings in one reply.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.total"
+        ],
+        "severity": "review"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

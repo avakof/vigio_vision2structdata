@@ -1,0 +1,2643 @@
+[
+  {
+    "document_id": "doc-fbe0396939eb0b165799dafe9e27e568",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "menu",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "a564e76081fb357733a24605201f256f583a3705cbf49b2bd6da8c13721d314a",
+      "media_type": "image/png",
+      "size_bytes": 77635,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1200.0,
+        "height": 920.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1200,
+        "image_height": 920,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [],
+    "run": {
+      "job_id": "e359b58bf15f422d8a73381313203a93",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "b078050b9d7ac2849b2021d77b0d4d56562f8061a336fe7d4fbdd482099cb439",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 2001,
+          "prompt_tokens": 1764,
+          "load_seconds": 2.3516754169831984,
+          "generation_seconds": 38.16591158299707,
+          "runtime_seconds": 42.55900750000728,
+          "peak_rss_bytes": 7287242752,
+          "mlx_peak_bytes": 7558486678,
+          "seconds_including_lock_wait": 43.08139208398643,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": null,
+              "raw": "Café des Érables",
+              "quote": "Café des Érables",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "SOUPE / SOUP",
+              "quote": "SOUPE / SOUP",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "SOUP",
+              "quote": "SOUP",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Velouté de céleri",
+              "quote": "Velouté de céleri",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Celery soup",
+              "quote": "Celery soup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "4,50 €",
+              "quote": "4,50 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "name",
+              "region_id": null,
+              "raw": "Tasse / Cup",
+              "quote": "Tasse / Cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "size",
+              "region_id": null,
+              "raw": "Tasse / Cup",
+              "quote": "Tasse / Cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "price",
+              "region_id": null,
+              "raw": "4,50 €",
+              "quote": "4,50 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "name",
+              "region_id": null,
+              "raw": "Bol / Bowl",
+              "quote": "Bol / Bowl",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "size",
+              "region_id": null,
+              "raw": "Bol / Bowl",
+              "quote": "Bol / Bowl",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "price",
+              "region_id": null,
+              "raw": "6,80 €",
+              "quote": "6,80 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "name",
+              "region_id": null,
+              "raw": "+ Croûtons",
+              "quote": "+ Croûtons",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "price",
+              "region_id": null,
+              "raw": "0,70 €",
+              "quote": "0,70 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Tarte aux poireaux",
+              "quote": "Tarte aux poireaux",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Leek tart",
+              "quote": "Leek tart",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "7,20 €",
+              "quote": "7,20 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "BOISSONS / DRINKS",
+              "quote": "BOISSONS / DRINKS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "DRINKS",
+              "quote": "DRINKS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Café filtre",
+              "quote": "Café filtre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Filter coffee",
+              "quote": "Filter coffee",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,60 €",
+              "quote": "2,60 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Thé noir",
+              "quote": "Thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Black tea",
+              "quote": "Black tea",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,80 €",
+              "quote": "2,80 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Ancien prix du thé",
+              "quote": "Ancien prix du thé",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,10 €",
+              "quote": "2,10 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "true",
+              "quote": "true",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "FORMULE / COMBO",
+              "quote": "FORMULE / COMBO",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "COMBO",
+              "quote": "COMBO",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "name",
+              "region_id": null,
+              "raw": "Déjeuner / Lunch",
+              "quote": "Déjeuner / Lunch",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Lunch",
+              "quote": "Lunch",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "price",
+              "region_id": null,
+              "raw": "10,40 €",
+              "quote": "10,40 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "description",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte + Café filtre OU thé noir",
+              "quote": "Bol de velouté OU tarte + Café filtre OU thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "name",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "group",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "description",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "name",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "group",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "description",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 1952,
+          "prompt_tokens": 1775,
+          "load_seconds": 2.8779627080075443,
+          "generation_seconds": 37.362162332981825,
+          "runtime_seconds": 43.30869016700308,
+          "peak_rss_bytes": 6570704896,
+          "mlx_peak_bytes": 7567399750,
+          "seconds_including_lock_wait": 43.752299957996,
+          "overflow": false,
+          "recovery_issues": {
+            "model_field_duplicate": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": null,
+              "raw": "Café des Érables",
+              "quote": "Café des Érables",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "SOUPE / SOUP",
+              "quote": "SOUPE / SOUP",
+              "state": "readable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "SOUP",
+              "quote": "SOUP",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Velouté de céleri",
+              "quote": "Velouté de céleri",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Celery soup",
+              "quote": "Celery soup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "4,50 €",
+              "quote": "4,50 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "name",
+              "region_id": null,
+              "raw": "Tasse / Cup",
+              "quote": "Tasse / Cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "size",
+              "region_id": null,
+              "raw": "Tasse / Cup",
+              "quote": "Tasse / Cup",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "price",
+              "region_id": null,
+              "raw": "4,50 €",
+              "quote": "4,50 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "variant",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "name",
+              "region_id": null,
+              "raw": "Bol / Bowl",
+              "quote": "Bol / Bowl",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "size",
+              "region_id": null,
+              "raw": "Bol / Bowl",
+              "quote": "Bol / Bowl",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "price",
+              "region_id": null,
+              "raw": "6,80 €",
+              "quote": "6,80 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "variant",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "name",
+              "region_id": null,
+              "raw": "+ Croûtons",
+              "quote": "+ Croûtons",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "price",
+              "region_id": null,
+              "raw": "0,70 €",
+              "quote": "0,70 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "supplement",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Tarte aux poireaux",
+              "quote": "Tarte aux poireaux",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Leek tart",
+              "quote": "Leek tart",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "7,20 €",
+              "quote": "7,20 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "BOISSONS / DRINKS",
+              "quote": "BOISSONS / DRINKS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "DRINKS",
+              "quote": "DRINKS",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Café filtre",
+              "quote": "Café filtre",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Filter coffee",
+              "quote": "Filter coffee",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,60 €",
+              "quote": "2,60 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Thé noir",
+              "quote": "Thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Black tea",
+              "quote": "Black tea",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,80 €",
+              "quote": "2,80 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r9",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "false",
+              "quote": "false",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Ancien prix du thé",
+              "quote": "Ancien prix du thé",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "2,10 €",
+              "quote": "2,10 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "crossed_out",
+              "region_id": null,
+              "raw": "true",
+              "quote": "true",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "FORMULE / COMBO",
+              "quote": "FORMULE / COMBO",
+              "state": "readable"
+            },
+            {
+              "local_id": "r11",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "COMBO",
+              "quote": "COMBO",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "name",
+              "region_id": null,
+              "raw": "Déjeuner / Lunch",
+              "quote": "Déjeuner / Lunch",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": "Lunch",
+              "quote": "Lunch",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "price",
+              "region_id": null,
+              "raw": "10,40 €",
+              "quote": "10,40 €",
+              "state": "readable"
+            },
+            {
+              "local_id": "r12",
+              "kind": "bundle",
+              "field": "currency",
+              "region_id": null,
+              "raw": "€",
+              "quote": "€",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "name",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "group",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r13",
+              "kind": "bundle_choice",
+              "field": "description",
+              "region_id": null,
+              "raw": "Bol de velouté OU tarte",
+              "quote": "Bol de velouté OU tarte",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "name",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "group",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            },
+            {
+              "local_id": "r14",
+              "kind": "bundle_choice",
+              "field": "description",
+              "region_id": null,
+              "raw": "+ Café filtre OU thé noir",
+              "quote": "+ Café filtre OU thé noir",
+              "state": "readable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "menu",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "variant",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "variant",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "supplement",
+        "parent_id": "p1.r2",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.r8",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.r9",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.r10",
+        "kind": "menu_item",
+        "parent_id": "p1.r7",
+        "page": 1,
+        "ordinal": 10
+      },
+      {
+        "id": "p1.r11",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 11
+      },
+      {
+        "id": "p1.r12",
+        "kind": "bundle",
+        "parent_id": "p1.r11",
+        "page": 1,
+        "ordinal": 12
+      },
+      {
+        "id": "p1.r13",
+        "kind": "bundle_choice",
+        "parent_id": "p1.r12",
+        "page": 1,
+        "ordinal": 13
+      },
+      {
+        "id": "p1.r14",
+        "kind": "bundle_choice",
+        "parent_id": "p1.r12",
+        "page": 1,
+        "ordinal": 14
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.venue_name",
+        "entity_id": "p1.root",
+        "field": "venue_name",
+        "raw": "Café des Érables",
+        "value": "Café des Érables",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Café des Érables",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": "SOUPE / SOUP",
+        "value": "SOUPE / SOUP",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "SOUPE / SOUP",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.translated_name",
+        "entity_id": "p1.r1",
+        "field": "translated_name",
+        "raw": "SOUP",
+        "value": "SOUP",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "SOUP",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": "Velouté de céleri",
+        "value": "Velouté de céleri",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Velouté de céleri",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.translated_name",
+        "entity_id": "p1.r2",
+        "field": "translated_name",
+        "raw": "Celery soup",
+        "value": "Celery soup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Celery soup",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.price",
+        "entity_id": "p1.r2",
+        "field": "price",
+        "raw": "4,50 €",
+        "value": "4.50",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "4,50 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.currency",
+        "entity_id": "p1.r2",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.crossed_out",
+        "entity_id": "p1.r2",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "Tasse / Cup",
+        "value": "Tasse / Cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Tasse / Cup",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.size",
+        "entity_id": "p1.r3",
+        "field": "size",
+        "raw": "Tasse / Cup",
+        "value": "Tasse / Cup",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Tasse / Cup",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.price",
+        "entity_id": "p1.r3",
+        "field": "price",
+        "raw": "4,50 €",
+        "value": "4.50",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "4,50 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.currency",
+        "entity_id": "p1.r3",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.crossed_out",
+        "entity_id": "p1.r3",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "Bol / Bowl",
+        "value": "Bol / Bowl",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol / Bowl",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.size",
+        "entity_id": "p1.r4",
+        "field": "size",
+        "raw": "Bol / Bowl",
+        "value": "Bol / Bowl",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol / Bowl",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.price",
+        "entity_id": "p1.r4",
+        "field": "price",
+        "raw": "6,80 €",
+        "value": "6.80",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "6,80 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.currency",
+        "entity_id": "p1.r4",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.crossed_out",
+        "entity_id": "p1.r4",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": "+ Croûtons",
+        "value": "+ Croûtons",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "+ Croûtons",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.price",
+        "entity_id": "p1.r5",
+        "field": "price",
+        "raw": "0,70 €",
+        "value": "0.70",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "0,70 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.currency",
+        "entity_id": "p1.r5",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": "Tarte aux poireaux",
+        "value": "Tarte aux poireaux",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Tarte aux poireaux",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.translated_name",
+        "entity_id": "p1.r6",
+        "field": "translated_name",
+        "raw": "Leek tart",
+        "value": "Leek tart",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Leek tart",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.price",
+        "entity_id": "p1.r6",
+        "field": "price",
+        "raw": "7,20 €",
+        "value": "7.20",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "7,20 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.currency",
+        "entity_id": "p1.r6",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.crossed_out",
+        "entity_id": "p1.r6",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": "BOISSONS / DRINKS",
+        "value": "BOISSONS / DRINKS",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "BOISSONS / DRINKS",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.translated_name",
+        "entity_id": "p1.r7",
+        "field": "translated_name",
+        "raw": "DRINKS",
+        "value": "DRINKS",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "DRINKS",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.name",
+        "entity_id": "p1.r8",
+        "field": "name",
+        "raw": "Café filtre",
+        "value": "Café filtre",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Café filtre",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.translated_name",
+        "entity_id": "p1.r8",
+        "field": "translated_name",
+        "raw": "Filter coffee",
+        "value": "Filter coffee",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Filter coffee",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.price",
+        "entity_id": "p1.r8",
+        "field": "price",
+        "raw": "2,60 €",
+        "value": "2.60",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2,60 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.currency",
+        "entity_id": "p1.r8",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.crossed_out",
+        "entity_id": "p1.r8",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.name",
+        "entity_id": "p1.r9",
+        "field": "name",
+        "raw": "Thé noir",
+        "value": "Thé noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Thé noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.translated_name",
+        "entity_id": "p1.r9",
+        "field": "translated_name",
+        "raw": "Black tea",
+        "value": "Black tea",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Black tea",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.price",
+        "entity_id": "p1.r9",
+        "field": "price",
+        "raw": "2,80 €",
+        "value": "2.80",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2,80 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.currency",
+        "entity_id": "p1.r9",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.crossed_out",
+        "entity_id": "p1.r9",
+        "field": "crossed_out",
+        "raw": "false",
+        "value": false,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "false",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.name",
+        "entity_id": "p1.r10",
+        "field": "name",
+        "raw": "Ancien prix du thé",
+        "value": "Ancien prix du thé",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Ancien prix du thé",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.price",
+        "entity_id": "p1.r10",
+        "field": "price",
+        "raw": "2,10 €",
+        "value": "2.10",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "2,10 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.currency",
+        "entity_id": "p1.r10",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.crossed_out",
+        "entity_id": "p1.r10",
+        "field": "crossed_out",
+        "raw": "true",
+        "value": true,
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "true",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.name",
+        "entity_id": "p1.r11",
+        "field": "name",
+        "raw": "FORMULE / COMBO",
+        "value": "FORMULE / COMBO",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "FORMULE / COMBO",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.translated_name",
+        "entity_id": "p1.r11",
+        "field": "translated_name",
+        "raw": "COMBO",
+        "value": "COMBO",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "COMBO",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.name",
+        "entity_id": "p1.r12",
+        "field": "name",
+        "raw": "Déjeuner / Lunch",
+        "value": "Déjeuner / Lunch",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Déjeuner / Lunch",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.translated_name",
+        "entity_id": "p1.r12",
+        "field": "translated_name",
+        "raw": "Lunch",
+        "value": "Lunch",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Lunch",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.price",
+        "entity_id": "p1.r12",
+        "field": "price",
+        "raw": "10,40 €",
+        "value": "10.40",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10,40 €",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.currency",
+        "entity_id": "p1.r12",
+        "field": "currency",
+        "raw": "€",
+        "value": "EUR",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "€",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.description",
+        "entity_id": "p1.r12",
+        "field": "description",
+        "raw": "Bol de velouté OU tarte + Café filtre OU thé noir",
+        "value": "Bol de velouté OU tarte + Café filtre OU thé noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol de velouté OU tarte + Café filtre OU thé noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.name",
+        "entity_id": "p1.r13",
+        "field": "name",
+        "raw": "Bol de velouté OU tarte",
+        "value": "Bol de velouté OU tarte",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol de velouté OU tarte",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.group",
+        "entity_id": "p1.r13",
+        "field": "group",
+        "raw": "Bol de velouté OU tarte",
+        "value": "Bol de velouté OU tarte",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol de velouté OU tarte",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.description",
+        "entity_id": "p1.r13",
+        "field": "description",
+        "raw": "Bol de velouté OU tarte",
+        "value": "Bol de velouté OU tarte",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Bol de velouté OU tarte",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.name",
+        "entity_id": "p1.r14",
+        "field": "name",
+        "raw": "+ Café filtre OU thé noir",
+        "value": "+ Café filtre OU thé noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "+ Café filtre OU thé noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.group",
+        "entity_id": "p1.r14",
+        "field": "group",
+        "raw": "+ Café filtre OU thé noir",
+        "value": "+ Café filtre OU thé noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "+ Café filtre OU thé noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.description",
+        "entity_id": "p1.r14",
+        "field": "description",
+        "raw": "+ Café filtre OU thé noir",
+        "value": "+ Café filtre OU thé noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "+ Café filtre OU thé noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "model_field_duplicate",
+        "message": "Repeated fields were consolidated or left unresolved when they disagreed.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.name",
+          "p1.r1.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "price_and_variants",
+        "message": "item has its own price and priced variants",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.price"
+        ],
+        "severity": "info"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.name",
+          "p1.r2.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.name",
+          "p1.r6.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.name",
+          "p1.r7.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.name",
+          "p1.r8.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.name",
+          "p1.r9.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r11.name",
+          "p1.r11.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "translation_without_layout_evidence",
+        "message": "Confirm that translated_name belongs to this source name.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r12.name",
+          "p1.r12.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "crossed_out_reading",
+        "message": "menu_item has a struck reading",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.crossed_out"
+        ],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
