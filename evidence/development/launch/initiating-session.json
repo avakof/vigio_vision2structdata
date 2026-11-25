@@ -1,0 +1,30 @@
+{
+  "purpose": "User-facing initiating session, project bootstrap and local feasibility and fixture logistics. The seven assigned development roles are listed in ../roster.json.",
+  "requested_role": null,
+  "orca_session_id": "f7cd0445-79f7-45a4-bf55-c954b4a01ade",
+  "orca_kind": "chat",
+  "orca_worktree_id": "eef455ab-3264-4dc9-ac62-bd121af1b230::/Users/vakof/orca/vigio_vision2structdata",
+  "task_id": null,
+  "dispatch_id": null,
+  "worker_id": null,
+  "effective": {
+    "harness": "codex",
+    "harness_version": "0.171.0",
+    "provider": "openai",
+    "model": "gpt-6.2-astra",
+    "effort": "max",
+    "session_id": "01a21335-7962-7351-a2c4-402c066631a7",
+    "cwd": "/Users/vakof/orca/vigio_vision2structdata",
+    "originator": "orca_desktop"
+  },
+  "evidence": [
+    "orca agent show orca_session_id:f7cd0445-79f7-45a4-bf55-c954b4a01ade --json",
+    "Codex rollout session_meta and turn_context for 01a21335-7962-7351-a2c4-402c066631a7"
+  ],
+  "dedicated_integrator": {
+    "reason": "The requested integration setting was Astra/xhigh. A separate Orca launch set this explicitly and took responsibility for orchestration and integration in the new repository.",
+    "orca_session_id": "86695985-f792-4d5b-9f14-8b8109e83a35",
+    "harness_session_id": "01a21337-ea80-73c3-88c4-fe7d355e7d6f",
+    "receipt": "integration.json"
+  }
+}
