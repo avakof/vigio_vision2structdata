@@ -1,0 +1,5899 @@
+[
+  {
+    "document_id": "doc-20966aea6542e570e176b77d6ba54535",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "menu",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "ec26aa74a2c03e49f21b8b185eea3e194c61121c3232df8bb624d978caff977a",
+      "media_type": "image/jpeg",
+      "size_bytes": 607118,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1957.0,
+        "height": 2343.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1292,
+        "image_height": 1547,
+        "image_to_original": [
+          1.5147058823529411,
+          0.0,
+          0.0,
+          1.5145442792501616,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_tile",
+        "text": "",
+        "language": "fr",
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            0.0,
+            408.0,
+            1957.0,
+            1933.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "bfb746e6766f00f49cf611027b76cba9600d43cdf7c8d164fbc85d68d1c7f6cd",
+        "crop_to_original": [
+          1.2215980024968789,
+          0.0,
+          0.0,
+          1.2219551282051282,
+          0.0,
+          408.0
+        ]
+      },
+      {
+        "id": "p1-style",
+        "page": 1,
+        "order": 1,
+        "kind": "page_style",
+        "text": "",
+        "language": "fr",
+        "writing": "unknown",
+        "box": null,
+        "artifact_path": "pages/0001.png",
+        "artifact_sha256": "63be867c35a89cf90acb30a7243398d48e45a8021cf89935b6f800cac9cd6061",
+        "crop_to_original": null
+      }
+    ],
+    "run": {
+      "job_id": "73ba2b4ee90844dfbc381cc77c822914",
+      "pipeline": "direct",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.2",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "direct",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "098daa980a34885afe96933f7012ab7481265760a9bc8752482c96efe5a5cf1f",
+      "calls": [
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "length",
+          "generated_tokens": 4096,
+          "prompt_tokens": 2582,
+          "load_seconds": 2.210421832976863,
+          "generation_seconds": 73.0809690419992,
+          "runtime_seconds": 77.1522027500032,
+          "peak_rss_bytes": 7459553280,
+          "mlx_peak_bytes": 7689317452,
+          "seconds_including_lock_wait": 77.73297183401883,
+          "overflow": true,
+          "recovery_issues": {
+            "model_prefix_recovered": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": null,
+              "raw": "Le Versailles",
+              "quote": "Le Versailles",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": null,
+              "raw": "Menu",
+              "quote": "Menu",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": null,
+              "raw": "14 Juin 1930",
+              "quote": "du 14 Juin 1930",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "16 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Les Potages",
+              "quote": "Les Potages",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Crème Augé",
+              "quote": "Crème Augé",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "3 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Petite Marmite",
+              "quote": "Petite Marmite",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "4",
+              "quote": "4",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "4 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Consommé d'Estime",
+              "quote": "Consommé d'Estime",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "3 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r5",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Les Oeufs",
+              "quote": "Les Oeufs",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r5",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Oeuf à la gelée",
+              "quote": "Oeuf à la gelée",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Omelette Savoyarde",
+              "quote": "Omelette Savoyarde",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Oeuf brouillé français",
+              "quote": "Oeuf brouillé français",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r9",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Poisson",
+              "quote": "Le Poisson",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r9",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Barbeau Versaillais",
+              "quote": "Barbeau Versaillais",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Quinte Mayonnaise",
+              "quote": "Quinte Mayonnaise",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "12 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Merlan frit",
+              "quote": "Merlan frit",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Barmon",
+              "quote": "Barmon",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Verte",
+              "quote": "Verte",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Roi beurre noir",
+              "quote": "Roi beurre noir",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Epervan frit",
+              "quote": "Epervan frit",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "5 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Sole Préfume",
+              "quote": "Sole Préfume",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "13",
+              "quote": "13",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "13 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Sole frite",
+              "quote": "Sole frite",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "12 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r19",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Nos Spécialités",
+              "quote": "Nos Spécialités",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r19",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Filets de Brochet à la Châtaigne",
+              "quote": "Filets de Brochet à la Châtaigne",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "14",
+              "quote": "14",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "14 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Poulet à la Gargonne",
+              "quote": "Le Poulet à la Gargonne",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "16",
+              "quote": "16",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "16 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "La Saucisse de Foie",
+              "quote": "La Saucisse de Foie",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "12 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Petit Saumon aux Glous",
+              "quote": "Le Petit Saumon aux Glous",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Rognon de Veau frites pois",
+              "quote": "Rognon de Veau frites pois",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "12 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Mouton Chapon à la Verveine",
+              "quote": "Mouton Chapon à la Verveine",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Grillade de porc aux épinards",
+              "quote": "Grillade de porc aux épinards",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Cervelle de Crevettes",
+              "quote": "Cervelle de Crevettes",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Cote de Veau croûte",
+              "quote": "Cote de Veau croûte",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Choucroute garnie",
+              "quote": "Choucroute garnie",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "9",
+              "quote": "9",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "9 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r30",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Tête de Veau vinaig",
+              "quote": "Tête de Veau vinaig",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r30",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r30",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "10 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Cote de mouton",
+              "quote": "Cote de mouton",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "9",
+              "quote": "9",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "9 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Pernod",
+              "quote": "Pernod",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "13",
+              "quote": "13",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "13 fr",
+              "state": "readable",
+              "language": "fr"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "length",
+          "generated_tokens": 4096,
+          "prompt_tokens": 2593,
+          "load_seconds": 2.794511040992802,
+          "generation_seconds": 74.24587583399261,
+          "runtime_seconds": 79.75210379200871,
+          "peak_rss_bytes": 7461781504,
+          "mlx_peak_bytes": 7689415756,
+          "seconds_including_lock_wait": 80.46096004199353,
+          "overflow": true,
+          "recovery_issues": {
+            "model_prefix_recovered": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": null,
+              "raw": "Le Versailles",
+              "quote": "Le Versailles",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": null,
+              "raw": "Menu",
+              "quote": "Menu",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": null,
+              "raw": "14 Juin 1930",
+              "quote": "du 14 Juin 1930",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "16 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Les Potages",
+              "quote": "Les Potages",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Crème Augé",
+              "quote": "Crème Augé",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "3 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Petite Marmite",
+              "quote": "Petite Marmite",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "4",
+              "quote": "4",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "4 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Consommé d'Estime",
+              "quote": "Consommé d'Estime",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "3 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r5",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Les Oeufs",
+              "quote": "Les Oeufs",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r5",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Oeuf à la gelée",
+              "quote": "Oeuf à la gelée",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Omelette Savoyarde",
+              "quote": "Omelette Savoyarde",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Oeuf brouillé français",
+              "quote": "Oeuf brouillé français",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r9",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Poisson",
+              "quote": "Le Poisson",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r9",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Barbeau Versaillais",
+              "quote": "Barbeau Versaillais",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Quinte Mayonnaise",
+              "quote": "Quinte Mayonnaise",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Merlan frit",
+              "quote": "Merlan frit",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Barmon",
+              "quote": "Barmon",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Verte",
+              "quote": "Verte",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Roi beurre noir",
+              "quote": "Roi beurre noir",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Epervan frit",
+              "quote": "Epervan frit",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r16",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Sole Préfume",
+              "quote": "Sole Préfume",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Sole frite",
+              "quote": "Sole frite",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r19",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Nos Spécialités",
+              "quote": "Nos Spécialités",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r19",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Filets de Brochet à la Châtaigne",
+              "quote": "Filets de Brochet à la Châtaigne",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Poulet à la Gargouille",
+              "quote": "Le Poulet à la Gargouille",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "La Saucisse de Bœuf à la Barigoule",
+              "quote": "La Saucisse de Bœuf à la Barigoule",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Petit Saumon aux Glous",
+              "quote": "Le Petit Saumon aux Glous",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Rôti de Veau",
+              "quote": "Rôti de Veau",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Grillade de Porc aux Epinards",
+              "quote": "Grillade de Porc aux Epinards",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Côte de Veau à la Vinaigrette",
+              "quote": "Côte de Veau à la Vinaigrette",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Côte de Mouton",
+              "quote": "Côte de Mouton",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Pommes de Terre",
+              "quote": "Pommes de Terre",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Bœuf à la Bourguignonne",
+              "quote": "Bœuf à la Bourguignonne",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r30",
+              "kind": "section",
+              "field": "name",
+              "region_id": null,
+              "raw": "Le Buffet Froid",
+              "quote": "Le Buffet Froid",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r30",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Jambon",
+              "quote": "Jambon",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r31",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": null,
+              "raw": "Veau",
+              "quote": "Veau",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": null,
+              "raw": "1",
+              "quote": "1",
+              "state": "readable",
+              "language": "fr"
+            },
+            {
+              "local_id": "r32",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": null,
+              "raw": "fr",
+              "quote": "1 fr",
+              "state": "readable",
+              "language": "fr"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [],
+          "channel": "direct",
+          "status": "incomplete",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "length",
+          "generated_tokens": 4096,
+          "prompt_tokens": 2631,
+          "load_seconds": 2.0068305839959066,
+          "generation_seconds": 82.97673675001715,
+          "runtime_seconds": 87.06151974998647,
+          "peak_rss_bytes": 7469662208,
+          "mlx_peak_bytes": 7690464332,
+          "seconds_including_lock_wait": 87.48017533301027,
+          "overflow": true,
+          "recovery_issues": {
+            "model_prefix_recovered": 1
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-crop-1",
+              "raw": "Le Saucisson chaud comme à Lyon",
+              "quote": "Le Saucisson chaud comme à Lyon",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": "p1-crop-1",
+              "raw": "8",
+              "quote": "8",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r1",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Les Hors-d'oeuvres variés",
+              "quote": "Les Hors-d'oeuvres variés",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Crème Angélique",
+              "quote": "Crème Angélique",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r2",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Petite Marmite",
+              "quote": "Petite Marmite",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "4",
+              "quote": "4",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r3",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Consommé clarté",
+              "quote": "Consommé clarté",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r4",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r5",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Les Oeufs",
+              "quote": "Les Oeufs",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Oeuf à la gelée",
+              "quote": "Oeuf à la gelée",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Omelette Savoyarde",
+              "quote": "Omelette Savoyarde",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r7",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Deux brouilles françaises",
+              "quote": "Deux brouilles françaises",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "5",
+              "quote": "5",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r9",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Le Poisson",
+              "quote": "Le Poisson",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Baron de Versailles",
+              "quote": "Baron de Versailles",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Pompon frais",
+              "quote": "Pompon frais",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "14",
+              "quote": "14",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Verte",
+              "quote": "Verte",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r12",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Rais beurre noir",
+              "quote": "Rais beurre noir",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "8",
+              "quote": "8",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r13",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Sole Préforme",
+              "quote": "Sole Préforme",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "13",
+              "quote": "13",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r14",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Sole frite",
+              "quote": "Sole frite",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r15",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r16",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Nos Spécialités",
+              "quote": "Nos Spécialités",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Filets de brochet à la",
+              "quote": "Filets de brochet à la",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "14",
+              "quote": "14",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r17",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Le Soulet",
+              "quote": "Le Soulet",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "14",
+              "quote": "14",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r18",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r19",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "La Sirée de Bouff",
+              "quote": "La Sirée de Bouff",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r19",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r19",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Le Petit Sale aux Gous",
+              "quote": "Le Petit Sale aux Gous",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r20",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Roynon de veau frits frais",
+              "quote": "Roynon de veau frits frais",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "12",
+              "quote": "12",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r21",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Mutton Chops",
+              "quote": "Mutton Chops",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r22",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Grillade de porc aux efimants",
+              "quote": "Grillade de porc aux efimants",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r23",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Cerveau faroullé",
+              "quote": "Cerveau faroullé",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "9",
+              "quote": "9",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r24",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Cote Veau croûte",
+              "quote": "Cote Veau croûte",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r25",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Choucroute garnie",
+              "quote": "Choucroute garnie",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "9",
+              "quote": "9",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r26",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Fête de Veau vinaig",
+              "quote": "Fête de Veau vinaig",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "10",
+              "quote": "10",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r27",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Cote de mouton",
+              "quote": "Cote de mouton",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "9",
+              "quote": "9",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r28",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-crop-1",
+              "raw": "Pernotade",
+              "quote": "Pernotade",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-crop-1",
+              "raw": "13",
+              "quote": "13",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            },
+            {
+              "local_id": "r29",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-crop-1",
+              "raw": "F",
+              "quote": "F",
+              "state": "readable",
+              "language": "fr",
+              "writing": "handwriting"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": true,
+      "original_capture": "suspected_incomplete"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "menu",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "menu_item",
+        "parent_id": "p1.r1",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "menu_item",
+        "parent_id": "p1.r5",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "menu_item",
+        "parent_id": "p1.r5",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.r8",
+        "kind": "menu_item",
+        "parent_id": "p1.r5",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.r9",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.r10",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 10
+      },
+      {
+        "id": "p1.r11",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 11
+      },
+      {
+        "id": "p1.r12",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 12
+      },
+      {
+        "id": "p1.r13",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 13
+      },
+      {
+        "id": "p1.r14",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 14
+      },
+      {
+        "id": "p1.r15",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 15
+      },
+      {
+        "id": "p1.r16",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 16
+      },
+      {
+        "id": "p1.r17",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 17
+      },
+      {
+        "id": "p1.r18",
+        "kind": "menu_item",
+        "parent_id": "p1.r9",
+        "page": 1,
+        "ordinal": 18
+      },
+      {
+        "id": "p1.r19",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 19
+      },
+      {
+        "id": "p1.r20",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 20
+      },
+      {
+        "id": "p1.r21",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 21
+      },
+      {
+        "id": "p1.r22",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 22
+      },
+      {
+        "id": "p1.r23",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 23
+      },
+      {
+        "id": "p1.r24",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 24
+      },
+      {
+        "id": "p1.r25",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 25
+      },
+      {
+        "id": "p1.r26",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 26
+      },
+      {
+        "id": "p1.r27",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 27
+      },
+      {
+        "id": "p1.r28",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 28
+      },
+      {
+        "id": "p1.r29",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 29
+      },
+      {
+        "id": "p1.r30",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 30
+      },
+      {
+        "id": "p1.r31",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 31
+      },
+      {
+        "id": "p1.r32",
+        "kind": "menu_item",
+        "parent_id": "p1.r19",
+        "page": 1,
+        "ordinal": 32
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.venue_name",
+        "entity_id": "p1.root",
+        "field": "venue_name",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Le Versailles",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-crop-1",
+            "quote": "Le Saucisson chaud comme à Lyon",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-2"
+          }
+        ],
+        "alternatives": [
+          "Le Versailles",
+          "Le Saucisson chaud comme à Lyon"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Menu",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-crop-1",
+            "quote": "8",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-2"
+          }
+        ],
+        "alternatives": [
+          "Menu",
+          "8"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.date",
+        "entity_id": "p1.root",
+        "field": "date",
+        "raw": "14 Juin 1930",
+        "value": "1930-06-14",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "du 14 Juin 1930",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "16 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": "p1-crop-1",
+            "quote": "F",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-2"
+          }
+        ],
+        "alternatives": [
+          "fr",
+          "F"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.name",
+        "entity_id": "p1.r1",
+        "field": "name",
+        "raw": "Les Potages",
+        "value": "Les Potages",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Les Potages",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.translated_name",
+        "entity_id": "p1.r1",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Soups"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": "Crème Augé",
+        "value": "Crème Augé",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Crème Augé",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.price",
+        "entity_id": "p1.r2",
+        "field": "price",
+        "raw": "3",
+        "value": "3",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "3",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.currency",
+        "entity_id": "p1.r2",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "3 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": "Petite Marmite",
+        "value": "Petite Marmite",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Petite Marmite",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.price",
+        "entity_id": "p1.r3",
+        "field": "price",
+        "raw": "4",
+        "value": "4",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "4",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.currency",
+        "entity_id": "p1.r3",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "4 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": "Consommé d'Estime",
+        "value": "Consommé d'Estime",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Consommé d'Estime",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.price",
+        "entity_id": "p1.r4",
+        "field": "price",
+        "raw": "3",
+        "value": "3",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "3",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.currency",
+        "entity_id": "p1.r4",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "3 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": "Les Oeufs",
+        "value": "Les Oeufs",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Les Oeufs",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.translated_name",
+        "entity_id": "p1.r5",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Eggs"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": "Oeuf à la gelée",
+        "value": "Oeuf à la gelée",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Oeuf à la gelée",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.price",
+        "entity_id": "p1.r6",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.currency",
+        "entity_id": "p1.r6",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.name",
+        "entity_id": "p1.r7",
+        "field": "name",
+        "raw": "Omelette Savoyarde",
+        "value": "Omelette Savoyarde",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Omelette Savoyarde",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.price",
+        "entity_id": "p1.r7",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.currency",
+        "entity_id": "p1.r7",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.name",
+        "entity_id": "p1.r8",
+        "field": "name",
+        "raw": "Oeuf brouillé français",
+        "value": "Oeuf brouillé français",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Oeuf brouillé français",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.price",
+        "entity_id": "p1.r8",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r8.currency",
+        "entity_id": "p1.r8",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.name",
+        "entity_id": "p1.r9",
+        "field": "name",
+        "raw": "Le Poisson",
+        "value": "Le Poisson",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Le Poisson",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r9.translated_name",
+        "entity_id": "p1.r9",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Fish"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.name",
+        "entity_id": "p1.r10",
+        "field": "name",
+        "raw": "Barbeau Versaillais",
+        "value": "Barbeau Versaillais",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Barbeau Versaillais",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.price",
+        "entity_id": "p1.r10",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "10",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r10.currency",
+        "entity_id": "p1.r10",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.name",
+        "entity_id": "p1.r11",
+        "field": "name",
+        "raw": "Quinte Mayonnaise",
+        "value": "Quinte Mayonnaise",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Quinte Mayonnaise",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.price",
+        "entity_id": "p1.r11",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "12",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r11.currency",
+        "entity_id": "p1.r11",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.name",
+        "entity_id": "p1.r12",
+        "field": "name",
+        "raw": "Merlan frit",
+        "value": "Merlan frit",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Merlan frit",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.price",
+        "entity_id": "p1.r12",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r12.currency",
+        "entity_id": "p1.r12",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.name",
+        "entity_id": "p1.r13",
+        "field": "name",
+        "raw": "Barmon",
+        "value": "Barmon",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Barmon",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.price",
+        "entity_id": "p1.r13",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r13.currency",
+        "entity_id": "p1.r13",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.name",
+        "entity_id": "p1.r14",
+        "field": "name",
+        "raw": "Verte",
+        "value": "Verte",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Verte",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.price",
+        "entity_id": "p1.r14",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "10",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r14.currency",
+        "entity_id": "p1.r14",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r15.name",
+        "entity_id": "p1.r15",
+        "field": "name",
+        "raw": "Roi beurre noir",
+        "value": "Roi beurre noir",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Roi beurre noir",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r15.price",
+        "entity_id": "p1.r15",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r15.currency",
+        "entity_id": "p1.r15",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r16.name",
+        "entity_id": "p1.r16",
+        "field": "name",
+        "raw": "Epervan frit",
+        "value": "Epervan frit",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Epervan frit",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r16.price",
+        "entity_id": "p1.r16",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "5",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r16.currency",
+        "entity_id": "p1.r16",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "5 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r17.name",
+        "entity_id": "p1.r17",
+        "field": "name",
+        "raw": "Sole Préfume",
+        "value": "Sole Préfume",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Sole Préfume",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r17.price",
+        "entity_id": "p1.r17",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "13",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "13",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r17.currency",
+        "entity_id": "p1.r17",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "13 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r18.name",
+        "entity_id": "p1.r18",
+        "field": "name",
+        "raw": "Sole frite",
+        "value": "Sole frite",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Sole frite",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r18.price",
+        "entity_id": "p1.r18",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "12",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r18.currency",
+        "entity_id": "p1.r18",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r19.name",
+        "entity_id": "p1.r19",
+        "field": "name",
+        "raw": "Nos Spécialités",
+        "value": "Nos Spécialités",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Nos Spécialités",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r19.translated_name",
+        "entity_id": "p1.r19",
+        "field": "translated_name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Our Specialties"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r20.name",
+        "entity_id": "p1.r20",
+        "field": "name",
+        "raw": "Filets de Brochet à la Châtaigne",
+        "value": "Filets de Brochet à la Châtaigne",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Filets de Brochet à la Châtaigne",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r20.price",
+        "entity_id": "p1.r20",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "14",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "14",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r20.currency",
+        "entity_id": "p1.r20",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "14 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r21.name",
+        "entity_id": "p1.r21",
+        "field": "name",
+        "raw": "Le Poulet à la Gargonne",
+        "value": "Le Poulet à la Gargonne",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Le Poulet à la Gargonne",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r21.price",
+        "entity_id": "p1.r21",
+        "field": "price",
+        "raw": "16",
+        "value": "16",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "16",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r21.currency",
+        "entity_id": "p1.r21",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "16 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r22.name",
+        "entity_id": "p1.r22",
+        "field": "name",
+        "raw": "La Saucisse de Foie",
+        "value": "La Saucisse de Foie",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "La Saucisse de Foie",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r22.price",
+        "entity_id": "p1.r22",
+        "field": "price",
+        "raw": "12",
+        "value": "12",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r22.currency",
+        "entity_id": "p1.r22",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r23.name",
+        "entity_id": "p1.r23",
+        "field": "name",
+        "raw": "Le Petit Saumon aux Glous",
+        "value": "Le Petit Saumon aux Glous",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Le Petit Saumon aux Glous",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r23.price",
+        "entity_id": "p1.r23",
+        "field": "price",
+        "raw": null,
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          },
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "10",
+          "1"
+        ],
+        "reason": "Independent local readings disagree.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r23.currency",
+        "entity_id": "p1.r23",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r24.name",
+        "entity_id": "p1.r24",
+        "field": "name",
+        "raw": "Rognon de Veau frites pois",
+        "value": "Rognon de Veau frites pois",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Rognon de Veau frites pois",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r24.price",
+        "entity_id": "p1.r24",
+        "field": "price",
+        "raw": "12",
+        "value": "12",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r24.currency",
+        "entity_id": "p1.r24",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "12 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r25.name",
+        "entity_id": "p1.r25",
+        "field": "name",
+        "raw": "Mouton Chapon à la Verveine",
+        "value": "Mouton Chapon à la Verveine",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Mouton Chapon à la Verveine",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r25.price",
+        "entity_id": "p1.r25",
+        "field": "price",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r25.currency",
+        "entity_id": "p1.r25",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r26.name",
+        "entity_id": "p1.r26",
+        "field": "name",
+        "raw": "Grillade de porc aux épinards",
+        "value": "Grillade de porc aux épinards",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Grillade de porc aux épinards",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r26.price",
+        "entity_id": "p1.r26",
+        "field": "price",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r26.currency",
+        "entity_id": "p1.r26",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r27.name",
+        "entity_id": "p1.r27",
+        "field": "name",
+        "raw": "Cervelle de Crevettes",
+        "value": "Cervelle de Crevettes",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Cervelle de Crevettes",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r27.price",
+        "entity_id": "p1.r27",
+        "field": "price",
+        "raw": "1",
+        "value": "1",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r27.currency",
+        "entity_id": "p1.r27",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "1 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r28.name",
+        "entity_id": "p1.r28",
+        "field": "name",
+        "raw": "Cote de Veau croûte",
+        "value": "Cote de Veau croûte",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Cote de Veau croûte",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r28.price",
+        "entity_id": "p1.r28",
+        "field": "price",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r28.currency",
+        "entity_id": "p1.r28",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r29.name",
+        "entity_id": "p1.r29",
+        "field": "name",
+        "raw": "Choucroute garnie",
+        "value": "Choucroute garnie",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Choucroute garnie",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r29.price",
+        "entity_id": "p1.r29",
+        "field": "price",
+        "raw": "9",
+        "value": "9",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "9",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r29.currency",
+        "entity_id": "p1.r29",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "9 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r30.name",
+        "entity_id": "p1.r30",
+        "field": "name",
+        "raw": "Tête de Veau vinaig",
+        "value": "Tête de Veau vinaig",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Tête de Veau vinaig",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r30.price",
+        "entity_id": "p1.r30",
+        "field": "price",
+        "raw": "10",
+        "value": "10",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r30.currency",
+        "entity_id": "p1.r30",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "10 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r31.name",
+        "entity_id": "p1.r31",
+        "field": "name",
+        "raw": "Cote de mouton",
+        "value": "Cote de mouton",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Cote de mouton",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r31.price",
+        "entity_id": "p1.r31",
+        "field": "price",
+        "raw": "9",
+        "value": "9",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "9",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r31.currency",
+        "entity_id": "p1.r31",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "9 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r32.name",
+        "entity_id": "p1.r32",
+        "field": "name",
+        "raw": "Pernod",
+        "value": "Pernod",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "Pernod",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r32.price",
+        "entity_id": "p1.r32",
+        "field": "price",
+        "raw": "13",
+        "value": "13",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "13",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r32.currency",
+        "entity_id": "p1.r32",
+        "field": "currency",
+        "raw": "fr",
+        "value": "CHF",
+        "state": "readable",
+        "origin": "observed",
+        "language": "fr",
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "13 fr",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "suspected_cutoff",
+        "message": "page 1 may be cut off at the edge of the capture",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "model_prefix_recovered",
+        "message": "Kept closed records from a reply truncated at the verified token limit.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "model_token_limit",
+        "message": "The local model reached its token budget and may have omitted page content.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.translated_name",
+          "p1.r5.translated_name",
+          "p1.r9.translated_name",
+          "p1.r19.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts returned different document or row structures.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_disagreement",
+        "message": "Conflicting readings were retained as unresolved alternatives.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.venue_name",
+          "p1.root.version",
+          "p1.root.currency",
+          "p1.r6.price",
+          "p1.r7.price",
+          "p1.r8.price",
+          "p1.r10.price",
+          "p1.r11.price",
+          "p1.r12.price",
+          "p1.r13.price",
+          "p1.r14.price",
+          "p1.r15.price",
+          "p1.r16.price",
+          "p1.r17.price",
+          "p1.r18.price",
+          "p1.r20.price",
+          "p1.r23.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "suspected_capture",
+        "message": "The model flagged content near a potentially cut-off page edge.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu.venue_name: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.venue_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu.version: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.version"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu.currency: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r7.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r8.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r9.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r10.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r11.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r12.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r13.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r14.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r15.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r16.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r17.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r18.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "section.translated_name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r19.translated_name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r20.price"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.price: Independent local readings disagree.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r23.price"
+        ],
+        "severity": "review"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

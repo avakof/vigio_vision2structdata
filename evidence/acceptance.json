@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T18:49:00+01:00",
+  "as_of": "2026-11-25T19:04:41+01:00",
   "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -32,17 +32,22 @@
       ]
     },
     "3_implementation": {
-      "status": "passed",
-      "reviewed_commit": "36b3200aa93d8faa3d4e6eeda3b9edb66ec6d141",
-      "detail": "294 package tests and 16 independent integrated probes passed. Production inference is gated separately.",
+      "status": "failed",
+      "reviewed_commit": "cbc9c057d100e5fb9251296716608d9da5d96538",
+      "detail": "The broader software suite passed 356 checks. Independent probes subsequently reproduced five faults in bounded recovery and reread reconciliation. Repairs are under way.",
       "evidence": [
         "docs/development/review-recheck.md",
-        "evidence/development/reviewer/recheck-results.txt"
+        "docs/development/recovery-parser-audit.md",
+        "evidence/development/reasoner_recovery_probes.py"
       ]
     },
     "4_evaluation": {
       "status": "not_run",
-      "detail": "Full candidate comparison outstanding. First direct development baseline emitted no documents on three archival inputs; stricter recovery is under development."
+      "detail": "Release cohort comparison awaits recovery recheck. Both 2048-token development baselines emitted 0 of 3 documents. The development recovery trial with 4096 tokens emitted all 3 direct documents and scored 1/8 fields.",
+      "evidence": [
+        "evidence/development/qa-live-development.md",
+        "evidence/evaluation/direct-development-final/evaluation.json"
+      ]
     },
     "5_review_handoff": {
       "status": "blocked",
