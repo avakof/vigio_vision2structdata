@@ -1,6 +1,6 @@
 # vision-to-tables
 
-A local command-line application for extracting evidence-backed invoice, menu and recipe data from JPEG, PNG and PDF sources. It stores the original, page geometry, local model attempts, field observations, corrections and immutable document versions. Each exported row links back to the source. French and English readings retain their original spelling.
+A local command-line application for extracting evidence-backed invoice, menu and recipe data from JPEG, PNG, static HEIC and PDF sources. It stores the original, page geometry, local model attempts, field observations, corrections and immutable document versions. Each exported row links back to the source. French and English readings retain their original spelling. Static HEIC uses the native ImageIO decoder on macOS.
 
 ## Setup
 
@@ -23,7 +23,7 @@ Model preparation needs network access and several gigabytes of disk. It verifie
 
 ```sh
 .venv/bin/vision-tables extract fixtures/feasibility/invoice.png --type invoice --pipeline direct --output output/invoice
-.venv/bin/vision-tables extract fixtures/synthetic/invoice-fr-mixed.pdf --type invoice --pipeline direct --output output/pdf
+.venv/bin/vision-tables extract fixtures/synthetic/invoice-fr-mixed.pdf --type invoice --pipeline direct --page-group 1,2 --output output/pdf
 .venv/bin/vision-tables evaluate fixtures/public/manifest.json --output output/evaluation
 ```
 
