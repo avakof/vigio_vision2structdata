@@ -1,0 +1,40 @@
+{
+  "first_environment": "mlx-vlm 0.8.1 with declared dependencies",
+  "first_probe": "failed",
+  "failure": "Qwen3VLVideoProcessor requires PyTorch >=2.6 and Torchvision when AutoProcessor.from_pretrained assembles the pinned image processor",
+  "added": {
+    "torch": "2.15.0",
+    "torchvision": "0.29.2"
+  },
+  "second_probe": "passed",
+  "network": "OS sandbox external-network denial with loopback allowed",
+  "second_result": {
+    "processor": "Qwen3VLProcessor",
+    "image_processor": "Qwen2VLImageProcessor",
+    "shapes": {
+      "input_ids": [
+        1,
+        343
+      ],
+      "attention_mask": [
+        1,
+        343
+      ],
+      "mm_token_type_ids": [
+        1,
+        343
+      ],
+      "pixel_values": [
+        1300,
+        1536
+      ],
+      "image_grid_thw": [
+        1,
+        3
+      ]
+    },
+    "schema_decoder": "LLGuidanceLogitsProcessor",
+    "mlx-vlm": "0.8.1"
+  },
+  "test_scope": "Processor and schema-grammar construction on a real image; no weight execution in this test."
+}
