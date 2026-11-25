@@ -1,0 +1,32 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "invoice",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "invoice",
+          "fields": {
+            "total": {
+              "value": "2202",
+              "metric": "critical_numeric",
+              "page": 1,
+              "decimal": true,
+              "origin": "observed"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

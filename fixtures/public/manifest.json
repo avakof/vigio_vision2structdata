@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "description": "Three archival pages with sparse human-transcribed labels. See SOURCES.md.",
+  "cases": [
+    {
+      "id": "babani-1921",
+      "source": "babani-1921.jpg",
+      "labels": "labels/babani-1921.json",
+      "split": "development",
+      "family": "babani-1921",
+      "strata": [
+        "fr",
+        "invoice",
+        "print",
+        "handwriting"
+      ],
+      "provenance": {
+        "origin": "real",
+        "source": "French invoice 2016.3.1, https://www.parismuseescollections.paris.fr/fr/palais-galliera/oeuvres/facture",
+        "license": "CC0 Paris Musées / Palais Galliera",
+        "labeler": "Museum catalogue description, published total; no exhaustive line-item transcription."
+      },
+      "settings": {},
+      "sha256": "53de907d6754bff1fa1a0ab28d010ee539702997ac0c969cc6fb15acc9b54290",
+      "labels_sha256": "662e794e428572d0153538c892456c29d88b6658b988adcaf37f6d82095a3fb2"
+    },
+    {
+      "id": "le-versailles-1920-p1",
+      "source": "le-versailles-1920-p1.jpg",
+      "labels": "labels/le-versailles-1920-p1.json",
+      "split": "development",
+      "family": "le-versailles-1920-p1",
+      "strata": [
+        "fr",
+        "menu",
+        "historical",
+        "multiple-columns",
+        "handwriting"
+      ],
+      "provenance": {
+        "origin": "real",
+        "source": "NYPL, Le Versailles, 1920-0071_wotm, page 64836: https://nypl.github.io/menus-api/",
+        "license": "1920 publication, US public domain. From The New York Public Library.",
+        "labeler": "NYPL What's on the Menu volunteer transcription and venue record; partial, marked under review."
+      },
+      "settings": {},
+      "sha256": "ec26aa74a2c03e49f21b8b185eea3e194c61121c3232df8bb624d978caff977a",
+      "labels_sha256": "267f53501b79ffa63ee522cb0b749e6bdc4045790e57f98f3b7d00b9478e0024"
+    },
+    {
+      "id": "jefferson-ice-cream",
+      "source": "jefferson-ice-cream.jpg",
+      "labels": "labels/jefferson-ice-cream.json",
+      "split": "development",
+      "family": "jefferson-ice-cream",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "fraction"
+      ],
+      "provenance": {
+        "origin": "real",
+        "source": "Thomas Jefferson Papers, Library of Congress, https://www.loc.gov/exhibits/treasures/tr33b.html#obj36",
+        "license": "Public-domain manuscript; Library of Congress lists no known restrictions on use or reproduction.",
+        "labeler": "Thomas Jefferson Foundation / Monticello historical manuscript transcription; see SOURCES.md."
+      },
+      "settings": {},
+      "sha256": "68bc782442ddb0ec4dbb65523bd87e412714e2599c671f379c7ddbaea7c2979e",
+      "labels_sha256": "0190d6cd371ab5c5ded7d5e1712d67121f74a3998fa427a81eab97c8ac3782a7"
+    }
+  ]
+}

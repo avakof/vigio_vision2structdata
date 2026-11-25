@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "eligible": false,
+  "page_count": 1,
+  "processed_pages": [
+    1
+  ],
+  "skipped_pages": [],
+  "documents": [
+    {
+      "type": "menu",
+      "scope": [
+        1
+      ],
+      "entities": [
+        {
+          "id": "header",
+          "kind": "menu",
+          "fields": {
+            "venue_name": "Le Versailles"
+          }
+        },
+        {
+          "id": "water",
+          "kind": "menu_item",
+          "fields": {
+            "name": "Eaux minerales la bout",
+            "price": {
+              "value": "5.00",
+              "metric": "menu_price",
+              "page": 1,
+              "decimal": true,
+              "origin": "observed"
+            }
+          },
+          "row": true
+        }
+      ]
+    }
+  ]
+}
