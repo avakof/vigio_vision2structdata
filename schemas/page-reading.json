@@ -170,6 +170,15 @@
           ],
           "default": null,
           "title": "Page"
+        },
+        "severity": {
+          "default": "review",
+          "enum": [
+            "review",
+            "info"
+          ],
+          "title": "Severity",
+          "type": "string"
         }
       },
       "required": [

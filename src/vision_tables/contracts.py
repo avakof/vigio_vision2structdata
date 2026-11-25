@@ -87,6 +87,7 @@ class Issue(Wire):
     message: str
     page: Number | None = None
     observation_ids: list[Identifier] = Field(default_factory=list)
+    severity: Literal["review", "info"] = "review"
 
 
 class Ingested(Wire):
@@ -305,7 +306,8 @@ class Document(Wire):
             raise ValueError("scope contains unaccounted pages")
         if (skipped or incomplete or self.coverage.source_skipped_pages) and self.validation != "incomplete":
             raise ValueError("incomplete coverage must be visible")
-        if self.approval == "human_approved" and (self.validation != "valid" or self.issues):
+        if self.approval == "human_approved" and (self.validation != "valid" or
+                self.coverage.suspected_capture or any(issue.severity == "review" for issue in self.issues)):
             raise ValueError("unresolved document cannot be approved")
         if self.approval == "human_approved" and not (self.observations and self.doc_type != "unknown" and
                 self.corrections and self.corrections[-1].approve and self.corrections[-1].base_version == self.parent_version):

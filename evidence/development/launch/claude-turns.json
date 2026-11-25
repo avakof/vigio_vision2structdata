@@ -1,0 +1,20 @@
+{
+  "domain": {
+    "session_id": "3907a0bf-a07f-45ce-b163-3a1c30136c28",
+    "model": "claude-sonnet-5-5",
+    "harness": "Claude Code",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-domain",
+    "source": "Claude Code assistant message metadata",
+    "effort": "high",
+    "effort_source": "Orca worker-start receipt"
+  },
+  "store": {
+    "session_id": "fd5bde56-d14a-41d0-93b6-7994ebfe884b",
+    "model": "claude-sonnet-5-5",
+    "harness": "Claude Code",
+    "cwd": "/Users/vakof/orca/workspaces/vision-to-tables/vt-store",
+    "source": "Claude Code assistant message metadata",
+    "effort": "high",
+    "effort_source": "Orca worker-start receipt"
+  }
+}
