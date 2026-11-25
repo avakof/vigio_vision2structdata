@@ -15,7 +15,7 @@ SHARED = (
 MEASURES = (
     "field_exact", "answerable_field_coverage", "accuracy_when_answered",
     "critical_numeric", "row_alignment", "relationship", "menu_price",
-    "recipe_quantity_unit_yield", "review_rate", "false_acceptance_rate",
+    "recipe_quantity_unit_yield", "recipe_time_temperature", "review_rate", "false_acceptance_rate",
     "unresolved_guess_rate", "case_pass",
 )
 
@@ -29,8 +29,9 @@ def runtime(cases):
              for page in case["runtime_sample"]["backend"].get("calls_by_page", {}).values()
              for call in page]
     qwen = [call for call in calls if call.get("constrained")]
-    parser = [call for call in calls if call.get("channel") == "parser" and call not in qwen]
+    parser = [call for call in calls if call.get("channel") == "parser" and not call.get("constrained")]
     crops = [crop for call in parser for crop in (call.get("recognition_tokens") or {}).get("crops", [])]
+    measured_crops = [crop for crop in crops if type(crop.get("generated_tokens")) is int]
     return {
         "case_seconds": [round(case["runtime_sample"]["seconds"], 3) for case in cases],
         "case_status": dict(Counter(case["status"] for case in cases)),
@@ -43,9 +44,10 @@ def runtime(cases):
         "qwen_crop_reads": sum("crop_region_id" in call for call in qwen),
         "qwen_retry_and_crop_calls": sum(call.get("id", "").rsplit("-", 1)[-1] != "0" for call in qwen),
         "parser_calls": len(parser),
-        "parser_crops_with_token_counts": len(crops),
-        "parser_tokens": sum(crop["generated_tokens"] for crop in crops),
-        "parser_token_cap_hits": sum(crop["cap_hit"] for crop in crops),
+        "parser_crops_with_token_counts": len(measured_crops),
+        "parser_crops_without_token_counts": len(crops) - len(measured_crops),
+        "parser_tokens": sum(crop["generated_tokens"] for crop in measured_crops),
+        "parser_token_cap_hits": sum(crop.get("cap_hit") is True for crop in crops),
         "max_model_process_rss_bytes": max((call.get("peak_rss_bytes", 0) for call in calls), default=0) or None,
         "max_mlx_peak_bytes": max((call.get("mlx_peak_bytes", 0) for call in qwen), default=0) or None,
     }
