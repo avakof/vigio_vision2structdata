@@ -25,8 +25,8 @@ LEXICAL_TYPES = {
     "currency": "ISO 4217 code; null when only an ambiguous symbol such as '$' is printed",
     "flag": "strict boolean",
     "unit": "canonical unit code (g, kg, ml, l, tbsp, carton ...); null when unrecognized",
-    "price_basis": "canonical unit code the unit price is per, or 'unit' for each",
-    "duration": "minutes as a number string",
+    "price_basis": "canonical unit code the unit price is per ('piece' for each)",
+    "duration": "minutes as a number string (decimal, or exact fraction)",
     "temp_c": "degrees Celsius as a number string; the scale must be printed",
     "temp_f": "degrees Fahrenheit as a number string; the scale must be printed",
     "ref": "page-local record id of an existing menu_item, resolved to its occurrence id",
@@ -153,3 +153,8 @@ def model_vocabulary(doc_type: str) -> dict:
                                "fields": {n: t for n, t in FIELD_TYPES[kind].items() if n not in CALCULATED_ONLY}}
                         for kind in FAMILIES[doc_type]},
             "rules": [HINTS[k] for k in ("raw", "evidence", "state", "relations")]}
+
+
+if __name__ == "__main__":  # python -m vision_tables.domain.schema > vocabulary.json
+    import json
+    print(json.dumps(vocabulary(), ensure_ascii=False, indent=2, sort_keys=True))
