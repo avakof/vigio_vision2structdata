@@ -98,6 +98,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
     degraded: set[int] = set()  # pages whose content was dropped or could not be classified: not complete
     entities: list[Entity] = []
     used_ids: set[str] = set()
+    unresolved_parent_entities: set[str] = set()
     sources: list[tuple[Entity, object]] = []
     for reading in mine:
         if reading.page not in read:
@@ -111,6 +112,8 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
                                        f"{len(reading.records)} records were not assembled", page=reading.page))
             continue
         local_ids: dict[str, str] = {}
+        unresolved_parent_ids = {local_id for call in reading.calls
+                                 for local_id in call.get("effective_unresolved_parent_ids", ())}
         page_entities: list[tuple[Entity, object]] = []
         for rec in reading.records:
             if rec.kind not in FAMILIES[reading.doc_type] or rec.kind not in FIELDS:
@@ -125,6 +128,8 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
             else:
                 local_ids[rec.local_id] = eid
             entity = Entity(id=eid, kind=rec.kind, parent_id=None, page=reading.page, ordinal=len(entities))
+            if rec.local_id in unresolved_parent_ids:
+                unresolved_parent_entities.add(eid)
             used_ids.add(eid)
             entities.append(entity)
             page_entities.append((entity, rec))
@@ -149,7 +154,7 @@ def assemble(ingested: Ingested, readings: list[PageReading], scope: list[int], 
                     entity.parent_id = None
                     break
                 seen.add(cursor.id)
-    _join_roots(entities, doc_type, issues)
+    _join_roots(entities, doc_type, issues, unresolved_parent_entities)
 
     incomplete |= degraded  # read, but part of the page is missing from the document
 
@@ -227,14 +232,15 @@ def _document_date_order(sources) -> str | None:
     return orders.pop() if len(orders) == 1 else None
 
 
-def _join_roots(entities: list[Entity], doc_type: str, issues: list[Issue]) -> None:
+def _join_roots(entities: list[Entity], doc_type: str, issues: list[Issue], unresolved_parent_entities: set[str]) -> None:
     if doc_type == "unknown":
         return
     root_kind = ROOT_KIND[doc_type]
     roots = [e for e in entities if e.kind == root_kind]
     joined: dict[tuple[int, str], int] = {}
     for entity in entities:
-        if entity.parent_id is not None or entity.kind not in JOIN_ROOT or root_kind not in PARENTS[entity.kind]:
+        if (entity.id in unresolved_parent_entities or entity.parent_id is not None
+                or entity.kind not in JOIN_ROOT or root_kind not in PARENTS[entity.kind]):
             continue
         same_page = [r for r in roots if r.page == entity.page]
         target, mode = None, ""
