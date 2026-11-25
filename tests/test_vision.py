@@ -346,6 +346,10 @@ def test_direct_raster_tiles_are_bounded_and_ground_conflicting_rereads(tmp_path
     canonical = assemble(ingestion, [result], [1], run, "doc-test")
     reading = next(obs for obs in canonical.observations if obs.field == "total")
     assert reading.value is None and reading.evidence[0].region_id == first.id
+    assert [(e.region_id, e.attempt_id, e.channel) for e in reading.evidence] == [
+        (first.id, result.calls[1]["attempt_id"], "direct"),
+        (second.id, result.calls[2]["attempt_id"], "direct"),
+    ]
     assert canonical.run.calls[2]["fields"][0]["region_id"] == second.id
 
 

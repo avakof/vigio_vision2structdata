@@ -335,12 +335,15 @@ class Document(Wire):
                 raise ValueError("unknown entity kind")
             if entity.page not in page_map or entity.parent_id is not None and entity.parent_id not in entities:
                 raise ValueError("unknown entity page or parent")
+        attempt_ids = {call["attempt_id"] for call in self.run.calls if isinstance(call.get("attempt_id"), str)}
         for obs in self.observations:
             if obs.entity_id not in entities:
                 raise ValueError("orphan observation")
             if obs.field not in FIELDS[entities[obs.entity_id].kind]:
                 raise ValueError("unsupported field for entity kind")
             for ref in obs.evidence:
+                if ref.attempt_id is not None and ref.attempt_id not in attempt_ids:
+                    raise ValueError("unknown extraction attempt in field evidence")
                 if ref.page not in page_map or ref.region_id and (
                     ref.region_id not in regions or regions[ref.region_id].page != ref.page
                 ):
