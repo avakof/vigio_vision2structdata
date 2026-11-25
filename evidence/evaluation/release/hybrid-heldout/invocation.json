@@ -1,0 +1,20 @@
+{
+  "sha": "38c303cd355db58c3f0430e5a6af107493cfd36c",
+  "manifest_sha256": "e259c0680137a689640073368d9abcd29f5bad727610ee12e667a96e9dffb021",
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    ".venv/bin/python",
+    "tools/verify_offline.py",
+    "evaluate",
+    "fixtures/archive-heldout/manifest.json",
+    "--pipeline",
+    "hybrid",
+    "--output",
+    "evidence/evaluation/release/hybrid-heldout"
+  ],
+  "started_utc": "2026-11-25T18:21:28.010799+00:00",
+  "wall_seconds": 471.3369348330016,
+  "exit_code": 0,
+  "finished_utc": "2026-11-25T18:29:19.348581+00:00"
+}

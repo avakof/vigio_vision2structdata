@@ -1,0 +1,2266 @@
+[
+  {
+    "document_id": "doc-4b39a09be641cab4b774d2e53626a61f",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "menu",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "1e3cd6293958baf91dbac9aabdf47859d36aa7cbe4b2b3a85dde530903c40f4a",
+      "media_type": "image/jpeg",
+      "size_bytes": 260801,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1257.0,
+        "height": 1955.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1133,
+        "image_height": 1763,
+        "image_to_original": [
+          1.1094439541041483,
+          0.0,
+          0.0,
+          1.1089052750992625,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_aside_text",
+        "text": "⚫",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            96.52162400706091,
+            527.8389109472489,
+            154.2127096204766,
+            738.5309132161088
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-1",
+        "page": 1,
+        "order": 1,
+        "kind": "parser_aside_text",
+        "text": "!",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            97.63106796116506,
+            1243.0828133862733,
+            158.6504854368932,
+            1455.9926262053316
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-3",
+        "page": 1,
+        "order": 3,
+        "kind": "parser_doc_title",
+        "text": "LUNCH.",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            491.4836716681377,
+            602.1355643788995,
+            765.5163283318624,
+            657.5808281338627
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-4",
+        "page": 1,
+        "order": 4,
+        "kind": "parser_text",
+        "text": "WEDNESDAY, OCTOBER 7, 1896",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            485.93645189761696,
+            679.7589336358479,
+            764.4068843777582,
+            715.2439024390243
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-5",
+        "page": 1,
+        "order": 5,
+        "kind": "parser_text",
+        "text": "Dishes Ready",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            489.2647837599294,
+            786.2138400453771,
+            754.4218887908208,
+            829.4611457742484
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-6",
+        "page": 1,
+        "order": 6,
+        "kind": "parser_paragraph_title",
+        "text": "FISH",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            579.1297440423655,
+            852.7481565513328,
+            671.2135922330098,
+            888.2331253545093
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-7",
+        "page": 1,
+        "order": 7,
+        "kind": "parser_text",
+        "text": "Skate black butter 60",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            492.59311562224184,
+            919.2824730572886,
+            762.18799646955,
+            956.9852524106635
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-8",
+        "page": 1,
+        "order": 8,
+        "kind": "parser_paragraph_title",
+        "text": "ENTREES",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            539.1897616946161,
+            973.6188315371525,
+            705.6063548102384,
+            1009.1038003403289
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-9",
+        "page": 1,
+        "order": 9,
+        "kind": "parser_text",
+        "text": "Sheep's trotters, poulette 60\nBraised beef with noodles 70\nVeal cutlet with tarragon 85\nLamb hash, Créole 80",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            452.6531332744925,
+            1024.6284741917186,
+            795.4713150926743,
+            1159.9149177538286
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-10",
+        "page": 1,
+        "order": 10,
+        "kind": "parser_paragraph_title",
+        "text": "ROAST",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            558.0503089143866,
+            1182.093023255814,
+            680.089143865843,
+            1215.3601815087918
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-11",
+        "page": 1,
+        "order": 11,
+        "kind": "parser_text",
+        "text": "Leg of mutton 50",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            328.3954104148279,
+            1226.4492342597844,
+            542.5180935569285,
+            1265.2609188882586
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-12",
+        "page": 1,
+        "order": 12,
+        "kind": "parser_text",
+        "text": "Beef 60",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            818.7696381288614,
+            1228.6670448099828,
+            914.1818181818182,
+            1264.1520136131592
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-parser-13",
+        "page": 1,
+        "order": 13,
+        "kind": "parser_text",
+        "text": "DELMONICOS.",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            503.6875551632833,
+            1360.626772546795,
+            733.342453662842,
+            1398.32955190017
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      }
+    ],
+    "run": {
+      "job_id": "641556181b7147a39542c9fdd8f89807",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 13,
+            "returned_crops": 13,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 2,
+                "generated_tokens": 2,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 3,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 4,
+                "generated_tokens": 17,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 5,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 6,
+                "generated_tokens": 3,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 7,
+                "generated_tokens": 8,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 8,
+                "generated_tokens": 4,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 9,
+                "generated_tokens": 47,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 10,
+                "generated_tokens": 3,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 11,
+                "generated_tokens": 8,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 12,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              },
+              {
+                "crop_index": 13,
+                "generated_tokens": 6,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 65.48601200000849,
+          "peak_rss_bytes": 10193190912,
+          "seconds_including_lock_wait": 66.28638279202278,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8",
+            "p1-parser-9",
+            "p1-parser-10",
+            "p1-parser-11",
+            "p1-parser-12",
+            "p1-parser-13"
+          ],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 1300,
+          "prompt_tokens": 2903,
+          "load_seconds": 3.9256903339992277,
+          "generation_seconds": 28.853672249999363,
+          "runtime_seconds": 36.29058445800911,
+          "peak_rss_bytes": 7460945920,
+          "mlx_peak_bytes": 7692119116,
+          "seconds_including_lock_wait": 37.05483241699403,
+          "overflow": false,
+          "recovery_issues": {
+            "model_record_id_recovered": 10
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-13",
+              "raw": "DELMONICOS.",
+              "quote": "DELMONICOS.",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": "p1-parser-3",
+              "raw": "LUNCH.",
+              "quote": "LUNCH.",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": "p1-parser-4",
+              "raw": "WEDNESDAY, OCTOBER 7, 1896",
+              "quote": "WEDNESDAY, OCTOBER 7, 1896",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.2",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-6",
+              "raw": "FISH",
+              "quote": "FISH",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.2",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-5",
+              "raw": "Dishes Ready",
+              "quote": "Dishes Ready",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "Skate black butter",
+              "quote": "Skate black butter",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.4",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-8",
+              "raw": "ENTREES",
+              "quote": "ENTREES",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.4",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-5",
+              "raw": "Dishes Ready",
+              "quote": "Dishes Ready",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Sheep's trotters, poulette",
+              "quote": "Sheep's trotters, poulette",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Braised beef with noodles",
+              "quote": "Braised beef with noodles",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "70",
+              "quote": "70",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "70",
+              "quote": "70",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Veal cutlet with tarragon",
+              "quote": "Veal cutlet with tarragon",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "85",
+              "quote": "85",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "85",
+              "quote": "85",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Lamb hash, Créole",
+              "quote": "Lamb hash, Créole",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "80",
+              "quote": "80",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "80",
+              "quote": "80",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.9",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-10",
+              "raw": "ROAST",
+              "quote": "ROAST",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.9",
+              "kind": "section",
+              "field": "description",
+              "region_id": "p1-parser-5",
+              "raw": "Dishes Ready",
+              "quote": "Dishes Ready",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-11",
+              "raw": "Leg of mutton",
+              "quote": "Leg of mutton",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-11",
+              "raw": "50",
+              "quote": "50",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-11",
+              "raw": "50",
+              "quote": "50",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-12",
+              "raw": "Beef",
+              "quote": "Beef",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-12",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-12",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0",
+            "p1-parser-1",
+            "p1-parser-3",
+            "p1-parser-4",
+            "p1-parser-5",
+            "p1-parser-6",
+            "p1-parser-7",
+            "p1-parser-8",
+            "p1-parser-9",
+            "p1-parser-10",
+            "p1-parser-11",
+            "p1-parser-12",
+            "p1-parser-13"
+          ],
+          "channel": "direct",
+          "status": "incomplete",
+          "finish_reason": "stop",
+          "generated_tokens": 1311,
+          "prompt_tokens": 2914,
+          "load_seconds": 2.765461041999515,
+          "generation_seconds": 40.462180832982995,
+          "runtime_seconds": 46.889360000001034,
+          "peak_rss_bytes": 7461273600,
+          "mlx_peak_bytes": 7692201036,
+          "seconds_including_lock_wait": 47.4591918750084,
+          "overflow": false,
+          "recovery_issues": {
+            "model_record_id_recovered": 10
+          },
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "venue_name",
+              "region_id": "p1-parser-13",
+              "raw": "DELMONICOS.",
+              "quote": "DELMONICOS.",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "version",
+              "region_id": "p1-parser-3",
+              "raw": "LUNCH.",
+              "quote": "LUNCH.",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "date",
+              "region_id": "p1-parser-4",
+              "raw": "WEDNESDAY, OCTOBER 7, 1896",
+              "quote": "WEDNESDAY, OCTOBER 7, 1896",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "menu",
+              "field": "currency",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.2",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-5",
+              "raw": "Dishes Ready",
+              "quote": "Dishes Ready",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.2",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-5",
+              "raw": "Dishes Ready",
+              "quote": "Dishes Ready",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-7",
+              "raw": "Skate black butter",
+              "quote": "Skate black butter",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.3",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-7",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.4",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-8",
+              "raw": "ENTREES",
+              "quote": "ENTREES",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.4",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-8",
+              "raw": "ENTREES",
+              "quote": "ENTREES",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Sheep's trotters, poulette",
+              "quote": "Sheep's trotters, poulette",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.5",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Braised beef with noodles",
+              "quote": "Braised beef with noodles",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "70",
+              "quote": "70",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.6",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "70",
+              "quote": "70",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Veal cutlet with tarragon",
+              "quote": "Veal cutlet with tarragon",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "85",
+              "quote": "85",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.7",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "85",
+              "quote": "85",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-9",
+              "raw": "Lamb hash, Créole",
+              "quote": "Lamb hash, Créole",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-9",
+              "raw": "80",
+              "quote": "80",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.8",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-9",
+              "raw": "80",
+              "quote": "80",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.9",
+              "kind": "section",
+              "field": "name",
+              "region_id": "p1-parser-10",
+              "raw": "ROAST",
+              "quote": "ROAST",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.9",
+              "kind": "section",
+              "field": "translated_name",
+              "region_id": "p1-parser-10",
+              "raw": "ROAST",
+              "quote": "ROAST",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-11",
+              "raw": "Leg of mutton",
+              "quote": "Leg of mutton",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-11",
+              "raw": "50",
+              "quote": "50",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.10",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-11",
+              "raw": "50",
+              "quote": "50",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "name",
+              "region_id": "p1-parser-12",
+              "raw": "Beef",
+              "quote": "Beef",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "price",
+              "region_id": "p1-parser-12",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            },
+            {
+              "local_id": "recovered.11",
+              "kind": "menu_item",
+              "field": "currency",
+              "region_id": "p1-parser-12",
+              "raw": "60",
+              "quote": "60",
+              "state": "readable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": false,
+      "original_capture": "not_established"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "menu",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.recovered.2",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.recovered.3",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.recovered.4",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.recovered.5",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.recovered.6",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.recovered.7",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.recovered.8",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      },
+      {
+        "id": "p1.recovered.9",
+        "kind": "section",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 8
+      },
+      {
+        "id": "p1.recovered.10",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 9
+      },
+      {
+        "id": "p1.recovered.11",
+        "kind": "menu_item",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 10
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.venue_name",
+        "entity_id": "p1.root",
+        "field": "venue_name",
+        "raw": "DELMONICOS.",
+        "value": "DELMONICOS.",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-13",
+            "quote": "DELMONICOS.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": "LUNCH.",
+        "value": "LUNCH.",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-3",
+            "quote": "LUNCH.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.date",
+        "entity_id": "p1.root",
+        "field": "date",
+        "raw": "WEDNESDAY, OCTOBER 7, 1896",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-4",
+            "quote": "WEDNESDAY, OCTOBER 7, 1896",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized month name",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.currency",
+        "entity_id": "p1.root",
+        "field": "currency",
+        "raw": "60",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.2.name",
+        "entity_id": "p1.recovered.2",
+        "field": "name",
+        "raw": "FISH",
+        "value": "FISH",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-6",
+            "quote": "FISH",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.2.description",
+        "entity_id": "p1.recovered.2",
+        "field": "description",
+        "raw": "Dishes Ready",
+        "value": "Dishes Ready",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "Dishes Ready",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.3.name",
+        "entity_id": "p1.recovered.3",
+        "field": "name",
+        "raw": "Skate black butter",
+        "value": "Skate black butter",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "Skate black butter",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.3.price",
+        "entity_id": "p1.recovered.3",
+        "field": "price",
+        "raw": "60",
+        "value": "60",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.3.currency",
+        "entity_id": "p1.recovered.3",
+        "field": "currency",
+        "raw": "60",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-7",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.4.name",
+        "entity_id": "p1.recovered.4",
+        "field": "name",
+        "raw": "ENTREES",
+        "value": "ENTREES",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-8",
+            "quote": "ENTREES",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.4.description",
+        "entity_id": "p1.recovered.4",
+        "field": "description",
+        "raw": "Dishes Ready",
+        "value": "Dishes Ready",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "Dishes Ready",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.4.translated_name",
+        "entity_id": "p1.recovered.4",
+        "field": "translated_name",
+        "raw": "ENTREES",
+        "value": "ENTREES",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-8",
+            "quote": "ENTREES",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.5.name",
+        "entity_id": "p1.recovered.5",
+        "field": "name",
+        "raw": "Sheep's trotters, poulette",
+        "value": "Sheep's trotters, poulette",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "Sheep's trotters, poulette",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.5.price",
+        "entity_id": "p1.recovered.5",
+        "field": "price",
+        "raw": "60",
+        "value": "60",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.5.currency",
+        "entity_id": "p1.recovered.5",
+        "field": "currency",
+        "raw": "60",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.6.name",
+        "entity_id": "p1.recovered.6",
+        "field": "name",
+        "raw": "Braised beef with noodles",
+        "value": "Braised beef with noodles",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "Braised beef with noodles",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.6.price",
+        "entity_id": "p1.recovered.6",
+        "field": "price",
+        "raw": "70",
+        "value": "70",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "70",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.6.currency",
+        "entity_id": "p1.recovered.6",
+        "field": "currency",
+        "raw": "70",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "70",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.7.name",
+        "entity_id": "p1.recovered.7",
+        "field": "name",
+        "raw": "Veal cutlet with tarragon",
+        "value": "Veal cutlet with tarragon",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "Veal cutlet with tarragon",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.7.price",
+        "entity_id": "p1.recovered.7",
+        "field": "price",
+        "raw": "85",
+        "value": "85",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "85",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.7.currency",
+        "entity_id": "p1.recovered.7",
+        "field": "currency",
+        "raw": "85",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "85",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.8.name",
+        "entity_id": "p1.recovered.8",
+        "field": "name",
+        "raw": "Lamb hash, Créole",
+        "value": "Lamb hash, Créole",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "Lamb hash, Créole",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.8.price",
+        "entity_id": "p1.recovered.8",
+        "field": "price",
+        "raw": "80",
+        "value": "80",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "80",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.8.currency",
+        "entity_id": "p1.recovered.8",
+        "field": "currency",
+        "raw": "80",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-9",
+            "quote": "80",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.9.name",
+        "entity_id": "p1.recovered.9",
+        "field": "name",
+        "raw": "ROAST",
+        "value": "ROAST",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-10",
+            "quote": "ROAST",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.9.description",
+        "entity_id": "p1.recovered.9",
+        "field": "description",
+        "raw": "Dishes Ready",
+        "value": "Dishes Ready",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-5",
+            "quote": "Dishes Ready",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.9.translated_name",
+        "entity_id": "p1.recovered.9",
+        "field": "translated_name",
+        "raw": "ROAST",
+        "value": "ROAST",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-10",
+            "quote": "ROAST",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.10.name",
+        "entity_id": "p1.recovered.10",
+        "field": "name",
+        "raw": "Leg of mutton",
+        "value": "Leg of mutton",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-11",
+            "quote": "Leg of mutton",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.10.price",
+        "entity_id": "p1.recovered.10",
+        "field": "price",
+        "raw": "50",
+        "value": "50",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-11",
+            "quote": "50",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.10.currency",
+        "entity_id": "p1.recovered.10",
+        "field": "currency",
+        "raw": "50",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-11",
+            "quote": "50",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.11.name",
+        "entity_id": "p1.recovered.11",
+        "field": "name",
+        "raw": "Beef",
+        "value": "Beef",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-12",
+            "quote": "Beef",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.11.price",
+        "entity_id": "p1.recovered.11",
+        "field": "price",
+        "raw": "60",
+        "value": "60",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-12",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.recovered.11.currency",
+        "entity_id": "p1.recovered.11",
+        "field": "currency",
+        "raw": "60",
+        "value": null,
+        "state": "ambiguous",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-12",
+            "quote": "60",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": "unrecognized currency",
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "model_record_id_recovered",
+        "message": "Repeated model IDs were replaced with distinct occurrence IDs.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu.date: unrecognized month name",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.date"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.3.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.5.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.6.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.7.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.8.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.10.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "ambiguous_reading",
+        "message": "menu_item.currency: unrecognized currency",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.11.currency"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "identical_translation",
+        "message": "translated_name equals name",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.4.translated_name"
+        ],
+        "severity": "info"
+      },
+      {
+        "code": "identical_translation",
+        "message": "translated_name equals name",
+        "page": 1,
+        "observation_ids": [
+          "p1.recovered.9.translated_name"
+        ],
+        "severity": "info"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]
