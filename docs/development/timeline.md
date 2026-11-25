@@ -15,5 +15,8 @@ Times are local to the target Mac on 2026-11-25 (Europe/Paris). Launch receipts 
 | 16:41–16:43 | QA reproduced sign, coverage and label defects. Opus reproduced versioning, export, review and mixed-PDF defects on dfa12df. |
 | 17:04–17:16 | Resumed interrupted transfers after host sleep and integrated fixes for the reproduced defects, structural corrections and scorer labels. The static-image and document cases stayed local. |
 | 17:24 | Opus rechecked the integrated 36b3200. All 294 package tests and 16 reviewer probes passed. Both end-to-end model runs still awaited pinned weights. |
+| 17:28–17:34 | All 100 pinned native parser packages passed the dependency check and imported under external denial. Standalone PP-DocLayoutV3 detected six regions. |
+| 17:35–17:46 | Claude Pro reached its account limit on two follow-ups. The lead integrated the specialists’ local drafts. Independent QA tested the resulting migration and metadata and reproduced a standalone foreign-key defect. The lead fixed lineage export and made the writing summary visible in review. |
+| 18:02–18:04 | The 1,917,255,968-byte Paddle recognizer passed SHA-256. The real offline full parser returned four recognized blocks in both runs. The production adapter independently captured two exhausted regions at a 32-token limit. |
 
 The contracts, evaluation harness and implementation progressed while the initial multi-gigabyte downloads were pending. Gate 1 inference had not passed when the implementation sessions started. Neither the worker receipts nor their tests establish route readiness; the final gate report records later production runs separately.

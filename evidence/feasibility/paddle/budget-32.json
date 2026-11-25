@@ -1,0 +1,94 @@
+{
+  "actual_blocks": 4,
+  "actual_boxes": 6,
+  "budget": {
+    "max_regions": 32,
+    "max_tokens_per_crop": 32
+  },
+  "calls": {
+    "crops": [
+      {
+        "cap_hit": false,
+        "crop_index": 1,
+        "eos_seen": true,
+        "generated_tokens": 7,
+        "token_limit": 32
+      },
+      {
+        "cap_hit": true,
+        "crop_index": 2,
+        "eos_seen": false,
+        "generated_tokens": 32,
+        "token_limit": 32
+      },
+      {
+        "cap_hit": true,
+        "crop_index": 3,
+        "eos_seen": false,
+        "generated_tokens": 32,
+        "token_limit": 32
+      },
+      {
+        "cap_hit": false,
+        "crop_index": 4,
+        "eos_seen": true,
+        "generated_tokens": 12,
+        "token_limit": 32
+      }
+    ],
+    "requested_crops": 4,
+    "returned_crops": 4
+  },
+  "components": {
+    "layout": {
+      "class": "LayoutAnalysisRunnerPredictor",
+      "device": "cpu"
+    },
+    "recognition": {
+      "class": "DocVLMLocalPredictor",
+      "device": "cpu"
+    }
+  },
+  "device": "cpu",
+  "fixture": "scripts/paddle-gate1-invoice.svg",
+  "input_pixels": [
+    700,
+    480
+  ],
+  "network_probe": {
+    "loopback": true,
+    "public_connect_errno": 1
+  },
+  "omitted_regions": 0,
+  "original_pixel_boxes": [
+    [
+      44,
+      39,
+      359,
+      73
+    ],
+    [
+      43,
+      92,
+      304,
+      150
+    ],
+    [
+      46,
+      178,
+      653,
+      307
+    ],
+    [
+      380,
+      358,
+      631,
+      391
+    ]
+  ],
+  "peak_rss_bytes": 10192420864,
+  "runtime_seconds": 22.361007874977076,
+  "token_limit_hits": 2,
+  "token_telemetry_complete": true,
+  "wall_seconds": 22.935306583007332
+}

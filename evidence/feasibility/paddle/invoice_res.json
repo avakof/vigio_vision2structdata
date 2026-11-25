@@ -1,0 +1,338 @@
+{
+    "input_path": "/Users/vakof/orca/vision-to-tables/.vt-state/paddle/output/invoice.png",
+    "page_index": null,
+    "page_count": null,
+    "width": 700,
+    "height": 480,
+    "model_settings": {
+        "use_doc_preprocessor": false,
+        "use_layout_detection": true,
+        "use_chart_recognition": false,
+        "use_seal_recognition": false,
+        "use_ocr_for_image_block": false,
+        "format_block_content": false,
+        "merge_layout_blocks": true,
+        "markdown_ignore_labels": [
+            "number",
+            "footnote",
+            "header",
+            "header_image",
+            "footer",
+            "footer_image",
+            "aside_text"
+        ],
+        "return_layout_polygon_points": true
+    },
+    "parsing_res_list": [
+        {
+            "block_label": "paragraph_title",
+            "block_content": "FACTURE / INVOICE",
+            "block_bbox": [
+                44,
+                39,
+                359,
+                73
+            ],
+            "block_id": 0,
+            "block_order": 1,
+            "group_id": 0,
+            "block_polygon_points": [
+                [
+                    44.0,
+                    39.0
+                ],
+                [
+                    359.0,
+                    39.0
+                ],
+                [
+                    359.0,
+                    73.0
+                ],
+                [
+                    44.0,
+                    73.0
+                ]
+            ]
+        },
+        {
+            "block_label": "text",
+            "block_content": "Papeterie Nuage (fictif)\nRéf. SYN-016 | 25/11/2026",
+            "block_bbox": [
+                43,
+                92,
+                304,
+                150
+            ],
+            "block_id": 1,
+            "block_order": 2,
+            "group_id": 1,
+            "block_polygon_points": [
+                [
+                    43.0,
+                    92.0
+                ],
+                [
+                    304.0,
+                    92.0
+                ],
+                [
+                    304.0,
+                    150.0
+                ],
+                [
+                    43.0,
+                    150.0
+                ]
+            ]
+        },
+        {
+            "block_label": "table",
+            "block_content": "<table><tr><td>Article / Item</td><td>Qté</td><td>Prix</td><td>Montant</td></tr><tr><td>Carnet</td><td>2</td><td>4,00 €</td><td>8,00 €</td></tr><tr><td>Stylo</td><td>1</td><td>2,00 €</td><td>2,00 €</td></tr></table>",
+            "block_bbox": [
+                46,
+                178,
+                653,
+                307
+            ],
+            "block_id": 2,
+            "block_order": null,
+            "group_id": 2,
+            "block_polygon_points": [
+                [
+                    46.0,
+                    178.0
+                ],
+                [
+                    653.0,
+                    178.0
+                ],
+                [
+                    653.0,
+                    307.0
+                ],
+                [
+                    46.0,
+                    307.0
+                ]
+            ]
+        },
+        {
+            "block_label": "vision_footnote",
+            "block_content": "Total TTC : 10,00 €",
+            "block_bbox": [
+                380,
+                358,
+                631,
+                391
+            ],
+            "block_id": 3,
+            "block_order": null,
+            "group_id": 3,
+            "block_polygon_points": [
+                [
+                    380.0,
+                    358.0
+                ],
+                [
+                    631.0,
+                    358.0
+                ],
+                [
+                    631.0,
+                    391.0
+                ],
+                [
+                    380.0,
+                    391.0
+                ]
+            ]
+        }
+    ],
+    "layout_det_res": {
+        "input_path": null,
+        "page_index": null,
+        "boxes": [
+            {
+                "cls_id": 17,
+                "label": "paragraph_title",
+                "score": 0.7734724283218384,
+                "coordinate": [
+                    44,
+                    39,
+                    359,
+                    73
+                ],
+                "order": 1,
+                "polygon_points": [
+                    [
+                        44.0,
+                        39.0
+                    ],
+                    [
+                        359.0,
+                        39.0
+                    ],
+                    [
+                        359.0,
+                        73.0
+                    ],
+                    [
+                        44.0,
+                        73.0
+                    ]
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.40545886754989624,
+                "coordinate": [
+                    44,
+                    92,
+                    265,
+                    119
+                ],
+                "order": 2,
+                "polygon_points": [
+                    [
+                        44.0,
+                        92.0
+                    ],
+                    [
+                        265.0,
+                        92.0
+                    ],
+                    [
+                        265.0,
+                        119.0
+                    ],
+                    [
+                        44.0,
+                        119.0
+                    ]
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.49159225821495056,
+                "coordinate": [
+                    43,
+                    92,
+                    304,
+                    150
+                ],
+                "order": 3,
+                "polygon_points": [
+                    [
+                        43.0,
+                        92.0
+                    ],
+                    [
+                        304.0,
+                        92.0
+                    ],
+                    [
+                        304.0,
+                        150.0
+                    ],
+                    [
+                        43.0,
+                        150.0
+                    ]
+                ]
+            },
+            {
+                "cls_id": 22,
+                "label": "text",
+                "score": 0.43155351281166077,
+                "coordinate": [
+                    44,
+                    123,
+                    304,
+                    150
+                ],
+                "order": 4,
+                "polygon_points": [
+                    [
+                        44.0,
+                        123.0
+                    ],
+                    [
+                        304.0,
+                        123.0
+                    ],
+                    [
+                        304.0,
+                        150.0
+                    ],
+                    [
+                        44.0,
+                        150.0
+                    ]
+                ]
+            },
+            {
+                "cls_id": 21,
+                "label": "table",
+                "score": 0.9610695242881775,
+                "coordinate": [
+                    46,
+                    178,
+                    653,
+                    307
+                ],
+                "order": null,
+                "polygon_points": [
+                    [
+                        46.0,
+                        178.0
+                    ],
+                    [
+                        653.0,
+                        178.0
+                    ],
+                    [
+                        653.0,
+                        307.0
+                    ],
+                    [
+                        46.0,
+                        307.0
+                    ]
+                ]
+            },
+            {
+                "cls_id": 24,
+                "label": "vision_footnote",
+                "score": 0.5336381196975708,
+                "coordinate": [
+                    380,
+                    358,
+                    631,
+                    391
+                ],
+                "order": null,
+                "polygon_points": [
+                    [
+                        380.0,
+                        358.0
+                    ],
+                    [
+                        631.0,
+                        358.0
+                    ],
+                    [
+                        631.0,
+                        391.0
+                    ],
+                    [
+                        380.0,
+                        391.0
+                    ]
+                ]
+            }
+        ]
+    }
+}

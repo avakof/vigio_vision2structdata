@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T17:24:00+01:00",
+  "as_of": "2026-11-25T18:04:00+01:00",
   "record": "integration checkpoint",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -14,10 +14,11 @@
     },
     "1_feasibility": {
       "status": "blocked",
-      "detail": "Provisioning native components. Actual image-generation and full parser results pending.",
+      "detail": "Full Paddle parser passed cold and warm. Direct Qwen image generation awaits shard 1.",
       "evidence": [
         "evidence/feasibility/processor.json",
-        "evidence/development/vision-paddle-gate1.md"
+        "evidence/development/vision-paddle-gate1.md",
+        "evidence/feasibility/paddle/report.json"
       ]
     },
     "2_contracts": {
@@ -67,5 +68,21 @@
   },
   "offline_production": {
     "status": "not_run"
+  },
+  "components": {
+    "native_full_parser": {
+      "status": "passed",
+      "evidence": [
+        "evidence/feasibility/paddle/report.json",
+        "evidence/feasibility/paddle/invoice_res.json",
+        "evidence/feasibility/paddle/budget-32.json"
+      ]
+    },
+    "direct_processor": {
+      "status": "passed",
+      "evidence": [
+        "evidence/feasibility/processor.json"
+      ]
+    }
   }
 }

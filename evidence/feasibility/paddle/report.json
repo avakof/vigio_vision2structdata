@@ -1,0 +1,61 @@
+{
+  "platform": "macOS-27.2.1-arm64-arm-64bit",
+  "python": "3.12.16",
+  "packages": {
+    "paddlepaddle": "3.2.1",
+    "paddleocr": "3.7.0",
+    "paddlex": "3.7.0",
+    "safetensors": "0.8.0"
+  },
+  "pipeline_version": "v1.6",
+  "paddle_device": "cpu",
+  "paddle_compiled_with_cuda": false,
+  "input_image_sha256": "0c9817ab13eddba0747ecd6d661bb4b9a8f9dbe004a2bf53bd9ff236ef4b5428",
+  "page_pixels": [
+    700,
+    480
+  ],
+  "layout": {
+    "class": "paddlex.inference.models.layout_analysis.predictor.LayoutAnalysisRunnerPredictor",
+    "device": "cpu",
+    "model_name": "PP-DocLayoutV3",
+    "dtype": null,
+    "revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3"
+  },
+  "recognition": {
+    "class": "paddlex.inference.models.doc_vlm.predictor.DocVLMLocalPredictor",
+    "device": "cpu",
+    "model_name": "PaddleOCR-VL-1.6-0.9B",
+    "dtype": "float32",
+    "revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd"
+  },
+  "init_seconds": 10.035661083005834,
+  "passes": [
+    {
+      "label": "cold",
+      "prediction_seconds": 15.838424750021659,
+      "peak_rss_bytes": 10063609856,
+      "layout_boxes": 6,
+      "recognized_blocks": 4,
+      "parser_result_sha256": "29f0256727d6775dac1e55ea85a52bce094c2947f1319a9161367e6606092f5e",
+      "markdown_sha256": "62d6a922b0ece6d88e57d1b567db8e7f2d907a2e6ad3328ef4e490ee5e447631"
+    },
+    {
+      "label": "warm",
+      "prediction_seconds": 15.70512475000578,
+      "peak_rss_bytes": 10065887232,
+      "layout_boxes": 6,
+      "recognized_blocks": 4,
+      "parser_result_sha256": "29f0256727d6775dac1e55ea85a52bce094c2947f1319a9161367e6606092f5e",
+      "markdown_sha256": "62d6a922b0ece6d88e57d1b567db8e7f2d907a2e6ad3328ef4e490ee5e447631"
+    }
+  ],
+  "status": "passed",
+  "command": "/usr/bin/time -l sandbox-exec -f tools/feasibility/offline.sb .vt-state/paddle/env/bin/python scripts/paddle-gate1.py",
+  "process_wall_seconds": 46.04,
+  "process_peak_rss_bytes": 10105159680,
+  "fixtures": 1,
+  "source_coordinates": "Top-left edges in original pixels, identity transform on the 700 by 480 fixture.",
+  "full_parser_result": "invoice_res.json",
+  "track": "native full parser before Qwen schema extraction"
+}
