@@ -69,8 +69,9 @@ document; skipped members of a group stay in its identity and are reported in `c
 | 130 | `cancelled` | SIGINT/SIGTERM. No partial version; see `error.next`. |
 
 `batch` returns the worst item: any failure 4, else incomplete 3, cancelled 130. `skipped` (unsupported
-extension) is explicit per item and does not fail a batch that also has supported files, but a directory with
-**no** supported file returns `failed`, exit 7, `error.code: no_supported_files`. A file that is not a regular
+extension) is explicit per item, lists the names in `skipped_inputs` and makes the batch `incomplete` (exit 3)
+because the directory was not fully read; a directory with **no** supported file returns `failed`, exit 7,
+`error.code: no_supported_files`. A file that is not a regular
 file, is a symlink, or exceeds `--max-bytes` is rejected before it is read (`source_too_large` / `invalid_input`,
 item `failed`, exit 4) and is retried automatically on the next run once it is acceptable. Every error has `code`, `message`, `next` and,
 for jobs, `artifact_root`.
@@ -106,6 +107,14 @@ descendant, so earlier human edits and approvals are preserved).
   the child is inserted (same transaction as the domain recomputation). Otherwise `stale_base` (exit 6).
   An identical correction file is recognised by the digest of its canonical contents **before** the stale check
   and returns the version it created (`status: replayed`).
+* A correction whose base descends from an extraction that a complete retry has **superseded** is rejected
+  as `stale_base` and names the live version to review, so reviewer edits can never be orphaned from the
+  version that reimport serves. Lineages of older, different-configuration extractions (for example an
+  approved one) stay reviewable.
+* Each export location tracks the formats it is *required* to hold (only grows) and those *published*
+  (migration 002). It is `published` only when required ⊆ published, so a later single-format
+  `export --format sqlite` can never discharge a pending JSON/CSV/review obligation; `jobs recover` publishes
+  every required format.
 * Snapshots, materialized observations, evidence links and issues are immutable (database triggers).
 * Possible duplicates (different source bytes; same invoice supplier and number, or ≥80% row-name overlap) are
   flagged in `possible_duplicates`/`review.json`. Nothing is merged or deleted.

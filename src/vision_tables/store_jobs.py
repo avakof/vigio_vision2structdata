@@ -372,7 +372,7 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
         status, code = "failed", EXIT_INVALID  # nothing was extractable; never a silent success
     elif counts.get("failed") or counts.get("pending") or counts.get("running"):
         status, code = "failed" if counts.get("failed") else "running", EXIT_FAILED
-    elif counts.get("incomplete"):
+    elif counts.get("incomplete") or counts.get("skipped"):  # a skipped input means the directory was not fully read
         status, code = "incomplete", EXIT_INCOMPLETE
     else:
         status, code = "completed", EXIT_OK
@@ -382,6 +382,10 @@ def run_batch(store: Store, input_dir: Path, output: Path, settings: Settings, *
               "items": [{"name": i["name"], "state": i["state"], "job_id": i["job_id"],
                          "source_sha256": i["source_sha256"], **(json.loads(i["detail_json"]) if i["detail_json"]
                                                                   else {})} for i in items]}
+    if unsupported and supported:
+        report["skipped_inputs"] = [{"name": n, "reason": "unsupported_extension"} for n in unsupported]
+        report["note"] = (f"{len(unsupported)} unsupported file(s) were skipped, so the batch is incomplete: "
+                          "convert them to JPEG, PNG, PDF or HEIC and rerun the same command.")
     if not supported:
         report["error"] = error_payload("no_supported_files", f"{input_dir} has no supported files "
                                         f"({', '.join(sorted(SUPPORTED_SUFFIXES))}); {len(unsupported)} skipped.")

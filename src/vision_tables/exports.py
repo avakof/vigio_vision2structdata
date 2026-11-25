@@ -363,7 +363,7 @@ def publish(store: Store, document_id: str, version: int, output_dir: Path | str
         body = (json.dumps(manifest, ensure_ascii=False, sort_keys=True, indent=2) + "\n").encode()
         _write_file(manifest_path, body)
     manifest_sha = digest_bytes(body)
-    store.mark_export(document_id, version, str(out), manifest_sha)
+    store.mark_export(document_id, version, str(out), manifest_sha, tuple(f for f in FORMATS if f in formats))
     return {"directory": str(target), "manifest": str(manifest_path), "manifest_sha256": manifest_sha,
             "snapshot_sha256": snapshot_sha, "files": sorted(merged)}
 

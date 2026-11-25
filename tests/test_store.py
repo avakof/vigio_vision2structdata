@@ -44,10 +44,11 @@ def test_migration_001_is_idempotent_and_checksummed(tmp_path):
     Store(tmp_path / "s")  # reopen: nothing re-applied
     with first.read() as conn:
         rows = conn.execute("SELECT version, name, checksum FROM schema_migrations").fetchall()
-    assert [(r[0], r[1]) for r in rows] == [(1, "initial")] and rows[0][2] == MIGRATIONS[0].checksum
+    assert [(r[0], r[1]) for r in rows] == [(1, "initial"), (2, "export_published_formats")]
+    assert [r[2] for r in rows] == [m.checksum for m in MIGRATIONS]
     conn = sqlite3.connect(first.path, isolation_level=None)
     assert apply_migrations(conn, "now") == []
-    tampered = (Migration(1, "initial", MIGRATIONS[0].statements[:-1]),)
+    tampered = (Migration(1, "initial", MIGRATIONS[0].statements[:-1]), MIGRATIONS[1])
     with raises("migration_mismatch"):
         apply_migrations(conn, "now", tampered)
     conn.execute("INSERT INTO schema_migrations VALUES (99,'future','x','now')")
@@ -327,3 +328,150 @@ def test_deterministic_ids_for_source_and_scope(settings):
     assert one.document_id == two.document_id and one.run.config_hash == two.run.config_hash
     assert hashlib.sha256(PNG).hexdigest() == one.source.sha256
     assert exports  # module imports cleanly
+
+
+def test_database_at_migration_001_upgrades_keeping_export_state(tmp_path):
+    state = tmp_path / "old"
+    state.mkdir()
+    conn = sqlite3.connect(state / "vision-tables.sqlite3", isolation_level=None)
+    apply_migrations(conn, "then", MIGRATIONS[:1])
+    for version, state_name in ((1, "published"), (2, "pending")):  # rows written by the 001 program
+        conn.execute("PRAGMA foreign_keys=OFF")
+        conn.execute("INSERT INTO exports VALUES ('d', ?, '/o', 'csv,json,review', ?, 'sha', 'then')",
+                     (version, state_name))
+    conn.close()
+    upgraded = Store(state)
+    with upgraded.read() as c:
+        rows = {r[0]: (r[1], r[2]) for r in c.execute("SELECT version, state, published_formats FROM exports")}
+    assert rows == {1: ("published", "csv,json,review"), 2: ("pending", "")}
+
+
+# -- review findings M1 / M2 ------------------------------------------------------------------------------
+def retry_candidate(store, settings, job):
+    data = build_document(job.job_id, settings, incomplete=True).model_dump(mode="json")
+    data.update(validation="issues", issues=[], coverage={"processed_pages": [1, 2], "skipped_pages": [],
+                                                           "source_skipped_pages": [], "incomplete_pages": []})
+    data["pages"].append({**data["pages"][0], "number": 2, "image_path": "pages/0002.png"})
+    from vision_tables.contracts import Document
+    return Document.model_validate(data)
+
+
+def test_correction_on_superseded_provisional_base_is_stale_and_edits_cannot_be_orphaned(store, settings):
+    _, first = persist(store, settings, incomplete=True)
+    did = first.document_id
+    job = store.create_job(kind="extract", input_path="x", output_dir="o", settings_json="{}")
+    got = store.persist_candidates(job.job_id, job.token, [retry_candidate(store, settings, job)])[0]
+    assert (got.action, got.version) == ("superseded", 2)
+    with raises("stale_base") as e:
+        store.apply_corrections(did, correction(did, 1), fake_apply)
+    assert counts(store)["document_versions"] == 2
+    ok = store.apply_corrections(did, correction(did, 2), fake_apply)  # the live lineage is reviewable
+    assert ok.version == 3
+    _, again = persist(store, settings, incomplete=True)  # reimport serves the edited descendant, not v1
+    assert again.version == 3 and again.action == "reused"
+
+
+def test_supersession_and_a_racing_correction_have_one_winner(store, settings):
+    _, first = persist(store, settings, incomplete=True)
+    did = first.document_id
+    job = store.create_job(kind="extract", input_path="x", output_dir="o", settings_json="{}")
+    candidate = retry_candidate(store, settings, job)
+    barrier, outcome = threading.Barrier(2), {}
+
+    def retry():
+        barrier.wait()
+        outcome["retry"] = store.persist_candidates(job.job_id, job.token, [candidate])[0].action
+
+    def edit():
+        barrier.wait()
+        try:
+            outcome["edit"] = store.apply_corrections(did, correction(did, 1), fake_apply).version
+        except Exception as exc:
+            outcome["edit"] = exc.code
+    threads = [threading.Thread(target=retry), threading.Thread(target=edit)]
+    [t.start() for t in threads]
+    [t.join() for t in threads]
+    served = store.get_document(did)
+    if outcome["retry"] == "superseded":  # retry won: the edit was rejected, nothing orphaned
+        assert outcome["edit"] == "stale_base" and served.version == 2 and not served.corrections
+    else:  # edit won: reviewer work is kept and the retry is discarded
+        assert outcome["retry"] == "reused" and outcome["edit"] == 2 and served.corrections
+    _, reimport = persist(store, settings, incomplete=True)
+    assert reimport.version == served.version
+
+
+def test_earlier_accepted_extraction_stays_reviewable_after_a_changed_config_extraction(store, settings):
+    _, first = persist(store, settings)
+    did = first.document_id
+    approved = store.apply_corrections(did, correction(did, 1, None, approve=True), fake_apply)
+    assert approved.document.approval == "human_approved"
+    _, newer = persist(store, settings.model_copy(update={"max_tokens": 4096}))
+    assert newer.action == "new_extraction" and newer.version == 3
+    # the accepted lineage is not superseded by a different configuration; further review still applies to it
+    follow = store.apply_corrections(did, correction(did, 2, "o-p1", "2.25"), fake_apply)
+    assert follow.base_version == 2 and follow.version == 4
+    assert store.get_document(did, 2).approval == "human_approved"  # historical snapshot untouched
+    with raises("stale_base"):
+        store.apply_corrections(did, correction(did, 2, "o-p0", "1.00"), fake_apply)
+
+
+def _export_row(store, did, version, out):
+    with store.read() as conn:
+        row = conn.execute("SELECT formats, published_formats, state FROM exports WHERE document_id=? AND version=?"
+                           " AND output_dir=?", (did, version, str(out))).fetchone()
+    return tuple(row)
+
+
+def test_narrow_export_never_discharges_a_pending_obligation(store, settings, tmp_path):
+    job, first = persist(store, settings)
+    out = (tmp_path / "o").resolve()
+    did = first.document_id
+    store.register_export(did, 1, str(out), ("json", "csv", "review"))
+    assert _export_row(store, did, 1, out) == ("json,csv,review", "", "pending")
+    exports.publish(store, did, 1, out, ("sqlite",))  # a later single-format export to the same place
+    assert _export_row(store, did, 1, out) == ("json,csv,review,sqlite", "sqlite", "pending")
+    assert [r["state"] for r in store.pending_exports() if r["output_dir"] == str(out)] == ["pending"]
+    done = exports.publish_pending(store)
+    target = out / did / "v0001"
+    assert [d["state"] for d in done if d["output_dir"] == str(out)] == ["published"]
+    assert {"document.json", "document.sqlite3", "manifest.json"} <= {p.name for p in target.iterdir()}
+    assert _export_row(store, did, 1, out) == ("json,csv,review,sqlite", "json,csv,review,sqlite", "published")
+    store.register_export(did, 1, str(out), ("json",))  # re-registering a done format is not a new obligation
+    assert _export_row(store, did, 1, out)[2] == "published"
+
+
+def test_registration_racing_publication_keeps_both_the_obligation_and_the_completed_formats(store, settings, tmp_path):
+    _, first = persist(store, settings)
+    did, out = first.document_id, (tmp_path / "o").resolve()
+    for _ in range(20):
+        store.register_export(did, 1, str(out), ("json",))
+        barrier = threading.Barrier(2)
+
+        def publish():
+            barrier.wait()
+            exports.publish(store, did, 1, out, ("json",))
+
+        def register():
+            barrier.wait()
+            store.register_export(did, 1, str(out), ("sqlite",))
+        threads = [threading.Thread(target=publish), threading.Thread(target=register)]
+        [t.start() for t in threads]
+        [t.join() for t in threads]
+        formats, published, state = _export_row(store, did, 1, out)
+        assert "sqlite" in formats and "json" in published and state == "pending"  # sqlite not yet written
+        exports.publish(store, did, 1, out, ("sqlite",))
+        assert _export_row(store, did, 1, out)[2] == "published"
+        with store.tx() as conn:  # reset for the next round
+            conn.execute("DELETE FROM exports")
+
+
+def test_correction_pending_export_survives_narrow_export_then_recovers(store, settings, tmp_path):
+    _, first = persist(store, settings)
+    did, out = first.document_id, (tmp_path / "o").resolve()
+    exports.publish(store, did, 1, out)
+    result = store.apply_corrections(did, correction(did, 1), fake_apply, extra_outputs=(str(out),))
+    assert result.output_dirs == [str(out)]
+    exports.publish(store, did, 2, out, ("sqlite",))
+    assert _export_row(store, did, 2, out)[2] == "pending"
+    exports.publish_pending(store)
+    assert (out / did / "v0002" / "document.json").is_file() and (out / did / "v0002" / "tables").is_dir()

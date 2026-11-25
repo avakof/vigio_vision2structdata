@@ -36,6 +36,7 @@ from .migrations import apply_migrations
 DB_NAME = "vision-tables.sqlite3"
 LEASE_SECONDS = 120.0
 DEFAULT_FORMATS = ("json", "csv", "review")
+FORMAT_ORDER = ("json", "csv", "review", "sqlite")
 _SCHEMA_VALIDATOR: Draft202012Validator | None = None
 
 
@@ -366,10 +367,7 @@ class Store:
                 results.append(self._persist_one(conn, doc))
             outputs = [(r.document_id, r.version) for r in results]
             for document_id, version in outputs:
-                conn.execute("INSERT INTO exports VALUES (?,?,?,?, 'pending', NULL, ?) ON CONFLICT(document_id,"
-                             " version, output_dir) DO UPDATE SET formats=excluded.formats, state='pending',"
-                             " manifest_sha256=NULL, updated_at=excluded.updated_at",
-                             (document_id, version, job["output_dir"], ",".join(DEFAULT_FORMATS), now_text()))
+                self._require_export(conn, document_id, version, job["output_dir"], DEFAULT_FORMATS)
             self._set_job(conn, job_id, token, "persisted", None, None, checked[0].source.sha256, False)
         return results
 
@@ -483,6 +481,14 @@ class Store:
                 raise ProcessingError("stale_base", f"Base version {changes.base_version} is no longer the latest of "
                                       f"its lineage (current version {head}). Re-export the current version and "
                                       "re-review; nothing was applied.")
+            owner = conn.execute("SELECT e.version FROM extractions e JOIN document_versions v ON"
+                                 " v.document_id=e.document_id AND v.config_hash=e.config_hash WHERE v.document_id=?"
+                                 " AND v.version=?", (document_id, base_row["base_version"])).fetchone()
+            if owner is not None and owner["version"] != base_row["base_version"]:
+                raise ProcessingError("stale_base", f"Base version {changes.base_version} descends from extraction "
+                                      f"{base_row['base_version']}, which was superseded by the complete retry "
+                                      f"version {owner['version']} of the same configuration. Review version "
+                                      f"{self._head(conn, document_id, owner['version'])}; nothing was applied.")
             base = self._load(conn, document_id, changes.base_version)
             try:
                 result = apply(base, changes)
@@ -510,9 +516,27 @@ class Store:
                                            (document_id,)) if Path(r[0]).is_dir()}
         dirs |= set(extra)
         for out in sorted(dirs):
-            conn.execute("INSERT OR IGNORE INTO exports VALUES (?,?,?,?, 'pending', NULL, ?)",
-                         (document_id, version, out, ",".join(DEFAULT_FORMATS), now_text()))
+            self._require_export(conn, document_id, version, out, DEFAULT_FORMATS)
         return sorted(dirs)
+
+    @staticmethod
+    def _require_export(conn, document_id: str, version: int, output_dir: str, formats, published=()) -> None:
+        """Grow the required format set and record published ones; state follows from the two sets.
+
+        Runs inside the caller's write transaction, so concurrent registration and publication cannot lose
+        either an obligation or a completed format.
+        """
+        row = conn.execute("SELECT formats, published_formats FROM exports WHERE document_id=? AND version=? AND"
+                           " output_dir=?", (document_id, version, output_dir)).fetchone()
+        need = set(formats) | (set(filter(None, row["formats"].split(","))) if row else set())
+        done = set(published) | (set(filter(None, row["published_formats"].split(","))) if row else set())
+        order = lambda items: ",".join(f for f in FORMAT_ORDER if f in items)  # noqa: E731
+        state = "published" if need <= done else "pending"
+        conn.execute("INSERT INTO exports (document_id, version, output_dir, formats, published_formats, state,"
+                     " manifest_sha256, updated_at) VALUES (?,?,?,?,?,?, NULL, ?) ON CONFLICT(document_id, version,"
+                     " output_dir) DO UPDATE SET formats=excluded.formats, published_formats=excluded.published_formats,"
+                     " state=excluded.state, updated_at=excluded.updated_at",
+                     (document_id, version, output_dir, order(need), order(done), state, now_text()))
 
     # -- reads ------------------------------------------------------------------------------
     def get_document(self, document_id: str, version: int | None = None) -> Document:
@@ -564,25 +588,22 @@ class Store:
         return [dict(r) for r in rows]
 
     def register_export(self, document_id: str, version: int, output_dir: str, formats: tuple[str, ...]) -> None:
+        """Record an obligation. Never clears a pending one and never marks anything published."""
         with self.tx("export") as conn:
-            row = conn.execute("SELECT formats FROM exports WHERE document_id=? AND version=? AND output_dir=?",
-                               (document_id, version, output_dir)).fetchone()
-            merged = sorted(set(formats) | (set(row["formats"].split(",")) if row else set()))
-            conn.execute("INSERT INTO exports VALUES (?,?,?,?, 'pending', NULL, ?) ON CONFLICT(document_id, version,"
-                         " output_dir) DO UPDATE SET formats=excluded.formats, state='pending',"
-                         " manifest_sha256=NULL, updated_at=excluded.updated_at",
-                         (document_id, version, output_dir, ",".join(merged), now_text()))
+            self._require_export(conn, document_id, version, output_dir, formats)
 
     def release(self, job_id: str, token: str) -> None:
         """Mark a still-unfinished job's lease expired so 'jobs recover' can take it over at once."""
         with self.tx("job") as conn:
             conn.execute("UPDATE jobs SET lease_expires_at=0 WHERE job_id=? AND owner_token=?", (job_id, token))
 
-    def mark_export(self, document_id: str, version: int, output_dir: str, manifest_sha256: str) -> None:
+    def mark_export(self, document_id: str, version: int, output_dir: str, manifest_sha256: str,
+                    formats: tuple[str, ...]) -> None:
+        """Record that exactly ``formats`` are now on disk. Other required formats stay pending."""
         with self.tx("export") as conn:
-            conn.execute("UPDATE exports SET state='published', manifest_sha256=?, updated_at=? WHERE document_id=?"
-                         " AND version=? AND output_dir=?", (manifest_sha256, now_text(), document_id, version,
-                                                             output_dir))
+            self._require_export(conn, document_id, version, output_dir, formats, published=formats)
+            conn.execute("UPDATE exports SET manifest_sha256=? WHERE document_id=? AND version=? AND output_dir=?",
+                         (manifest_sha256, document_id, version, output_dir))
 
 
 def _alive(pid: int | None) -> bool:

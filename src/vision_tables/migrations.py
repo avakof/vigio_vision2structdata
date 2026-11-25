@@ -144,7 +144,14 @@ class Migration:
         return hashlib.sha256("\n;\n".join(self.statements).encode()).hexdigest()
 
 
-MIGRATIONS = (Migration(1, "initial", tuple(_V1)),)
+# 002: an export row now separates the formats a location is *required* to hold (``formats``, only grows)
+# from those actually published (``published_formats``). A row is 'published' only when required is a subset.
+_V2 = [
+    "ALTER TABLE exports ADD COLUMN published_formats TEXT NOT NULL DEFAULT ''",
+    "UPDATE exports SET published_formats = formats WHERE state = 'published'",
+]
+
+MIGRATIONS = (Migration(1, "initial", tuple(_V1)), Migration(2, "export_published_formats", tuple(_V2)))
 LATEST = MIGRATIONS[-1].version
 
 

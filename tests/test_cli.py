@@ -270,11 +270,13 @@ def test_batch_reports_per_document_status_and_resumes_without_rework(run, monke
     assert code == 4 and calls == ["a.png", "b.png", "c.pdf"] and second["batch_id"] == first["batch_id"]
     state["fail"] = False
     code, third = run("batch", str(inbox), "--output", str(run.tmp / "out"), "--retry-failed")
-    assert code == 0 and calls[3:] == ["b.png"] and third["counts"] == {"completed": 3, "skipped": 1}
+    assert code == 3 and calls[3:] == ["b.png"] and third["counts"] == {"completed": 3, "skipped": 1}
+    assert third["status"] == "incomplete" and third["skipped_inputs"] == [
+        {"name": "notes.txt", "reason": "unsupported_extension"}] and "skipped" in third["note"]
     # a changed file is processed again
     (inbox / "a.png").write_bytes(PNG + b"a edited")
     code, fourth = run("batch", str(inbox), "--output", str(run.tmp / "out"))
-    assert code == 0 and calls[4:] == ["a.png"]
+    assert code == 3 and calls[4:] == ["a.png"]  # still incomplete: notes.txt remains unprocessed
 
 
 def test_batch_cancellation_is_recoverable(run, monkeypatch):
