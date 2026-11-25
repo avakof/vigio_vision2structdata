@@ -277,16 +277,48 @@ def _parser_regions(page, reply, first_order):
     if (reply["width"], reply["height"]) != (page.image_width, page.image_height):
         raise ProcessingError("invalid_parser_geometry", "Parser page size does not match the rendered page.")
     regions = []
+    degraded = 0
     for index, block in enumerate(reply["blocks"][:_PARSER_REGIONS]):
-        bounds = box(page.image_to_original, block["block_bbox"], page.width, page.height)
         text = block["block_content"]
-        if bounds and isinstance(text, str) and text.strip():
-            if block["block_label"] == "table" and "<" in text:
-                text = _table_excerpt(text)
-            regions.append(Region(id=f"p{page.number}-parser-{index}", page=page.number, order=first_order + index,
-                                  kind=f"parser_{block['block_label']}", text=text[:16384],
-                                  box=Box(xyxy=bounds, precision="parser_region")))
-    return regions
+        if not isinstance(text, str):
+            degraded += 1
+            continue
+        if not text.strip():
+            continue
+        try:
+            bounds = box(page.image_to_original, block["block_bbox"], page.width, page.height)
+        except (KeyError, TypeError, ValueError):
+            bounds = None
+        if block["block_label"] == "table" and "<" in text:
+            text = _table_excerpt(text)
+        if not bounds or len(text) > 16384 or not text.strip():
+            degraded += 1
+        regions.append(Region(id=f"p{page.number}-parser-{index}", page=page.number, order=first_order + index,
+                              kind=f"parser_{block['block_label']}", text=text[:16384],
+                              box=Box(xyxy=bounds, precision="parser_region") if bounds else None))
+    return regions, degraded
+
+
+def _parser_token_status(telemetry, token_limit):
+    """Validate exact counts and require an observed stop for every uncapped crop."""
+    if not isinstance(telemetry, dict) or not isinstance(crops := telemetry.get("crops"), list):
+        return 0, False
+    requested, returned = telemetry.get("requested_crops"), telemetry.get("returned_crops")
+    complete = (type(requested) is int and type(returned) is int and requested > 0
+                and requested == returned == len(crops))
+    hits = 0
+    for index, crop in enumerate(crops, 1):
+        if not isinstance(crop, dict):
+            complete = False
+            continue
+        count = crop.get("generated_tokens")
+        cap = crop.get("cap_hit")
+        valid = (type(crop.get("crop_index")) is int and crop["crop_index"] == index
+                 and type(crop.get("token_limit")) is int and crop["token_limit"] == token_limit
+                 and type(count) is int and 0 < count <= token_limit and cap is (count == token_limit))
+        hits += int(valid and cap is True)
+        complete = complete and valid and (cap is True or crop.get("eos_seen") is True)
+    return hits, complete
 
 
 def _table_excerpt(content):
@@ -489,22 +521,38 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
                 "artifact_dir": relative, "image_path": page.image_path, "channel": "parser", "status": "failed"}
         calls.append(call)
         try:
+            parser_token_limit = min(768, settings.max_tokens)
             reply = runtime_local.call("paddle", {"image": str(image), "max_regions": _PARSER_REGIONS,
-                                                 "max_tokens": min(768, settings.max_tokens)}, directory, settings)
-            added = _parser_regions(page, reply, max((r.order for r in native), default=-1) + 1)
-            if not added or not reply.get("layout", {}).get("boxes"):
-                raise ProcessingError("no_parser_regions", "The full parser returned no usable layout and recognition result.")
+                                                 "max_tokens": parser_token_limit}, directory, settings)
+            telemetry = reply.get("recognition_tokens")
+            hits, telemetry_complete = _parser_token_status(telemetry, parser_token_limit)
+            call.update(token_limit=parser_token_limit, recognition_tokens=telemetry,
+                        token_limit_hits=hits, token_telemetry_complete=telemetry_complete)
+            if hits:
+                partial = True
+                issue("parser_token_limit", f"Native recognition reached its token limit on {hits} crop(s).")
+            if not telemetry_complete:
+                partial = True
+                issue("parser_token_telemetry_missing", "The native parser did not provide a verified token count and stop for every crop.")
+            added, degraded = _parser_regions(page, reply, max((r.order for r in native), default=-1) + 1)
+            if degraded:
+                partial = True
+                issue("parser_content_incomplete", f"The parser returned missing geometry or unrepresentable content in {degraded} block(s).")
             omitted = reply["omitted_regions"] + max(0, len(reply["blocks"]) - _PARSER_REGIONS)
             if omitted:
                 partial = True
                 issue("parser_region_limit", f"The parser omitted {omitted} regions at its configured limit.")
             call.update({key: reply[key] for key in ("device", "components", "runtime_seconds", "peak_rss_bytes",
                                                    "seconds_including_lock_wait") if key in reply})
-            call.update(status="incomplete" if omitted else "parsed", omitted_regions=omitted)
+            call.update(omitted_regions=omitted, degraded_blocks=degraded)
+            if not added or not reply.get("layout", {}).get("boxes"):
+                raise ProcessingError("no_parser_regions", "The full parser returned no usable layout and recognition result.")
+            call["status"] = "incomplete" if hits or not telemetry_complete or omitted or degraded else "parsed"
         except ProcessingError as exc:
             call["error"] = exc.code
             issue(exc.code, str(exc))
-            return PageReading(page=page.number, doc_type="unknown", incomplete=True, issues=issues, calls=calls)
+            return PageReading(page=page.number, doc_type="unknown", incomplete=True, issues=issues, calls=calls,
+                               regions=added)
         except (KeyError, TypeError, ValueError):
             call["error"] = "invalid_parser_reply"
             issue("invalid_parser_reply", "The full parser did not return usable page evidence.")
@@ -513,6 +561,14 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
             write_json(directory / "attempt.json", call)
 
     offered, text = _region_prompt([*native, *added], page)
+    if settings.pipeline == "hybrid":
+        context_omissions = sum(region.id not in offered for region in added)
+        if context_omissions:
+            partial = True
+            issue("parser_context_limit", "The page prompt budget excluded some native parser regions.")
+            call = calls[0]
+            call.update(status="incomplete", context_omitted_regions=context_omissions)
+            write_json(artifact_root / call["artifact_dir"] / "attempt.json", call)
     native_only = page.text_layer == "usable" and bool(native) and len(offered) == len(native) and not added
     base = None
     for index in range(1 + settings.retries):

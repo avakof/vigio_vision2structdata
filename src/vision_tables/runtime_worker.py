@@ -56,6 +56,74 @@ class BoundedLayout:
             yield result
 
 
+def _native_generated_sequence(model, inputs, result, limit):
+    """Read PaddleX 3.7's (generated_ids, scores) before text postprocessing."""
+    unknown = {"generated_tokens": None, "token_limit": limit if type(limit) is int else None,
+               "cap_hit": None, "eos_seen": None}
+    config = getattr(model, "generation_config", None)
+    if getattr(config, "trunc_input", None) is not True or type(limit) is not int or limit < 1:
+        return unknown
+    try:
+        # The pinned native parser uses batch size one. This excludes EOS padding from other rows.
+        if inputs["input_ids"].shape[0] != 1 or not isinstance(result, tuple) or len(result) != 2:
+            return unknown
+        tokens, = result[0].tolist()
+    except (AttributeError, IndexError, KeyError, RuntimeError, TypeError, ValueError):
+        return unknown
+    if not isinstance(tokens, list) or any(type(token) is not int for token in tokens) or len(tokens) > limit:
+        return unknown
+    eos = getattr(config, "eos_token_id", None)
+    if eos is None:
+        eos = getattr(getattr(model, "config", None), "eos_token_id", None)
+    eos_ids = [eos] if type(eos) is int else eos
+    eos_seen = (bool(tokens and tokens[-1] in eos_ids)
+                if isinstance(eos_ids, (tuple, list)) and eos_ids else None)
+    return {"generated_tokens": len(tokens), "token_limit": limit,
+            "cap_hit": len(tokens) == limit, "eos_seen": eos_seen}
+
+
+class MeasuredRecognition:
+    """Observe native sequences while leaving recognition input and output intact."""
+
+    def __init__(self, predictor):
+        self.predictor = predictor
+        self.requested_crops = 0
+        self.returned_crops = 0
+        self.crops = []
+
+    def __getattr__(self, name):
+        return getattr(self.predictor, name)
+
+    def predict(self, items, *args, **kwargs):
+        self.requested_crops += len(items)
+        model = getattr(self.predictor, "infer", None)
+        generate = getattr(model, "generate", None)
+
+        def observe(inputs, **options):
+            result = generate(inputs, **options)
+            self.crops.append(_native_generated_sequence(model, inputs, result, options.get("max_new_tokens")))
+            return result
+
+        installed = False
+        if callable(generate):
+            try:
+                model.generate = observe
+                installed = True
+            except (AttributeError, TypeError):
+                pass  # Decoded blocks remain available even if the telemetry hook is unavailable.
+        try:
+            for result in self.predictor.predict(items, *args, **kwargs):
+                self.returned_crops += 1
+                yield result
+        finally:
+            if installed:
+                model.generate = generate
+
+    def report(self):
+        return {"requested_crops": self.requested_crops, "returned_crops": self.returned_crops,
+                "crops": [dict(crop_index=index, **crop) for index, crop in enumerate(self.crops, 1)]}
+
+
 def paddle_parse(request):
     import paddle
     from paddleocr import PaddleOCRVL
@@ -70,16 +138,19 @@ def paddle_parse(request):
     )
     inner = pipeline.paddlex_pipeline._pipeline
     layout = BoundedLayout(inner.layout_det_model, request["max_regions"])
+    recognition = MeasuredRecognition(inner.vl_rec_model)
     inner.layout_det_model = layout
+    inner.vl_rec_model = recognition
     (page,) = pipeline.predict(request["image"], max_new_tokens=request["max_tokens"])
     serial = page.json["res"]
     return {
         "layout": serial["layout_det_res"], "blocks": serial["parsing_res_list"],
         "width": serial["width"], "height": serial["height"],
         "omitted_regions": layout.omitted, "device": paddle.device.get_device(),
+        "recognition_tokens": recognition.report(),
         "components": {
             name: {"class": type(predictor).__name__, "device": getattr(predictor, "device", None)}
-            for name, predictor in (("layout", layout.predictor), ("recognition", inner.vl_rec_model))
+            for name, predictor in (("layout", layout.predictor), ("recognition", recognition.predictor))
         },
     }
 
