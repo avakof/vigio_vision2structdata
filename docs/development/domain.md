@@ -124,3 +124,5 @@ issues and approval are recomputed; a later edit resets approval.
   are ambiguous, never guessed.
 
 Optional bounded adapter hints retain the source language and visible writing style of a quoted reading. Direct image readings can carry a boxless page-style summary linked to the source image. When a parser region or a reread crop grounds the reading, its style can be attached there. Locale and ambiguous dates keep their independent normalization rules. A page summary cannot justify pairing translations by layout.
+
+A bilingual pairing requires both source names on the same paired line or mutually aligned nearby text spans. A page image, broad crop or one grounded name leaves an explicit review issue. After checking the source, a reviewer can confirm the translated field on its item or correct the pairing. The prior observations remain in version history.

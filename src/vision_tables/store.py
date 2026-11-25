@@ -401,7 +401,6 @@ class Store:
         conn.execute("INSERT INTO extractions VALUES (?,?,?,?) ON CONFLICT(document_id, config_hash)"
                      " DO UPDATE SET version=excluded.version, finality=excluded.finality",
                      (did, stamped.run.config_hash, number, finality))
-        self._link_duplicates(conn, stamped, now)
         return Persisted(did, number, number, latest, action, number, stamped, self._duplicates(conn, did))
 
     @staticmethod
@@ -417,9 +416,14 @@ class Store:
                       doc.run.job_id, doc.validation, doc.approval, reviewer, payload.decode(),
                       digest_bytes(payload), json.dumps(signature(doc), sort_keys=True), now))
         materialize(conn, doc)
+        conn.execute("UPDATE documents SET doc_type=? WHERE document_id=? AND doc_type!=?",
+                     (doc.doc_type, doc.document_id, doc.doc_type))
+        self._link_duplicates(conn, doc, now)
 
     def _link_duplicates(self, conn, doc: Document, now: str) -> None:
         mine = signature(doc)
+        conn.execute("DELETE FROM duplicate_links WHERE status='review' AND (document_id=? OR other_document_id=?)",
+                     (doc.document_id, doc.document_id))
         rows = conn.execute(
             "SELECT v.document_id, v.signature_json FROM document_versions v JOIN documents d USING (document_id)"
             " WHERE d.doc_type=? AND d.source_sha256 != ? AND v.document_id != ? AND v.version ="
@@ -700,8 +704,9 @@ def copy_version(store: Store, destination: sqlite3.Connection, document_id: str
     document = Document.model_validate_json(row["snapshot_json"])
     destination.execute("BEGIN IMMEDIATE")
     try:
-        for table, data in (("sources", src_row), ("documents", doc_row)):
-            destination.execute(f"INSERT INTO {table} VALUES ({','.join('?' * len(data.keys()))})", tuple(data))
+        selected_identity = dict(doc_row) | {"doc_type": document.doc_type}
+        for table, data in (("sources", tuple(src_row)), ("documents", tuple(selected_identity.values()))):
+            destination.execute(f"INSERT INTO {table} VALUES ({','.join('?' * len(data))})", tuple(data))
         destination.executemany("INSERT INTO export_lineage VALUES (?,?,?,?,?)", lineage)
         destination.execute(f"INSERT INTO document_versions VALUES ({','.join('?' * len(row))})", tuple(row))
         materialize(destination, document)

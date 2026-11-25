@@ -459,3 +459,40 @@ def test_tie_and_unknown_classification_paths_are_incomplete_too():
     assert _mixed(EXAMPLES["invoice"](1), foreign_kind).coverage.incomplete_pages == [2]
     all_unknown = build(PageReading(page=1, doc_type="unknown", records=[rec("unknown", "u", description=f("?"))]))
     assert all_unknown.coverage.incomplete_pages == [1]
+
+
+@pytest.mark.parametrize("placement,paired", [
+    ("page-only", False), ("one-side", False), ("separate_columns", False), ("coarse_crop", False),
+    ("shared_line", True), ("adjacent_spans", True),
+])
+def test_menu_translation_requires_evidence_for_the_pair(placement, paired):
+    from vision_tables.contracts import Box, CorrectionSet
+    from vision_tables.domain import apply_corrections
+
+    def region(identifier, text, x, width, precision="native_text"):
+        return Region(id=identifier, page=1, order=x, kind=precision, text=text,
+                      box=Box(xyxy=(x, 12, x + width, 27), precision=precision))
+
+    locations = []
+    original = translated = None
+    if placement in ("one-side", "separate_columns", "adjacent_spans"):
+        locations.append(region("en", "Soup", 5, 36))
+        original = "en"
+        if placement != "one-side":
+            locations.append(region("fr", "Soupe", 45 if placement == "adjacent_spans" else 680, 40))
+            translated = "fr"
+    elif placement in ("coarse_crop", "shared_line"):
+        original = translated = "pair"
+        locations.append(region("pair", "Soup / Soupe", 3, 100, "crop" if placement == "coarse_crop" else "native_text"))
+    reading = PageReading(page=1, doc_type="menu", regions=locations, records=[
+        rec("menu", "m", currency=f("EUR"), venue_name=f("Bistro")),
+        rec("menu_item", "i", "m", name=f("Soup", language="en", region_id=original),
+            translated_name=f("Soupe", language="fr", region_id=translated), price=f("4,50"))])
+    doc = build(reading)
+    assert ("translation_without_layout_evidence" in codes(doc, "review")) is not paired
+    assert review_gate(doc)["approvable"] == paired
+    if not paired:
+        correction = CorrectionSet(document_id=doc.document_id, base_version=doc.version, reviewer="Fixture reviewer",
+                                   changes=[{"observation_id": "p1.i.translated_name", "raw": "Soupe",
+                                             "value": "Soupe", "reason": "Source confirms this is the same item."}])
+        assert review_gate(apply_corrections(doc, correction))["approvable"]

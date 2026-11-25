@@ -175,9 +175,14 @@ _V3 = [
     "BEGIN SELECT RAISE(ABORT, 'regions rows are immutable'); END",
 ]
 
+_V4 = ("""UPDATE documents SET doc_type=COALESCE((
+    SELECT json_extract(v.snapshot_json, '$.doc_type') FROM document_versions v
+    WHERE v.document_id=documents.document_id ORDER BY v.version DESC LIMIT 1), doc_type)""",)
+
 MIGRATIONS = (Migration(1, "initial", tuple(_V1)),
               Migration(2, "export_published_formats", tuple(_V2)),
-              Migration(3, "review_severity_and_crop_transforms", tuple(_V3)))
+              Migration(3, "review_severity_and_crop_transforms", tuple(_V3)),
+              Migration(4, "latest_document_type", _V4))
 # A standalone export carries one complete snapshot. Its parent is identified
 # by number and hash in export_lineage; ancestor document data stays in the store.
 _EXPORT_LINEAGE = """CREATE TABLE export_lineage (

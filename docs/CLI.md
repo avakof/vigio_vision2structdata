@@ -117,6 +117,7 @@ descendant, so earlier human edits and approvals are preserved).
   every required format.
 * Snapshots, materialized observations, evidence links and issues are immutable (database triggers).
 * Migration 003 backfills issue severities and crop transforms from each immutable snapshot. CSV, review JSON and standalone SQLite expose the same per-version metadata.
+* Migration 004 aligns the document list and duplicate suggestions with the latest classification. A selected-version export keeps the classification recorded for that version.
 * Possible duplicates (different source bytes; same invoice supplier and number, or ≥80% row-name overlap) are
   flagged in `possible_duplicates`/`review.json`. Nothing is merged or deleted.
 

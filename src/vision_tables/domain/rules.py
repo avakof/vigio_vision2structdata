@@ -9,6 +9,7 @@ reported (info) rather than hidden.
 """
 from __future__ import annotations
 
+import re
 from decimal import ROUND_HALF_UP, Decimal
 from fractions import Fraction
 
@@ -194,7 +195,7 @@ def recompute(doc_type: str, entities: list[Entity], observations: list[Observat
     if doc_type == "invoice":
         _invoice(v, ents, add, note, calc, unrounded, currency_of, view)
     elif doc_type == "menu":
-        _menu(v, ents, note, {region.id for region in regions if region.box})
+        _menu(v, ents, note, {r.id: r for r in regions if r.box and r.box.precision != "crop"})
     elif doc_type == "recipe":
         _recipe(v, ents, note, roots)
     _common_rows(v, ents, note)
@@ -365,6 +366,38 @@ def _invoice(v: View, ents, add, note, calc, unrounded, currency_of, view):
                  [total_id, f"{root.id}.calculated_total"])
 
 
+def _paired_translation(original, translated, spatial_regions):
+    """Check both readings against a paired line or two nearby text boxes on one baseline."""
+    def locations(obs):
+        return [spatial_regions[ref.region_id] for ref in obs.evidence
+                if ref.region_id in spatial_regions and obs.raw
+                and fold(obs.raw) in fold(spatial_regions[ref.region_id].text)]
+
+    if not all(fold(obs.raw or "") for obs in (original, translated)):
+        return False
+    left_name, right_name = (re.escape(fold(obs.raw or "")) for obs in (original, translated))
+    separator = r"[\s/|():–—-]+"
+    paired = re.compile(rf"(?<!\w)(?:{left_name}{separator}{right_name}|{right_name}{separator}{left_name})(?!\w)")
+    for left in locations(original):
+        for right in locations(translated):
+            if left.page != right.page:
+                continue
+            if left.id == right.id:
+                if any(paired.search(fold(line)) for line in left.text.splitlines()):
+                    return True
+                continue
+            if len(left.text.splitlines()) != 1 or len(right.text.splitlines()) != 1:
+                continue
+            x0, y0, x1, y1 = left.box.xyxy
+            u0, v0, u1, v1 = right.box.xyxy
+            height = min(y1 - y0, v1 - v0)
+            overlap = min(y1, v1) - max(y0, v0)
+            gap = max(x0 - u1, u0 - x1, 0)
+            if overlap >= 0.6 * max(y1 - y0, v1 - v0) and gap <= 2 * height:
+                return True
+    return False
+
+
 def _menu(v: View, ents, note, spatial_regions):
     for eid in v.order:
         entity = ents[eid]
@@ -392,8 +425,8 @@ def _menu(v: View, ents, note, spatial_regions):
                 note("identical_translation", f"{translated} equals {plain}", entity, [b.id])
             elif a.language and b.language and a.language == b.language:
                 note("translation_same_language", f"{plain} and {translated} are both {a.language}", entity, [a.id, b.id])
-            elif not any(ev.region_id in spatial_regions for ev in a.evidence + b.evidence):
-                note("translation_without_layout_evidence", f"{translated} paired without region evidence", entity, [b.id])
+            elif b.origin != "human_supplied" and not _paired_translation(a, b, spatial_regions):
+                note("translation_without_layout_evidence", f"Confirm that {translated} belongs to this source name.", entity, [a.id, b.id])
 
 
 def _recipe(v: View, ents, note, roots):

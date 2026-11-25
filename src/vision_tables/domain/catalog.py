@@ -46,7 +46,7 @@ CATALOG = {
     "invalid_item_ref": ("review", "menu", "Correct item_ref to an existing menu item."),
     "translation_same_language": ("review", "menu", "Confirm the translation pairing; both readings carry the same language."),
     "replacement_without_crossout": ("review", "*", "Mark the original crossed_out or remove the replacement reading."),
-    "translation_without_layout_evidence": ("info", "menu", "The pairing has no region evidence; confirm the translation belongs to this dish."),
+    "translation_without_layout_evidence": ("review", "menu", "The pairing has no region evidence; confirm the translation belongs to this dish."),
     "identical_translation": ("info", "menu", "The translated text equals the original."),
     "item_without_price": ("info", "menu", "No price was read for this item."),
     "price_and_variants": ("info", "menu", "The item has its own price and priced variants."),

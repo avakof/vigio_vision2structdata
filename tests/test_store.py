@@ -45,7 +45,7 @@ def test_migration_001_is_idempotent_and_checksummed(tmp_path):
     with first.read() as conn:
         rows = conn.execute("SELECT version, name, checksum FROM schema_migrations").fetchall()
     assert [(r[0], r[1]) for r in rows] == [(1, "initial"), (2, "export_published_formats"),
-                                               (3, "review_severity_and_crop_transforms")]
+                                               (3, "review_severity_and_crop_transforms"), (4, "latest_document_type")]
     assert [r[2] for r in rows] == [m.checksum for m in MIGRATIONS]
     conn = sqlite3.connect(first.path, isolation_level=None)
     assert apply_migrations(conn, "now") == []

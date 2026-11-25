@@ -205,3 +205,24 @@ def test_unknown_format_is_rejected(env):
     with pytest.raises(Exception, match="Unknown export format"):
         exports.publish(store, got.document_id, 1, tmp / "o", ("xlsx",))
     assert os.listdir(tmp) == ["state"]  # nothing created for a rejected request
+
+
+def test_reclassification_lists_latest_and_preserves_exported_type_per_version(env):
+    from vision_tables.domain import assemble
+    from vision_tables.domain.examples import EXAMPLES, example_context
+
+    store, settings, tmp = env
+    ingested, run = example_context()
+    for n, family in enumerate(("invoice", "menu"), 1):
+        job = store.create_job(kind="extract", input_path="example", output_dir=str(tmp), settings_json="{}")
+        current = run.model_copy(update={"job_id": job.job_id, "config_hash": str(n) * 64})
+        doc = assemble(ingested, [EXAMPLES[family]()], [1], current, "same-doc")
+        store.persist_candidates(job.job_id, job.token, [doc])
+    assert store.list_documents()[0]["doc_type"] == "menu"
+    for n, family in enumerate(("invoice", "menu"), 1):
+        result = Path(exports.publish(store, "same-doc", n, tmp, exports.FORMATS)["directory"])
+        assert read_csv(result / "tables/documents.csv")[0]["doc_type"] == family
+        assert json.loads((result / "document.json").read_bytes())["doc_type"] == family
+        with sqlite3.connect(result / "document.sqlite3") as db:
+            assert db.execute("SELECT doc_type FROM documents").fetchone()[0] == family
+            assert db.execute("PRAGMA foreign_key_check").fetchall() == []
