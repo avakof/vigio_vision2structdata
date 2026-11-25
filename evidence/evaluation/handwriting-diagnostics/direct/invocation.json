@@ -1,0 +1,25 @@
+{
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "fixture_commit": "f6191ca",
+  "manifest_sha256": "28bc671002b55afc9e103b7abd0a42e1fbb6683c1187b054c45a011bb78a130e",
+  "started_utc": "2026-11-25T18:11:04.318659+00:00",
+  "command": [
+    "/Users/vakof/orca/vision-to-tables/.venv/bin/python",
+    "/Users/vakof/orca/vision-to-tables/.vt-state/diagnostic-candidates/bcffc67782a0b786531e6c09d4b5e7583ed63cc8/tools/verify_offline.py",
+    "evaluate",
+    "/Users/vakof/orca/vision-to-tables/fixtures/handwriting-diagnostics/manifest.json",
+    "--output",
+    "/Users/vakof/orca/vision-to-tables/evidence/evaluation/handwriting-diagnostics/direct",
+    "--pipeline",
+    "direct",
+    "--state-dir",
+    "/Users/vakof/orca/vision-to-tables/.vt-state",
+    "--lock-file",
+    "/Users/vakof/orca/vision-to-tables/.vt-state/inference.lock"
+  ],
+  "application_source": "Isolated git archive of src/, tools/, scripts/ and pyproject.toml at candidate_commit.",
+  "phase": "fresh CLI process per route, uncontrolled filesystem cache",
+  "finished_utc": "2026-11-25T18:12:26.990279+00:00",
+  "wall_seconds": 82.67165437500807,
+  "exit_code": 0
+}

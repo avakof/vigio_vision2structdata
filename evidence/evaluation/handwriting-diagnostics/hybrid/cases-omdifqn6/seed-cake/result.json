@@ -1,0 +1,1350 @@
+[
+  {
+    "document_id": "doc-2d1bd79c4ade5aec72b25ad3064733ad",
+    "version": 1,
+    "parent_version": null,
+    "doc_type": "recipe",
+    "scope": [
+      1
+    ],
+    "source": {
+      "sha256": "d481aabefe5c789c24d64eeb6bb4f92f9ac70253ad4397c321fd5a88ff538e5f",
+      "media_type": "image/png",
+      "size_bytes": 1530922,
+      "page_count": 1,
+      "original_path": "original"
+    },
+    "pages": [
+      {
+        "number": 1,
+        "width": 1446.0,
+        "height": 750.0,
+        "unit": "px",
+        "image_path": "pages/0001.png",
+        "image_width": 1446,
+        "image_height": 750,
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "text_layer": "absent"
+      }
+    ],
+    "regions": [
+      {
+        "id": "p1-parser-0",
+        "page": 1,
+        "order": 0,
+        "kind": "parser_text",
+        "text": "A Seed Cake  \nFakes of Butter, work it with your hands, till  \n(8.11) its no thicker then cream, y.n.put in y.golks  \nof 2 LCGGS beat up by degrees, take  \nthe white W beat V work them in  \nby degrees, take 3 of flower, 43 of sugar  \ndried  \nof caraway veed, W a little sack cover it par  \nwith a thin past W butter it, y.t it may slip  \nout, you must keep it stirring till its in the  \nOven, which must be Berg hot.",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            35.0,
+            3.0,
+            1422.0,
+            750.0
+          ],
+          "space": "original_top_left",
+          "precision": "parser_region"
+        },
+        "artifact_path": null,
+        "artifact_sha256": null,
+        "crop_to_original": null
+      },
+      {
+        "id": "p1-crop-1",
+        "page": 1,
+        "order": 0,
+        "kind": "reread_crop",
+        "text": "",
+        "language": null,
+        "writing": "unknown",
+        "box": {
+          "xyxy": [
+            23.0,
+            0.0,
+            1434.0,
+            750.0
+          ],
+          "space": "original_top_left",
+          "precision": "crop"
+        },
+        "artifact_path": "crops/0001-01.png",
+        "artifact_sha256": "d9dac73d90083f133cd2732e6bce99a29208a0bd9c2033c572f4748a2bb670c7",
+        "crop_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          23.0,
+          0.0
+        ]
+      }
+    ],
+    "run": {
+      "job_id": "569820d2af9348e9b0dd24b678c544e1",
+      "pipeline": "hybrid",
+      "schema_version": "1.0",
+      "pipeline_version": "0.1.3",
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "runtime": {
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "versions": {
+          "annotated-doc": "0.0.7",
+          "annotated-types": "0.8.0",
+          "anyio": "4.16.0",
+          "attrs": "26.1.0",
+          "certifi": "2026.11.20",
+          "cffi": "2.1.1",
+          "charset-normalizer": "3.5.3",
+          "click": "8.5.1",
+          "cryptography": "50.0.2",
+          "datasets": "5.2.0",
+          "dill": "0.4.1",
+          "fastapi": "0.165.0",
+          "filelock": "4.3.1",
+          "fsspec": "2026.9.0",
+          "h11": "0.16.0",
+          "hf-xet": "1.8.0",
+          "httpcore": "1.0.9",
+          "httpcore2": "2.16.2",
+          "httpx": "0.28.1",
+          "httpx2": "2.16.2",
+          "huggingface-hub": "2.4.0",
+          "idna": "3.20",
+          "jinja2": "3.1.6",
+          "jsonschema": "4.26.0",
+          "jsonschema-specifications": "2025.9.1",
+          "llguidance": "1.9.1",
+          "markdown-it-py": "4.3.0",
+          "markupsafe": "3.0.4",
+          "mdurl": "0.1.2",
+          "miniaudio": "1.73",
+          "mlx": "0.32.4",
+          "mlx-audio": "0.6.8",
+          "mlx-metal": "0.32.4",
+          "mlx-vlm": "0.8.1",
+          "mpmath": "1.3.0",
+          "multiprocess": "0.70.19",
+          "networkx": "3.7",
+          "numpy": "2.5.5",
+          "opencv-python": "5.1.0.95",
+          "opentelemetry-api": "1.45.2",
+          "packaging": "26.4",
+          "pandas": "3.1.1",
+          "pillow": "13.0.0",
+          "pyarrow": "26.0.1",
+          "pycparser": "3.12",
+          "pydantic": "2.14.4",
+          "pydantic-core": "2.50.5",
+          "pygments": "2.21.0",
+          "python-dateutil": "4.0.0",
+          "python-multipart": "0.0.34",
+          "pyyaml": "6.0.4",
+          "referencing": "0.37.0",
+          "regex": "2026.11.24",
+          "requests": "2.34.2",
+          "rich": "15.0.0",
+          "rpds-py": "2026.9.1",
+          "safetensors": "0.8.0",
+          "scipy": "1.18.1",
+          "sentencepiece": "0.2.3",
+          "setuptools": "84.2.1",
+          "shellingham": "1.5.4",
+          "sounddevice": "0.5.6",
+          "starlette": "1.10.0",
+          "sympy": "1.14.0",
+          "tokenizers": "0.23.3",
+          "torch": "2.15.0",
+          "torchvision": "0.29.2",
+          "tqdm": "4.70.1",
+          "transformers": "5.23.0",
+          "truststore": "0.10.5",
+          "typer": "0.29.2",
+          "typing-extensions": "4.16.0",
+          "typing-inspection": "0.4.5",
+          "tzdata": "2026.6",
+          "urllib3": "2.8.0",
+          "uvicorn": "0.54.0",
+          "websockets": "17.4",
+          "xxhash": "4.1.0"
+        },
+        "components": {
+          "invalid_or_missing": [],
+          "mlx_runtime_found": true,
+          "version_conflicts": {},
+          "missing_runtime_packages": [],
+          "processor": {
+            "device": "Apple M3 Max",
+            "key": "ba834654ec9d6e9258f89b4fc772d962f80bbe4b4a9d118678af0a7a1f3d62bf",
+            "passed": true,
+            "pixel_shape": [
+              256,
+              1536
+            ],
+            "processor": "Qwen3VLProcessor",
+            "schema_decoder": "LLGuidanceLogitsProcessor"
+          },
+          "parser": {
+            "ready": true,
+            "model": "PaddleOCR-VL-1.6",
+            "backend": "native",
+            "device_requested": "cpu",
+            "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+            "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+            "versions": {
+              "aiohappyeyeballs": "2.7.1",
+              "aiohttp": "3.14.5",
+              "aiosignal": "1.4.0",
+              "aistudio-sdk": "0.3.9",
+              "annotated-types": "0.8.0",
+              "anyio": "4.16.0",
+              "attrs": "26.1.0",
+              "bce-python-sdk": "0.9.79",
+              "beautifulsoup4": "4.15.0",
+              "cachetools": "8.0.2",
+              "certifi": "2026.11.20",
+              "cffi": "2.1.1",
+              "chardet": "7.7.0",
+              "charset-normalizer": "3.5.3",
+              "click": "8.5.1",
+              "cloudpickle": "3.1.3",
+              "colorlog": "6.12.0",
+              "crc32c": "2.9.post0",
+              "cryptography": "50.0.2",
+              "cssselect": "1.6.0",
+              "cssutils": "2.15.0",
+              "einops": "0.8.2",
+              "encutils": "1.0.0",
+              "et-xmlfile": "2.0.0",
+              "filelock": "4.3.1",
+              "frozenlist": "1.8.0",
+              "fsspec": "2026.9.0",
+              "ftfy": "6.3.1",
+              "future": "1.0.0",
+              "h11": "0.16.0",
+              "hf-xet": "1.8.0",
+              "httpcore": "1.0.9",
+              "httpcore2": "2.16.2",
+              "httpx": "0.28.1",
+              "httpx2": "2.16.2",
+              "huggingface-hub": "2.4.0",
+              "idna": "3.20",
+              "imagesize": "2.0.1",
+              "jinja2": "3.1.6",
+              "jiter": "0.19.0",
+              "joblib": "1.6.0",
+              "latex2mathml": "3.81.1",
+              "lxml": "6.1.3",
+              "markupsafe": "3.0.4",
+              "modelscope": "1.40.3",
+              "modelscope-hub": "0.7.2",
+              "more-itertools": "11.2.1",
+              "multidict": "7.2.1",
+              "narwhals": "2.29.0",
+              "networkx": "3.7",
+              "numpy": "2.3.5",
+              "openai": "3.59.0",
+              "opencv-contrib-python": "4.10.0.84",
+              "openpyxl": "3.1.5",
+              "opt-einsum": "3.3.0",
+              "packaging": "26.4",
+              "paddleocr": "3.7.0",
+              "paddlepaddle": "3.2.1",
+              "paddlex": "3.7.0",
+              "pandas": "3.1.1",
+              "pillow": "13.0.0",
+              "premailer": "3.10.0",
+              "prettytable": "3.19.0",
+              "propcache": "0.5.4",
+              "protobuf": "7.36.2",
+              "psutil": "7.2.2",
+              "py-cpuinfo": "9.0.0",
+              "pyclipper": "1.4.0",
+              "pycparser": "3.12",
+              "pycryptodome": "4.6.0",
+              "pydantic": "2.14.4",
+              "pydantic-core": "2.50.5",
+              "pypdfium2": "5.15.2",
+              "python-bidi": "0.6.12",
+              "python-dateutil": "4.0.0",
+              "pyyaml": "6.0.2",
+              "regex": "2026.11.24",
+              "requests": "2.34.2",
+              "ruamel-yaml": "0.19.1",
+              "safetensors": "0.8.0",
+              "scikit-learn": "1.9.1",
+              "scipy": "1.18.1",
+              "sentencepiece": "0.2.3",
+              "setuptools": "84.2.1",
+              "shapely": "2.2.0",
+              "six": "1.17.0",
+              "sniffio": "1.3.1",
+              "soupsieve": "4.1.3",
+              "threadpoolctl": "3.8.0",
+              "tiktoken": "0.14.0",
+              "tokenizers": "0.23.3",
+              "tqdm": "4.70.1",
+              "truststore": "0.10.5",
+              "typing-extensions": "4.16.0",
+              "typing-inspection": "0.4.5",
+              "tzdata": "2026.6",
+              "ujson": "6.1.0",
+              "urllib3": "2.8.0",
+              "wcwidth": "0.9.5",
+              "yarl": "1.25.1"
+            }
+          }
+        },
+        "ready": true,
+        "host_supported": true
+      },
+      "settings": {
+        "pipeline": "hybrid",
+        "doc_type": "auto",
+        "page_groups": [],
+        "max_bytes": 67108864,
+        "max_pages": 16,
+        "max_pixels": 40000000,
+        "render_pixels": 2000000,
+        "max_crops": 1,
+        "max_tokens": 4096,
+        "retries": 1
+      },
+      "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+      "calls": [
+        {
+          "id": "p1-paddle",
+          "attempt_id": "p1-paddle",
+          "model": "PaddleOCR-VL-1.6",
+          "artifact_dir": "attempts/p1-paddle",
+          "image_path": "pages/0001.png",
+          "channel": "parser",
+          "status": "parsed",
+          "token_limit": 768,
+          "recognition_tokens": {
+            "requested_crops": 1,
+            "returned_crops": 1,
+            "crops": [
+              {
+                "crop_index": 1,
+                "generated_tokens": 145,
+                "token_limit": 768,
+                "cap_hit": false,
+                "eos_seen": true
+              }
+            ]
+          },
+          "token_limit_hits": 0,
+          "token_telemetry_complete": true,
+          "device": "cpu",
+          "components": {
+            "layout": {
+              "class": "LayoutAnalysisRunnerPredictor",
+              "device": "cpu"
+            },
+            "recognition": {
+              "class": "DocVLMLocalPredictor",
+              "device": "cpu"
+            }
+          },
+          "runtime_seconds": 81.04656950000208,
+          "peak_rss_bytes": 13432209408,
+          "seconds_including_lock_wait": 81.81720083398977,
+          "omitted_regions": 0,
+          "degraded_blocks": 0
+        },
+        {
+          "id": "p1-qwen-0",
+          "attempt_id": "p1-qwen-0",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-0",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 1257,
+          "prompt_tokens": 1874,
+          "load_seconds": 3.5719484169967473,
+          "generation_seconds": 22.907127416983712,
+          "runtime_seconds": 30.00362191698514,
+          "peak_rss_bytes": 7275184128,
+          "mlx_peak_bytes": 7656087926,
+          "seconds_including_lock_wait": 30.75502441599383,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "A Seed Cake",
+              "quote": "A Seed Cake",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "version",
+              "region_id": "p1-parser-0",
+              "raw": "8.11",
+              "quote": "(8.11)",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": "p1-parser-0",
+              "raw": "Butter",
+              "quote": "Fakes of Butter",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-0",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable"
+            },
+            {
+              "local_id": "r2",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-0",
+              "raw": "2",
+              "quote": "2",
+              "state": "readable"
+            },
+            {
+              "local_id": "r3",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": "p1-parser-0",
+              "raw": "beat up by degrees",
+              "quote": "beat up by degrees",
+              "state": "readable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r4",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-0",
+              "raw": "3",
+              "quote": "3",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "quantity",
+              "region_id": "p1-parser-0",
+              "raw": "43",
+              "quote": "43",
+              "state": "readable"
+            },
+            {
+              "local_id": "r5",
+              "kind": "ingredient",
+              "field": "preparation",
+              "region_id": "p1-parser-0",
+              "raw": "dried",
+              "quote": "dried",
+              "state": "readable"
+            },
+            {
+              "local_id": "r6",
+              "kind": "ingredient",
+              "field": "name",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r7",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": "p1-parser-0",
+              "raw": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+              "quote": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+              "state": "readable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-1",
+          "attempt_id": "p1-qwen-1",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-1",
+          "image_path": "pages/0001.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "finish_reason": "stop",
+          "generated_tokens": 509,
+          "prompt_tokens": 1885,
+          "load_seconds": 2.8362260420108214,
+          "generation_seconds": 11.857688249991043,
+          "runtime_seconds": 17.484885832993314,
+          "peak_rss_bytes": 7291125760,
+          "mlx_peak_bytes": 7664919078,
+          "seconds_including_lock_wait": 18.305395583010977,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "A Seed Cake",
+              "quote": "A Seed Cake",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "version",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_quantity",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_unit",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "yield_type",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            },
+            {
+              "local_id": "r1",
+              "kind": "step",
+              "field": "instruction",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        },
+        {
+          "id": "p1-qwen-2",
+          "attempt_id": "p1-qwen-2",
+          "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+          "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+          "constrained": true,
+          "token_limit": 4096,
+          "artifact_dir": "attempts/p1-qwen-2",
+          "image_path": "crops/0001-01.png",
+          "region_ids": [
+            "p1-parser-0"
+          ],
+          "channel": "direct",
+          "status": "parsed",
+          "crop_region_id": "p1-crop-1",
+          "finish_reason": "stop",
+          "generated_tokens": 329,
+          "prompt_tokens": 1848,
+          "load_seconds": 3.0722173749818467,
+          "generation_seconds": 8.74471337502473,
+          "runtime_seconds": 14.60827791702468,
+          "peak_rss_bytes": 7297859584,
+          "mlx_peak_bytes": 7633756118,
+          "seconds_including_lock_wait": 15.228120749990921,
+          "overflow": false,
+          "fields": [
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "title",
+              "region_id": "p1-parser-0",
+              "raw": "A Seed Cake",
+              "quote": "A Seed Cake",
+              "state": "readable"
+            },
+            {
+              "local_id": "root",
+              "kind": "recipe",
+              "field": "description",
+              "region_id": null,
+              "raw": null,
+              "quote": "",
+              "state": "unreadable"
+            }
+          ]
+        }
+      ]
+    },
+    "coverage": {
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "source_skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": true,
+      "original_capture": "suspected_incomplete"
+    },
+    "entities": [
+      {
+        "id": "p1.root",
+        "kind": "recipe",
+        "parent_id": null,
+        "page": 1,
+        "ordinal": 0
+      },
+      {
+        "id": "p1.r1",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 1
+      },
+      {
+        "id": "p1.r2",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 2
+      },
+      {
+        "id": "p1.r3",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 3
+      },
+      {
+        "id": "p1.r4",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 4
+      },
+      {
+        "id": "p1.r5",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 5
+      },
+      {
+        "id": "p1.r6",
+        "kind": "ingredient",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 6
+      },
+      {
+        "id": "p1.r7",
+        "kind": "step",
+        "parent_id": "p1.root",
+        "page": 1,
+        "ordinal": 7
+      }
+    ],
+    "observations": [
+      {
+        "id": "p1.root.title",
+        "entity_id": "p1.root",
+        "field": "title",
+        "raw": "A Seed Cake",
+        "value": "A Seed Cake",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "A Seed Cake",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.version",
+        "entity_id": "p1.root",
+        "field": "version",
+        "raw": "8.11",
+        "value": "8.11",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "(8.11)",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.root.description",
+        "entity_id": "p1.root",
+        "field": "description",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Fakes of Butter, work it with your hands, till its no thicker then cream, y.n.put in y.golks of 2 LCGGS beat up by degrees, take the white W beat V work them in by degrees, take 3 of flower, 43 of sugar dried of caraway veed, W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_quantity",
+        "entity_id": "p1.root",
+        "field": "yield_quantity",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "null"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_unit",
+        "entity_id": "p1.root",
+        "field": "yield_unit",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "null"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.root.yield_type",
+        "entity_id": "p1.root",
+        "field": "yield_type",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-1"
+          }
+        ],
+        "alternatives": [
+          "null"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r1.instruction",
+        "entity_id": "p1.r1",
+        "field": "instruction",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Fakes of Butter, work it with your hands, till its no thicker then cream, y.n.put in y.golks of 2 LCGGS beat up by degrees, take the white W beat V work them in by degrees, take 3 of flower, 43 of sugar dried of caraway veed, W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot."
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.name",
+        "entity_id": "p1.r2",
+        "field": "name",
+        "raw": "Butter",
+        "value": "Butter",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "Fakes of Butter",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.quantity",
+        "entity_id": "p1.r2",
+        "field": "quantity",
+        "raw": "3",
+        "value": "3",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "3",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r2.preparation",
+        "entity_id": "p1.r2",
+        "field": "preparation",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "work it with your hands, till its no thicker then cream"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.name",
+        "entity_id": "p1.r3",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Eggs"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.quantity",
+        "entity_id": "p1.r3",
+        "field": "quantity",
+        "raw": "2",
+        "value": "2",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "2",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r3.preparation",
+        "entity_id": "p1.r3",
+        "field": "preparation",
+        "raw": "beat up by degrees",
+        "value": "beat up by degrees",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "beat up by degrees",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.name",
+        "entity_id": "p1.r4",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Flower"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r4.quantity",
+        "entity_id": "p1.r4",
+        "field": "quantity",
+        "raw": "3",
+        "value": "3",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "3",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.name",
+        "entity_id": "p1.r5",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Sugar"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.quantity",
+        "entity_id": "p1.r5",
+        "field": "quantity",
+        "raw": "43",
+        "value": "43",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "43",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r5.preparation",
+        "entity_id": "p1.r5",
+        "field": "preparation",
+        "raw": "dried",
+        "value": "dried",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "dried",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      },
+      {
+        "id": "p1.r6.name",
+        "entity_id": "p1.r6",
+        "field": "name",
+        "raw": null,
+        "value": null,
+        "state": "unreadable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": null,
+            "quote": "",
+            "channel": "direct",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [
+          "Caraway seeds"
+        ],
+        "reason": "The field was not supported by its source quote.",
+        "derivation": null
+      },
+      {
+        "id": "p1.r7.instruction",
+        "entity_id": "p1.r7",
+        "field": "instruction",
+        "raw": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+        "value": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+        "state": "readable",
+        "origin": "observed",
+        "language": null,
+        "evidence": [
+          {
+            "page": 1,
+            "region_id": "p1-parser-0",
+            "quote": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+            "channel": "parser",
+            "attempt_id": "p1-qwen-0"
+          }
+        ],
+        "alternatives": [],
+        "reason": null,
+        "derivation": null
+      }
+    ],
+    "issues": [
+      {
+        "code": "suspected_cutoff",
+        "message": "page 1 may be cut off at the edge of the capture",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unsupported_quote",
+        "message": "A proposed field could not be grounded in its quoted source text.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description",
+          "p1.root.yield_quantity",
+          "p1.root.yield_unit",
+          "p1.root.yield_type",
+          "p1.r1.instruction",
+          "p1.r2.preparation",
+          "p1.r3.name",
+          "p1.r4.name",
+          "p1.r5.name",
+          "p1.r6.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "reread_structure_disagreement",
+        "message": "Whole-page attempts disagreed on the document, row structure, or readings of indistinguishable rows.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "suspected_capture",
+        "message": "The model flagged content near a potentially cut-off page edge.",
+        "page": 1,
+        "observation_ids": [],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.description: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.description"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_quantity: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_quantity"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_unit: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_unit"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "recipe.yield_type: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.root.yield_type"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "step.instruction: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r1.instruction"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.preparation: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r2.preparation"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r3.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r4.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r5.name"
+        ],
+        "severity": "review"
+      },
+      {
+        "code": "unreadable_field",
+        "message": "ingredient.name: The field was not supported by its source quote.",
+        "page": 1,
+        "observation_ids": [
+          "p1.r6.name"
+        ],
+        "severity": "review"
+      }
+    ],
+    "validation": "incomplete",
+    "approval": "needs_review",
+    "corrections": []
+  }
+]

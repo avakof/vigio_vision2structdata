@@ -1,0 +1,3945 @@
+{
+  "version": 1,
+  "manifest_sha256": "28bc671002b55afc9e103b7abd0a42e1fbb6683c1187b054c45a011bb78a130e",
+  "configuration": {
+    "pipeline": "hybrid",
+    "doc_type": "auto",
+    "page_groups": [],
+    "max_bytes": 67108864,
+    "max_pages": 16,
+    "max_pixels": 40000000,
+    "render_pixels": 2000000,
+    "max_crops": 1,
+    "max_tokens": 4096,
+    "retries": 1,
+    "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+    "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+    "versions": {
+      "annotated-doc": "0.0.7",
+      "annotated-types": "0.8.0",
+      "anyio": "4.16.0",
+      "attrs": "26.1.0",
+      "certifi": "2026.11.20",
+      "cffi": "2.1.1",
+      "charset-normalizer": "3.5.3",
+      "click": "8.5.1",
+      "cryptography": "50.0.2",
+      "datasets": "5.2.0",
+      "dill": "0.4.1",
+      "fastapi": "0.165.0",
+      "filelock": "4.3.1",
+      "fsspec": "2026.9.0",
+      "h11": "0.16.0",
+      "hf-xet": "1.8.0",
+      "httpcore": "1.0.9",
+      "httpcore2": "2.16.2",
+      "httpx": "0.28.1",
+      "httpx2": "2.16.2",
+      "huggingface-hub": "2.4.0",
+      "idna": "3.20",
+      "jinja2": "3.1.6",
+      "jsonschema": "4.26.0",
+      "jsonschema-specifications": "2025.9.1",
+      "llguidance": "1.9.1",
+      "markdown-it-py": "4.3.0",
+      "markupsafe": "3.0.4",
+      "mdurl": "0.1.2",
+      "miniaudio": "1.73",
+      "mlx": "0.32.4",
+      "mlx-audio": "0.6.8",
+      "mlx-metal": "0.32.4",
+      "mlx-vlm": "0.8.1",
+      "mpmath": "1.3.0",
+      "multiprocess": "0.70.19",
+      "networkx": "3.7",
+      "numpy": "2.5.5",
+      "opencv-python": "5.1.0.95",
+      "opentelemetry-api": "1.45.2",
+      "packaging": "26.4",
+      "pandas": "3.1.1",
+      "pillow": "13.0.0",
+      "pyarrow": "26.0.1",
+      "pycparser": "3.12",
+      "pydantic": "2.14.4",
+      "pydantic-core": "2.50.5",
+      "pygments": "2.21.0",
+      "python-dateutil": "4.0.0",
+      "python-multipart": "0.0.34",
+      "pyyaml": "6.0.4",
+      "referencing": "0.37.0",
+      "regex": "2026.11.24",
+      "requests": "2.34.2",
+      "rich": "15.0.0",
+      "rpds-py": "2026.9.1",
+      "safetensors": "0.8.0",
+      "scipy": "1.18.1",
+      "sentencepiece": "0.2.3",
+      "setuptools": "84.2.1",
+      "shellingham": "1.5.4",
+      "sounddevice": "0.5.6",
+      "starlette": "1.10.0",
+      "sympy": "1.14.0",
+      "tokenizers": "0.23.3",
+      "torch": "2.15.0",
+      "torchvision": "0.29.2",
+      "tqdm": "4.70.1",
+      "transformers": "5.23.0",
+      "truststore": "0.10.5",
+      "typer": "0.29.2",
+      "typing-extensions": "4.16.0",
+      "typing-inspection": "0.4.5",
+      "tzdata": "2026.6",
+      "urllib3": "2.8.0",
+      "uvicorn": "0.54.0",
+      "websockets": "17.4",
+      "xxhash": "4.1.0"
+    },
+    "components_ready": true,
+    "base_config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193"
+  },
+  "case_results": [
+    {
+      "fixture": "seed-cake",
+      "origin": "real",
+      "split": "held_out",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "crossed-out",
+        "duplicate-ingredient"
+      ],
+      "sha256": "d481aabefe5c789c24d64eeb6bb4f92f9ac70253ad4397c321fd5a88ff538e5f",
+      "labels_sha256": "a75a00dce03951defd64dc523dda89efa4c8b6c6557cabf1a8a8472c55fcf605",
+      "settings": {},
+      "status": "incomplete",
+      "detail": null,
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "incomplete_pages": [
+        1
+      ],
+      "suspected_capture": true,
+      "page_count": 1,
+      "issues": [
+        "reread_structure_disagreement",
+        "suspected_capture",
+        "suspected_cutoff",
+        "unreadable_field",
+        "unsupported_quote"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 7,
+        "field_exact_ok": 3,
+        "answerable_fields": 6,
+        "covered_answerable_fields": 3,
+        "correct_answered_fields": 3,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "status",
+          "location": "source"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/header/yield_quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/header/yield_quantity"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/deleted-butter/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/deleted-butter/quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/deleted-butter/quantity"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/deleted-butter/crossed_out"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/deleted-butter"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "seed-cake",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 146.85455395898316,
+        "processed_page_count": 1,
+        "failed": true,
+        "process_high_water_rss_bytes": 75366400,
+        "backend": {
+          "runs": [
+            {
+              "scope": [
+                1
+              ],
+              "job_id": "569820d2af9348e9b0dd24b678c544e1",
+              "pipeline": "hybrid",
+              "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+              "model_revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+              "pipeline_version": "0.1.3",
+              "schema_version": "1.0",
+              "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+              "runtime": {
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "versions": {
+                  "annotated-doc": "0.0.7",
+                  "annotated-types": "0.8.0",
+                  "anyio": "4.16.0",
+                  "attrs": "26.1.0",
+                  "certifi": "2026.11.20",
+                  "cffi": "2.1.1",
+                  "charset-normalizer": "3.5.3",
+                  "click": "8.5.1",
+                  "cryptography": "50.0.2",
+                  "datasets": "5.2.0",
+                  "dill": "0.4.1",
+                  "fastapi": "0.165.0",
+                  "filelock": "4.3.1",
+                  "fsspec": "2026.9.0",
+                  "h11": "0.16.0",
+                  "hf-xet": "1.8.0",
+                  "httpcore": "1.0.9",
+                  "httpcore2": "2.16.2",
+                  "httpx": "0.28.1",
+                  "httpx2": "2.16.2",
+                  "huggingface-hub": "2.4.0",
+                  "idna": "3.20",
+                  "jinja2": "3.1.6",
+                  "jsonschema": "4.26.0",
+                  "jsonschema-specifications": "2025.9.1",
+                  "llguidance": "1.9.1",
+                  "markdown-it-py": "4.3.0",
+                  "markupsafe": "3.0.4",
+                  "mdurl": "0.1.2",
+                  "miniaudio": "1.73",
+                  "mlx": "0.32.4",
+                  "mlx-audio": "0.6.8",
+                  "mlx-metal": "0.32.4",
+                  "mlx-vlm": "0.8.1",
+                  "mpmath": "1.3.0",
+                  "multiprocess": "0.70.19",
+                  "networkx": "3.7",
+                  "numpy": "2.5.5",
+                  "opencv-python": "5.1.0.95",
+                  "opentelemetry-api": "1.45.2",
+                  "packaging": "26.4",
+                  "pandas": "3.1.1",
+                  "pillow": "13.0.0",
+                  "pyarrow": "26.0.1",
+                  "pycparser": "3.12",
+                  "pydantic": "2.14.4",
+                  "pydantic-core": "2.50.5",
+                  "pygments": "2.21.0",
+                  "python-dateutil": "4.0.0",
+                  "python-multipart": "0.0.34",
+                  "pyyaml": "6.0.4",
+                  "referencing": "0.37.0",
+                  "regex": "2026.11.24",
+                  "requests": "2.34.2",
+                  "rich": "15.0.0",
+                  "rpds-py": "2026.9.1",
+                  "safetensors": "0.8.0",
+                  "scipy": "1.18.1",
+                  "sentencepiece": "0.2.3",
+                  "setuptools": "84.2.1",
+                  "shellingham": "1.5.4",
+                  "sounddevice": "0.5.6",
+                  "starlette": "1.10.0",
+                  "sympy": "1.14.0",
+                  "tokenizers": "0.23.3",
+                  "torch": "2.15.0",
+                  "torchvision": "0.29.2",
+                  "tqdm": "4.70.1",
+                  "transformers": "5.23.0",
+                  "truststore": "0.10.5",
+                  "typer": "0.29.2",
+                  "typing-extensions": "4.16.0",
+                  "typing-inspection": "0.4.5",
+                  "tzdata": "2026.6",
+                  "urllib3": "2.8.0",
+                  "uvicorn": "0.54.0",
+                  "websockets": "17.4",
+                  "xxhash": "4.1.0"
+                },
+                "components": {
+                  "invalid_or_missing": [],
+                  "mlx_runtime_found": true,
+                  "version_conflicts": {},
+                  "missing_runtime_packages": [],
+                  "processor": {
+                    "device": "Apple M3 Max",
+                    "key": "ba834654ec9d6e9258f89b4fc772d962f80bbe4b4a9d118678af0a7a1f3d62bf",
+                    "passed": true,
+                    "pixel_shape": [
+                      256,
+                      1536
+                    ],
+                    "processor": "Qwen3VLProcessor",
+                    "schema_decoder": "LLGuidanceLogitsProcessor"
+                  },
+                  "parser": {
+                    "ready": true,
+                    "model": "PaddleOCR-VL-1.6",
+                    "backend": "native",
+                    "device_requested": "cpu",
+                    "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+                    "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+                    "versions": {
+                      "aiohappyeyeballs": "2.7.1",
+                      "aiohttp": "3.14.5",
+                      "aiosignal": "1.4.0",
+                      "aistudio-sdk": "0.3.9",
+                      "annotated-types": "0.8.0",
+                      "anyio": "4.16.0",
+                      "attrs": "26.1.0",
+                      "bce-python-sdk": "0.9.79",
+                      "beautifulsoup4": "4.15.0",
+                      "cachetools": "8.0.2",
+                      "certifi": "2026.11.20",
+                      "cffi": "2.1.1",
+                      "chardet": "7.7.0",
+                      "charset-normalizer": "3.5.3",
+                      "click": "8.5.1",
+                      "cloudpickle": "3.1.3",
+                      "colorlog": "6.12.0",
+                      "crc32c": "2.9.post0",
+                      "cryptography": "50.0.2",
+                      "cssselect": "1.6.0",
+                      "cssutils": "2.15.0",
+                      "einops": "0.8.2",
+                      "encutils": "1.0.0",
+                      "et-xmlfile": "2.0.0",
+                      "filelock": "4.3.1",
+                      "frozenlist": "1.8.0",
+                      "fsspec": "2026.9.0",
+                      "ftfy": "6.3.1",
+                      "future": "1.0.0",
+                      "h11": "0.16.0",
+                      "hf-xet": "1.8.0",
+                      "httpcore": "1.0.9",
+                      "httpcore2": "2.16.2",
+                      "httpx": "0.28.1",
+                      "httpx2": "2.16.2",
+                      "huggingface-hub": "2.4.0",
+                      "idna": "3.20",
+                      "imagesize": "2.0.1",
+                      "jinja2": "3.1.6",
+                      "jiter": "0.19.0",
+                      "joblib": "1.6.0",
+                      "latex2mathml": "3.81.1",
+                      "lxml": "6.1.3",
+                      "markupsafe": "3.0.4",
+                      "modelscope": "1.40.3",
+                      "modelscope-hub": "0.7.2",
+                      "more-itertools": "11.2.1",
+                      "multidict": "7.2.1",
+                      "narwhals": "2.29.0",
+                      "networkx": "3.7",
+                      "numpy": "2.3.5",
+                      "openai": "3.59.0",
+                      "opencv-contrib-python": "4.10.0.84",
+                      "openpyxl": "3.1.5",
+                      "opt-einsum": "3.3.0",
+                      "packaging": "26.4",
+                      "paddleocr": "3.7.0",
+                      "paddlepaddle": "3.2.1",
+                      "paddlex": "3.7.0",
+                      "pandas": "3.1.1",
+                      "pillow": "13.0.0",
+                      "premailer": "3.10.0",
+                      "prettytable": "3.19.0",
+                      "propcache": "0.5.4",
+                      "protobuf": "7.36.2",
+                      "psutil": "7.2.2",
+                      "py-cpuinfo": "9.0.0",
+                      "pyclipper": "1.4.0",
+                      "pycparser": "3.12",
+                      "pycryptodome": "4.6.0",
+                      "pydantic": "2.14.4",
+                      "pydantic-core": "2.50.5",
+                      "pypdfium2": "5.15.2",
+                      "python-bidi": "0.6.12",
+                      "python-dateutil": "4.0.0",
+                      "pyyaml": "6.0.2",
+                      "regex": "2026.11.24",
+                      "requests": "2.34.2",
+                      "ruamel-yaml": "0.19.1",
+                      "safetensors": "0.8.0",
+                      "scikit-learn": "1.9.1",
+                      "scipy": "1.18.1",
+                      "sentencepiece": "0.2.3",
+                      "setuptools": "84.2.1",
+                      "shapely": "2.2.0",
+                      "six": "1.17.0",
+                      "sniffio": "1.3.1",
+                      "soupsieve": "4.1.3",
+                      "threadpoolctl": "3.8.0",
+                      "tiktoken": "0.14.0",
+                      "tokenizers": "0.23.3",
+                      "tqdm": "4.70.1",
+                      "truststore": "0.10.5",
+                      "typing-extensions": "4.16.0",
+                      "typing-inspection": "0.4.5",
+                      "tzdata": "2026.6",
+                      "ujson": "6.1.0",
+                      "urllib3": "2.8.0",
+                      "wcwidth": "0.9.5",
+                      "yarl": "1.25.1"
+                    }
+                  }
+                },
+                "ready": true,
+                "host_supported": true
+              },
+              "settings": {
+                "pipeline": "hybrid",
+                "doc_type": "auto",
+                "page_groups": [],
+                "max_bytes": 67108864,
+                "max_pages": 16,
+                "max_pixels": 40000000,
+                "render_pixels": 2000000,
+                "max_crops": 1,
+                "max_tokens": 4096,
+                "retries": 1
+              },
+              "calls": [
+                {
+                  "id": "p1-paddle",
+                  "attempt_id": "p1-paddle",
+                  "model": "PaddleOCR-VL-1.6",
+                  "artifact_dir": "attempts/p1-paddle",
+                  "image_path": "pages/0001.png",
+                  "channel": "parser",
+                  "status": "parsed",
+                  "token_limit": 768,
+                  "recognition_tokens": {
+                    "requested_crops": 1,
+                    "returned_crops": 1,
+                    "crops": [
+                      {
+                        "crop_index": 1,
+                        "generated_tokens": 145,
+                        "token_limit": 768,
+                        "cap_hit": false,
+                        "eos_seen": true
+                      }
+                    ]
+                  },
+                  "token_limit_hits": 0,
+                  "token_telemetry_complete": true,
+                  "device": "cpu",
+                  "components": {
+                    "layout": {
+                      "class": "LayoutAnalysisRunnerPredictor",
+                      "device": "cpu"
+                    },
+                    "recognition": {
+                      "class": "DocVLMLocalPredictor",
+                      "device": "cpu"
+                    }
+                  },
+                  "runtime_seconds": 81.04656950000208,
+                  "peak_rss_bytes": 13432209408,
+                  "seconds_including_lock_wait": 81.81720083398977,
+                  "omitted_regions": 0,
+                  "degraded_blocks": 0
+                },
+                {
+                  "id": "p1-qwen-0",
+                  "attempt_id": "p1-qwen-0",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-0",
+                  "image_path": "pages/0001.png",
+                  "region_ids": [
+                    "p1-parser-0"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "finish_reason": "stop",
+                  "generated_tokens": 1257,
+                  "prompt_tokens": 1874,
+                  "load_seconds": 3.5719484169967473,
+                  "generation_seconds": 22.907127416983712,
+                  "runtime_seconds": 30.00362191698514,
+                  "peak_rss_bytes": 7275184128,
+                  "mlx_peak_bytes": 7656087926,
+                  "seconds_including_lock_wait": 30.75502441599383,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Seed Cake",
+                      "quote": "A Seed Cake",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "version",
+                      "region_id": "p1-parser-0",
+                      "raw": "8.11",
+                      "quote": "(8.11)",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r1",
+                      "kind": "step",
+                      "field": "instruction",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r2",
+                      "kind": "ingredient",
+                      "field": "name",
+                      "region_id": "p1-parser-0",
+                      "raw": "Butter",
+                      "quote": "Fakes of Butter",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r2",
+                      "kind": "ingredient",
+                      "field": "quantity",
+                      "region_id": "p1-parser-0",
+                      "raw": "3",
+                      "quote": "3",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r2",
+                      "kind": "ingredient",
+                      "field": "preparation",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r3",
+                      "kind": "ingredient",
+                      "field": "name",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r3",
+                      "kind": "ingredient",
+                      "field": "quantity",
+                      "region_id": "p1-parser-0",
+                      "raw": "2",
+                      "quote": "2",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r3",
+                      "kind": "ingredient",
+                      "field": "preparation",
+                      "region_id": "p1-parser-0",
+                      "raw": "beat up by degrees",
+                      "quote": "beat up by degrees",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r4",
+                      "kind": "ingredient",
+                      "field": "name",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r4",
+                      "kind": "ingredient",
+                      "field": "quantity",
+                      "region_id": "p1-parser-0",
+                      "raw": "3",
+                      "quote": "3",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r5",
+                      "kind": "ingredient",
+                      "field": "name",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r5",
+                      "kind": "ingredient",
+                      "field": "quantity",
+                      "region_id": "p1-parser-0",
+                      "raw": "43",
+                      "quote": "43",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r5",
+                      "kind": "ingredient",
+                      "field": "preparation",
+                      "region_id": "p1-parser-0",
+                      "raw": "dried",
+                      "quote": "dried",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "r6",
+                      "kind": "ingredient",
+                      "field": "name",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r7",
+                      "kind": "step",
+                      "field": "instruction",
+                      "region_id": "p1-parser-0",
+                      "raw": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+                      "quote": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+                      "state": "readable"
+                    }
+                  ]
+                },
+                {
+                  "id": "p1-qwen-1",
+                  "attempt_id": "p1-qwen-1",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-1",
+                  "image_path": "pages/0001.png",
+                  "region_ids": [
+                    "p1-parser-0"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "finish_reason": "stop",
+                  "generated_tokens": 509,
+                  "prompt_tokens": 1885,
+                  "load_seconds": 2.8362260420108214,
+                  "generation_seconds": 11.857688249991043,
+                  "runtime_seconds": 17.484885832993314,
+                  "peak_rss_bytes": 7291125760,
+                  "mlx_peak_bytes": 7664919078,
+                  "seconds_including_lock_wait": 18.305395583010977,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Seed Cake",
+                      "quote": "A Seed Cake",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "version",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "yield_quantity",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "yield_unit",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "yield_type",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    },
+                    {
+                      "local_id": "r1",
+                      "kind": "step",
+                      "field": "instruction",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    }
+                  ]
+                },
+                {
+                  "id": "p1-qwen-2",
+                  "attempt_id": "p1-qwen-2",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-2",
+                  "image_path": "crops/0001-01.png",
+                  "region_ids": [
+                    "p1-parser-0"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "crop_region_id": "p1-crop-1",
+                  "finish_reason": "stop",
+                  "generated_tokens": 329,
+                  "prompt_tokens": 1848,
+                  "load_seconds": 3.0722173749818467,
+                  "generation_seconds": 8.74471337502473,
+                  "runtime_seconds": 14.60827791702468,
+                  "peak_rss_bytes": 7297859584,
+                  "mlx_peak_bytes": 7633756118,
+                  "seconds_including_lock_wait": 15.228120749990921,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Seed Cake",
+                      "quote": "A Seed Cake",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "job_id": "569820d2af9348e9b0dd24b678c544e1",
+          "error_code": null,
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 13432209408,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 145,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 1,
+                  "returned_crops": 1
+                },
+                "runtime_seconds": 81.04656950000208,
+                "seconds_including_lock_wait": 81.81720083398977,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "A Seed Cake",
+                    "raw": "A Seed Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "version",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "(8.11)",
+                    "raw": "8.11",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "instruction",
+                    "kind": "step",
+                    "local_id": "r1",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "name",
+                    "kind": "ingredient",
+                    "local_id": "r2",
+                    "quote": "Fakes of Butter",
+                    "raw": "Butter",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "quantity",
+                    "kind": "ingredient",
+                    "local_id": "r2",
+                    "quote": "3",
+                    "raw": "3",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "preparation",
+                    "kind": "ingredient",
+                    "local_id": "r2",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "name",
+                    "kind": "ingredient",
+                    "local_id": "r3",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "quantity",
+                    "kind": "ingredient",
+                    "local_id": "r3",
+                    "quote": "2",
+                    "raw": "2",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "preparation",
+                    "kind": "ingredient",
+                    "local_id": "r3",
+                    "quote": "beat up by degrees",
+                    "raw": "beat up by degrees",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "name",
+                    "kind": "ingredient",
+                    "local_id": "r4",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "quantity",
+                    "kind": "ingredient",
+                    "local_id": "r4",
+                    "quote": "3",
+                    "raw": "3",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "name",
+                    "kind": "ingredient",
+                    "local_id": "r5",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "quantity",
+                    "kind": "ingredient",
+                    "local_id": "r5",
+                    "quote": "43",
+                    "raw": "43",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "preparation",
+                    "kind": "ingredient",
+                    "local_id": "r5",
+                    "quote": "dried",
+                    "raw": "dried",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "name",
+                    "kind": "ingredient",
+                    "local_id": "r6",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "instruction",
+                    "kind": "step",
+                    "local_id": "r7",
+                    "quote": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+                    "raw": "W a little sack cover it par with a thin past W butter it, y.t it may slip out, you must keep it stirring till its in the Oven, which must be Berg hot.",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 1257,
+                "generation_seconds": 22.907127416983712,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 3.5719484169967473,
+                "mlx_peak_bytes": 7656087926,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7275184128,
+                "prompt_tokens": 1874,
+                "region_ids": [
+                  "p1-parser-0"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 30.00362191698514,
+                "seconds_including_lock_wait": 30.75502441599383,
+                "status": "parsed",
+                "token_limit": 4096
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-1",
+                "attempt_id": "p1-qwen-1",
+                "channel": "direct",
+                "constrained": true,
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "A Seed Cake",
+                    "raw": "A Seed Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "version",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "yield_quantity",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "yield_unit",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "yield_type",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  },
+                  {
+                    "field": "instruction",
+                    "kind": "step",
+                    "local_id": "r1",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 509,
+                "generation_seconds": 11.857688249991043,
+                "id": "p1-qwen-1",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.8362260420108214,
+                "mlx_peak_bytes": 7664919078,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7291125760,
+                "prompt_tokens": 1885,
+                "region_ids": [
+                  "p1-parser-0"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 17.484885832993314,
+                "seconds_including_lock_wait": 18.305395583010977,
+                "status": "parsed",
+                "token_limit": 4096
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-2",
+                "attempt_id": "p1-qwen-2",
+                "channel": "direct",
+                "constrained": true,
+                "crop_region_id": "p1-crop-1",
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "A Seed Cake",
+                    "raw": "A Seed Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 329,
+                "generation_seconds": 8.74471337502473,
+                "id": "p1-qwen-2",
+                "image_path": "crops/0001-01.png",
+                "load_seconds": 3.0722173749818467,
+                "mlx_peak_bytes": 7633756118,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7297859584,
+                "prompt_tokens": 1848,
+                "region_ids": [
+                  "p1-parser-0"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 14.60827791702468,
+                "seconds_including_lock_wait": 15.228120749990921,
+                "status": "parsed",
+                "token_limit": 4096
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-omdifqn6/seed-cake"
+    },
+    {
+      "fixture": "potted-tongues",
+      "origin": "real",
+      "split": "held_out",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "quantity-range",
+        "crossed-out-word"
+      ],
+      "sha256": "756b658bd7ae19350846312f8dfe0c483cfaf7c08852fde7e267a6a668e24f1b",
+      "labels_sha256": "b3f38f1eeefb0874ddd683f40fde53ccd166f2db3ff247345e7e58f0e3f62700",
+      "settings": {},
+      "status": "completed",
+      "detail": null,
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": false,
+      "page_count": 1,
+      "issues": [
+        "recipe_yield_missing"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 5,
+        "field_exact_ok": 1,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/header/title"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/butter/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/butter/quantity_min"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/butter/quantity_min"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/butter/quantity_max"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/butter/quantity_max"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/butter"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "potted-tongues",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 117.29289058299037,
+        "processed_page_count": 1,
+        "failed": false,
+        "process_high_water_rss_bytes": 84639744,
+        "backend": {
+          "runs": [
+            {
+              "scope": [
+                1
+              ],
+              "job_id": "2624cf018826432fa9bccd50e4a7820e",
+              "pipeline": "hybrid",
+              "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+              "model_revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+              "pipeline_version": "0.1.3",
+              "schema_version": "1.0",
+              "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+              "runtime": {
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "versions": {
+                  "annotated-doc": "0.0.7",
+                  "annotated-types": "0.8.0",
+                  "anyio": "4.16.0",
+                  "attrs": "26.1.0",
+                  "certifi": "2026.11.20",
+                  "cffi": "2.1.1",
+                  "charset-normalizer": "3.5.3",
+                  "click": "8.5.1",
+                  "cryptography": "50.0.2",
+                  "datasets": "5.2.0",
+                  "dill": "0.4.1",
+                  "fastapi": "0.165.0",
+                  "filelock": "4.3.1",
+                  "fsspec": "2026.9.0",
+                  "h11": "0.16.0",
+                  "hf-xet": "1.8.0",
+                  "httpcore": "1.0.9",
+                  "httpcore2": "2.16.2",
+                  "httpx": "0.28.1",
+                  "httpx2": "2.16.2",
+                  "huggingface-hub": "2.4.0",
+                  "idna": "3.20",
+                  "jinja2": "3.1.6",
+                  "jsonschema": "4.26.0",
+                  "jsonschema-specifications": "2025.9.1",
+                  "llguidance": "1.9.1",
+                  "markdown-it-py": "4.3.0",
+                  "markupsafe": "3.0.4",
+                  "mdurl": "0.1.2",
+                  "miniaudio": "1.73",
+                  "mlx": "0.32.4",
+                  "mlx-audio": "0.6.8",
+                  "mlx-metal": "0.32.4",
+                  "mlx-vlm": "0.8.1",
+                  "mpmath": "1.3.0",
+                  "multiprocess": "0.70.19",
+                  "networkx": "3.7",
+                  "numpy": "2.5.5",
+                  "opencv-python": "5.1.0.95",
+                  "opentelemetry-api": "1.45.2",
+                  "packaging": "26.4",
+                  "pandas": "3.1.1",
+                  "pillow": "13.0.0",
+                  "pyarrow": "26.0.1",
+                  "pycparser": "3.12",
+                  "pydantic": "2.14.4",
+                  "pydantic-core": "2.50.5",
+                  "pygments": "2.21.0",
+                  "python-dateutil": "4.0.0",
+                  "python-multipart": "0.0.34",
+                  "pyyaml": "6.0.4",
+                  "referencing": "0.37.0",
+                  "regex": "2026.11.24",
+                  "requests": "2.34.2",
+                  "rich": "15.0.0",
+                  "rpds-py": "2026.9.1",
+                  "safetensors": "0.8.0",
+                  "scipy": "1.18.1",
+                  "sentencepiece": "0.2.3",
+                  "setuptools": "84.2.1",
+                  "shellingham": "1.5.4",
+                  "sounddevice": "0.5.6",
+                  "starlette": "1.10.0",
+                  "sympy": "1.14.0",
+                  "tokenizers": "0.23.3",
+                  "torch": "2.15.0",
+                  "torchvision": "0.29.2",
+                  "tqdm": "4.70.1",
+                  "transformers": "5.23.0",
+                  "truststore": "0.10.5",
+                  "typer": "0.29.2",
+                  "typing-extensions": "4.16.0",
+                  "typing-inspection": "0.4.5",
+                  "tzdata": "2026.6",
+                  "urllib3": "2.8.0",
+                  "uvicorn": "0.54.0",
+                  "websockets": "17.4",
+                  "xxhash": "4.1.0"
+                },
+                "components": {
+                  "invalid_or_missing": [],
+                  "mlx_runtime_found": true,
+                  "version_conflicts": {},
+                  "missing_runtime_packages": [],
+                  "processor": {
+                    "device": "Apple M3 Max",
+                    "key": "ba834654ec9d6e9258f89b4fc772d962f80bbe4b4a9d118678af0a7a1f3d62bf",
+                    "passed": true,
+                    "pixel_shape": [
+                      256,
+                      1536
+                    ],
+                    "processor": "Qwen3VLProcessor",
+                    "schema_decoder": "LLGuidanceLogitsProcessor"
+                  },
+                  "parser": {
+                    "ready": true,
+                    "model": "PaddleOCR-VL-1.6",
+                    "backend": "native",
+                    "device_requested": "cpu",
+                    "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+                    "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+                    "versions": {
+                      "aiohappyeyeballs": "2.7.1",
+                      "aiohttp": "3.14.5",
+                      "aiosignal": "1.4.0",
+                      "aistudio-sdk": "0.3.9",
+                      "annotated-types": "0.8.0",
+                      "anyio": "4.16.0",
+                      "attrs": "26.1.0",
+                      "bce-python-sdk": "0.9.79",
+                      "beautifulsoup4": "4.15.0",
+                      "cachetools": "8.0.2",
+                      "certifi": "2026.11.20",
+                      "cffi": "2.1.1",
+                      "chardet": "7.7.0",
+                      "charset-normalizer": "3.5.3",
+                      "click": "8.5.1",
+                      "cloudpickle": "3.1.3",
+                      "colorlog": "6.12.0",
+                      "crc32c": "2.9.post0",
+                      "cryptography": "50.0.2",
+                      "cssselect": "1.6.0",
+                      "cssutils": "2.15.0",
+                      "einops": "0.8.2",
+                      "encutils": "1.0.0",
+                      "et-xmlfile": "2.0.0",
+                      "filelock": "4.3.1",
+                      "frozenlist": "1.8.0",
+                      "fsspec": "2026.9.0",
+                      "ftfy": "6.3.1",
+                      "future": "1.0.0",
+                      "h11": "0.16.0",
+                      "hf-xet": "1.8.0",
+                      "httpcore": "1.0.9",
+                      "httpcore2": "2.16.2",
+                      "httpx": "0.28.1",
+                      "httpx2": "2.16.2",
+                      "huggingface-hub": "2.4.0",
+                      "idna": "3.20",
+                      "imagesize": "2.0.1",
+                      "jinja2": "3.1.6",
+                      "jiter": "0.19.0",
+                      "joblib": "1.6.0",
+                      "latex2mathml": "3.81.1",
+                      "lxml": "6.1.3",
+                      "markupsafe": "3.0.4",
+                      "modelscope": "1.40.3",
+                      "modelscope-hub": "0.7.2",
+                      "more-itertools": "11.2.1",
+                      "multidict": "7.2.1",
+                      "narwhals": "2.29.0",
+                      "networkx": "3.7",
+                      "numpy": "2.3.5",
+                      "openai": "3.59.0",
+                      "opencv-contrib-python": "4.10.0.84",
+                      "openpyxl": "3.1.5",
+                      "opt-einsum": "3.3.0",
+                      "packaging": "26.4",
+                      "paddleocr": "3.7.0",
+                      "paddlepaddle": "3.2.1",
+                      "paddlex": "3.7.0",
+                      "pandas": "3.1.1",
+                      "pillow": "13.0.0",
+                      "premailer": "3.10.0",
+                      "prettytable": "3.19.0",
+                      "propcache": "0.5.4",
+                      "protobuf": "7.36.2",
+                      "psutil": "7.2.2",
+                      "py-cpuinfo": "9.0.0",
+                      "pyclipper": "1.4.0",
+                      "pycparser": "3.12",
+                      "pycryptodome": "4.6.0",
+                      "pydantic": "2.14.4",
+                      "pydantic-core": "2.50.5",
+                      "pypdfium2": "5.15.2",
+                      "python-bidi": "0.6.12",
+                      "python-dateutil": "4.0.0",
+                      "pyyaml": "6.0.2",
+                      "regex": "2026.11.24",
+                      "requests": "2.34.2",
+                      "ruamel-yaml": "0.19.1",
+                      "safetensors": "0.8.0",
+                      "scikit-learn": "1.9.1",
+                      "scipy": "1.18.1",
+                      "sentencepiece": "0.2.3",
+                      "setuptools": "84.2.1",
+                      "shapely": "2.2.0",
+                      "six": "1.17.0",
+                      "sniffio": "1.3.1",
+                      "soupsieve": "4.1.3",
+                      "threadpoolctl": "3.8.0",
+                      "tiktoken": "0.14.0",
+                      "tokenizers": "0.23.3",
+                      "tqdm": "4.70.1",
+                      "truststore": "0.10.5",
+                      "typing-extensions": "4.16.0",
+                      "typing-inspection": "0.4.5",
+                      "tzdata": "2026.6",
+                      "ujson": "6.1.0",
+                      "urllib3": "2.8.0",
+                      "wcwidth": "0.9.5",
+                      "yarl": "1.25.1"
+                    }
+                  }
+                },
+                "ready": true,
+                "host_supported": true
+              },
+              "settings": {
+                "pipeline": "hybrid",
+                "doc_type": "auto",
+                "page_groups": [],
+                "max_bytes": 67108864,
+                "max_pages": 16,
+                "max_pixels": 40000000,
+                "render_pixels": 2000000,
+                "max_crops": 1,
+                "max_tokens": 4096,
+                "retries": 1
+              },
+              "calls": [
+                {
+                  "id": "p1-paddle",
+                  "attempt_id": "p1-paddle",
+                  "model": "PaddleOCR-VL-1.6",
+                  "artifact_dir": "attempts/p1-paddle",
+                  "image_path": "pages/0001.png",
+                  "channel": "parser",
+                  "status": "parsed",
+                  "token_limit": 768,
+                  "recognition_tokens": {
+                    "requested_crops": 2,
+                    "returned_crops": 2,
+                    "crops": [
+                      {
+                        "crop_index": 1,
+                        "generated_tokens": 5,
+                        "token_limit": 768,
+                        "cap_hit": false,
+                        "eos_seen": true
+                      },
+                      {
+                        "crop_index": 2,
+                        "generated_tokens": 240,
+                        "token_limit": 768,
+                        "cap_hit": false,
+                        "eos_seen": true
+                      }
+                    ]
+                  },
+                  "token_limit_hits": 0,
+                  "token_telemetry_complete": true,
+                  "device": "cpu",
+                  "components": {
+                    "layout": {
+                      "class": "LayoutAnalysisRunnerPredictor",
+                      "device": "cpu"
+                    },
+                    "recognition": {
+                      "class": "DocVLMLocalPredictor",
+                      "device": "cpu"
+                    }
+                  },
+                  "runtime_seconds": 97.07343720801873,
+                  "peak_rss_bytes": 13423476736,
+                  "seconds_including_lock_wait": 97.54177650000202,
+                  "omitted_regions": 0,
+                  "degraded_blocks": 0
+                },
+                {
+                  "id": "p1-qwen-0",
+                  "attempt_id": "p1-qwen-0",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-0",
+                  "image_path": "pages/0001.png",
+                  "region_ids": [
+                    "p1-parser-0",
+                    "p1-parser-1"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "finish_reason": "stop",
+                  "generated_tokens": 553,
+                  "prompt_tokens": 2623,
+                  "load_seconds": 2.765466083015781,
+                  "generation_seconds": 13.193814375001239,
+                  "runtime_seconds": 18.66934195900103,
+                  "peak_rss_bytes": 7446593536,
+                  "mlx_peak_bytes": 7683763276,
+                  "seconds_including_lock_wait": 19.16638704200159,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "To Port Tonques",
+                      "quote": "To Port Tonques",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": "p1-parser-1",
+                      "raw": "Salt y. Tongues lightly with ordinary Salt, the next day with\nsource of salt peter, for 3 large tongues, or 4 small ones at the weeks\nend Salt them again with ordinary Salt, and let them lye a fortnight.\nThen Boils Boils them tender & peal them, take the root skins & the\nTelly part of the blade of the tongues. season them with Jamaica pepper\nbeaten, put them in a pot with 2 or 3 p. of Butter to Cor & Tongues so as\nto Cover them well, lay the roots at the top of the tongues to keep them\nmoist, covering them with double wet paper, tye them down, let them\nstand in the Oven about an hour & half, then take them out, swill\nthem in Butter to wash off the Spice & Settlement, put them in\nthe pot you intend to keep them in & after the Butter has stood to be\nClear from the Settlement, pour it upon them whilst it is hot & let\nthere be butter enough to Carry them of a Convenient Thickness.",
+                      "quote": "Salt y. Tongues lightly with ordinary Salt, the next day with\nsource of salt peter, for 3 large tongues, or 4 small ones at the weeks\nend Salt them again with ordinary Salt, and let them lye a fortnight.\nThen Boils Boils them tender & peal them, take the root skins & the\nTelly part of the blade of the tongues. season them with Jamaica pepper\nbeaten, put them in a pot with 2 or 3 p. of Butter to Cor & Tongues so as\nto Cover them well, lay the roots at the top of the tongues to keep them\nmoist, covering them with double wet paper, tye them down, let them\nstand in the Oven about an hour & half, then take them out, swill\nthem in Butter to wash off the Spice & Settlement, put them in\nthe pot you intend to keep them in & after the Butter has stood to be\nClear from the Settlement, pour it upon them whilst it is hot & let\nthere be butter enough to Carry them of a Convenient Thickness.",
+                      "state": "readable"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "job_id": "2624cf018826432fa9bccd50e4a7820e",
+          "error_code": null,
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 13423476736,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 5,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 2,
+                      "eos_seen": true,
+                      "generated_tokens": 240,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 2,
+                  "returned_crops": 2
+                },
+                "runtime_seconds": 97.07343720801873,
+                "seconds_including_lock_wait": 97.54177650000202,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "To Port Tonques",
+                    "raw": "To Port Tonques",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "Salt y. Tongues lightly with ordinary Salt, the next day with\nsource of salt peter, for 3 large tongues, or 4 small ones at the weeks\nend Salt them again with ordinary Salt, and let them lye a fortnight.\nThen Boils Boils them tender & peal them, take the root skins & the\nTelly part of the blade of the tongues. season them with Jamaica pepper\nbeaten, put them in a pot with 2 or 3 p. of Butter to Cor & Tongues so as\nto Cover them well, lay the roots at the top of the tongues to keep them\nmoist, covering them with double wet paper, tye them down, let them\nstand in the Oven about an hour & half, then take them out, swill\nthem in Butter to wash off the Spice & Settlement, put them in\nthe pot you intend to keep them in & after the Butter has stood to be\nClear from the Settlement, pour it upon them whilst it is hot & let\nthere be butter enough to Carry them of a Convenient Thickness.",
+                    "raw": "Salt y. Tongues lightly with ordinary Salt, the next day with\nsource of salt peter, for 3 large tongues, or 4 small ones at the weeks\nend Salt them again with ordinary Salt, and let them lye a fortnight.\nThen Boils Boils them tender & peal them, take the root skins & the\nTelly part of the blade of the tongues. season them with Jamaica pepper\nbeaten, put them in a pot with 2 or 3 p. of Butter to Cor & Tongues so as\nto Cover them well, lay the roots at the top of the tongues to keep them\nmoist, covering them with double wet paper, tye them down, let them\nstand in the Oven about an hour & half, then take them out, swill\nthem in Butter to wash off the Spice & Settlement, put them in\nthe pot you intend to keep them in & after the Butter has stood to be\nClear from the Settlement, pour it upon them whilst it is hot & let\nthere be butter enough to Carry them of a Convenient Thickness.",
+                    "region_id": "p1-parser-1",
+                    "state": "readable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 553,
+                "generation_seconds": 13.193814375001239,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.765466083015781,
+                "mlx_peak_bytes": 7683763276,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7446593536,
+                "prompt_tokens": 2623,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 18.66934195900103,
+                "seconds_including_lock_wait": 19.16638704200159,
+                "status": "parsed",
+                "token_limit": 4096
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-omdifqn6/potted-tongues"
+    },
+    {
+      "fixture": "plumb-cake",
+      "origin": "real",
+      "split": "held_out",
+      "strata": [
+        "en",
+        "recipe",
+        "handwriting",
+        "known-crop",
+        "diagnostic",
+        "uncertain-digit",
+        "fraction"
+      ],
+      "sha256": "5f5de0e5b775097389272e70ddf136abfdc8e9bfca3d0469bb77fd7f2a43cabb",
+      "labels_sha256": "d3704cad6b8ab65f246a05405429016cc80bb6605a5498c12087dff8cd7c8a36",
+      "settings": {},
+      "status": "completed",
+      "detail": null,
+      "processed_pages": [
+        1
+      ],
+      "skipped_pages": [],
+      "incomplete_pages": [],
+      "suspected_capture": false,
+      "page_count": 1,
+      "issues": [
+        "recipe_yield_missing",
+        "unreadable_field",
+        "unsupported_quote"
+      ],
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 6,
+        "field_exact_ok": 2,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 1,
+        "unresolved_fields": 2,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "failures": [
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/sugar/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/sugar/quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/sugar/quantity"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/sugar"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/eggs/name"
+        },
+        {
+          "metric": "field_exact",
+          "location": "pages [1]/eggs/quantity"
+        },
+        {
+          "metric": "recipe_quantity_unit_yield",
+          "location": "pages [1]/eggs/quantity"
+        },
+        {
+          "metric": "row_alignment",
+          "location": "pages [1]/eggs"
+        }
+      ],
+      "runtime_sample": {
+        "fixture": "plumb-cake",
+        "phase": "fresh_process_per_model_call",
+        "seconds": 81.34275187502499,
+        "processed_page_count": 1,
+        "failed": false,
+        "process_high_water_rss_bytes": 84639744,
+        "backend": {
+          "runs": [
+            {
+              "scope": [
+                1
+              ],
+              "job_id": "7aae27cf9e2943c1864f93d791dbfb83",
+              "pipeline": "hybrid",
+              "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+              "model_revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+              "pipeline_version": "0.1.3",
+              "schema_version": "1.0",
+              "config_hash": "bc83cae4fc6cfbc52d492d2736e7b8669a8ce7cce0a455bd48498c6475d36193",
+              "runtime": {
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "versions": {
+                  "annotated-doc": "0.0.7",
+                  "annotated-types": "0.8.0",
+                  "anyio": "4.16.0",
+                  "attrs": "26.1.0",
+                  "certifi": "2026.11.20",
+                  "cffi": "2.1.1",
+                  "charset-normalizer": "3.5.3",
+                  "click": "8.5.1",
+                  "cryptography": "50.0.2",
+                  "datasets": "5.2.0",
+                  "dill": "0.4.1",
+                  "fastapi": "0.165.0",
+                  "filelock": "4.3.1",
+                  "fsspec": "2026.9.0",
+                  "h11": "0.16.0",
+                  "hf-xet": "1.8.0",
+                  "httpcore": "1.0.9",
+                  "httpcore2": "2.16.2",
+                  "httpx": "0.28.1",
+                  "httpx2": "2.16.2",
+                  "huggingface-hub": "2.4.0",
+                  "idna": "3.20",
+                  "jinja2": "3.1.6",
+                  "jsonschema": "4.26.0",
+                  "jsonschema-specifications": "2025.9.1",
+                  "llguidance": "1.9.1",
+                  "markdown-it-py": "4.3.0",
+                  "markupsafe": "3.0.4",
+                  "mdurl": "0.1.2",
+                  "miniaudio": "1.73",
+                  "mlx": "0.32.4",
+                  "mlx-audio": "0.6.8",
+                  "mlx-metal": "0.32.4",
+                  "mlx-vlm": "0.8.1",
+                  "mpmath": "1.3.0",
+                  "multiprocess": "0.70.19",
+                  "networkx": "3.7",
+                  "numpy": "2.5.5",
+                  "opencv-python": "5.1.0.95",
+                  "opentelemetry-api": "1.45.2",
+                  "packaging": "26.4",
+                  "pandas": "3.1.1",
+                  "pillow": "13.0.0",
+                  "pyarrow": "26.0.1",
+                  "pycparser": "3.12",
+                  "pydantic": "2.14.4",
+                  "pydantic-core": "2.50.5",
+                  "pygments": "2.21.0",
+                  "python-dateutil": "4.0.0",
+                  "python-multipart": "0.0.34",
+                  "pyyaml": "6.0.4",
+                  "referencing": "0.37.0",
+                  "regex": "2026.11.24",
+                  "requests": "2.34.2",
+                  "rich": "15.0.0",
+                  "rpds-py": "2026.9.1",
+                  "safetensors": "0.8.0",
+                  "scipy": "1.18.1",
+                  "sentencepiece": "0.2.3",
+                  "setuptools": "84.2.1",
+                  "shellingham": "1.5.4",
+                  "sounddevice": "0.5.6",
+                  "starlette": "1.10.0",
+                  "sympy": "1.14.0",
+                  "tokenizers": "0.23.3",
+                  "torch": "2.15.0",
+                  "torchvision": "0.29.2",
+                  "tqdm": "4.70.1",
+                  "transformers": "5.23.0",
+                  "truststore": "0.10.5",
+                  "typer": "0.29.2",
+                  "typing-extensions": "4.16.0",
+                  "typing-inspection": "0.4.5",
+                  "tzdata": "2026.6",
+                  "urllib3": "2.8.0",
+                  "uvicorn": "0.54.0",
+                  "websockets": "17.4",
+                  "xxhash": "4.1.0"
+                },
+                "components": {
+                  "invalid_or_missing": [],
+                  "mlx_runtime_found": true,
+                  "version_conflicts": {},
+                  "missing_runtime_packages": [],
+                  "processor": {
+                    "device": "Apple M3 Max",
+                    "key": "ba834654ec9d6e9258f89b4fc772d962f80bbe4b4a9d118678af0a7a1f3d62bf",
+                    "passed": true,
+                    "pixel_shape": [
+                      256,
+                      1536
+                    ],
+                    "processor": "Qwen3VLProcessor",
+                    "schema_decoder": "LLGuidanceLogitsProcessor"
+                  },
+                  "parser": {
+                    "ready": true,
+                    "model": "PaddleOCR-VL-1.6",
+                    "backend": "native",
+                    "device_requested": "cpu",
+                    "layout_revision": "241f8bdfc77a7c7bee915a5057aaee58c235a8d3",
+                    "recognition_revision": "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd",
+                    "versions": {
+                      "aiohappyeyeballs": "2.7.1",
+                      "aiohttp": "3.14.5",
+                      "aiosignal": "1.4.0",
+                      "aistudio-sdk": "0.3.9",
+                      "annotated-types": "0.8.0",
+                      "anyio": "4.16.0",
+                      "attrs": "26.1.0",
+                      "bce-python-sdk": "0.9.79",
+                      "beautifulsoup4": "4.15.0",
+                      "cachetools": "8.0.2",
+                      "certifi": "2026.11.20",
+                      "cffi": "2.1.1",
+                      "chardet": "7.7.0",
+                      "charset-normalizer": "3.5.3",
+                      "click": "8.5.1",
+                      "cloudpickle": "3.1.3",
+                      "colorlog": "6.12.0",
+                      "crc32c": "2.9.post0",
+                      "cryptography": "50.0.2",
+                      "cssselect": "1.6.0",
+                      "cssutils": "2.15.0",
+                      "einops": "0.8.2",
+                      "encutils": "1.0.0",
+                      "et-xmlfile": "2.0.0",
+                      "filelock": "4.3.1",
+                      "frozenlist": "1.8.0",
+                      "fsspec": "2026.9.0",
+                      "ftfy": "6.3.1",
+                      "future": "1.0.0",
+                      "h11": "0.16.0",
+                      "hf-xet": "1.8.0",
+                      "httpcore": "1.0.9",
+                      "httpcore2": "2.16.2",
+                      "httpx": "0.28.1",
+                      "httpx2": "2.16.2",
+                      "huggingface-hub": "2.4.0",
+                      "idna": "3.20",
+                      "imagesize": "2.0.1",
+                      "jinja2": "3.1.6",
+                      "jiter": "0.19.0",
+                      "joblib": "1.6.0",
+                      "latex2mathml": "3.81.1",
+                      "lxml": "6.1.3",
+                      "markupsafe": "3.0.4",
+                      "modelscope": "1.40.3",
+                      "modelscope-hub": "0.7.2",
+                      "more-itertools": "11.2.1",
+                      "multidict": "7.2.1",
+                      "narwhals": "2.29.0",
+                      "networkx": "3.7",
+                      "numpy": "2.3.5",
+                      "openai": "3.59.0",
+                      "opencv-contrib-python": "4.10.0.84",
+                      "openpyxl": "3.1.5",
+                      "opt-einsum": "3.3.0",
+                      "packaging": "26.4",
+                      "paddleocr": "3.7.0",
+                      "paddlepaddle": "3.2.1",
+                      "paddlex": "3.7.0",
+                      "pandas": "3.1.1",
+                      "pillow": "13.0.0",
+                      "premailer": "3.10.0",
+                      "prettytable": "3.19.0",
+                      "propcache": "0.5.4",
+                      "protobuf": "7.36.2",
+                      "psutil": "7.2.2",
+                      "py-cpuinfo": "9.0.0",
+                      "pyclipper": "1.4.0",
+                      "pycparser": "3.12",
+                      "pycryptodome": "4.6.0",
+                      "pydantic": "2.14.4",
+                      "pydantic-core": "2.50.5",
+                      "pypdfium2": "5.15.2",
+                      "python-bidi": "0.6.12",
+                      "python-dateutil": "4.0.0",
+                      "pyyaml": "6.0.2",
+                      "regex": "2026.11.24",
+                      "requests": "2.34.2",
+                      "ruamel-yaml": "0.19.1",
+                      "safetensors": "0.8.0",
+                      "scikit-learn": "1.9.1",
+                      "scipy": "1.18.1",
+                      "sentencepiece": "0.2.3",
+                      "setuptools": "84.2.1",
+                      "shapely": "2.2.0",
+                      "six": "1.17.0",
+                      "sniffio": "1.3.1",
+                      "soupsieve": "4.1.3",
+                      "threadpoolctl": "3.8.0",
+                      "tiktoken": "0.14.0",
+                      "tokenizers": "0.23.3",
+                      "tqdm": "4.70.1",
+                      "truststore": "0.10.5",
+                      "typing-extensions": "4.16.0",
+                      "typing-inspection": "0.4.5",
+                      "tzdata": "2026.6",
+                      "ujson": "6.1.0",
+                      "urllib3": "2.8.0",
+                      "wcwidth": "0.9.5",
+                      "yarl": "1.25.1"
+                    }
+                  }
+                },
+                "ready": true,
+                "host_supported": true
+              },
+              "settings": {
+                "pipeline": "hybrid",
+                "doc_type": "auto",
+                "page_groups": [],
+                "max_bytes": 67108864,
+                "max_pages": 16,
+                "max_pixels": 40000000,
+                "render_pixels": 2000000,
+                "max_crops": 1,
+                "max_tokens": 4096,
+                "retries": 1
+              },
+              "calls": [
+                {
+                  "id": "p1-paddle",
+                  "attempt_id": "p1-paddle",
+                  "model": "PaddleOCR-VL-1.6",
+                  "artifact_dir": "attempts/p1-paddle",
+                  "image_path": "pages/0001.png",
+                  "channel": "parser",
+                  "status": "parsed",
+                  "token_limit": 768,
+                  "recognition_tokens": {
+                    "requested_crops": 2,
+                    "returned_crops": 2,
+                    "crops": [
+                      {
+                        "crop_index": 1,
+                        "generated_tokens": 6,
+                        "token_limit": 768,
+                        "cap_hit": false,
+                        "eos_seen": true
+                      },
+                      {
+                        "crop_index": 2,
+                        "generated_tokens": 139,
+                        "token_limit": 768,
+                        "cap_hit": false,
+                        "eos_seen": true
+                      }
+                    ]
+                  },
+                  "token_limit_hits": 0,
+                  "token_telemetry_complete": true,
+                  "device": "cpu",
+                  "components": {
+                    "layout": {
+                      "class": "LayoutAnalysisRunnerPredictor",
+                      "device": "cpu"
+                    },
+                    "recognition": {
+                      "class": "DocVLMLocalPredictor",
+                      "device": "cpu"
+                    }
+                  },
+                  "runtime_seconds": 47.220083167019766,
+                  "peak_rss_bytes": 11468505088,
+                  "seconds_including_lock_wait": 47.63407654201728,
+                  "omitted_regions": 0,
+                  "degraded_blocks": 0
+                },
+                {
+                  "id": "p1-qwen-0",
+                  "attempt_id": "p1-qwen-0",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-0",
+                  "image_path": "pages/0001.png",
+                  "region_ids": [
+                    "p1-parser-0",
+                    "p1-parser-1"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "finish_reason": "stop",
+                  "generated_tokens": 359,
+                  "prompt_tokens": 1646,
+                  "load_seconds": 2.0041408329852857,
+                  "generation_seconds": 8.155015458003618,
+                  "runtime_seconds": 12.021584500005702,
+                  "peak_rss_bytes": 7253803008,
+                  "mlx_peak_bytes": 7493194550,
+                  "seconds_including_lock_wait": 12.481711500004167,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Rich Plumb Cake",
+                      "quote": "A Rich Plumb Cake",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    }
+                  ]
+                },
+                {
+                  "id": "p1-qwen-1",
+                  "attempt_id": "p1-qwen-1",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-1",
+                  "image_path": "pages/0001.png",
+                  "region_ids": [
+                    "p1-parser-0",
+                    "p1-parser-1"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "finish_reason": "stop",
+                  "generated_tokens": 359,
+                  "prompt_tokens": 1657,
+                  "load_seconds": 2.1264775000163354,
+                  "generation_seconds": 7.9385749999783,
+                  "runtime_seconds": 12.060402958013583,
+                  "peak_rss_bytes": 7233585152,
+                  "mlx_peak_bytes": 7502386150,
+                  "seconds_including_lock_wait": 12.516624375013635,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Rich Plumb Cake",
+                      "quote": "A Rich Plumb Cake",
+                      "state": "readable"
+                    },
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "description",
+                      "region_id": null,
+                      "raw": null,
+                      "quote": "",
+                      "state": "unreadable"
+                    }
+                  ]
+                },
+                {
+                  "id": "p1-qwen-2",
+                  "attempt_id": "p1-qwen-2",
+                  "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                  "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                  "constrained": true,
+                  "token_limit": 4096,
+                  "artifact_dir": "attempts/p1-qwen-2",
+                  "image_path": "crops/0001-01.png",
+                  "region_ids": [
+                    "p1-parser-0"
+                  ],
+                  "channel": "direct",
+                  "status": "parsed",
+                  "crop_region_id": "p1-crop-1",
+                  "finish_reason": "stop",
+                  "generated_tokens": 86,
+                  "prompt_tokens": 776,
+                  "load_seconds": 2.317561417003162,
+                  "generation_seconds": 2.6931956250045914,
+                  "runtime_seconds": 7.657031457987614,
+                  "peak_rss_bytes": 6687784960,
+                  "mlx_peak_bytes": 7072440446,
+                  "seconds_including_lock_wait": 8.153637124982197,
+                  "overflow": false,
+                  "fields": [
+                    {
+                      "local_id": "root",
+                      "kind": "recipe",
+                      "field": "title",
+                      "region_id": "p1-parser-0",
+                      "raw": "A Rich Plumb Cake",
+                      "quote": "A Rich Plumb Cake",
+                      "state": "readable",
+                      "language": "en",
+                      "writing": "handwriting"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "job_id": "7aae27cf9e2943c1864f93d791dbfb83",
+          "error_code": null,
+          "attempted_pages": [
+            1
+          ],
+          "calls_by_page": {
+            "1": [
+              {
+                "artifact_dir": "attempts/p1-paddle",
+                "attempt_id": "p1-paddle",
+                "channel": "parser",
+                "components": {
+                  "layout": {
+                    "class": "LayoutAnalysisRunnerPredictor",
+                    "device": "cpu"
+                  },
+                  "recognition": {
+                    "class": "DocVLMLocalPredictor",
+                    "device": "cpu"
+                  }
+                },
+                "degraded_blocks": 0,
+                "device": "cpu",
+                "id": "p1-paddle",
+                "image_path": "pages/0001.png",
+                "model": "PaddleOCR-VL-1.6",
+                "omitted_regions": 0,
+                "peak_rss_bytes": 11468505088,
+                "recognition_tokens": {
+                  "crops": [
+                    {
+                      "cap_hit": false,
+                      "crop_index": 1,
+                      "eos_seen": true,
+                      "generated_tokens": 6,
+                      "token_limit": 768
+                    },
+                    {
+                      "cap_hit": false,
+                      "crop_index": 2,
+                      "eos_seen": true,
+                      "generated_tokens": 139,
+                      "token_limit": 768
+                    }
+                  ],
+                  "requested_crops": 2,
+                  "returned_crops": 2
+                },
+                "runtime_seconds": 47.220083167019766,
+                "seconds_including_lock_wait": 47.63407654201728,
+                "status": "parsed",
+                "token_limit": 768,
+                "token_limit_hits": 0,
+                "token_telemetry_complete": true
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-0",
+                "attempt_id": "p1-qwen-0",
+                "channel": "direct",
+                "constrained": true,
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "A Rich Plumb Cake",
+                    "raw": "A Rich Plumb Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 359,
+                "generation_seconds": 8.155015458003618,
+                "id": "p1-qwen-0",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.0041408329852857,
+                "mlx_peak_bytes": 7493194550,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7253803008,
+                "prompt_tokens": 1646,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 12.021584500005702,
+                "seconds_including_lock_wait": 12.481711500004167,
+                "status": "parsed",
+                "token_limit": 4096
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-1",
+                "attempt_id": "p1-qwen-1",
+                "channel": "direct",
+                "constrained": true,
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "A Rich Plumb Cake",
+                    "raw": "A Rich Plumb Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable"
+                  },
+                  {
+                    "field": "description",
+                    "kind": "recipe",
+                    "local_id": "root",
+                    "quote": "",
+                    "raw": null,
+                    "region_id": null,
+                    "state": "unreadable"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 359,
+                "generation_seconds": 7.9385749999783,
+                "id": "p1-qwen-1",
+                "image_path": "pages/0001.png",
+                "load_seconds": 2.1264775000163354,
+                "mlx_peak_bytes": 7502386150,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 7233585152,
+                "prompt_tokens": 1657,
+                "region_ids": [
+                  "p1-parser-0",
+                  "p1-parser-1"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 12.060402958013583,
+                "seconds_including_lock_wait": 12.516624375013635,
+                "status": "parsed",
+                "token_limit": 4096
+              },
+              {
+                "artifact_dir": "attempts/p1-qwen-2",
+                "attempt_id": "p1-qwen-2",
+                "channel": "direct",
+                "constrained": true,
+                "crop_region_id": "p1-crop-1",
+                "fields": [
+                  {
+                    "field": "title",
+                    "kind": "recipe",
+                    "language": "en",
+                    "local_id": "root",
+                    "quote": "A Rich Plumb Cake",
+                    "raw": "A Rich Plumb Cake",
+                    "region_id": "p1-parser-0",
+                    "state": "readable",
+                    "writing": "handwriting"
+                  }
+                ],
+                "finish_reason": "stop",
+                "generated_tokens": 86,
+                "generation_seconds": 2.6931956250045914,
+                "id": "p1-qwen-2",
+                "image_path": "crops/0001-01.png",
+                "load_seconds": 2.317561417003162,
+                "mlx_peak_bytes": 7072440446,
+                "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+                "overflow": false,
+                "peak_rss_bytes": 6687784960,
+                "prompt_tokens": 776,
+                "region_ids": [
+                  "p1-parser-0"
+                ],
+                "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+                "runtime_seconds": 7.657031457987614,
+                "seconds_including_lock_wait": 8.153637124982197,
+                "status": "parsed",
+                "token_limit": 4096
+              }
+            ]
+          }
+        }
+      },
+      "artifacts": "cases-omdifqn6/plumb-cake"
+    }
+  ],
+  "metrics": [
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "all",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "crossed-out",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 7,
+        "field_exact_ok": 3,
+        "answerable_fields": 6,
+        "covered_answerable_fields": 3,
+        "correct_answered_fields": 3,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 3,
+          "denominator": 7,
+          "rate": 0.42857142857142855
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        },
+        "accuracy_when_answered": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "crossed-out-word",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 5,
+        "field_exact_ok": 1,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "diagnostic",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "duplicate-ingredient",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 0,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 7,
+        "field_exact_ok": 3,
+        "answerable_fields": 6,
+        "covered_answerable_fields": 3,
+        "correct_answered_fields": 3,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 3,
+          "denominator": 7,
+          "rate": 0.42857142857142855
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 2,
+          "rate": 0.5
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        },
+        "accuracy_when_answered": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 6,
+          "rate": 0.5
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "en",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "fraction",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 6,
+        "field_exact_ok": 2,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 1,
+        "unresolved_fields": 2,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 2,
+          "denominator": 6,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25
+        },
+        "accuracy_when_answered": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "handwriting",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "known-crop",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "quantity-range",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 5,
+        "field_exact_ok": 1,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 0,
+        "unresolved_fields": 1,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 1,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25
+        },
+        "accuracy_when_answered": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "recipe",
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 2,
+          "denominator": 3,
+          "rate": 0.6666666666666666
+        },
+        "page_coverage": {
+          "numerator": 9,
+          "denominator": 9,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 6,
+          "denominator": 18,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 3,
+          "denominator": 9,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 1,
+          "denominator": 5,
+          "rate": 0.2
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 5,
+          "denominator": 14,
+          "rate": 0.35714285714285715
+        },
+        "accuracy_when_answered": {
+          "numerator": 4,
+          "denominator": 5,
+          "rate": 0.8
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 4,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 3,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 9,
+          "denominator": 14,
+          "rate": 0.6428571428571429
+        }
+      }
+    },
+    {
+      "origin": "real",
+      "split": "held_out",
+      "stratum": "uncertain-digit",
+      "counts": {
+        "attempts": 1,
+        "documents": 1,
+        "status_n": 1,
+        "status_ok": 1,
+        "page_coverage_n": 3,
+        "page_coverage_ok": 3,
+        "document_scope_n": 1,
+        "document_scope_ok": 1,
+        "document_type_n": 1,
+        "document_type_ok": 1,
+        "field_exact_n": 6,
+        "field_exact_ok": 2,
+        "answerable_fields": 4,
+        "covered_answerable_fields": 1,
+        "correct_answered_fields": 1,
+        "unresolved_fields": 2,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 3,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 2,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 1,
+        "review_documents": 1,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 1,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 1,
+        "passed_cases": 0
+      },
+      "rates": {
+        "status": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "page_coverage": {
+          "numerator": 3,
+          "denominator": 3,
+          "rate": 1.0
+        },
+        "document_scope": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "document_type": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "field_exact": {
+          "numerator": 2,
+          "denominator": 6,
+          "rate": 0.3333333333333333
+        },
+        "recipe_quantity_unit_yield": {
+          "numerator": 1,
+          "denominator": 3,
+          "rate": 0.3333333333333333
+        },
+        "row_alignment": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "case_pass": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_coverage": {
+          "numerator": 1,
+          "denominator": 4,
+          "rate": 0.25
+        },
+        "accuracy_when_answered": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "unresolved_guess_rate": {
+          "numerator": 0,
+          "denominator": 2,
+          "rate": 0.0
+        },
+        "approval_status_coverage": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "review_rate": {
+          "numerator": 1,
+          "denominator": 1,
+          "rate": 1.0
+        },
+        "automatic_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "false_acceptance_rate": {
+          "numerator": 0,
+          "denominator": 0,
+          "rate": null
+        },
+        "unsafe_acceptance_on_ineligible_cases": {
+          "numerator": 0,
+          "denominator": 1,
+          "rate": 0.0
+        },
+        "answerable_field_abstention": {
+          "numerator": 3,
+          "denominator": 4,
+          "rate": 0.75
+        }
+      }
+    }
+  ],
+  "runtime": [
+    {
+      "origin": "real",
+      "split": "held_out",
+      "by_phase": {
+        "fresh_process_per_model_call": {
+          "samples": 3,
+          "noncompleted_runs": 1,
+          "seconds": {
+            "min": 81.34275187502499,
+            "mean": 115.16339880566618,
+            "max": 146.85455395898316
+          },
+          "processed_pages": 3,
+          "samples_with_processed_pages": 3,
+          "end_to_end_seconds_per_processed_page": 115.16339880566618,
+          "process_high_water_rss_max_bytes": 84639744
+        }
+      }
+    }
+  ]
+}

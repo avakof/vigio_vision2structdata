@@ -1,0 +1,595 @@
+{
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "fixture_commit": "f6191ca",
+  "sample": {
+    "recipes": 3,
+    "manuscripts": 2,
+    "language": "en",
+    "source": "Wellcome Collection, genuine 18th-century handwriting",
+    "split": "separate purposive diagnostic, prospectively sealed before any diagnostic inference",
+    "labeling": "Sparse cross-checked institutional TEI references with case-sensitive unique ingredient name anchors"
+  },
+  "routes": {
+    "direct": {
+      "wall_seconds": 82.67165437500807,
+      "exit_code": 0,
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 4,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 3,
+        "correct_answered_fields": 3,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 1,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 0,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "cases": [
+        {
+          "id": "seed-cake",
+          "processing_status": "completed",
+          "document_count": 1,
+          "seconds": 12.55607108300319,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 1,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 7,
+            "field_exact_ok": 1,
+            "answerable_fields": 6,
+            "covered_answerable_fields": 1,
+            "correct_answered_fields": 1,
+            "unresolved_fields": 1,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 0,
+            "row_alignment_n": 2,
+            "row_alignment_ok": 0,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/active-butter/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/active-butter/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/active-butter/quantity"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/active-butter"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/deleted-butter/quantity"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/crossed_out"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/deleted-butter"
+            }
+          ],
+          "canonical_target_rows": [],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        },
+        {
+          "id": "potted-tongues",
+          "processing_status": "incomplete",
+          "document_count": 1,
+          "seconds": 53.922186582989525,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 0,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 5,
+            "field_exact_ok": 1,
+            "answerable_fields": 4,
+            "covered_answerable_fields": 1,
+            "correct_answered_fields": 1,
+            "unresolved_fields": 1,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 0,
+            "row_alignment_n": 1,
+            "row_alignment_ok": 0,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "status",
+              "location": "source"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/quantity_min"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/butter/quantity_min"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/quantity_max"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/butter/quantity_max"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/butter"
+            }
+          ],
+          "canonical_target_rows": [],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        },
+        {
+          "id": "plumb-cake",
+          "processing_status": "completed",
+          "document_count": 1,
+          "seconds": 12.249277208000422,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 1,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 6,
+            "field_exact_ok": 2,
+            "answerable_fields": 4,
+            "covered_answerable_fields": 1,
+            "correct_answered_fields": 1,
+            "unresolved_fields": 2,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 1,
+            "row_alignment_n": 2,
+            "row_alignment_ok": 0,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/sugar/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/sugar/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/sugar/quantity"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/sugar"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/eggs/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/eggs/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/eggs/quantity"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/eggs"
+            }
+          ],
+          "canonical_target_rows": [],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        }
+      ]
+    },
+    "hybrid": {
+      "wall_seconds": 346.78374520898797,
+      "exit_code": 0,
+      "offline_probe": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "counts": {
+        "attempts": 3,
+        "documents": 3,
+        "status_n": 3,
+        "status_ok": 2,
+        "page_coverage_n": 9,
+        "page_coverage_ok": 9,
+        "document_scope_n": 3,
+        "document_scope_ok": 3,
+        "document_type_n": 3,
+        "document_type_ok": 3,
+        "field_exact_n": 18,
+        "field_exact_ok": 6,
+        "answerable_fields": 14,
+        "covered_answerable_fields": 5,
+        "correct_answered_fields": 4,
+        "unresolved_fields": 4,
+        "guessed_unresolved_fields": 0,
+        "recipe_quantity_unit_yield_n": 9,
+        "recipe_quantity_unit_yield_ok": 3,
+        "row_alignment_n": 5,
+        "row_alignment_ok": 1,
+        "documents_with_known_approval": 3,
+        "review_documents": 3,
+        "auto_accepted_documents": 0,
+        "auto_accepted_cases": 0,
+        "ineligible_cases": 3,
+        "auto_accepted_ineligible_cases": 0,
+        "false_accepted_cases": 0,
+        "failed_cases": 3,
+        "passed_cases": 0
+      },
+      "cases": [
+        {
+          "id": "seed-cake",
+          "processing_status": "incomplete",
+          "document_count": 1,
+          "seconds": 146.85455395898316,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 0,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 7,
+            "field_exact_ok": 3,
+            "answerable_fields": 6,
+            "covered_answerable_fields": 3,
+            "correct_answered_fields": 3,
+            "unresolved_fields": 1,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 1,
+            "row_alignment_n": 2,
+            "row_alignment_ok": 1,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "status",
+              "location": "source"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/header/yield_quantity"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/deleted-butter/quantity"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/deleted-butter/crossed_out"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/deleted-butter"
+            }
+          ],
+          "canonical_target_rows": [
+            {
+              "document_id": "doc-2d1bd79c4ade5aec72b25ad3064733ad",
+              "entity_id": "p1.r2",
+              "fields": {
+                "name": {
+                  "id": "p1.r2.name",
+                  "raw": "Butter",
+                  "value": "Butter",
+                  "state": "readable",
+                  "origin": "observed",
+                  "alternatives": [],
+                  "evidence": [
+                    {
+                      "page": 1,
+                      "region_id": "p1-parser-0",
+                      "quote": "Fakes of Butter",
+                      "channel": "parser",
+                      "attempt_id": "p1-qwen-0"
+                    }
+                  ]
+                },
+                "quantity": {
+                  "id": "p1.r2.quantity",
+                  "raw": "3",
+                  "value": "3",
+                  "state": "readable",
+                  "origin": "observed",
+                  "alternatives": [],
+                  "evidence": [
+                    {
+                      "page": 1,
+                      "region_id": "p1-parser-0",
+                      "quote": "3",
+                      "channel": "parser",
+                      "attempt_id": "p1-qwen-0"
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        },
+        {
+          "id": "potted-tongues",
+          "processing_status": "completed",
+          "document_count": 1,
+          "seconds": 117.29289058299037,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 1,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 5,
+            "field_exact_ok": 1,
+            "answerable_fields": 4,
+            "covered_answerable_fields": 1,
+            "correct_answered_fields": 0,
+            "unresolved_fields": 1,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 1,
+            "row_alignment_n": 1,
+            "row_alignment_ok": 0,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/header/title"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/quantity_min"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/butter/quantity_min"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/butter/quantity_max"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/butter/quantity_max"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/butter"
+            }
+          ],
+          "canonical_target_rows": [],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        },
+        {
+          "id": "plumb-cake",
+          "processing_status": "completed",
+          "document_count": 1,
+          "seconds": 81.34275187502499,
+          "counts": {
+            "attempts": 1,
+            "documents": 1,
+            "status_n": 1,
+            "status_ok": 1,
+            "page_coverage_n": 3,
+            "page_coverage_ok": 3,
+            "document_scope_n": 1,
+            "document_scope_ok": 1,
+            "document_type_n": 1,
+            "document_type_ok": 1,
+            "field_exact_n": 6,
+            "field_exact_ok": 2,
+            "answerable_fields": 4,
+            "covered_answerable_fields": 1,
+            "correct_answered_fields": 1,
+            "unresolved_fields": 2,
+            "guessed_unresolved_fields": 0,
+            "recipe_quantity_unit_yield_n": 3,
+            "recipe_quantity_unit_yield_ok": 1,
+            "row_alignment_n": 2,
+            "row_alignment_ok": 0,
+            "documents_with_known_approval": 1,
+            "review_documents": 1,
+            "auto_accepted_documents": 0,
+            "auto_accepted_cases": 0,
+            "ineligible_cases": 1,
+            "auto_accepted_ineligible_cases": 0,
+            "false_accepted_cases": 0,
+            "failed_cases": 1,
+            "passed_cases": 0
+          },
+          "failures": [
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/sugar/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/sugar/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/sugar/quantity"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/sugar"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/eggs/name"
+            },
+            {
+              "metric": "field_exact",
+              "location": "pages [1]/eggs/quantity"
+            },
+            {
+              "metric": "recipe_quantity_unit_yield",
+              "location": "pages [1]/eggs/quantity"
+            },
+            {
+              "metric": "row_alignment",
+              "location": "pages [1]/eggs"
+            }
+          ],
+          "canonical_target_rows": [],
+          "row_selection_note": "Shows all ingredient names whose source or normalized name contains the target word without regard to case. The independent scorer uses the exact declared label anchors."
+        }
+      ]
+    }
+  }
+}
