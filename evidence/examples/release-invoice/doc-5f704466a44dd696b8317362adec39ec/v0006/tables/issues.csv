@@ -1,0 +1,3 @@
+document_id,issue_seq,code,severity,message,page,observation_ids
+doc-5f704466a44dd696b8317362adec39ec,0,critical_missing,info,invoice.issue_date was not read,1,[]
+doc-5f704466a44dd696b8317362adec39ec,1,total_check_indeterminate,info,no subtotal or line items were read to compare with the total,1,"[""p1.root.total""]"

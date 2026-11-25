@@ -1,0 +1,6 @@
+document_id,observation_id,seq,page,region_id,quote,channel,attempt_id,source_sha256,job_id,source_path,page_image_path
+doc-5f704466a44dd696b8317362adec39ec,p1.root.document_kind,0,1,p1-parser-0,FACTURE / INVOICE,parser,p1-qwen-0,74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335,88a65ece943f4555b99f4aeda6c85f71,original,pages/0001.png
+doc-5f704466a44dd696b8317362adec39ec,p1.root.document_number,0,1,p1-parser-0,VTX-4187,parser,p1-qwen-0,74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335,88a65ece943f4555b99f4aeda6c85f71,original,pages/0001.png
+doc-5f704466a44dd696b8317362adec39ec,p1.root.supplier_name,0,1,p1-parser-0,Atelier de la Rive,parser,p1-qwen-0,74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335,88a65ece943f4555b99f4aeda6c85f71,original,pages/0001.png
+doc-5f704466a44dd696b8317362adec39ec,p1.root.currency,0,1,p1-parser-1,EUR,parser,p1-qwen-0,74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335,88a65ece943f4555b99f4aeda6c85f71,original,pages/0001.png
+doc-5f704466a44dd696b8317362adec39ec,p1.root.total,0,1,p1-parser-1,"37,25 EUR",parser,p1-qwen-0,74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335,88a65ece943f4555b99f4aeda6c85f71,original,pages/0001.png

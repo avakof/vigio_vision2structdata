@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T21:23:43+01:00",
+  "as_of": "2026-11-25T21:27:35+01:00",
   "record": "integrated production checkpoint; final comparative evaluation in progress",
   "all_requested_routes_complete": false,
   "default_route": "direct",
@@ -71,20 +71,37 @@
   },
   "production_routes": {
     "direct": {
-      "status": "not_run",
-      "detail": "Frozen evaluation executes real local inference. Normal extract-to-SQLite-and-exports receipts on the exact frozen revision are queued after the benchmark."
+      "status": "passed",
+      "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+      "pipeline_version": "0.1.3",
+      "scope": "Normal extract CLI from original fixture bytes through model, canonical JSON, CSV, SQLite and review bundle.",
+      "version": 4,
+      "needs_review": true,
+      "wall_seconds": 12.012921916990308,
+      "evidence": [
+        "evidence/examples/release-invoice/verification.json"
+      ]
     },
     "hybrid": {
-      "status": "not_run",
-      "detail": "Frozen evaluation executes real local inference. Normal extract-to-SQLite-and-exports receipts on the exact frozen revision are queued after the benchmark."
+      "status": "passed",
+      "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+      "pipeline_version": "0.1.3",
+      "scope": "Normal extract CLI from original fixture bytes through model, canonical JSON, CSV, SQLite and review bundle.",
+      "version": 5,
+      "needs_review": true,
+      "wall_seconds": 40.87007633401663,
+      "evidence": [
+        "evidence/examples/release-invoice/verification.json"
+      ]
     }
   },
   "offline_production": {
-    "status": "not_run",
+    "status": "passed",
+    "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+    "detail": "External TCP denied, loopback verified, both frozen production CLI extractions and exports passed. The synthetic currency confirmation produced v6. Applying the same payload replayed v6 and genuine same-config hybrid reimport reused the corrected child of v5.",
     "evidence": [
-      "docs/development/reviewer-release.md"
-    ],
-    "scope": "Frozen release normal CLI persistence, corrections and publication."
+      "evidence/examples/release-invoice/verification.json"
+    ]
   },
   "components": {
     "native_full_parser": {

@@ -1,0 +1,339 @@
+{
+  "status": "passed",
+  "candidate_commit": "bcffc67782a0b786531e6c09d4b5e7583ed63cc8",
+  "pipeline_version": "0.1.3",
+  "source": "fixtures/feasibility/invoice.png",
+  "source_sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "receipt": "All calls used the normal process-restricted CLI and existing immutable SQLite lineage. This source-controlled fixture check did not approve a document.",
+  "initial_extractions": [
+    {
+      "tag": "direct-invoice",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "extract",
+        "fixtures/feasibility/invoice.png",
+        "--type",
+        "invoice",
+        "--pipeline",
+        "direct",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/.vt-state/release-runs/candidate-examples/direct-invoice/exports",
+        "--no-progress"
+      ],
+      "source_sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+      "completed_at": "2026-11-25T20:25:49.303667+00:00",
+      "wall_seconds": 12.012921916990308,
+      "exit_code": 0,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "job_id": "ef84663ffcf340b7b06857ae4d9dc3f2",
+      "snapshots": [
+        {
+          "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+          "version": 4,
+          "action": "new_extraction",
+          "snapshot_sha256": "4606604e3a8e175fcba8f2ca87fd238ebe4250f9b9f3b9de49a9e00bc1b1885c",
+          "scope": [
+            1
+          ],
+          "approval": "needs_review",
+          "validation": "valid",
+          "coverage": {
+            "incomplete_pages": [],
+            "original_capture": "not_established",
+            "processed_pages": [
+              1
+            ],
+            "skipped_pages": [],
+            "source_skipped_pages": [],
+            "suspected_capture": false
+          },
+          "key_observations": [
+            {
+              "field": "document_number",
+              "value": "VTX-4187",
+              "raw": "VTX-4187",
+              "state": "readable"
+            },
+            {
+              "field": "currency",
+              "value": "EUR",
+              "raw": "EUR",
+              "state": "readable"
+            },
+            {
+              "field": "total",
+              "value": "37.25",
+              "raw": "37,25 EUR",
+              "state": "readable"
+            }
+          ],
+          "issue_codes": [
+            "critical_missing",
+            "total_check_indeterminate"
+          ],
+          "observation_count": 5,
+          "entity_count": 1,
+          "schema_version": "1.0",
+          "pipeline_version": "0.1.3",
+          "sqlite_integrity": "ok",
+          "sqlite_foreign_key_violations": 0
+        }
+      ]
+    },
+    {
+      "tag": "hybrid-invoice",
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "extract",
+        "fixtures/feasibility/invoice.png",
+        "--type",
+        "invoice",
+        "--pipeline",
+        "hybrid",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/.vt-state/release-runs/candidate-examples/hybrid-invoice/exports",
+        "--no-progress"
+      ],
+      "source_sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+      "completed_at": "2026-11-25T20:26:30.413727+00:00",
+      "wall_seconds": 40.87007633401663,
+      "exit_code": 0,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      },
+      "job_id": "88a65ece943f4555b99f4aeda6c85f71",
+      "snapshots": [
+        {
+          "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+          "version": 5,
+          "action": "new_extraction",
+          "snapshot_sha256": "2829756395698531a7c086e13577708b1cadbf4b6c9cc29e3be4800a8790801c",
+          "scope": [
+            1
+          ],
+          "approval": "needs_review",
+          "validation": "valid",
+          "coverage": {
+            "incomplete_pages": [],
+            "original_capture": "not_established",
+            "processed_pages": [
+              1
+            ],
+            "skipped_pages": [],
+            "source_skipped_pages": [],
+            "suspected_capture": false
+          },
+          "key_observations": [
+            {
+              "field": "document_number",
+              "value": "VTX-4187",
+              "raw": "VTX-4187",
+              "state": "readable"
+            },
+            {
+              "field": "currency",
+              "value": "EUR",
+              "raw": "EUR",
+              "state": "readable"
+            },
+            {
+              "field": "total",
+              "value": "37.25",
+              "raw": "37,25 EUR",
+              "state": "readable"
+            }
+          ],
+          "issue_codes": [
+            "critical_missing",
+            "total_check_indeterminate"
+          ],
+          "observation_count": 5,
+          "entity_count": 1,
+          "schema_version": "1.0",
+          "pipeline_version": "0.1.3",
+          "sqlite_integrity": "ok",
+          "sqlite_foreign_key_violations": 0
+        }
+      ]
+    }
+  ],
+  "correction_workflow": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "review",
+        "apply",
+        "evidence/examples/release-invoice/corrections.json",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--output",
+        "evidence/examples/release-invoice",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.30192125000758097,
+      "status": "applied",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "review",
+        "apply",
+        "evidence/examples/release-invoice/corrections.json",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--output",
+        "evidence/examples/release-invoice",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.25296937499661,
+      "status": "replayed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "extract",
+        "fixtures/feasibility/invoice.png",
+        "--type",
+        "invoice",
+        "--pipeline",
+        "hybrid",
+        "--output",
+        "/Users/vakof/orca/vision-to-tables/.vt-state/release-runs/candidate-examples/reimport-exports",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 34.97442354200757,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "4",
+        "--format",
+        "all",
+        "--output",
+        "evidence/examples/release-invoice",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.19902745800209232,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "5",
+        "--format",
+        "all",
+        "--output",
+        "evidence/examples/release-invoice",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.1695832910190802,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "tools/verify_offline.py",
+        "export",
+        "--document",
+        "doc-5f704466a44dd696b8317362adec39ec",
+        "--version",
+        "6",
+        "--format",
+        "all",
+        "--output",
+        "evidence/examples/release-invoice",
+        "--no-progress"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.1631876660103444,
+      "status": "completed",
+      "guard": {
+        "loopback": true,
+        "public_connect_errno": 1
+      }
+    }
+  ],
+  "snapshots": [
+    {
+      "version": 4,
+      "parent_version": 3,
+      "route": "direct",
+      "approval": "needs_review",
+      "sha256": "4606604e3a8e175fcba8f2ca87fd238ebe4250f9b9f3b9de49a9e00bc1b1885c",
+      "observation_count": 5,
+      "foreign_key_violations": 0
+    },
+    {
+      "version": 5,
+      "parent_version": 4,
+      "route": "hybrid",
+      "approval": "needs_review",
+      "sha256": "2829756395698531a7c086e13577708b1cadbf4b6c9cc29e3be4800a8790801c",
+      "observation_count": 5,
+      "foreign_key_violations": 0
+    },
+    {
+      "version": 6,
+      "parent_version": 5,
+      "route": "hybrid",
+      "approval": "needs_review",
+      "sha256": "83d712be2e41e4a9374330da6a61afb2f3d6a4c423955bbef157e6d5c58a7576",
+      "observation_count": 5,
+      "foreign_key_violations": 0
+    }
+  ],
+  "same_configuration_reimport": {
+    "version": 6,
+    "base_version": 5,
+    "action": "reused",
+    "approval": "needs_review"
+  }
+}

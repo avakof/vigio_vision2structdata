@@ -1,0 +1,2 @@
+document_id,seq,base_version,reviewer,approve,observation_id,value,raw,state,reason
+doc-5f704466a44dd696b8317362adec39ec,0,5,Integration fixture verification (automated),false,p1.root.currency,EUR,EUR,readable,"The independently generated invoice fixture prints EUR with its total. Controlled source check, with no approval."

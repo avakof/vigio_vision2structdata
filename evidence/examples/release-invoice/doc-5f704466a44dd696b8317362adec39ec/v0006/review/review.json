@@ -1,0 +1,329 @@
+{
+  "approval": "needs_review",
+  "artifact_root": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71",
+  "corrections": {
+    "apply": "vision-tables review apply corrections.json --document doc-5f704466a44dd696b8317362adec39ec",
+    "base_version": 6,
+    "example": "corrections.example.json",
+    "rules": [
+      "Set base_version to this version; a changed head is rejected as stale_base.",
+      "A change targets an observation_id; value must be null unless state is readable.",
+      "Calculated observations cannot be edited; correct their inputs instead.",
+      "approve=true is a human decision on exactly this version; it fails while blocking issues remain.",
+      "Repeating an identical file is idempotent and returns the version it created."
+    ],
+    "schema": "corrections.schema.json"
+  },
+  "coverage": {
+    "incomplete_pages": [],
+    "original_capture": "not_established",
+    "processed_pages": [
+      1
+    ],
+    "skipped_pages": [],
+    "source_skipped_pages": [],
+    "suspected_capture": false
+  },
+  "doc_type": "invoice",
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "format": "vision-tables-review/1",
+  "history": [
+    {
+      "approval": "needs_review",
+      "base_version": 1,
+      "created_at": "2026-11-25T17:36:47.506859+00:00",
+      "kind": "extraction",
+      "parent_version": null,
+      "reviewer": null,
+      "snapshot_sha256": "0beedda91a4b85d9bcd3df189e576aa8dea828ae00eba1936928f0aecb7c5ad9",
+      "validation": "valid",
+      "version": 1
+    },
+    {
+      "approval": "needs_review",
+      "base_version": 2,
+      "created_at": "2026-11-25T17:37:16.623751+00:00",
+      "kind": "extraction",
+      "parent_version": 1,
+      "reviewer": null,
+      "snapshot_sha256": "b254dc1b24cc396eda8bd5921dcf121591c1531f13413d1fe1aa9ef6c69daaa8",
+      "validation": "valid",
+      "version": 2
+    },
+    {
+      "approval": "needs_review",
+      "base_version": 2,
+      "created_at": "2026-11-25T17:39:12.652464+00:00",
+      "kind": "correction",
+      "parent_version": 2,
+      "reviewer": "Integration fixture verification (automated)",
+      "snapshot_sha256": "e93e080bb4990e59af0468bae87284f8341b619c8ba2423b05bbdaa930f00094",
+      "validation": "valid",
+      "version": 3
+    },
+    {
+      "approval": "needs_review",
+      "base_version": 4,
+      "created_at": "2026-11-25T20:25:48.993247+00:00",
+      "kind": "extraction",
+      "parent_version": 3,
+      "reviewer": null,
+      "snapshot_sha256": "4606604e3a8e175fcba8f2ca87fd238ebe4250f9b9f3b9de49a9e00bc1b1885c",
+      "validation": "valid",
+      "version": 4
+    },
+    {
+      "approval": "needs_review",
+      "base_version": 5,
+      "created_at": "2026-11-25T20:26:30.136151+00:00",
+      "kind": "extraction",
+      "parent_version": 4,
+      "reviewer": null,
+      "snapshot_sha256": "2829756395698531a7c086e13577708b1cadbf4b6c9cc29e3be4800a8790801c",
+      "validation": "valid",
+      "version": 5
+    },
+    {
+      "approval": "needs_review",
+      "base_version": 5,
+      "created_at": "2026-11-25T20:26:30.687169+00:00",
+      "kind": "correction",
+      "parent_version": 5,
+      "reviewer": "Integration fixture verification (automated)",
+      "snapshot_sha256": "83d712be2e41e4a9374330da6a61afb2f3d6a4c423955bbef157e6d5c58a7576",
+      "validation": "valid",
+      "version": 6
+    }
+  ],
+  "issue_counts": {
+    "info": 2,
+    "review": 0
+  },
+  "issues": [
+    {
+      "code": "critical_missing",
+      "message": "invoice.issue_date was not read",
+      "observation_ids": [],
+      "observations": [],
+      "page": 1,
+      "page_reference": {
+        "height": 420.0,
+        "image": {
+          "exists": true,
+          "height": 420,
+          "path": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71/pages/0001.png",
+          "relative_path": "pages/0001.png",
+          "width": 800
+        },
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "page": 1,
+        "text_layer": "absent",
+        "unit": "px",
+        "width": 800.0
+      },
+      "seq": 0,
+      "severity": "info"
+    },
+    {
+      "code": "total_check_indeterminate",
+      "message": "no subtotal or line items were read to compare with the total",
+      "observation_ids": [
+        "p1.root.total"
+      ],
+      "observations": [
+        {
+          "alternatives": [],
+          "derivation": null,
+          "entity_id": "p1.root",
+          "entity_kind": "invoice",
+          "evidence": [
+            {
+              "attempt_id": "p1-qwen-0",
+              "channel": "parser",
+              "page": 1,
+              "page_reference": {
+                "height": 420.0,
+                "image": {
+                  "exists": true,
+                  "height": 420,
+                  "path": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71/pages/0001.png",
+                  "relative_path": "pages/0001.png",
+                  "width": 800
+                },
+                "image_to_original": [
+                  1.0,
+                  0.0,
+                  0.0,
+                  1.0,
+                  0.0,
+                  0.0
+                ],
+                "page": 1,
+                "text_layer": "absent",
+                "unit": "px",
+                "width": 800.0
+              },
+              "quote": "37,25 EUR",
+              "region": {
+                "box": {
+                  "precision": "parser_region",
+                  "space": "original_top_left",
+                  "xyxy": [
+                    42.0,
+                    309.0,
+                    467.0,
+                    358.0
+                  ]
+                },
+                "crop": null,
+                "crop_to_original": null,
+                "kind": "parser_text",
+                "language": null,
+                "region_id": "p1-parser-1",
+                "writing": "unknown"
+              }
+            }
+          ],
+          "field": "total",
+          "issue_codes": [
+            "total_check_indeterminate"
+          ],
+          "issues": [
+            {
+              "code": "total_check_indeterminate",
+              "severity": "info"
+            }
+          ],
+          "language": null,
+          "observation_id": "p1.root.total",
+          "origin": "observed",
+          "parent_id": null,
+          "raw": "37,25 EUR",
+          "reason": null,
+          "state": "readable",
+          "value": "37.25"
+        }
+      ],
+      "page": 1,
+      "page_reference": {
+        "height": 420.0,
+        "image": {
+          "exists": true,
+          "height": 420,
+          "path": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71/pages/0001.png",
+          "relative_path": "pages/0001.png",
+          "width": 800
+        },
+        "image_to_original": [
+          1.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        "page": 1,
+        "text_layer": "absent",
+        "unit": "px",
+        "width": 800.0
+      },
+      "seq": 1,
+      "severity": "info"
+    }
+  ],
+  "page_styles": [],
+  "parent_version": 5,
+  "possible_duplicates": [],
+  "review_items": [
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "entity_kind": "invoice",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "parser",
+          "page": 1,
+          "page_reference": {
+            "height": 420.0,
+            "image": {
+              "exists": true,
+              "height": 420,
+              "path": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71/pages/0001.png",
+              "relative_path": "pages/0001.png",
+              "width": 800
+            },
+            "image_to_original": [
+              1.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "page": 1,
+            "text_layer": "absent",
+            "unit": "px",
+            "width": 800.0
+          },
+          "quote": "37,25 EUR",
+          "region": {
+            "box": {
+              "precision": "parser_region",
+              "space": "original_top_left",
+              "xyxy": [
+                42.0,
+                309.0,
+                467.0,
+                358.0
+              ]
+            },
+            "crop": null,
+            "crop_to_original": null,
+            "kind": "parser_text",
+            "language": null,
+            "region_id": "p1-parser-1",
+            "writing": "unknown"
+          }
+        }
+      ],
+      "field": "total",
+      "issue_codes": [
+        "total_check_indeterminate"
+      ],
+      "issues": [
+        {
+          "code": "total_check_indeterminate",
+          "severity": "info"
+        }
+      ],
+      "language": null,
+      "observation_id": "p1.root.total",
+      "origin": "observed",
+      "parent_id": null,
+      "raw": "37,25 EUR",
+      "reason": null,
+      "state": "readable",
+      "value": "37.25"
+    }
+  ],
+  "snapshot_sha256": "83d712be2e41e4a9374330da6a61afb2f3d6a4c423955bbef157e6d5c58a7576",
+  "source": {
+    "exists": true,
+    "path": "/Users/vakof/orca/vision-to-tables/.vt-state/jobs/88a65ece943f4555b99f4aeda6c85f71/original",
+    "relative_path": "original",
+    "sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+    "sha256_verified": true
+  },
+  "state_dir": "/Users/vakof/orca/vision-to-tables/.vt-state",
+  "validation": "valid",
+  "version": 6
+}

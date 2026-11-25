@@ -1,0 +1,385 @@
+{
+  "approval": "needs_review",
+  "corrections": [],
+  "coverage": {
+    "incomplete_pages": [],
+    "original_capture": "not_established",
+    "processed_pages": [
+      1
+    ],
+    "skipped_pages": [],
+    "source_skipped_pages": [],
+    "suspected_capture": false
+  },
+  "doc_type": "invoice",
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "entities": [
+    {
+      "id": "p1.root",
+      "kind": "invoice",
+      "ordinal": 0,
+      "page": 1,
+      "parent_id": null
+    }
+  ],
+  "issues": [
+    {
+      "code": "critical_missing",
+      "message": "invoice.issue_date was not read",
+      "observation_ids": [],
+      "page": 1,
+      "severity": "info"
+    },
+    {
+      "code": "total_check_indeterminate",
+      "message": "no subtotal or line items were read to compare with the total",
+      "observation_ids": [
+        "p1.root.total"
+      ],
+      "page": 1,
+      "severity": "info"
+    }
+  ],
+  "observations": [
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "direct",
+          "page": 1,
+          "quote": "FACTURE / INVOICE",
+          "region_id": null
+        }
+      ],
+      "field": "document_kind",
+      "id": "p1.root.document_kind",
+      "language": null,
+      "origin": "observed",
+      "raw": "FACTURE / INVOICE",
+      "reason": null,
+      "state": "readable",
+      "value": "invoice"
+    },
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "direct",
+          "page": 1,
+          "quote": "VTX-4187",
+          "region_id": null
+        }
+      ],
+      "field": "document_number",
+      "id": "p1.root.document_number",
+      "language": null,
+      "origin": "observed",
+      "raw": "VTX-4187",
+      "reason": null,
+      "state": "readable",
+      "value": "VTX-4187"
+    },
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "direct",
+          "page": 1,
+          "quote": "Atelier de la Rive",
+          "region_id": null
+        }
+      ],
+      "field": "supplier_name",
+      "id": "p1.root.supplier_name",
+      "language": null,
+      "origin": "observed",
+      "raw": "Atelier de la Rive",
+      "reason": null,
+      "state": "readable",
+      "value": "Atelier de la Rive"
+    },
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "direct",
+          "page": 1,
+          "quote": "EUR",
+          "region_id": null
+        }
+      ],
+      "field": "currency",
+      "id": "p1.root.currency",
+      "language": null,
+      "origin": "observed",
+      "raw": "EUR",
+      "reason": null,
+      "state": "readable",
+      "value": "EUR"
+    },
+    {
+      "alternatives": [],
+      "derivation": null,
+      "entity_id": "p1.root",
+      "evidence": [
+        {
+          "attempt_id": "p1-qwen-0",
+          "channel": "direct",
+          "page": 1,
+          "quote": "37,25 EUR",
+          "region_id": null
+        }
+      ],
+      "field": "total",
+      "id": "p1.root.total",
+      "language": null,
+      "origin": "observed",
+      "raw": "37,25 EUR",
+      "reason": null,
+      "state": "readable",
+      "value": "37.25"
+    }
+  ],
+  "pages": [
+    {
+      "height": 420.0,
+      "image_height": 420,
+      "image_path": "pages/0001.png",
+      "image_to_original": [
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "image_width": 800,
+      "number": 1,
+      "text_layer": "absent",
+      "unit": "px",
+      "width": 800.0
+    }
+  ],
+  "parent_version": 3,
+  "regions": [],
+  "run": {
+    "calls": [
+      {
+        "artifact_dir": "attempts/p1-qwen-0",
+        "attempt_id": "p1-qwen-0",
+        "channel": "direct",
+        "constrained": true,
+        "fields": [
+          {
+            "field": "document_kind",
+            "kind": "invoice",
+            "local_id": "root",
+            "quote": "FACTURE / INVOICE",
+            "raw": "FACTURE / INVOICE",
+            "region_id": null,
+            "state": "readable"
+          },
+          {
+            "field": "document_number",
+            "kind": "invoice",
+            "local_id": "root",
+            "quote": "VTX-4187",
+            "raw": "VTX-4187",
+            "region_id": null,
+            "state": "readable"
+          },
+          {
+            "field": "supplier_name",
+            "kind": "invoice",
+            "local_id": "root",
+            "quote": "Atelier de la Rive",
+            "raw": "Atelier de la Rive",
+            "region_id": null,
+            "state": "readable"
+          },
+          {
+            "field": "currency",
+            "kind": "invoice",
+            "local_id": "root",
+            "quote": "EUR",
+            "raw": "EUR",
+            "region_id": null,
+            "state": "readable"
+          },
+          {
+            "field": "total",
+            "kind": "invoice",
+            "local_id": "root",
+            "quote": "37,25 EUR",
+            "raw": "37,25 EUR",
+            "region_id": null,
+            "state": "readable"
+          }
+        ],
+        "finish_reason": "stop",
+        "generated_tokens": 195,
+        "generation_seconds": 4.600310459005414,
+        "id": "p1-qwen-0",
+        "image_path": "pages/0001.png",
+        "load_seconds": 3.104977165989112,
+        "mlx_peak_bytes": 7047456806,
+        "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+        "overflow": false,
+        "peak_rss_bytes": 7134199808,
+        "prompt_tokens": 759,
+        "region_ids": [],
+        "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+        "runtime_seconds": 10.736905457975809,
+        "seconds_including_lock_wait": 11.42556699999841,
+        "status": "parsed",
+        "token_limit": 4096
+      }
+    ],
+    "config_hash": "8f3063f8bc14fc9bfb6e70bccb6c5c7aefe45744bbcd2e355023026fa45ab71b",
+    "job_id": "ef84663ffcf340b7b06857ae4d9dc3f2",
+    "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+    "pipeline": "direct",
+    "pipeline_version": "0.1.3",
+    "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+    "runtime": {
+      "components": {
+        "invalid_or_missing": [],
+        "missing_runtime_packages": [],
+        "mlx_runtime_found": true,
+        "processor": {
+          "device": "Apple M3 Max",
+          "key": "1c2282b157bc58e699ea06ebac3adb0b4f2396b94d789ad877c3fb2f6b9c66e0",
+          "passed": true,
+          "pixel_shape": [
+            256,
+            1536
+          ],
+          "processor": "Qwen3VLProcessor",
+          "schema_decoder": "LLGuidanceLogitsProcessor"
+        },
+        "version_conflicts": {}
+      },
+      "host_supported": true,
+      "model": "mlx-community/Qwen3.5-9B-MLX-4bit",
+      "ready": true,
+      "revision": "938d8919941c6e7efd3c7150eff7fe9d12afa631",
+      "versions": {
+        "annotated-doc": "0.0.7",
+        "annotated-types": "0.8.0",
+        "anyio": "4.16.0",
+        "attrs": "26.1.0",
+        "certifi": "2026.11.20",
+        "cffi": "2.1.1",
+        "charset-normalizer": "3.5.3",
+        "click": "8.5.1",
+        "cryptography": "50.0.2",
+        "datasets": "5.2.0",
+        "dill": "0.4.1",
+        "fastapi": "0.165.0",
+        "filelock": "4.3.1",
+        "fsspec": "2026.9.0",
+        "h11": "0.16.0",
+        "hf-xet": "1.8.0",
+        "httpcore": "1.0.9",
+        "httpcore2": "2.16.2",
+        "httpx": "0.28.1",
+        "httpx2": "2.16.2",
+        "huggingface-hub": "2.4.0",
+        "idna": "3.20",
+        "jinja2": "3.1.6",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "llguidance": "1.9.1",
+        "markdown-it-py": "4.3.0",
+        "markupsafe": "3.0.4",
+        "mdurl": "0.1.2",
+        "miniaudio": "1.73",
+        "mlx": "0.32.4",
+        "mlx-audio": "0.6.8",
+        "mlx-metal": "0.32.4",
+        "mlx-vlm": "0.8.1",
+        "mpmath": "1.3.0",
+        "multiprocess": "0.70.19",
+        "networkx": "3.7",
+        "numpy": "2.5.5",
+        "opencv-python": "5.1.0.95",
+        "opentelemetry-api": "1.45.2",
+        "packaging": "26.4",
+        "pandas": "3.1.1",
+        "pillow": "13.0.0",
+        "pyarrow": "26.0.1",
+        "pycparser": "3.12",
+        "pydantic": "2.14.4",
+        "pydantic-core": "2.50.5",
+        "pygments": "2.21.0",
+        "python-dateutil": "4.0.0",
+        "python-multipart": "0.0.34",
+        "pyyaml": "6.0.4",
+        "referencing": "0.37.0",
+        "regex": "2026.11.24",
+        "requests": "2.34.2",
+        "rich": "15.0.0",
+        "rpds-py": "2026.9.1",
+        "safetensors": "0.8.0",
+        "scipy": "1.18.1",
+        "sentencepiece": "0.2.3",
+        "setuptools": "84.2.1",
+        "shellingham": "1.5.4",
+        "sounddevice": "0.5.6",
+        "starlette": "1.10.0",
+        "sympy": "1.14.0",
+        "tokenizers": "0.23.3",
+        "torch": "2.15.0",
+        "torchvision": "0.29.2",
+        "tqdm": "4.70.1",
+        "transformers": "5.23.0",
+        "truststore": "0.10.5",
+        "typer": "0.29.2",
+        "typing-extensions": "4.16.0",
+        "typing-inspection": "0.4.5",
+        "tzdata": "2026.6",
+        "urllib3": "2.8.0",
+        "uvicorn": "0.54.0",
+        "websockets": "17.4",
+        "xxhash": "4.1.0"
+      }
+    },
+    "schema_version": "1.0",
+    "settings": {
+      "doc_type": "invoice",
+      "max_bytes": 67108864,
+      "max_crops": 1,
+      "max_pages": 16,
+      "max_pixels": 40000000,
+      "max_tokens": 4096,
+      "page_groups": [],
+      "pipeline": "direct",
+      "render_pixels": 2000000,
+      "retries": 1
+    }
+  },
+  "scope": [
+    1
+  ],
+  "source": {
+    "media_type": "image/png",
+    "original_path": "original",
+    "page_count": 1,
+    "sha256": "74a42e29d6e64a3095463bcbfd3df33e65fa382a19c38e7e2bb358df0d032335",
+    "size_bytes": 21390
+  },
+  "validation": "valid",
+  "version": 4
+}

@@ -1,0 +1,15 @@
+{
+  "document_id": "doc-5f704466a44dd696b8317362adec39ec",
+  "base_version": 5,
+  "reviewer": "Integration fixture verification (automated)",
+  "approve": false,
+  "changes": [
+    {
+      "observation_id": "p1.root.currency",
+      "value": "EUR",
+      "raw": "EUR",
+      "state": "readable",
+      "reason": "The independently generated invoice fixture prints EUR with its total. Controlled source check, with no approval."
+    }
+  ]
+}
