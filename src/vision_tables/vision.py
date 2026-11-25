@@ -11,14 +11,14 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from jsonschema import Draft202012Validator
-from PIL import Image, ImageOps
+from PIL import Image
 
 from . import runtime_local
 from .artifacts import write_json
 from .config import QWEN_MODEL, QWEN_REVISION, ProcessingError, Settings
 from .contracts import Box, Evidence, FieldRead, Issue, ModelPayload, Page, PageReading, Region
 from .vision_geometry import box, invert, localize
-from .vision_ingest import inspect_source
+from .vision_ingest import inspect_source, read_oriented_raster
 from .vocabulary import CALCULATED_ONLY, FAMILIES, FIELDS
 from .wire_json import parse_object
 
@@ -170,39 +170,53 @@ def _artifact(root, relative):
     return path
 
 
-def _crop(page, region, source, root, index, settings):
+def _target_rect(page, region):
     transform = invert(page.image_to_original)
     bounds = box(transform, region.box.xyxy, page.image_width, page.image_height)
     if bounds is None:
         return None
     x0, y0, x1, y1 = bounds
-    rect = (max(0, math.floor(x0) - 12), max(0, math.floor(y0) - 12),
+    return (max(0, math.floor(x0) - 12), max(0, math.floor(y0) - 12),
             min(page.image_width, math.ceil(x1) + 12), min(page.image_height, math.ceil(y1) + 12))
+
+
+def _tile_rects(page, count):
+    """Overlapping strips down the long axis, or one centered strip."""
+    w, h = page.image_width, page.image_height
+    vertical = h >= w
+    length = h if vertical else w
+    if count <= 0 or length < 3:
+        return []
+    span = min(length - 1, math.ceil(length * min(0.65, 1.3 / count)))
+    remaining = length - span
+    starts = [remaining // 2] if count == 1 else [round(remaining * n / (count - 1)) for n in range(count)]
+    return [(0, start, w, start + span) if vertical else (start, 0, start + span, h)
+            for start in dict.fromkeys(starts)]
+
+
+def _crop(page, image, rect, target, root, index, settings):
     path = root / "crops" / f"{page.number:04d}-{index:02d}.png"
     path.parent.mkdir(mode=0o700, exist_ok=True)
-    # After downsampling a photograph, reread from its immutable full-resolution source.
-    high_resolution = page.unit == "px" and (page.width * page.height) > page.image_width * page.image_height
-    with Image.open(root / "original" if high_resolution else source) as raw:
-        image = ImageOps.exif_transpose(raw) if high_resolution else raw
-        sx, sy = image.width / page.image_width, image.height / page.image_height
-        x0, y0, x1, y1 = rect
-        full_rect = (math.floor(x0 * sx), math.floor(y0 * sy),
-                     min(image.width, math.ceil(x1 * sx)), min(image.height, math.ceil(y1 * sy)))
-        patch = image.crop(full_rect).convert("RGBA")
-        width, height = patch.size
-        budget = min(settings.render_pixels, settings.max_pixels)
-        scale = min(1, math.sqrt(budget / (width * height)), budget / max(width, height))
-        if scale < 1:
-            patch = patch.resize((max(1, int(width * scale)), max(1, int(height * scale))), Image.Resampling.LANCZOS)
-        white = Image.new("RGB", patch.size, "white")
-        white.paste(patch, mask=patch.getchannel("A"))
-        with path.open("xb") as out:
-            white.save(out, format="PNG")
+    sx, sy = image.width / page.image_width, image.height / page.image_height
+    x0, y0, x1, y1 = rect
+    full_rect = (math.floor(x0 * sx), math.floor(y0 * sy),
+                 min(image.width, math.ceil(x1 * sx)), min(image.height, math.ceil(y1 * sy)))
+    patch = image.crop(full_rect).convert("RGBA")
+    width, height = patch.size
+    budget = min(settings.render_pixels, settings.max_pixels)
+    scale = min(1, math.sqrt(budget / (width * height)), budget / max(width, height))
+    if scale < 1:
+        patch = patch.resize((max(1, int(width * scale)), max(1, int(height * scale))), Image.Resampling.LANCZOS)
+    white = Image.new("RGB", patch.size, "white")
+    white.paste(patch, mask=patch.getchannel("A"))
+    with path.open("xb") as out:
+        white.save(out, format="PNG")
     a, b, c, d, e, f = localize(page.image_to_original, full_rect[0] / sx, full_rect[1] / sy)
     u, v = width / (patch.width * sx), height / (patch.height * sy)
     transform = a * u, b * u, c * v, d * v, e, f
     bounds = box(transform, (0, 0, patch.width, patch.height), page.width, page.height)
-    return Region(id=f"p{page.number}-crop-{index}", page=page.number, order=region.order, kind="reread_crop",
+    return Region(id=f"p{page.number}-crop-{index}", page=page.number, order=target.order if target else index - 1,
+                  kind="reread_crop" if target else "reread_tile",
                   box=Box(xyxy=bounds, precision="crop"), artifact_path=str(path.relative_to(root)),
                   artifact_sha256=hashlib.sha256(path.read_bytes()).hexdigest(), crop_to_original=transform)
 
@@ -250,6 +264,8 @@ def _call_attempt(page, root, settings, image, offered, text, native_only, crop,
             "constrained": True, "token_limit": settings.max_tokens, "artifact_dir": relative,
             "image_path": str(image.relative_to(root.resolve())) if image else None, "region_ids": list(offered),
             "channel": "native_text" if native_only else "direct", "status": "failed"}
+    if crop:
+        call["crop_region_id"] = crop.id
     calls.append(call)
     try:
         reply = runtime_local.call("qwen", {"schema": schema, "image": str(image) if image else None,
@@ -326,8 +342,9 @@ def _merge(base, reread, crop):
             if (old is None and not crop) or (old is not None and old.state == "unreadable" and reading.state == "readable"):
                 peer.fields[name] = reading
             elif old is not None and old.raw and reading.raw and _normalize(old.raw) != _normalize(reading.raw):
-                peer.fields[name] = FieldRead(raw=None, state="ambiguous", evidence=old.evidence,
-                                              region_id=old.region_id, alternatives=[old.raw, reading.raw],
+                citation = reading if reading.region_id and not old.region_id else old
+                peer.fields[name] = FieldRead(raw=None, state="ambiguous", evidence=citation.evidence,
+                                              region_id=citation.region_id, alternatives=[old.raw, reading.raw],
                                               reason="Independent local readings disagree.")
                 peer.fields[name]._trace = old._trace + reading._trace
                 conflict = True
@@ -432,13 +449,24 @@ def read_page(page: Page, regions: list[Region], artifact_root: Path, settings: 
                                                   for record in result.records for read in record.fields.values())):
             break
 
-    if base is not None:
-        for index, target in enumerate(_targets(base, [*native, *added])[:settings.max_crops], 1):
-            crop = _crop(page, target, image, artifact_root, index, settings)
-            if crop is None:
-                continue
+    if base is not None and settings.max_crops:
+        high_resolution = page.unit == "px" and page.width * page.height > page.image_width * page.image_height
+        targets = [(rect, target) for target in _targets(base, [*native, *added])
+                   if (rect := _target_rect(page, target)) is not None][:settings.max_crops]
+        if (not targets and settings.pipeline == "direct" and not native and high_resolution
+                and any(read.state in ("ambiguous", "unreadable") for row in base.records for read in row.fields.values())):
+            targets = [(rect, None) for rect in _tile_rects(page, settings.max_crops)]
+        resolved_source = None
+        if targets:
+            if high_resolution:
+                resolved_source, *_ = read_oriented_raster(_artifact(artifact_root, "original"), settings.max_pixels)
+            else:
+                with Image.open(image) as rendered:
+                    resolved_source = rendered.convert("RGB")
+        for index, (rect, target) in enumerate(targets, 1):
+            crop = _crop(page, resolved_source, rect, target, artifact_root, index, settings)
             added.append(crop)
-            crop_regions, crop_text = _region_prompt([target], page)
+            crop_regions, crop_text = _region_prompt([target] if target else [], page)
             result, _ = _call_attempt(page, artifact_root, settings, _artifact(artifact_root, crop.artifact_path),
                                       crop_regions, crop_text, False, crop, settings.retries + index, calls)
             if calls[-1].get("overflow"):

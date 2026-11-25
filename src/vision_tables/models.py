@@ -114,6 +114,8 @@ def runtime_info(settings: Settings) -> dict:
 
 
 def doctor(settings: Settings) -> dict:
+    from .vision_heic import heic_info
+
     state = settings.state_dir.resolve()
     existing = next(p for p in (state, *state.parents) if p.exists())
     runtime = runtime_info(settings)
@@ -127,7 +129,7 @@ def doctor(settings: Settings) -> dict:
     return {"state_dir": str(state), "pipeline": settings.pipeline, "hardware": hardware,
             "python": sys.version.split()[0], "core_versions": {
                 p: importlib.metadata.version(p) for p in ("pydantic", "pypdfium2", "Pillow", "jsonschema")},
-            "runtime": runtime, "ready": runtime["ready"],
+            "runtime": runtime, "ready": runtime["ready"], "ingestion": {"heic": heic_info()},
             "readiness_basis": "Local component inventory and installed runtime versions. Real inference gates are recorded in evidence/acceptance.json.",
             "next": [] if runtime["ready"] else ["Run vision-tables models prepare and inspect component results."]}
 

@@ -8,11 +8,14 @@ from pathlib import Path
 
 import pypdfium2 as pdf
 import pytest
-from PIL import Image
+from PIL import Image, ImageDraw
 
-from vision_tables import runtime_local, vision
+from vision_tables import models, runtime_local, vision, vision_heic
 from vision_tables.config import ProcessingError, Settings
+from vision_tables.contracts import Run
+from vision_tables.domain import assemble
 from vision_tables.vision_geometry import invert, point
+from vision_tables.vision_heic import heic_info
 
 FIXTURES = Path(__file__).resolve().parents[1] / "fixtures"
 INVOICE = FIXTURES / "feasibility/invoice.png"
@@ -85,19 +88,96 @@ def test_invalid_source_reasons(tmp_path, name, code):
     assert error.value.code == code
 
 
-def test_source_limits_and_heic(tmp_path):
+def test_source_limits(tmp_path):
     with pytest.raises(ProcessingError) as error:
         vision.inspect_source(INVOICE, tmp_path, Settings(max_bytes=16))
     assert error.value.code == "oversized_input"
     assert not (tmp_path / "original").exists()
-    fake_heic = tmp_path / "source"
-    fake_heic.write_bytes(b"\0\0\0\x18ftypheic\0\0\0\0mif1heic")
-    with pytest.raises(ProcessingError) as error:
-        vision.inspect_source(fake_heic, tmp_path, Settings())
-    assert error.value.code == "unsupported_heic"
     with pytest.raises(ProcessingError) as error:
         vision.inspect_source(INVOICE, tmp_path, Settings(max_pixels=10))
     assert error.value.code == "source_pixel_limit"
+
+
+def test_heic_sequence_is_explicitly_unsupported(tmp_path):
+    source = tmp_path / "animated.heics"
+    source.write_bytes(b"\0\0\0\x18ftyphevc\0\0\0\0msf1hevc")
+    with pytest.raises(ProcessingError) as error:
+        vision.inspect_source(source, tmp_path, Settings())
+    assert error.value.code == "unsupported_heic_sequence"
+
+
+def heic_still(source, target):
+    subprocess.run(["/usr/bin/sips", "-s", "format", "heic", str(source), "--out", str(target)],
+                   capture_output=True, check=True, timeout=15)
+
+
+@pytest.mark.skipif(not heic_info()["ready"], reason="Requires macOS ImageIO HEIC codec")
+def test_real_heic_still_and_orientation(tmp_path):
+    job = tmp_path / "job"
+    job.mkdir()
+    source = tmp_path / "still"
+    heic_still(INVOICE, source)
+    ingestion = vision.inspect_source(source, job, Settings())
+    page, = ingestion.pages
+    assert ingestion.source.media_type == "image/heic"
+    assert (job / ingestion.source.original_path).read_bytes() == source.read_bytes()
+    assert ingestion.source.sha256 == hashlib.sha256(source.read_bytes()).hexdigest()
+    assert (page.width, page.height, page.image_width, page.image_height) == (800, 420, 800, 420)
+    assert page.image_to_original == (1, 0, 0, 1, 0, 0)
+
+    oriented_job = tmp_path / "oriented_job"
+    oriented_job.mkdir()
+    jpeg = tmp_path / "portrait.jpg"
+    image = Image.new("RGB", (80, 48), "white")
+    ImageDraw.Draw(image).rectangle((0, 0, 15, 15), fill=(240, 0, 0))
+    metadata = image.getexif()
+    metadata[274] = 6
+    image.save(jpeg, exif=metadata)
+    oriented = tmp_path / "portrait.heic"
+    heic_still(jpeg, oriented)
+    page, = vision.inspect_source(oriented, oriented_job, Settings()).pages
+    assert (page.width, page.height, page.image_width, page.image_height) == (80, 48, 48, 80)
+    assert page.image_to_original == (0, -1, 1, 0, 0, 48)
+    with Image.open(oriented_job / page.image_path) as rendered:
+        r, g, b = rendered.getpixel((40, 6))
+        assert r > 200 and max(g, b) < 75
+
+
+@pytest.mark.skipif(not heic_info()["ready"], reason="Requires macOS ImageIO HEIC codec")
+def test_heic_pixel_limit_and_corrupt_container(tmp_path):
+    source = tmp_path / "input.heic"
+    heic_still(INVOICE, source)
+    limited = tmp_path / "limited"
+    limited.mkdir()
+    with pytest.raises(ProcessingError) as error:
+        vision.inspect_source(source, limited, Settings(max_pixels=100))
+    assert error.value.code == "source_pixel_limit"
+    assert (limited / "original").is_file()
+    bad = tmp_path / "bad.heic"
+    bad.write_bytes(source.read_bytes()[:64])
+    with pytest.raises(ProcessingError) as error:
+        vision.inspect_source(bad, tmp_path, Settings())
+    assert error.value.code == "corrupt_heic"
+
+
+def test_doctor_reports_heic_capability(tmp_path):
+    doctor = models.doctor(Settings(state_dir=tmp_path))
+    codec = doctor["ingestion"]["heic"]
+    assert codec == heic_info()
+    if codec["ready"]:
+        assert codec["backend"] == "macOS ImageIO"
+    else:
+        assert "PNG or JPEG" in codec["reason"]
+
+
+def test_unavailable_heic_codec_explains_conversion(tmp_path, monkeypatch):
+    source = tmp_path / "input.heic"
+    source.write_bytes(b"\0\0\0\x18ftypheic\0\0\0\0mif1heic")
+    monkeypatch.setattr(vision_heic.sys, "platform", "unsupported-native-platform")
+    with pytest.raises(ProcessingError) as error:
+        vision.inspect_source(source, tmp_path, Settings())
+    assert error.value.code == "unsupported_heic"
+    assert "PNG or JPEG" in str(error.value)
 
 
 def reply(raw="37,25", quote="TOTAL 37,25 EUR", detail=None, region=None, **metadata):
@@ -237,3 +317,58 @@ def test_hybrid_adapter_maps_parser_boxes_and_targets_native_resolution_crop(tmp
     assert crop.box.xyxy == (16, 36, 384, 144)
     assert crop.crop_to_original == (1, 0, 0, 1, 16, 36)
     assert result.records[0].fields["total"].region_id == crop.id
+
+
+def test_direct_raster_tiles_are_bounded_and_ground_conflicting_rereads(tmp_path, monkeypatch):
+    settings = Settings(doc_type="invoice", render_pixels=84_000, retries=0, max_crops=2)
+    ingestion = vision.inspect_source(INVOICE, tmp_path, settings)
+    page, = ingestion.pages
+    responses = iter([reply(None, ""), reply(), reply(raw="57,25", quote="TOTAL 57,25 EUR")])
+    monkeypatch.setattr(runtime_local, "call", lambda *unused: next(responses))
+    result = vision.read_page(page, [], tmp_path, settings)
+    assert len(result.calls) == 3 and len(result.regions) == 2
+    first, second = result.regions
+    assert first.box.xyxy == pytest.approx((0, 0, 520, 420))
+    assert second.box.xyxy == pytest.approx((280, 0, 800, 420))
+    for tile, call in zip(result.regions, result.calls[1:]):
+        assert tile.kind == "reread_tile" and tile.box.precision == "crop"
+        assert call["crop_region_id"] == call["fields"][0]["region_id"] == tile.id
+        assert call["image_path"] == tile.artifact_path
+        with Image.open(tmp_path / tile.artifact_path) as pixels:
+            assert pixels.width * pixels.height <= settings.render_pixels
+            assert tile.box.xyxy[:2] == pytest.approx(point(tile.crop_to_original, 0, 0))
+            assert tile.box.xyxy[2:] == pytest.approx(point(tile.crop_to_original, pixels.width, pixels.height))
+    total = result.records[0].fields["total"]
+    assert total.state == "ambiguous" and total.raw is None and total.region_id == first.id
+    assert total.alternatives == ["37,25", "57,25"]
+    run = Run(job_id="test", pipeline="direct", model="test", revision="test", runtime={}, settings={},
+              config_hash="0" * 64, calls=result.calls)
+    canonical = assemble(ingestion, [result], [1], run, "doc-test")
+    reading = next(obs for obs in canonical.observations if obs.field == "total")
+    assert reading.value is None and reading.evidence[0].region_id == first.id
+    assert canonical.run.calls[2]["fields"][0]["region_id"] == second.id
+
+
+@pytest.mark.parametrize("render_pixels,max_crops", [(2_000_000, 2), (84_000, 0)])
+def test_tiles_require_more_source_pixels_and_crop_budget(tmp_path, monkeypatch, render_pixels, max_crops):
+    settings = Settings(doc_type="invoice", render_pixels=render_pixels, retries=0, max_crops=max_crops)
+    page, = vision.inspect_source(INVOICE, tmp_path, settings).pages
+    responses = iter([reply(None, "")])
+    monkeypatch.setattr(runtime_local, "call", lambda *unused: next(responses))
+    result = vision.read_page(page, [], tmp_path, settings)
+    assert len(result.calls) == 1 and not result.regions
+
+
+@pytest.mark.skipif(not heic_info()["ready"], reason="Requires macOS ImageIO HEIC codec")
+def test_direct_tile_can_reread_immutable_heic(tmp_path, monkeypatch):
+    source = tmp_path / "source.heic"
+    heic_still(INVOICE, source)
+    settings = Settings(doc_type="invoice", render_pixels=84_000, retries=0, max_crops=1)
+    page, = vision.inspect_source(source, tmp_path, settings).pages
+    responses = iter([reply(None, ""), reply()])
+    monkeypatch.setattr(runtime_local, "call", lambda *unused: next(responses))
+    result = vision.read_page(page, [], tmp_path, settings)
+    tile, = result.regions
+    assert tile.kind == "reread_tile" and tile.box.xyxy == pytest.approx((140, 0, 660, 420))
+    assert (tmp_path / "original").read_bytes() == source.read_bytes()
+    assert result.records[0].fields["total"].region_id == tile.id

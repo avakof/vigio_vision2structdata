@@ -6,6 +6,7 @@ import hashlib
 import math
 import os
 import stat
+import tempfile
 import threading
 import unicodedata
 from contextlib import closing
@@ -18,11 +19,40 @@ from PIL import Image, ImageOps, UnidentifiedImageError
 from .config import ProcessingError, Settings
 from .contracts import Box, Ingested, Issue, Page, Region, Source
 from .vision_geometry import box, invert, raster_affine
+from .vision_heic import decode_heic
 
 _MAX_NATIVE_CHARS = 20_000
 _MAX_RENDER_EDGE = 8192
 _MAX_PAGE_INVENTORY = 100_000
 _PDF_LOCK = threading.Lock()
+_HEIC_STILLS = {b"heic", b"heix", b"heim", b"heis"}
+_HEIC_SEQUENCES = {b"hevc", b"hevx", b"hevm", b"hevs"}
+_ORIENTATION = {
+    2: Image.Transpose.FLIP_LEFT_RIGHT, 3: Image.Transpose.ROTATE_180, 4: Image.Transpose.FLIP_TOP_BOTTOM,
+    5: Image.Transpose.TRANSPOSE, 6: Image.Transpose.ROTATE_270, 7: Image.Transpose.TRANSVERSE,
+    8: Image.Transpose.ROTATE_90,
+}
+
+
+def _media(header):
+    if header.startswith(b"%PDF-"):
+        return "application/pdf"
+    if header.startswith(b"\x89PNG\r\n\x1a\n"):
+        return "image/png"
+    if header.startswith(b"\xff\xd8\xff"):
+        return "image/jpeg"
+    if header[4:8] == b"ftyp" and len(header) >= 16:
+        length = int.from_bytes(header[:4], "big")
+        start = 16 if length == 1 else 8
+        if length == 1:
+            length = int.from_bytes(header[8:16], "big")
+        limit = min(length or len(header), len(header))
+        brands = {header[start:start + 4], *(header[i:i + 4] for i in range(start + 8, limit - 3, 4))}
+        if brands & _HEIC_SEQUENCES:
+            raise ProcessingError("unsupported_heic_sequence", "Export a single frame of the HEIC sequence as HEIC, PNG or JPEG.")
+        if brands & _HEIC_STILLS or (b"mif1" in brands and not brands & {b"avif", b"avis"}):
+            return "image/heic"
+    raise ProcessingError("unsupported_format", "Expected a JPEG, PNG, PDF or a supported HEIC still.")
 
 
 def import_source(path: Path, root: Path, limit: int):
@@ -39,18 +69,7 @@ def import_source(path: Path, root: Path, limit: int):
             header = source.read(64)
             if not header:
                 raise ProcessingError("empty_source", "The source is empty.")
-            if header.startswith(b"%PDF-"):
-                media = "application/pdf"
-            elif header.startswith(b"\x89PNG\r\n\x1a\n"):
-                media = "image/png"
-            elif header.startswith(b"\xff\xd8\xff"):
-                media = "image/jpeg"
-            elif header[4:8] == b"ftyp" and any(
-                brand in header[8:] for brand in (b"heic", b"heix", b"hevc", b"hevx", b"mif1", b"msf1")
-            ):
-                raise ProcessingError("unsupported_heic", "HEIC decoding is not configured. Convert the original to PNG or JPEG.")
-            else:
-                raise ProcessingError("unsupported_format", "Expected a JPEG, PNG or PDF file.")
+            media = _media(header)
             with original.open("xb") as output:
                 try:
                     block = header
@@ -84,12 +103,29 @@ def _quality(image, number):
         yield Issue(code="low_contrast", message="The rendered page has very low luminance contrast.", page=number)
 
 
-def _raster(original, media, root, settings):
+def read_oriented_raster(original, max_pixels, media=None):
+    if media is None:
+        with original.open("rb") as file:
+            media = _media(file.read(64))
+    if media == "image/heic":
+        with tempfile.TemporaryDirectory(prefix=".heic-", dir=original.parent) as scratch:
+            path = Path(scratch) / "pixels.png"
+            width, height, orientation = decode_heic(original, path, max_pixels)
+            try:
+                with Image.open(path, formats=["PNG"]) as source:
+                    if source.size != (width, height):
+                        raise ProcessingError("corrupt_heic", "Decoded raster dimensions disagree with the HEIC metadata.")
+                    image = source.convert("RGBA")
+            except (OSError, ValueError, Image.DecompressionBombError) as exc:
+                raise ProcessingError("corrupt_heic", "The HEIC decoder produced unreadable pixels.") from exc
+        if orientation in _ORIENTATION:
+            image = image.transpose(_ORIENTATION[orientation])
+        return image, width, height, orientation
     try:
         with Image.open(original, formats=["JPEG", "PNG"]) as source:
             width, height = source.size
-            if width * height > settings.max_pixels:
-                raise ProcessingError("source_pixel_limit", f"Image exceeds {settings.max_pixels} source pixels.")
+            if width * height > max_pixels:
+                raise ProcessingError("source_pixel_limit", f"Image exceeds {max_pixels} source pixels.")
             if getattr(source, "n_frames", 1) > 1:
                 raise ProcessingError("unsupported_animation", "Animated PNG is unsupported. Export still images individually.")
             orientation = source.getexif().get(274, 1)
@@ -98,6 +134,11 @@ def _raster(original, media, root, settings):
         raise ProcessingError("source_pixel_limit", "Image exceeds Pillow's decoder pixel limit.") from exc
     except (UnidentifiedImageError, OSError, ValueError, SyntaxError) as exc:
         raise ProcessingError("corrupt_image", f"The declared {media} source could not be decoded.") from exc
+    return image, width, height, orientation
+
+
+def _raster(original, media, root, settings):
+    image, width, height, orientation = read_oriented_raster(original, settings.max_pixels, media)
     white = Image.new("RGB", image.size, "white")
     white.paste(image, mask=image.getchannel("A"))
     w, h = white.size
