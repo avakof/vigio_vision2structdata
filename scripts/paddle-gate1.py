@@ -15,7 +15,14 @@ import time
 
 WORKTREE = Path(__file__).resolve().parents[1]
 STATE = Path(os.environ.get("VT_STATE_DIR", WORKTREE / ".vt-state")).resolve() / "paddle"
-LOCK = Path(os.environ.get("VT_INFERENCE_LOCK", STATE.parent / "inference.lock"))
+def inference_lock():
+    if os.environ.get("VT_INFERENCE_LOCK"):
+        return Path(os.environ["VT_INFERENCE_LOCK"])
+    if (WORKTREE / ".git").exists():
+        common = subprocess.check_output(["git", "-C", str(WORKTREE), "rev-parse",
+                                          "--path-format=absolute", "--git-common-dir"], text=True)
+        return Path(common.strip()).parent / ".vt-state/inference.lock"
+    return Path.home() / ".local/state/vision-to-tables/inference.lock"
 LAYOUT_REVISION = "241f8bdfc77a7c7bee915a5057aaee58c235a8d3"
 VLM_REVISION = "132c45f52c0a26ed5a6b2f6bd8e3985794cc27dd"
 WEIGHTS = {
@@ -150,7 +157,8 @@ if __name__ == "__main__":
         "PADDLE_PDX_CACHE_HOME": str(STATE / "paddlex"),
         "PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK": "True",
     })
-    LOCK.parent.mkdir(parents=True, exist_ok=True)
-    with LOCK.open("a") as lock:
+    lock_path = inference_lock()
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with lock_path.open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
         run()
