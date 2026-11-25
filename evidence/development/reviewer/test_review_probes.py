@@ -208,9 +208,10 @@ def test_integrated_replay_correction_and_consistent_exports(env):
     assert any(o["raw"].startswith("=HYPERLINK") for o in canonical["observations"] if o["raw"])
 
 
-def test_truncated_but_valid_reply_is_incomplete_not_success(env):
-    env.model((invoice_reply(), 2048, None), (invoice_reply(), 2048, None))
-    code, out = env.run("extract", str(env.image), "--output", str(env.tmp / "o"))
+@pytest.mark.parametrize("budget", [2048, 4096])
+def test_truncated_but_valid_reply_is_incomplete_not_success(env, budget):
+    env.model((invoice_reply(), budget, None), (invoice_reply(), budget, None))
+    code, out = env.run("extract", str(env.image), "--max-tokens", str(budget), "--output", str(env.tmp / "o"))
     assert code == 3 and out["status"] == "incomplete" and "model_token_limit" in _doc(out)["issue_codes"]
 
 
