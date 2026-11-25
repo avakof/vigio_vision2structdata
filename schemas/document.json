@@ -1034,7 +1034,7 @@
           "type": "string"
         },
         "pipeline_version": {
-          "default": "0.1.1",
+          "default": "0.1.2",
           "title": "Pipeline Version",
           "type": "string"
         },
