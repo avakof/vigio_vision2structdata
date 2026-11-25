@@ -56,3 +56,9 @@ PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=src /Users/vakof/orca/vision-to-tables/.ven
 ```
 
 Dispatch `ctx_d6bbbb55290c`, task `task_18d856ef6a22`. The independent Codex turn `01a213b7-2036-78e0-9b92-a3e937a88f1d` recorded `gpt-6.2-astra` and `xhigh`.
+
+## Shared-table recheck at a7676cb
+
+**Finding 2 passed at `a7676cb13832cfeb06078acae8c31eb99cc8261e`.** I replayed the Python counterexample above unchanged against that Git tree. With `Soupe` and `Roast chicken` in the first and fourth cells, assembly returned `issues ['translation_without_layout_evidence'] False`. The issue had review severity and blocked approval.
+
+For the positive control, the same table box contained `<td>Soupe / Soup</td>` and the translated reading was `Soup`. Assembly returned `valid [] True`. Both documents retained the initial `needs_review` approval state. These two synthetic checks close the remaining parser-table counterexample. No inference ran.
