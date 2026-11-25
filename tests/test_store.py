@@ -123,7 +123,7 @@ def test_changed_config_creates_traceable_extraction_and_preserves_reviewed_line
     _, first = persist(store, settings)
     did = first.document_id
     store.apply_corrections(did, correction(did, 1), fake_apply)  # v2 on lineage 1
-    other = settings.model_copy(update={"max_tokens": 4096})
+    other = settings.model_copy(update={"max_tokens": 512})
     _, changed = persist(store, other)
     assert (changed.action, changed.version, changed.parent_version, changed.base_version) == ("new_extraction", 3, 2, 3)
     assert changed.document.approval == "needs_review" and not changed.document.corrections
@@ -406,7 +406,7 @@ def test_earlier_accepted_extraction_stays_reviewable_after_a_changed_config_ext
     did = first.document_id
     approved = store.apply_corrections(did, correction(did, 1, None, approve=True), fake_apply)
     assert approved.document.approval == "human_approved"
-    _, newer = persist(store, settings.model_copy(update={"max_tokens": 4096}))
+    _, newer = persist(store, settings.model_copy(update={"max_tokens": 512}))
     assert newer.action == "new_extraction" and newer.version == 3
     # the accepted lineage is not superseded by a different configuration; further review still applies to it
     follow = store.apply_corrections(did, correction(did, 2, "o-p1", "2.25"), fake_apply)

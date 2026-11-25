@@ -44,7 +44,7 @@ class Settings(BaseModel):
     max_pixels: int = Field(default=40_000_000, gt=0, le=100_000_000)
     render_pixels: int = Field(default=2_000_000, gt=0, le=8_000_000)
     max_crops: int = Field(default=1, ge=0, le=4)
-    max_tokens: int = Field(default=2048, ge=32, le=8192)
+    max_tokens: int = Field(default=4096, ge=32, le=8192)
     retries: int = Field(default=1, ge=0, le=2)
 
     @model_validator(mode="after")
